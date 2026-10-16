@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40" fill="none">
+  <!-- Botanical leaf icon mark -->
+  <g transform="translate(4, 5)">
+    <path d="M15 1C15 1 5 6 3 17C2 22 6 27 12 28C14 28.5 16 28 17 26.5C18.5 24 16.5 20.5 14 18C10.5 14.5 13 8 15 1Z" fill="#1B4D3E" opacity="0.95"/>
+    <path d="M14 1C14 1 20 8 20 16C20 22 16.5 26.5 13 28C17 27 24 23 23 15C22 7 14 1 14 1Z" fill="#2E7D5B" opacity="0.85"/>
+    <path d="M13.5 28C13.5 28 13 20 10 14" stroke="#EDE7DC" stroke-width="1.2" stroke-linecap="round"/>
+    <circle cx="12" cy="28.5" r="1.5" fill="#1B4D3E"/>
+  </g>
+  <!-- Typography -->
+  <text x="38" y="24" font-family="'Fraunces', Georgia, 'Times New Roman', serif" font-size="16" font-weight="600" letter-spacing="2.8" fill="#18241C">PLANTVERSE</text>
+  <text x="202" y="16" font-family="'Source Sans 3', sans-serif" font-size="7.5" font-weight="700" letter-spacing="1.5" fill="#2E7D5B">AI</text>
+</svg>

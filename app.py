@@ -1,15 +1,58 @@
 import streamlit as st
-from plant_identification import main as plant_identifier_main
-from ar_location_plant_map import main as ar_location_main
 
-# Sidebar Navigation
-st.sidebar.title("🌱 PlantVerse Navigation")
-app_choice = st.sidebar.radio("Select Module:", ["Plant Identifier", "AR + Location Explorer"])
+from ui.chrome import apply_chrome, init_state
 
-# App Navigation Logic
-if app_choice == "Plant Identifier":
-    st.title("📸 Plant Identifier")
-    plant_identifier_main()
-elif app_choice == "AR + Location Explorer":
-    st.title("🗺️ AR + Location-Based Plant Map")
-    ar_location_main()
+st.set_page_config(
+    page_title="PlantVerse — Botanical Intelligence",
+    page_icon=":material/eco:",
+    layout="wide",
+    initial_sidebar_state="collapsed",
+)
+
+st.logo("static/logo.svg", size="large")
+apply_chrome()
+init_state()
+
+explore = st.Page(
+    "app_pages/explore.py",
+    title="Explore",
+    icon=":material/forest:",
+    url_path="explore",
+    default=True,
+)
+identify = st.Page(
+    "app_pages/identify.py",
+    title="Identify",
+    icon=":material/document_scanner:",
+    url_path="identify",
+)
+disease_detection = st.Page(
+    "app_pages/disease_detection.py",
+    title="Disease Detection",
+    icon=":material/healing:",
+    url_path="disease-detection",
+)
+library = st.Page(
+    "app_pages/library.py",
+    title="Plant Library",
+    icon=":material/menu_book:",
+    url_path="library",
+)
+ar_explorer = st.Page(
+    "app_pages/ar_explorer.py",
+    title="AR Explorer",
+    icon=":material/explore:",
+    url_path="ar-explorer",
+)
+about = st.Page(
+    "app_pages/about.py",
+    title="About",
+    icon=":material/info:",
+    url_path="about",
+)
+
+page = st.navigation(
+    [explore, identify, disease_detection, library, ar_explorer, about],
+    position="top",
+)
+page.run()

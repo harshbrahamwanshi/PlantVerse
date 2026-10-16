@@ -1,0 +1,11 @@
+# PlantVerse ML Microservice Requirements
+starlette>=0.30.0
+uvicorn>=0.20.0
+python-multipart>=0.0.6
+pillow>=9.0.0
+torch>=2.0.0
+transformers>=4.30.0
+numpy>=1.22.0
+
+# Optional: If running legacy TensorFlow/Keras models directly:
+# tensorflow>=2.10.0

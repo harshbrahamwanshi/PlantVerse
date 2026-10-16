@@ -1,0 +1,572 @@
+/* ==========================================================================
+   PlantVerse — Major Project Academic & Commercial Botanical Design System
+   Aesthetic: Premium Nature-Technology Editorial & Justified Research UI
+   ========================================================================== */
+
+:root {
+  --pv-forest-deep: #0e291f;
+  --pv-forest: #1b4d3e;
+  --pv-forest-mid: #256653;
+  --pv-emerald: #2e7d5b;
+  --pv-emerald-light: #e7f3ec;
+  --pv-sage: #8fa89b;
+  
+  --pv-sand: #f9f8f5;
+  --pv-card-bg: #ffffff;
+  --pv-card-warm: #f6f3eb;
+  --pv-paper: #f1ece1;
+  
+  --pv-ink: #18241c;
+  --pv-ink-soft: #2e3b32;
+  --pv-muted: #57655c;
+  --pv-subtle: #8a968e;
+  
+  --pv-line: #dcd4c5;
+  --pv-line-soft: #ebe5da;
+  
+  --pv-shadow-xs: 0 1px 3px rgba(24, 36, 28, 0.04);
+  --pv-shadow-sm: 0 2px 8px rgba(24, 36, 28, 0.05), 0 1px 2px rgba(24, 36, 28, 0.03);
+  --pv-shadow-md: 0 6px 20px rgba(24, 36, 28, 0.07), 0 2px 6px rgba(24, 36, 28, 0.04);
+  --pv-shadow-lg: 0 12px 32px rgba(24, 36, 28, 0.09), 0 4px 12px rgba(24, 36, 28, 0.05);
+  
+  --pv-radius-sm: 6px;
+  --pv-radius: 10px;
+  --pv-radius-lg: 14px;
+  --pv-radius-pill: 9999px;
+}
+
+/* Base Canvas */
+html, body, .stApp {
+  background-color: var(--pv-sand) !important;
+  color: var(--pv-ink);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   CENTERED APP GEOMETRY: Centered layout with equal margins left and right
+   ========================================================================== */
+section[data-testid="stMain"],
+.stMain {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.stMainBlockContainer,
+div[data-testid="stMainBlockContainer"],
+.block-container {
+  max-width: 1060px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  padding-top: 2rem !important;
+  padding-bottom: 6rem !important;
+  box-sizing: border-box !important;
+}
+
+/* Header & Top Navigation Bar Centering */
+.stAppHeader,
+header[data-testid="stHeader"] {
+  background: rgba(249, 248, 245, 0.95) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--pv-line-soft);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--pv-shadow-xs);
+  display: flex !important;
+  justify-content: center !important;
+}
+
+header[data-testid="stHeader"] > div {
+  max-width: 1060px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  box-sizing: border-box !important;
+}
+
+[data-testid="stHeader"] .stLogo {
+  margin-left: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+[data-testid="stHeader"] .stLogo:hover {
+  transform: scale(1.02);
+}
+
+/* Hide Default Streamlit Clutter */
+div[data-testid="stDecoration"],
+.stAppDeployButton,
+[data-testid="stMainMenu"],
+.stAppFooter,
+footer,
+[data-testid="stToolbar"] [data-testid="stToolbarActions"],
+[data-testid="stAppDeployButton"] {
+  display: none !important;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--pv-ink);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  text-align: left;
+}
+
+h1 {
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+h2 {
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+h3 {
+  line-height: 1.35;
+}
+
+/* Justified Body Text for Content Paragraphs (Exclude buttons, badges, and def-rows) */
+.stMarkdown:not(button *) p,
+[data-testid="stMarkdownContainer"]:not(button *):not([class*="def-row"] *):not([class*="kicker"] *) p {
+  color: var(--pv-ink-soft);
+  line-height: 1.72;
+  font-size: 1.02rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Captions & Metadata */
+.stCaption, [data-testid="stCaptionContainer"] {
+  color: var(--pv-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Academic Pill Badges */
+.pv-pill-tag,
+.pv-academic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.32rem 0.9rem;
+  border-radius: var(--pv-radius-pill);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: var(--pv-emerald-light);
+  color: var(--pv-forest);
+  border: 1px solid rgba(46, 125, 91, 0.25);
+  margin-bottom: 0.75rem;
+}
+
+/* Botanical Kickers */
+[class*="st-key-kicker"] .stCaption,
+[class*="st-key-kicker"] p,
+.pv-kicker {
+  font-size: 0.72rem !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: var(--pv-forest) !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.25rem !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: left !important;
+}
+
+/* Hero Section Typography */
+[class*="st-key-hero-title"] h1,
+[class*="st-key-hero-title"] [data-testid="stMarkdownContainer"] h1 {
+  font-size: clamp(2.3rem, 4.4vw, 3.5rem) !important;
+  line-height: 1.08 !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.035em !important;
+  color: var(--pv-forest-deep) !important;
+  margin: 0.25rem 0 0.85rem 0 !important;
+  text-transform: none !important;
+  text-align: left !important;
+}
+
+[class*="st-key-hero-copy"] p {
+  font-size: 1.12rem !important;
+  line-height: 1.7 !important;
+  color: var(--pv-ink-soft) !important;
+  text-align: justify !important;
+}
+
+/* Section Separators */
+[class*="st-key-section-rule"] hr,
+hr {
+  margin: 1.6rem 0 !important;
+  border: none !important;
+  border-top: 1px solid var(--pv-line-soft) !important;
+}
+
+/* Equal Height & Elevated Cards */
+div[data-testid="column"] > div[data-testid="stVerticalBlockBorderWrapper"],
+div[data-testid="column"] > div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlockBorderWrapper"] {
+  height: 100% !important;
+}
+
+div[data-testid="stVerticalBlockBorderWrapper"] > div {
+  background-color: var(--pv-card-bg) !important;
+  border: 1px solid var(--pv-line) !important;
+  border-radius: var(--pv-radius-lg) !important;
+  box-shadow: var(--pv-shadow-sm) !important;
+  padding: 1.35rem 1.45rem !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+div[data-testid="stVerticalBlockBorderWrapper"]:hover > div {
+  border-color: #c9bea9 !important;
+  box-shadow: var(--pv-shadow-md) !important;
+}
+
+/* ==========================================================================
+   BUTTONS SYSTEM: High Visibility, Crisp Contrast & Vivid Botanical Styling
+   ========================================================================== */
+.stButton > button,
+.stDownloadButton > button,
+.stFormSubmitButton > button {
+  border-radius: var(--pv-radius) !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  padding: 0.65rem 1.4rem !important;
+  min-height: 2.85rem !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: var(--pv-shadow-xs) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Reset all inner elements of any button to prevent dark text inheritance */
+.stButton > button *,
+.stDownloadButton > button *,
+.stFormSubmitButton > button * {
+  text-align: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.25 !important;
+}
+
+/* PRIMARY BUTTONS: Launch Identifier, Execute Identification Pipeline, Search Database, etc. */
+button[data-testid="stBaseButton-primary"],
+.stButton > button[kind="primary"],
+.stFormSubmitButton > button {
+  background: #1b4d3e !important;
+  background: linear-gradient(180deg, #246350 0%, #154234 100%) !important;
+  border: 1px solid #12372b !important;
+  color: #ffffff !important;
+  box-shadow: 0 3px 8px rgba(27, 77, 62, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+}
+
+/* CRITICAL: Force Pure White Text on Primary Buttons */
+button[data-testid="stBaseButton-primary"] *,
+button[data-testid="stBaseButton-primary"] p,
+button[data-testid="stBaseButton-primary"] span,
+button[data-testid="stBaseButton-primary"] div,
+button[data-testid="stBaseButton-primary"] svg,
+.stButton > button[kind="primary"] *,
+.stButton > button[kind="primary"] p,
+.stButton > button[kind="primary"] span,
+.stButton > button[kind="primary"] div,
+.stButton > button[kind="primary"] svg,
+.stFormSubmitButton > button *,
+.stFormSubmitButton > button p,
+.stFormSubmitButton > button span,
+.stFormSubmitButton > button div {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Primary Button Hover State */
+button[data-testid="stBaseButton-primary"]:hover,
+.stButton > button[kind="primary"]:hover,
+.stFormSubmitButton > button:hover {
+  background: linear-gradient(180deg, #2d7a63 0%, #1c5241 100%) !important;
+  border-color: #174838 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 18px rgba(27, 77, 62, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+}
+
+button[data-testid="stBaseButton-primary"]:hover *,
+button[data-testid="stBaseButton-primary"]:hover p,
+.stButton > button[kind="primary"]:hover *,
+.stButton > button[kind="primary"]:hover p {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Primary Button Active / Pressed State */
+button[data-testid="stBaseButton-primary"]:active,
+.stButton > button[kind="primary"]:active,
+.stFormSubmitButton > button:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 1px 3px rgba(27, 77, 62, 0.25) !important;
+}
+
+/* Primary Button Disabled State (e.g. before image upload) */
+button[data-testid="stBaseButton-primary"]:disabled,
+button[data-testid="stBaseButton-primary"][disabled],
+.stButton > button[kind="primary"]:disabled,
+.stButton > button[kind="primary"][disabled] {
+  background: #e6e0d5 !important;
+  border-color: #d2cabb !important;
+  box-shadow: none !important;
+  cursor: not-allowed !important;
+  opacity: 0.85 !important;
+  transform: none !important;
+}
+
+button[data-testid="stBaseButton-primary"]:disabled *,
+button[data-testid="stBaseButton-primary"]:disabled p,
+.stButton > button[kind="primary"]:disabled *,
+.stButton > button[kind="primary"]:disabled p {
+  color: #7d7568 !important;
+  fill: #7d7568 !important;
+}
+
+/* SECONDARY BUTTONS: Clean White Background, Emerald Text & Crisp Border */
+button[data-testid="stBaseButton-secondary"],
+.stButton > button[kind="secondary"],
+.stDownloadButton > button {
+  background: #ffffff !important;
+  color: #1b4d3e !important;
+  border: 1.5px solid #c9c1b4 !important;
+  box-shadow: var(--pv-shadow-xs) !important;
+}
+
+button[data-testid="stBaseButton-secondary"] *,
+button[data-testid="stBaseButton-secondary"] p,
+button[data-testid="stBaseButton-secondary"] span,
+button[data-testid="stBaseButton-secondary"] div,
+.stButton > button[kind="secondary"] *,
+.stButton > button[kind="secondary"] p,
+.stButton > button[kind="secondary"] span,
+.stButton > button[kind="secondary"] div,
+.stDownloadButton > button *,
+.stDownloadButton > button p,
+.stDownloadButton > button span {
+  color: #1b4d3e !important;
+  fill: #1b4d3e !important;
+  font-weight: 600 !important;
+}
+
+button[data-testid="stBaseButton-secondary"]:hover,
+.stButton > button[kind="secondary"]:hover,
+.stDownloadButton > button:hover {
+  background: #f4efe4 !important;
+  border-color: #1b4d3e !important;
+  transform: translateY(-1px) !important;
+  box-shadow: var(--pv-shadow-sm) !important;
+}
+
+button[data-testid="stBaseButton-secondary"]:hover *,
+button[data-testid="stBaseButton-secondary"]:hover p,
+.stButton > button[kind="secondary"]:hover *,
+.stButton > button[kind="secondary"]:hover p,
+.stDownloadButton > button:hover *,
+.stDownloadButton > button:hover p {
+  color: #0e291f !important;
+  fill: #0e291f !important;
+}
+
+/* File Uploader Dropzone */
+[data-testid="stFileUploaderDropzone"] {
+  background: #fdfbf7 !important;
+  border: 2px dashed #c2d1c7 !important;
+  border-radius: var(--pv-radius-lg) !important;
+  min-height: 12.5rem !important;
+  padding: 1.75rem 1.25rem !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-testid="stFileUploaderDropzone"]:hover {
+  background: #f1f7f3 !important;
+  border-color: var(--pv-forest) !important;
+}
+
+[data-testid="stFileUploaderDropzoneInstructions"] span {
+  color: var(--pv-muted) !important;
+  font-size: 0.95rem !important;
+}
+
+/* Specimen Imagery Framing */
+img {
+  border-radius: var(--pv-radius) !important;
+}
+
+[class*="st-key-hero-image"] img,
+[class*="st-key-profile-image"] img,
+[class*="st-key-library-image"] img,
+[class*="st-key-session-image"] img,
+[class*="st-key-disease-image"] img,
+[class*="st-key-diag-image"] img,
+[class*="st-key-plate-image"] img {
+  object-fit: cover !important;
+  width: 100% !important;
+  border-radius: var(--pv-radius-lg) !important;
+  box-shadow: var(--pv-shadow-md) !important;
+  border: 1px solid var(--pv-line) !important;
+}
+
+[class*="st-key-hero-image"] img {
+  min-height: 25rem;
+  max-height: 31rem;
+  object-position: center;
+}
+
+[class*="st-key-profile-image"] img,
+[class*="st-key-library-image"] img {
+  min-height: 19rem;
+  max-height: 27rem;
+  object-position: center;
+}
+
+[class*="st-key-session-image"] img {
+  height: 12.5rem;
+  object-position: center;
+}
+
+[class*="st-key-plate-image"] img {
+  height: 17rem;
+  object-position: center;
+}
+
+/* Metadata Rows & Definitions */
+[class*="st-key-def-row"] {
+  border-top: 1px solid var(--pv-line-soft);
+  padding-top: 0.65rem;
+  padding-bottom: 0.55rem;
+}
+
+[class*="st-key-def-row"] p {
+  text-align: left !important;
+  margin: 0 !important;
+}
+
+/* Expanders */
+.stExpander {
+  background: var(--pv-card-bg) !important;
+  border: 1px solid var(--pv-line) !important;
+  border-radius: var(--pv-radius) !important;
+  box-shadow: var(--pv-shadow-xs) !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.stExpander details summary {
+  padding: 0.75rem 1rem !important;
+  font-weight: 500 !important;
+  color: var(--pv-ink) !important;
+}
+
+/* Inputs & Form Controls */
+[data-testid="stTextInput"] input,
+[data-testid="stNumberInput"] input,
+[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+  border-radius: var(--pv-radius) !important;
+  background-color: var(--pv-card-bg) !important;
+  border: 1px solid var(--pv-line) !important;
+  font-size: 0.95rem !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+[data-testid="stTextInput"] input:focus,
+[data-testid="stNumberInput"] input:focus,
+[data-testid="stSelectbox"] div[data-baseweb="select"] > div:focus-within {
+  border-color: var(--pv-forest) !important;
+  box-shadow: 0 0 0 3px rgba(27, 77, 62, 0.12) !important;
+}
+
+/* Tabs */
+button[data-baseweb="tab"] {
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  color: var(--pv-muted) !important;
+  padding-top: 0.65rem !important;
+  padding-bottom: 0.65rem !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+  color: var(--pv-forest) !important;
+  border-bottom-color: var(--pv-forest) !important;
+}
+
+/* Metric Display Cards */
+[data-testid="stMetric"] {
+  background: var(--pv-card-bg) !important;
+  border: 1px solid var(--pv-line) !important;
+  border-radius: var(--pv-radius) !important;
+  padding: 1rem 1.25rem !important;
+  box-shadow: var(--pv-shadow-xs) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+[data-testid="stMetric"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--pv-shadow-sm) !important;
+}
+
+[data-testid="stMetricLabel"] {
+  color: var(--pv-muted) !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+}
+
+[data-testid="stMetricValue"] {
+  color: var(--pv-forest-deep) !important;
+  font-weight: 700 !important;
+}
+
+/* Mobile & Responsive Rules */
+@media (max-width: 768px) {
+  .stMainBlockContainer,
+  div[data-testid="stMainBlockContainer"],
+  .block-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 1.25rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  [class*="st-key-hero-title"] h1 {
+    font-size: 2.1rem !important;
+  }
+
+  [class*="st-key-hero-image"] img,
+  [class*="st-key-profile-image"] img,
+  [class*="st-key-library-image"] img {
+    min-height: 16rem !important;
+    max-height: 22rem !important;
+  }
+
+  [data-testid="stFileUploaderDropzone"] {
+    min-height: 10rem !important;
+  }
+}
