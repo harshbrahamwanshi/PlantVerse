@@ -50,13 +50,18 @@ class DiseasePredictor:
 
         # Try PyTorch Transformers pipeline
         try:
-            from transformers import pipeline, AutoModelForImageClassification, AutoImageProcessor
+            from transformers import (
+                pipeline,
+                AutoModelForImageClassification,
+                AutoImageProcessor,
+                MobileNetV2ImageProcessor,
+            )
+            model = AutoModelForImageClassification.from_pretrained(self.model_name)
             try:
                 processor = AutoImageProcessor.from_pretrained(self.model_name)
-                model = AutoModelForImageClassification.from_pretrained(self.model_name)
-                self.pipeline = pipeline("image-classification", model=model, image_processor=processor)
             except Exception:
-                self.pipeline = pipeline("image-classification", model=self.model_name)
+                processor = MobileNetV2ImageProcessor.from_pretrained(self.model_name)
+            self.pipeline = pipeline("image-classification", model=model, image_processor=processor)
             self.backend = "transformers"
             self.is_loaded = True
             print(f"[ML Service] Successfully loaded Transformers model: {self.model_name}")

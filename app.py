@@ -1,3 +1,4 @@
+import importlib
 import streamlit as st
 
 from ui.chrome import apply_chrome, init_state
@@ -8,6 +9,17 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed",
 )
+
+import ar_location_plant_map
+import plant_disease_detection
+import plant_identification
+import ui.presentation
+
+if not hasattr(plant_identification, "_CROP_BOTANICAL_MAP"):
+    importlib.reload(ar_location_plant_map)
+    importlib.reload(plant_disease_detection)
+    importlib.reload(plant_identification)
+    importlib.reload(ui.presentation)
 
 st.logo("static/logo.svg", size="large")
 apply_chrome()

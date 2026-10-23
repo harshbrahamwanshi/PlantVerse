@@ -180,6 +180,11 @@ if img_file and run_identify:
         medicinal = get_medicinal_uses_from_wikipedia(wiki_title, target_lang="en")
         description = PlantLocationFinder().get_wikipedia_summary(wiki_title)
 
+        buffer = BytesIO()
+        rgb = image.convert("RGB")
+        rgb.save(buffer, format="JPEG", quality=88)
+        image_bytes = buffer.getvalue()
+
         disease_res = None
         if enable_disease_check:
             st.write(translate_text("4. Screening foliar health and agricultural disease pathologies...", lang_code))
@@ -201,11 +206,6 @@ if img_file and run_identify:
                 })
             except Exception as d_exc:
                 st.warning(f"Disease screening skipped: {d_exc}")
-
-        buffer = BytesIO()
-        rgb = image.convert("RGB")
-        rgb.save(buffer, format="JPEG", quality=88)
-        image_bytes = buffer.getvalue()
 
         result = {
             "common_name": label,

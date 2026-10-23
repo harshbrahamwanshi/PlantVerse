@@ -56,13 +56,18 @@ def load_disease_classifier():
 
     # 2. Standard Native Pipeline (Hugging Face / PyTorch MobileNetV2)
     try:
-        from transformers import pipeline, AutoModelForImageClassification, AutoImageProcessor
+        from transformers import (
+            pipeline,
+            AutoModelForImageClassification,
+            AutoImageProcessor,
+            MobileNetV2ImageProcessor,
+        )
+        model = AutoModelForImageClassification.from_pretrained(DEFAULT_MODEL_NAME)
         try:
             processor = AutoImageProcessor.from_pretrained(DEFAULT_MODEL_NAME)
-            model = AutoModelForImageClassification.from_pretrained(DEFAULT_MODEL_NAME)
-            pipe = pipeline("image-classification", model=model, image_processor=processor)
         except Exception:
-            pipe = pipeline("image-classification", model=DEFAULT_MODEL_NAME)
+            processor = MobileNetV2ImageProcessor.from_pretrained(DEFAULT_MODEL_NAME)
+        pipe = pipeline("image-classification", model=model, image_processor=processor)
         return {"type": "transformers", "pipeline": pipe}
     except Exception as exc:
         print(f"Warning: Could not initialize primary transformers pipeline: {exc}")

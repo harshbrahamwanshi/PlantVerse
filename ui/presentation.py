@@ -115,9 +115,11 @@ def extra_taxon_fields(plant_info: Optional[Dict[str, Any]]) -> List[Tuple[str, 
 
 
 import base64
+import io
 import json
 from datetime import datetime
 from pathlib import Path
+from PIL import Image
 
 _DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 _DIAGNOSES_FILE = _DATA_DIR / "diagnoses.json"
@@ -133,7 +135,9 @@ def load_persistent_diagnoses() -> List[Dict[str, Any]]:
             for item in items:
                 if "image_b64" in item and item["image_b64"]:
                     try:
-                        item["image_bytes"] = base64.b64decode(item["image_b64"])
+                        raw = base64.b64decode(item["image_b64"])
+                        Image.open(io.BytesIO(raw)).verify()
+                        item["image_bytes"] = raw
                     except Exception:
                         item["image_bytes"] = None
             return items

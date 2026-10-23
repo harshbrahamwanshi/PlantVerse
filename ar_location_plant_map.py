@@ -11,11 +11,14 @@ class PlantLocationFinder:
         self.inaturalist_base_url = "https://api.inaturalist.org/v1"
         self.wikipedia_base_url = "https://en.wikipedia.org/api/rest_v1"
         self.ipinfo_url = "http://ip-api.com/json"
+        self.headers = {
+            "User-Agent": "PlantVerse/1.0 (https://github.com/plantverse/app; contact@plantverse.org) python-requests/2.31"
+        }
 
     def get_user_location(self) -> Optional[Tuple[float, float]]:
         """Get user's approximate location using IP geolocation from ip-api.com."""
         try:
-            response = requests.get(self.ipinfo_url, timeout=5)
+            response = requests.get(self.ipinfo_url, headers=self.headers, timeout=5)
             if response.status_code == 200:
                 data = response.json()
                 lat = data.get("lat")
@@ -41,7 +44,7 @@ class PlantLocationFinder:
                 "per_page": 1,
             }
 
-            response = requests.get(url, params=params, timeout=10)
+            response = requests.get(url, params=params, headers=self.headers, timeout=10)
             if response.status_code == 200:
                 data = response.json()
                 if data["results"]:
@@ -69,7 +72,7 @@ class PlantLocationFinder:
                 "geo": "true",
             }
 
-            response = requests.get(url, params=params, timeout=15)
+            response = requests.get(url, params=params, headers=self.headers, timeout=15)
             if response.status_code == 200:
                 data = response.json()
                 return data.get("results", [])
@@ -83,7 +86,7 @@ class PlantLocationFinder:
             search_term = scientific_name.replace(" ", "_")
             url = f"{self.wikipedia_base_url}/page/summary/{urllib.parse.quote(search_term)}"
 
-            response = requests.get(url, timeout=10)
+            response = requests.get(url, headers=self.headers, timeout=10)
             if response.status_code == 200:
                 data = response.json()
                 return data.get("extract", "No description available.")
@@ -91,7 +94,9 @@ class PlantLocationFinder:
                 search_url = "https://en.wikipedia.org/api/rest_v1/page/summary/"
                 alt_search = scientific_name.split()[0]
                 response = requests.get(
-                    f"{search_url}{urllib.parse.quote(alt_search)}", timeout=10
+                    f"{search_url}{urllib.parse.quote(alt_search)}",
+                    headers=self.headers,
+                    timeout=10,
                 )
                 if response.status_code == 200:
                     data = response.json()
