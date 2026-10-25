@@ -25,6 +25,11 @@ import streamlit as st
 import torch
 from transformers import AutoImageProcessor, AutoModelForImageClassification
 
+import importlib as _importlib
+import ml_config as _ml_config
+if not hasattr(_ml_config, "load_conditions_metadata"):
+    _importlib.reload(_ml_config)
+
 from ml_config import (
     ENABLE_FLORASENSE_SECONDARY,
     FLORASENSE_HIGH_CONF_THRESHOLD,

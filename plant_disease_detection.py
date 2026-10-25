@@ -46,6 +46,11 @@ from disease_recommendations import (
     get_disease_info,
     normalize_disease_label,
 )
+import importlib as _importlib
+import ml_config as _ml_config
+if not hasattr(_ml_config, "load_conditions_metadata"):
+    _importlib.reload(_ml_config)
+
 from ml_config import (
     CROP_TO_CLASS_INDICES,
     DISEASE_BACKEND,
@@ -68,6 +73,9 @@ from ml_config import (
     load_plants_metadata,
     resolve_supported_disease_crop,
 )
+import plant_identification as _plant_identification
+if not hasattr(_plant_identification, "predict_species_detailed"):
+    _importlib.reload(_plant_identification)
 from plant_identification import predict_species_detailed
 from vision_analysis import analyze_foliar_lesions, crop_to_bbox, segment_leaf
 

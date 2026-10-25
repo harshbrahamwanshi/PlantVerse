@@ -10,16 +10,28 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-import ar_location_plant_map
-import plant_disease_detection
-import plant_identification
-import ui.presentation
+import ml_config
+if not hasattr(ml_config, "load_conditions_metadata"):
+    importlib.reload(ml_config)
 
-if not hasattr(plant_identification, "_CROP_BOTANICAL_MAP"):
-    importlib.reload(ar_location_plant_map)
-    importlib.reload(plant_disease_detection)
+import vision_analysis
+import disease_recommendations
+import ui.feedback
+importlib.reload(vision_analysis)
+importlib.reload(disease_recommendations)
+importlib.reload(ui.feedback)
+
+import plant_identification
+if not hasattr(plant_identification, "predict_species_detailed"):
     importlib.reload(plant_identification)
-    importlib.reload(ui.presentation)
+
+import plant_disease_detection
+if not hasattr(plant_disease_detection, "_build_general_condition_diagnosis"):
+    importlib.reload(plant_identification)
+    importlib.reload(plant_disease_detection)
+
+import ar_location_plant_map
+import ui.presentation
 
 st.logo("static/logo.svg", size="large")
 apply_chrome()
