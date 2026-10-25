@@ -1,0 +1,87 @@
+{
+  "base_model": "kimcomehome/plantvillage-vit-leaf-disease",
+  "train_data": "PlantVillage subset + PlantDoc train (field photos)",
+  "plantdoc_test": {
+    "before": 0.3771186440677966,
+    "after": 0.7542372881355932,
+    "after_int8_onnx": 0.7669491525423728,
+    "n": 236
+  },
+  "plantvillage_test": {
+    "before": 1.0,
+    "after": 1.0,
+    "after_int8_onnx": 0.9986842105263158,
+    "n": 760
+  },
+  "per_class_plantdoc": {
+    "Apple___Apple_scab": 0.9,
+    "Apple___healthy": 1.0,
+    "Apple___Cedar_apple_rust": 0.8,
+    "Pepper,_bell___healthy": 0.875,
+    "Pepper,_bell___Bacterial_spot": 0.6666666666666666,
+    "Blueberry___healthy": 0.9090909090909091,
+    "Cherry_(including_sour)___healthy": 0.9,
+    "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": 0.25,
+    "Corn_(maize)___Northern_Leaf_Blight": 0.5,
+    "Corn_(maize)___Common_rust_": 0.9,
+    "Peach___healthy": 0.8888888888888888,
+    "Potato___Early_blight": 0.375,
+    "Potato___Late_blight": 0.5,
+    "Raspberry___healthy": 1.0,
+    "Soybean___healthy": 0.75,
+    "Squash___Powdery_mildew": 1.0,
+    "Strawberry___healthy": 1.0,
+    "Tomato___Early_blight": 0.7777777777777778,
+    "Tomato___Septoria_leaf_spot": 0.7272727272727273,
+    "Tomato___healthy": 0.75,
+    "Tomato___Bacterial_spot": 0.4444444444444444,
+    "Tomato___Late_blight": 0.6,
+    "Tomato___Tomato_mosaic_virus": 0.5,
+    "Tomato___Tomato_Yellow_Leaf_Curl_Virus": 0.8333333333333334,
+    "Tomato___Leaf_Mold": 0.5,
+    "Grape___healthy": 0.9166666666666666,
+    "Grape___Black_rot": 0.875
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.3545108824539527,
+      "plantdoc_val_acc": 0.7606837606837606
+    },
+    {
+      "epoch": 2,
+      "loss": 0.934175682475241,
+      "plantdoc_val_acc": 0.7735042735042735
+    },
+    {
+      "epoch": 3,
+      "loss": 0.8323567570756665,
+      "plantdoc_val_acc": 0.7905982905982906
+    },
+    {
+      "epoch": 4,
+      "loss": 0.7799203013130229,
+      "plantdoc_val_acc": 0.7863247863247863
+    },
+    {
+      "epoch": 5,
+      "loss": 0.7440965174556636,
+      "plantdoc_val_acc": 0.7905982905982906
+    },
+    {
+      "epoch": 6,
+      "loss": 0.7253395374730337,
+      "plantdoc_val_acc": 0.782051282051282
+    },
+    {
+      "epoch": 7,
+      "loss": 0.7194332951050011,
+      "plantdoc_val_acc": 0.7948717948717948
+    },
+    {
+      "epoch": 8,
+      "loss": 0.7112476566283823,
+      "plantdoc_val_acc": 0.7948717948717948
+    }
+  ]
+}

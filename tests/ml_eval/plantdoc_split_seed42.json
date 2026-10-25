@@ -1,0 +1,1894 @@
+{
+  "tuning": [
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple Scab Leaf/052609%20Hartman%20Crabapple%20scab%20single%20leaf.JPG.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Apple_scab",
+      "source": "PlantDoc:test/Apple Scab Leaf/052609%20Hartman%20Crabapple%20scab%20single%20leaf.JPG.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple Scab Leaf/28-500x375.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Apple_scab",
+      "source": "PlantDoc:test/Apple Scab Leaf/28-500x375.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple Scab Leaf/816.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Apple_scab",
+      "source": "PlantDoc:test/Apple Scab Leaf/816.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple Scab Leaf/apple%20scab%20leaf.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Apple_scab",
+      "source": "PlantDoc:test/Apple Scab Leaf/apple%20scab%20leaf.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple Scab Leaf/apple%20scabnew.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Apple_scab",
+      "source": "PlantDoc:test/Apple Scab Leaf/apple%20scabnew.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple Scab Leaf/apples_apple-scab_10_zoom.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Apple_scab",
+      "source": "PlantDoc:test/Apple Scab Leaf/apples_apple-scab_10_zoom.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple leaf/20180511_090912-14gtw8a-e1526047952754.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___healthy",
+      "source": "PlantDoc:test/Apple leaf/20180511_090912-14gtw8a-e1526047952754.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple leaf/20180511_091252-1gy5xf5-e1526048000596.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___healthy",
+      "source": "PlantDoc:test/Apple leaf/20180511_091252-1gy5xf5-e1526048000596.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple leaf/4120978-single-green-leaf-of-apple-tree.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___healthy",
+      "source": "PlantDoc:test/Apple leaf/4120978-single-green-leaf-of-apple-tree.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple leaf/apple-leaf-14319997.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___healthy",
+      "source": "PlantDoc:test/Apple leaf/apple-leaf-14319997.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple rust leaf/02.-Rust-2017-207u24s.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Cedar_apple_rust",
+      "source": "PlantDoc:test/Apple rust leaf/02.-Rust-2017-207u24s.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple rust leaf/185161-004-EAF28842.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Cedar_apple_rust",
+      "source": "PlantDoc:test/Apple rust leaf/185161-004-EAF28842.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple rust leaf/9343310-small.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Cedar_apple_rust",
+      "source": "PlantDoc:test/Apple rust leaf/9343310-small.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf/10148582-green-leaf-of-pepper.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___healthy",
+      "source": "PlantDoc:test/Bell_pepper leaf/10148582-green-leaf-of-pepper.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf/4825902504_5fa80b65b8_z.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___healthy",
+      "source": "PlantDoc:test/Bell_pepper leaf/4825902504_5fa80b65b8_z.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf/IMG_1629.JPG?1507122477.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___healthy",
+      "source": "PlantDoc:test/Bell_pepper leaf/IMG_1629.JPG?1507122477.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf/e33155.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___healthy",
+      "source": "PlantDoc:test/Bell_pepper leaf/e33155.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf spot/00.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___Bacterial_spot",
+      "source": "PlantDoc:test/Bell_pepper leaf spot/00.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf spot/000.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___Bacterial_spot",
+      "source": "PlantDoc:test/Bell_pepper leaf spot/000.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf spot/H5w92.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___Bacterial_spot",
+      "source": "PlantDoc:test/Bell_pepper leaf spot/H5w92.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf spot/pepper-spot.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___Bacterial_spot",
+      "source": "PlantDoc:test/Bell_pepper leaf spot/pepper-spot.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf spot/pepper_bacterial-spot_03_zoom.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___Bacterial_spot",
+      "source": "PlantDoc:test/Bell_pepper leaf spot/pepper_bacterial-spot_03_zoom.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Blueberry leaf/P1200665+Vaccinium+alaskaense+vs+ovalifolium+leaf+and++twig+cr.jpg",
+      "expected_plant": "Blueberry",
+      "expected_scientific": "Vaccinium corymbosum",
+      "expected_disease_raw": "Blueberry___healthy",
+      "source": "PlantDoc:test/Blueberry leaf/P1200665+Vaccinium+alaskaense+vs+ovalifolium+leaf+and++twig+cr.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Blueberry leaf/P1200701+Vaccinium+ovalifolium+Oval-leaf+Blueberry+leaf+margin+Heather+Meadows+cr.jpg",
+      "expected_plant": "Blueberry",
+      "expected_scientific": "Vaccinium corymbosum",
+      "expected_disease_raw": "Blueberry___healthy",
+      "source": "PlantDoc:test/Blueberry leaf/P1200701+Vaccinium+ovalifolium+Oval-leaf+Blueberry+leaf+margin+Heather+Meadows+cr.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Blueberry leaf/blueberry-leaves-normal-above-and-iron-deficient-below-bgahf8.jpg",
+      "expected_plant": "Blueberry",
+      "expected_scientific": "Vaccinium corymbosum",
+      "expected_disease_raw": "Blueberry___healthy",
+      "source": "PlantDoc:test/Blueberry leaf/blueberry-leaves-normal-above-and-iron-deficient-below-bgahf8.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Blueberry leaf/northern-highbush-blueberry-blue-huckleberry-vaccinium-corymbosum-EHNXRR.jpg",
+      "expected_plant": "Blueberry",
+      "expected_scientific": "Vaccinium corymbosum",
+      "expected_disease_raw": "Blueberry___healthy",
+      "source": "PlantDoc:test/Blueberry leaf/northern-highbush-blueberry-blue-huckleberry-vaccinium-corymbosum-EHNXRR.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Blueberry leaf/stock-photo-blueberry-leaf-closeup-isolated-on-white-306486470.jpg",
+      "expected_plant": "Blueberry",
+      "expected_scientific": "Vaccinium corymbosum",
+      "expected_disease_raw": "Blueberry___healthy",
+      "source": "PlantDoc:test/Blueberry leaf/stock-photo-blueberry-leaf-closeup-isolated-on-white-306486470.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Cherry leaf/fc729af279e9087d00bd32d89a1552a756a3ad9de7f2b_1260x1260.jpg",
+      "expected_plant": "Cherry",
+      "expected_scientific": "Prunus avium",
+      "expected_disease_raw": "Cherry_(including_sour)___healthy",
+      "source": "PlantDoc:test/Cherry leaf/fc729af279e9087d00bd32d89a1552a756a3ad9de7f2b_1260x1260.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Cherry leaf/five-cherry-tree-green-leaves-white-isolated-background-34493587.jpg",
+      "expected_plant": "Cherry",
+      "expected_scientific": "Prunus avium",
+      "expected_disease_raw": "Cherry_(including_sour)___healthy",
+      "source": "PlantDoc:test/Cherry leaf/five-cherry-tree-green-leaves-white-isolated-background-34493587.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Cherry leaf/prunsero_leaf2.jpg",
+      "expected_plant": "Cherry",
+      "expected_scientific": "Prunus avium",
+      "expected_disease_raw": "Cherry_(including_sour)___healthy",
+      "source": "PlantDoc:test/Cherry leaf/prunsero_leaf2.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Cherry leaf/prunus-virginiana-le-gmittelhauser.jpg",
+      "expected_plant": "Cherry",
+      "expected_scientific": "Prunus avium",
+      "expected_disease_raw": "Cherry_(including_sour)___healthy",
+      "source": "PlantDoc:test/Cherry leaf/prunus-virginiana-le-gmittelhauser.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Cherry leaf/red-cherry-tree-leaf-isolated-crisp-white-background-35742030.jpg",
+      "expected_plant": "Cherry",
+      "expected_scientific": "Prunus avium",
+      "expected_disease_raw": "Cherry_(including_sour)___healthy",
+      "source": "PlantDoc:test/Cherry leaf/red-cherry-tree-leaf-isolated-crisp-white-background-35742030.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Cherry leaf/three-vibrant-leaves-bird-cherry-tree-13905898.jpg",
+      "expected_plant": "Cherry",
+      "expected_scientific": "Prunus avium",
+      "expected_disease_raw": "Cherry_(including_sour)___healthy",
+      "source": "PlantDoc:test/Cherry leaf/three-vibrant-leaves-bird-cherry-tree-13905898.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn leaf blight/0796.20graylssymt.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Northern_Leaf_Blight",
+      "source": "PlantDoc:test/Corn leaf blight/0796.20graylssymt.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn leaf blight/07c.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Northern_Leaf_Blight",
+      "source": "PlantDoc:test/Corn leaf blight/07c.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn leaf blight/160314_web.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Northern_Leaf_Blight",
+      "source": "PlantDoc:test/Corn leaf blight/160314_web.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn leaf blight/2013Corn_GrayLeafSpot_0815_0003.JPG.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Northern_Leaf_Blight",
+      "source": "PlantDoc:test/Corn leaf blight/2013Corn_GrayLeafSpot_0815_0003.JPG.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn leaf blight/2015070295153021.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Northern_Leaf_Blight",
+      "source": "PlantDoc:test/Corn leaf blight/2015070295153021.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn leaf blight/Common%20Diseases%20Figure%201.JPG.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Northern_Leaf_Blight",
+      "source": "PlantDoc:test/Corn leaf blight/Common%20Diseases%20Figure%201.JPG.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn leaf blight/corn-disease-update-fig-3-gray-leaf-spot.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Northern_Leaf_Blight",
+      "source": "PlantDoc:test/Corn leaf blight/corn-disease-update-fig-3-gray-leaf-spot.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn leaf blight/corn-gray-leaf-spot-f4.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Northern_Leaf_Blight",
+      "source": "PlantDoc:test/Corn leaf blight/corn-gray-leaf-spot-f4.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn rust leaf/0796.40comrust.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Common_rust_",
+      "source": "PlantDoc:test/Corn rust leaf/0796.40comrust.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn rust leaf/0796.47southrust.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Common_rust_",
+      "source": "PlantDoc:test/Corn rust leaf/0796.47southrust.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn rust leaf/2256-body-1501555581-1.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Common_rust_",
+      "source": "PlantDoc:test/Corn rust leaf/2256-body-1501555581-1.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Peach leaf/peach-leaf-isolated-white-background-42295220.jpg",
+      "expected_plant": "Peach",
+      "expected_scientific": "Prunus persica",
+      "expected_disease_raw": "Peach___healthy",
+      "source": "PlantDoc:test/Peach leaf/peach-leaf-isolated-white-background-42295220.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Peach leaf/rose_tree_220430.jpg",
+      "expected_plant": "Peach",
+      "expected_scientific": "Prunus persica",
+      "expected_disease_raw": "Peach___healthy",
+      "source": "PlantDoc:test/Peach leaf/rose_tree_220430.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Peach leaf/stock-photo-peach-leaf-isolated-on-white-background-281097503.jpg",
+      "expected_plant": "Peach",
+      "expected_scientific": "Prunus persica",
+      "expected_disease_raw": "Peach___healthy",
+      "source": "PlantDoc:test/Peach leaf/stock-photo-peach-leaf-isolated-on-white-background-281097503.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Potato leaf early blight/backus-056-potato-blight.jpg",
+      "expected_plant": "Potato",
+      "expected_scientific": "Solanum tuberosum",
+      "expected_disease_raw": "Potato___Early_blight",
+      "source": "PlantDoc:test/Potato leaf early blight/backus-056-potato-blight.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Potato leaf early blight/early-blight-alternaria-alternata-leaf-spotting-on-potato-leaf-X91XJE.jpg",
+      "expected_plant": "Potato",
+      "expected_scientific": "Solanum tuberosum",
+      "expected_disease_raw": "Potato___Early_blight",
+      "source": "PlantDoc:test/Potato leaf early blight/early-blight-alternaria-alternata-leaf-spotting-on-potato-leaf-X91XJE.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Potato leaf early blight/early-blight-or-target-spot-alternaria-solani-lesions-on-a-tomato-AXK6AY.jpg",
+      "expected_plant": "Potato",
+      "expected_scientific": "Solanum tuberosum",
+      "expected_disease_raw": "Potato___Early_blight",
+      "source": "PlantDoc:test/Potato leaf early blight/early-blight-or-target-spot-alternaria-solani-lesions-on-a-tomato-AXK6AY.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Potato leaf early blight/earlyblightpotato.jpg",
+      "expected_plant": "Potato",
+      "expected_scientific": "Solanum tuberosum",
+      "expected_disease_raw": "Potato___Early_blight",
+      "source": "PlantDoc:test/Potato leaf early blight/earlyblightpotato.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Potato leaf early blight/potatobd001.jpg",
+      "expected_plant": "Potato",
+      "expected_scientific": "Solanum tuberosum",
+      "expected_disease_raw": "Potato___Early_blight",
+      "source": "PlantDoc:test/Potato leaf early blight/potatobd001.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Potato leaf late blight/1421_0.jpeg?itok=FMtmgePj.jpg",
+      "expected_plant": "Potato",
+      "expected_scientific": "Solanum tuberosum",
+      "expected_disease_raw": "Potato___Late_blight",
+      "source": "PlantDoc:test/Potato leaf late blight/1421_0.jpeg?itok=FMtmgePj.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Potato leaf late blight/20090710-lateblight.jpg",
+      "expected_plant": "Potato",
+      "expected_scientific": "Solanum tuberosum",
+      "expected_disease_raw": "Potato___Late_blight",
+      "source": "PlantDoc:test/Potato leaf late blight/20090710-lateblight.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Potato leaf late blight/2540_600.jpg",
+      "expected_plant": "Potato",
+      "expected_scientific": "Solanum tuberosum",
+      "expected_disease_raw": "Potato___Late_blight",
+      "source": "PlantDoc:test/Potato leaf late blight/2540_600.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Potato leaf late blight/5816740026_d42ef24413_Phytophthora-Infestans.jpg",
+      "expected_plant": "Potato",
+      "expected_scientific": "Solanum tuberosum",
+      "expected_disease_raw": "Potato___Late_blight",
+      "source": "PlantDoc:test/Potato leaf late blight/5816740026_d42ef24413_Phytophthora-Infestans.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Potato leaf late blight/LateBlight04.jpg",
+      "expected_plant": "Potato",
+      "expected_scientific": "Solanum tuberosum",
+      "expected_disease_raw": "Potato___Late_blight",
+      "source": "PlantDoc:test/Potato leaf late blight/LateBlight04.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Raspberry leaf/depositphotos_1323264-Raspberry-leaf-on-white.jpg",
+      "expected_plant": "Raspberry",
+      "expected_scientific": "Rubus idaeus",
+      "expected_disease_raw": "Raspberry___healthy",
+      "source": "PlantDoc:test/Raspberry leaf/depositphotos_1323264-Raspberry-leaf-on-white.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Raspberry leaf/depositphotos_1323551-stock-photo-raspberry-leaves.jpg",
+      "expected_plant": "Raspberry",
+      "expected_scientific": "Rubus idaeus",
+      "expected_disease_raw": "Raspberry___healthy",
+      "source": "PlantDoc:test/Raspberry leaf/depositphotos_1323551-stock-photo-raspberry-leaves.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Raspberry leaf/depositphotos_2795312-stock-photo-green-raspberry-leaf.jpg",
+      "expected_plant": "Raspberry",
+      "expected_scientific": "Rubus idaeus",
+      "expected_disease_raw": "Raspberry___healthy",
+      "source": "PlantDoc:test/Raspberry leaf/depositphotos_2795312-stock-photo-green-raspberry-leaf.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Raspberry leaf/iron-deficiency-raspberry-leaf-chlorosis-isolated-32457798.jpg",
+      "expected_plant": "Raspberry",
+      "expected_scientific": "Rubus idaeus",
+      "expected_disease_raw": "Raspberry___healthy",
+      "source": "PlantDoc:test/Raspberry leaf/iron-deficiency-raspberry-leaf-chlorosis-isolated-32457798.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Raspberry leaf/leaves-of-raspberry-stock-picture-2529053.jpg",
+      "expected_plant": "Raspberry",
+      "expected_scientific": "Rubus idaeus",
+      "expected_disease_raw": "Raspberry___healthy",
+      "source": "PlantDoc:test/Raspberry leaf/leaves-of-raspberry-stock-picture-2529053.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Raspberry leaf/three-raspberry-green-leaves-isolated-white-background-62022932.jpg",
+      "expected_plant": "Raspberry",
+      "expected_scientific": "Rubus idaeus",
+      "expected_disease_raw": "Raspberry___healthy",
+      "source": "PlantDoc:test/Raspberry leaf/three-raspberry-green-leaves-isolated-white-background-62022932.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Soyabean leaf/Soybean%20edamame%20leaf1.JPG.jpg",
+      "expected_plant": "Soybean",
+      "expected_scientific": "Glycine max",
+      "expected_disease_raw": "Soybean___healthy",
+      "source": "PlantDoc:test/Soyabean leaf/Soybean%20edamame%20leaf1.JPG.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Soyabean leaf/leaf-raspberry-isolated-on-a-white-stock-photography-image-10106222-1625198.jpg",
+      "expected_plant": "Soybean",
+      "expected_scientific": "Glycine max",
+      "expected_disease_raw": "Soybean___healthy",
+      "source": "PlantDoc:test/Soyabean leaf/leaf-raspberry-isolated-on-a-white-stock-photography-image-10106222-1625198.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Soyabean leaf/stock-photo-fresh-soy-leaves-isolated-on-white-94266130.jpg",
+      "expected_plant": "Soybean",
+      "expected_scientific": "Glycine max",
+      "expected_disease_raw": "Soybean___healthy",
+      "source": "PlantDoc:test/Soyabean leaf/stock-photo-fresh-soy-leaves-isolated-on-white-94266130.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Soyabean leaf/stock-photo-fresh-soy-leaves-isolated-on-white-94700095.jpg",
+      "expected_plant": "Soybean",
+      "expected_scientific": "Glycine max",
+      "expected_disease_raw": "Soybean___healthy",
+      "source": "PlantDoc:test/Soyabean leaf/stock-photo-fresh-soy-leaves-isolated-on-white-94700095.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Soyabean leaf/stock-photo-soy-leaf-isolated-on-white-background-120961801.jpg",
+      "expected_plant": "Soybean",
+      "expected_scientific": "Glycine max",
+      "expected_disease_raw": "Soybean___healthy",
+      "source": "PlantDoc:test/Soyabean leaf/stock-photo-soy-leaf-isolated-on-white-background-120961801.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Squash Powdery mildew leaf/powdery-mildew-erysiphe-plantani-on-young-sycamore-leaves-b774tm.jpg",
+      "expected_plant": "Squash",
+      "expected_scientific": "Cucurbita",
+      "expected_disease_raw": "Squash___Powdery_mildew",
+      "source": "PlantDoc:test/Squash Powdery mildew leaf/powdery-mildew-erysiphe-plantani-on-young-sycamore-leaves-b774tm.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Squash Powdery mildew leaf/surface.jpg",
+      "expected_plant": "Squash",
+      "expected_scientific": "Cucurbita",
+      "expected_disease_raw": "Squash___Powdery_mildew",
+      "source": "PlantDoc:test/Squash Powdery mildew leaf/surface.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Strawberry leaf/strawberry-leaf-22360816.jpg",
+      "expected_plant": "Strawberry",
+      "expected_scientific": "Fragaria ananassa",
+      "expected_disease_raw": "Strawberry___healthy",
+      "source": "PlantDoc:test/Strawberry leaf/strawberry-leaf-22360816.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Strawberry leaf/strawberry-leaves-stock-image-948674.jpg",
+      "expected_plant": "Strawberry",
+      "expected_scientific": "Fragaria ananassa",
+      "expected_disease_raw": "Strawberry___healthy",
+      "source": "PlantDoc:test/Strawberry leaf/strawberry-leaves-stock-image-948674.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Strawberry leaf/strawberry-leaves-stock-picture-948708.jpg",
+      "expected_plant": "Strawberry",
+      "expected_scientific": "Fragaria ananassa",
+      "expected_disease_raw": "Strawberry___healthy",
+      "source": "PlantDoc:test/Strawberry leaf/strawberry-leaves-stock-picture-948708.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Strawberry leaf/wild-strawberry-leaf-top-view-rotated-KTBXCY.jpg",
+      "expected_plant": "Strawberry",
+      "expected_scientific": "Fragaria ananassa",
+      "expected_disease_raw": "Strawberry___healthy",
+      "source": "PlantDoc:test/Strawberry leaf/wild-strawberry-leaf-top-view-rotated-KTBXCY.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Early blight leaf/100983448.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Early_blight",
+      "source": "PlantDoc:test/Tomato Early blight leaf/100983448.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Early blight leaf/1234080-Early-Blight.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Early_blight",
+      "source": "PlantDoc:test/Tomato Early blight leaf/1234080-Early-Blight.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Early blight leaf/dscn3175.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Early_blight",
+      "source": "PlantDoc:test/Tomato Early blight leaf/dscn3175.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Early blight leaf/early_blight1-150x150.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Early_blight",
+      "source": "PlantDoc:test/Tomato Early blight leaf/early_blight1-150x150.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Early blight leaf/tomato_early-blight_01_zoom.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Early_blight",
+      "source": "PlantDoc:test/Tomato Early blight leaf/tomato_early-blight_01_zoom.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Septoria leaf spot/0.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Septoria_leaf_spot",
+      "source": "PlantDoc:test/Tomato Septoria leaf spot/0.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Septoria leaf spot/2STEM.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Septoria_leaf_spot",
+      "source": "PlantDoc:test/Tomato Septoria leaf spot/2STEM.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Septoria leaf spot/55830b60a7cf2.image.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Septoria_leaf_spot",
+      "source": "PlantDoc:test/Tomato Septoria leaf spot/55830b60a7cf2.image.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Septoria leaf spot/RARZ4.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Septoria_leaf_spot",
+      "source": "PlantDoc:test/Tomato Septoria leaf spot/RARZ4.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Septoria leaf spot/early-blight-septoria-ls-fig-3.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Septoria_leaf_spot",
+      "source": "PlantDoc:test/Tomato Septoria leaf spot/early-blight-septoria-ls-fig-3.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf/2013-08-20-06.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___healthy",
+      "source": "PlantDoc:test/Tomato leaf/2013-08-20-06.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf/90e2c0.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___healthy",
+      "source": "PlantDoc:test/Tomato leaf/90e2c0.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf/DSCN1015.JPG.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___healthy",
+      "source": "PlantDoc:test/Tomato leaf/DSCN1015.JPG.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf/IMG_1246.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___healthy",
+      "source": "PlantDoc:test/Tomato leaf/IMG_1246.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf/Tomato59.JPG.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___healthy",
+      "source": "PlantDoc:test/Tomato leaf/Tomato59.JPG.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf/main-qimg-d9c2a93f60568485c989670d9bbf703b.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___healthy",
+      "source": "PlantDoc:test/Tomato leaf/main-qimg-d9c2a93f60568485c989670d9bbf703b.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf bacterial spot/%2320+Bacterial+Spot+and+Speck.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Bacterial_spot",
+      "source": "PlantDoc:test/Tomato leaf bacterial spot/%2320+Bacterial+Spot+and+Speck.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf bacterial spot/07.17.18-Common_Tomato_Diseases_Canker-258x300.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Bacterial_spot",
+      "source": "PlantDoc:test/Tomato leaf bacterial spot/07.17.18-Common_Tomato_Diseases_Canker-258x300.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf late blight/18c.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Late_blight",
+      "source": "PlantDoc:test/Tomato leaf late blight/18c.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf late blight/636368370164094909-late-blight-15-.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Late_blight",
+      "source": "PlantDoc:test/Tomato leaf late blight/636368370164094909-late-blight-15-.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf late blight/70.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Late_blight",
+      "source": "PlantDoc:test/Tomato leaf late blight/70.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf late blight/LateBlt09_06.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Late_blight",
+      "source": "PlantDoc:test/Tomato leaf late blight/LateBlt09_06.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf late blight/dsc_8148cs.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Late_blight",
+      "source": "PlantDoc:test/Tomato leaf late blight/dsc_8148cs.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf late blight/image.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Late_blight",
+      "source": "PlantDoc:test/Tomato leaf late blight/image.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf late blight/late_blight_tomato_leaf_spore1x1200.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Late_blight",
+      "source": "PlantDoc:test/Tomato leaf late blight/late_blight_tomato_leaf_spore1x1200.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf mosaic virus/D%29AlfMov.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Tomato_mosaic_virus",
+      "source": "PlantDoc:test/Tomato leaf mosaic virus/D%29AlfMov.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf mosaic virus/Tomato-Mosaic-1wdr2jx-300x225.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Tomato_mosaic_virus",
+      "source": "PlantDoc:test/Tomato leaf mosaic virus/Tomato-Mosaic-1wdr2jx-300x225.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf mosaic virus/everystockphoto-21099455-l.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Tomato_mosaic_virus",
+      "source": "PlantDoc:test/Tomato leaf mosaic virus/everystockphoto-21099455-l.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf mosaic virus/ill-tomato-of-tomato-mosaic-virus-DBE17N.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Tomato_mosaic_virus",
+      "source": "PlantDoc:test/Tomato leaf mosaic virus/ill-tomato-of-tomato-mosaic-virus-DBE17N.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf mosaic virus/tmv-tomato-34.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Tomato_mosaic_virus",
+      "source": "PlantDoc:test/Tomato leaf mosaic virus/tmv-tomato-34.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf mosaic virus/toma_TMV.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Tomato_mosaic_virus",
+      "source": "PlantDoc:test/Tomato leaf mosaic virus/toma_TMV.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf yellow virus/17fc47.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+      "source": "PlantDoc:test/Tomato leaf yellow virus/17fc47.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato mold leaf/49%20Leafmold%20Bottom.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Leaf_Mold",
+      "source": "PlantDoc:test/Tomato mold leaf/49%20Leafmold%20Bottom.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato mold leaf/50%20Leafmold%20Top.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Leaf_Mold",
+      "source": "PlantDoc:test/Tomato mold leaf/50%20Leafmold%20Top.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato mold leaf/BIGSD.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Leaf_Mold",
+      "source": "PlantDoc:test/Tomato mold leaf/BIGSD.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato mold leaf/dscn6689.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Leaf_Mold",
+      "source": "PlantDoc:test/Tomato mold leaf/dscn6689.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf/DSCN7317.JPG.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___healthy",
+      "source": "PlantDoc:test/grape leaf/DSCN7317.JPG.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf/depositphotos_6898486-stock-photo-grape-leaves.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___healthy",
+      "source": "PlantDoc:test/grape leaf/depositphotos_6898486-stock-photo-grape-leaves.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf/grape-leaf-14309623.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___healthy",
+      "source": "PlantDoc:test/grape leaf/grape-leaf-14309623.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf/grapes-leaves.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___healthy",
+      "source": "PlantDoc:test/grape leaf/grapes-leaves.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf black rot/35589125035_662dd5b258_b.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___Black_rot",
+      "source": "PlantDoc:test/grape leaf black rot/35589125035_662dd5b258_b.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf black rot/Black%20rot%20on%20foliage.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___Black_rot",
+      "source": "PlantDoc:test/grape leaf black rot/Black%20rot%20on%20foliage.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf black rot/grape_F15a.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___Black_rot",
+      "source": "PlantDoc:test/grape leaf black rot/grape_F15a.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf black rot/piano%20gully%20spray%20seed%20damage%2006%20%289%29.JPG.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___Black_rot",
+      "source": "PlantDoc:test/grape leaf black rot/piano%20gully%20spray%20seed%20damage%2006%20%289%29.JPG.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    }
+  ],
+  "heldout": [
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple Scab Leaf/1b321015-6e33-4f18-aade-888f4383fe92.jpeg.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Apple_scab",
+      "source": "PlantDoc:test/Apple Scab Leaf/1b321015-6e33-4f18-aade-888f4383fe92.jpeg.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple Scab Leaf/apple-scab-5366820.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Apple_scab",
+      "source": "PlantDoc:test/Apple Scab Leaf/apple-scab-5366820.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple Scab Leaf/apples_apple-scab_01_zoom.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Apple_scab",
+      "source": "PlantDoc:test/Apple Scab Leaf/apples_apple-scab_01_zoom.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple Scab Leaf/apples_apple-scab_02_thm.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Apple_scab",
+      "source": "PlantDoc:test/Apple Scab Leaf/apples_apple-scab_02_thm.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple leaf/20180511_091133-24l1vhg-e1526047988236.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___healthy",
+      "source": "PlantDoc:test/Apple leaf/20180511_091133-24l1vhg-e1526047988236.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple leaf/Apple-Leaf-Wallpaper-17.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___healthy",
+      "source": "PlantDoc:test/Apple leaf/Apple-Leaf-Wallpaper-17.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple leaf/apple-leaf-9834637.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___healthy",
+      "source": "PlantDoc:test/Apple leaf/apple-leaf-9834637.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple leaf/apple-leaf-closeup-37636177.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___healthy",
+      "source": "PlantDoc:test/Apple leaf/apple-leaf-closeup-37636177.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple leaf/apple-leaf-isolated-white-background-56631026.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___healthy",
+      "source": "PlantDoc:test/Apple leaf/apple-leaf-isolated-white-background-56631026.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple rust leaf/0605_Rust-induced_leafspot.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Cedar_apple_rust",
+      "source": "PlantDoc:test/Apple rust leaf/0605_Rust-induced_leafspot.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple rust leaf/2011-011.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Cedar_apple_rust",
+      "source": "PlantDoc:test/Apple rust leaf/2011-011.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple rust leaf/20130519cedarapplerust.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Cedar_apple_rust",
+      "source": "PlantDoc:test/Apple rust leaf/20130519cedarapplerust.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple rust leaf/20130610_110514.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Cedar_apple_rust",
+      "source": "PlantDoc:test/Apple rust leaf/20130610_110514.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple rust leaf/20130802_111632.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Cedar_apple_rust",
+      "source": "PlantDoc:test/Apple rust leaf/20130802_111632.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple rust leaf/4-apple-rust2_19011_matt-bertone.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Cedar_apple_rust",
+      "source": "PlantDoc:test/Apple rust leaf/4-apple-rust2_19011_matt-bertone.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Apple rust leaf/99e886623c2080c22f6519b0e708c531.jpg",
+      "expected_plant": "Apple",
+      "expected_scientific": "Malus domestica",
+      "expected_disease_raw": "Apple___Cedar_apple_rust",
+      "source": "PlantDoc:test/Apple rust leaf/99e886623c2080c22f6519b0e708c531.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf/GREEN%20BELL%20PLANT%20YELLOW%20LEAF.JPG.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___healthy",
+      "source": "PlantDoc:test/Bell_pepper leaf/GREEN%20BELL%20PLANT%20YELLOW%20LEAF.JPG.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf/RnGnC.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___healthy",
+      "source": "PlantDoc:test/Bell_pepper leaf/RnGnC.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf/pepper_leaf.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___healthy",
+      "source": "PlantDoc:test/Bell_pepper leaf/pepper_leaf.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf/why-are-my-pepper-plants-yellow-yellow-pepper-plants-yellow-leaves-green-veins-pepper-plants-yellow-veins.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___healthy",
+      "source": "PlantDoc:test/Bell_pepper leaf/why-are-my-pepper-plants-yellow-yellow-pepper-plants-yellow-leaves-green-veins-pepper-plants-yellow-veins.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf spot/01.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___Bacterial_spot",
+      "source": "PlantDoc:test/Bell_pepper leaf spot/01.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf spot/Bacterial-spot-pepper2.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___Bacterial_spot",
+      "source": "PlantDoc:test/Bell_pepper leaf spot/Bacterial-spot-pepper2.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf spot/CMVpepperLeafShock-copy-50QUALITY-1ge8umw.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___Bacterial_spot",
+      "source": "PlantDoc:test/Bell_pepper leaf spot/CMVpepperLeafShock-copy-50QUALITY-1ge8umw.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Bell_pepper leaf spot/bacterial_leaf_spot_pepper_l.jpg",
+      "expected_plant": "Bell Pepper",
+      "expected_scientific": "Capsicum annuum",
+      "expected_disease_raw": "Pepper,_bell___Bacterial_spot",
+      "source": "PlantDoc:test/Bell_pepper leaf spot/bacterial_leaf_spot_pepper_l.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Blueberry leaf/blueberrysilverleaf16-1372b.jpg",
+      "expected_plant": "Blueberry",
+      "expected_scientific": "Vaccinium corymbosum",
+      "expected_disease_raw": "Blueberry___healthy",
+      "source": "PlantDoc:test/Blueberry leaf/blueberrysilverleaf16-1372b.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Blueberry leaf/leaf-blueberry-15281271.jpg",
+      "expected_plant": "Blueberry",
+      "expected_scientific": "Vaccinium corymbosum",
+      "expected_disease_raw": "Blueberry___healthy",
+      "source": "PlantDoc:test/Blueberry leaf/leaf-blueberry-15281271.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Blueberry leaf/stock-photo-green-blueberry-leaf-isolated-with-clipping-path-550344304.jpg",
+      "expected_plant": "Blueberry",
+      "expected_scientific": "Vaccinium corymbosum",
+      "expected_disease_raw": "Blueberry___healthy",
+      "source": "PlantDoc:test/Blueberry leaf/stock-photo-green-blueberry-leaf-isolated-with-clipping-path-550344304.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Blueberry leaf/stock-photo-two-sides-of-blueberry-leaf-isolated-on-white-15582232.jpg",
+      "expected_plant": "Blueberry",
+      "expected_scientific": "Vaccinium corymbosum",
+      "expected_disease_raw": "Blueberry___healthy",
+      "source": "PlantDoc:test/Blueberry leaf/stock-photo-two-sides-of-blueberry-leaf-isolated-on-white-15582232.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Blueberry leaf/vaccinium-angustifolium-low-bush-blueberry_0830_124221.jpg",
+      "expected_plant": "Blueberry",
+      "expected_scientific": "Vaccinium corymbosum",
+      "expected_disease_raw": "Blueberry___healthy",
+      "source": "PlantDoc:test/Blueberry leaf/vaccinium-angustifolium-low-bush-blueberry_0830_124221.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Blueberry leaf/vaccinium_angustifolium_leaf2.JPG.jpg",
+      "expected_plant": "Blueberry",
+      "expected_scientific": "Vaccinium corymbosum",
+      "expected_disease_raw": "Blueberry___healthy",
+      "source": "PlantDoc:test/Blueberry leaf/vaccinium_angustifolium_leaf2.JPG.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Cherry leaf/d7b79dbc0bca0eb3e63fbe5dfb256ccd53d90a4eb1413_1260x1260.jpg",
+      "expected_plant": "Cherry",
+      "expected_scientific": "Prunus avium",
+      "expected_disease_raw": "Cherry_(including_sour)___healthy",
+      "source": "PlantDoc:test/Cherry leaf/d7b79dbc0bca0eb3e63fbe5dfb256ccd53d90a4eb1413_1260x1260.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Cherry leaf/e52bbb9a08ede2948ba0c006f02fe7b053ad7831d1df6_1260x1260.jpg",
+      "expected_plant": "Cherry",
+      "expected_scientific": "Prunus avium",
+      "expected_disease_raw": "Cherry_(including_sour)___healthy",
+      "source": "PlantDoc:test/Cherry leaf/e52bbb9a08ede2948ba0c006f02fe7b053ad7831d1df6_1260x1260.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Cherry leaf/ed12ff77ce021883de241830dee55e2e53d2c93231699_1260x1260.jpg",
+      "expected_plant": "Cherry",
+      "expected_scientific": "Prunus avium",
+      "expected_disease_raw": "Cherry_(including_sour)___healthy",
+      "source": "PlantDoc:test/Cherry leaf/ed12ff77ce021883de241830dee55e2e53d2c93231699_1260x1260.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Cherry leaf/prunsero_leaf1.jpg",
+      "expected_plant": "Cherry",
+      "expected_scientific": "Prunus avium",
+      "expected_disease_raw": "Cherry_(including_sour)___healthy",
+      "source": "PlantDoc:test/Cherry leaf/prunsero_leaf1.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn Gray leaf spot/IMG_42231.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "source": "PlantDoc:test/Corn Gray leaf spot/IMG_42231.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn Gray leaf spot/rsz0803Figure6.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "source": "PlantDoc:test/Corn Gray leaf spot/rsz0803Figure6.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn Gray leaf spot/show_picture.asp?id=aaaaaaaaaaogcqq&w2=420&h2=378&clip=center,420,378&meta=0.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "source": "PlantDoc:test/Corn Gray leaf spot/show_picture.asp?id=aaaaaaaaaaogcqq&w2=420&h2=378&clip=center,420,378&meta=0.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn Gray leaf spot/strom5.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "source": "PlantDoc:test/Corn Gray leaf spot/strom5.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn leaf blight/02c.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Northern_Leaf_Blight",
+      "source": "PlantDoc:test/Corn leaf blight/02c.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn leaf blight/0c.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Northern_Leaf_Blight",
+      "source": "PlantDoc:test/Corn leaf blight/0c.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn leaf blight/1321189.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Northern_Leaf_Blight",
+      "source": "PlantDoc:test/Corn leaf blight/1321189.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn leaf blight/Corn-SCLB-2017-1.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Northern_Leaf_Blight",
+      "source": "PlantDoc:test/Corn leaf blight/Corn-SCLB-2017-1.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn rust leaf/0796.39maizerust.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Common_rust_",
+      "source": "PlantDoc:test/Corn rust leaf/0796.39maizerust.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn rust leaf/0796.52srusttelia.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Common_rust_",
+      "source": "PlantDoc:test/Corn rust leaf/0796.52srusttelia.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn rust leaf/12-19striprustJIM.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Common_rust_",
+      "source": "PlantDoc:test/Corn rust leaf/12-19striprustJIM.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn rust leaf/1355.50commonrust.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Common_rust_",
+      "source": "PlantDoc:test/Corn rust leaf/1355.50commonrust.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn rust leaf/393.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Common_rust_",
+      "source": "PlantDoc:test/Corn rust leaf/393.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn rust leaf/5496239405_d95bdb97d1_z.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Common_rust_",
+      "source": "PlantDoc:test/Corn rust leaf/5496239405_d95bdb97d1_z.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Corn rust leaf/80104747.jpg",
+      "expected_plant": "Corn (Maize)",
+      "expected_scientific": "Zea mays",
+      "expected_disease_raw": "Corn_(maize)___Common_rust_",
+      "source": "PlantDoc:test/Corn rust leaf/80104747.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Peach leaf/00pe.jpg",
+      "expected_plant": "Peach",
+      "expected_scientific": "Prunus persica",
+      "expected_disease_raw": "Peach___healthy",
+      "source": "PlantDoc:test/Peach leaf/00pe.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Peach leaf/7190f27ead55c0f6e3ff8b982972810a5446a9713a49d_1260x1260.jpg",
+      "expected_plant": "Peach",
+      "expected_scientific": "Prunus persica",
+      "expected_disease_raw": "Peach___healthy",
+      "source": "PlantDoc:test/Peach leaf/7190f27ead55c0f6e3ff8b982972810a5446a9713a49d_1260x1260.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Peach leaf/depositphotos_3786198-Peach-leaf.jpg",
+      "expected_plant": "Peach",
+      "expected_scientific": "Prunus persica",
+      "expected_disease_raw": "Peach___healthy",
+      "source": "PlantDoc:test/Peach leaf/depositphotos_3786198-Peach-leaf.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Peach leaf/peach-leaf-10223898.jpg",
+      "expected_plant": "Peach",
+      "expected_scientific": "Prunus persica",
+      "expected_disease_raw": "Peach___healthy",
+      "source": "PlantDoc:test/Peach leaf/peach-leaf-10223898.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Peach leaf/peach-leaf-16690421.jpg",
+      "expected_plant": "Peach",
+      "expected_scientific": "Prunus persica",
+      "expected_disease_raw": "Peach___healthy",
+      "source": "PlantDoc:test/Peach leaf/peach-leaf-16690421.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Peach leaf/stock-photo-peach-tree-leaf-isolated-over-white-background-back-side-64472731.jpg",
+      "expected_plant": "Peach",
+      "expected_scientific": "Prunus persica",
+      "expected_disease_raw": "Peach___healthy",
+      "source": "PlantDoc:test/Peach leaf/stock-photo-peach-tree-leaf-isolated-over-white-background-back-side-64472731.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Potato leaf early blight/3023.jpg",
+      "expected_plant": "Potato",
+      "expected_scientific": "Solanum tuberosum",
+      "expected_disease_raw": "Potato___Early_blight",
+      "source": "PlantDoc:test/Potato leaf early blight/3023.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Potato leaf early blight/potato-blight-phytophthora-infestans-close-up-of-upper-surface-of-BMMRXC.jpg",
+      "expected_plant": "Potato",
+      "expected_scientific": "Solanum tuberosum",
+      "expected_disease_raw": "Potato___Early_blight",
+      "source": "PlantDoc:test/Potato leaf early blight/potato-blight-phytophthora-infestans-close-up-of-upper-surface-of-BMMRXC.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Potato leaf early blight/potato-early-blight-alternaria-alternata-lesion-on-a-potato-leaf-a1w1em.jpg",
+      "expected_plant": "Potato",
+      "expected_scientific": "Solanum tuberosum",
+      "expected_disease_raw": "Potato___Early_blight",
+      "source": "PlantDoc:test/Potato leaf early blight/potato-early-blight-alternaria-alternata-lesion-on-a-potato-leaf-a1w1em.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Potato leaf late blight/B2750109-Late_blight_on_a_potato_plant-SPL.jpg",
+      "expected_plant": "Potato",
+      "expected_scientific": "Solanum tuberosum",
+      "expected_disease_raw": "Potato___Late_blight",
+      "source": "PlantDoc:test/Potato leaf late blight/B2750109-Late_blight_on_a_potato_plant-SPL.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Potato leaf late blight/irish-blight-symptoms-on-potato-leaves-atmf8b.jpg",
+      "expected_plant": "Potato",
+      "expected_scientific": "Solanum tuberosum",
+      "expected_disease_raw": "Potato___Late_blight",
+      "source": "PlantDoc:test/Potato leaf late blight/irish-blight-symptoms-on-potato-leaves-atmf8b.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Potato leaf late blight/potato-late-blight.jpg",
+      "expected_plant": "Potato",
+      "expected_scientific": "Solanum tuberosum",
+      "expected_disease_raw": "Potato___Late_blight",
+      "source": "PlantDoc:test/Potato leaf late blight/potato-late-blight.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Raspberry leaf/Raspberry-leaf.jpg",
+      "expected_plant": "Raspberry",
+      "expected_scientific": "Rubus idaeus",
+      "expected_disease_raw": "Raspberry___healthy",
+      "source": "PlantDoc:test/Raspberry leaf/Raspberry-leaf.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Soyabean leaf/07feb_ma_sbr3.JPG.jpg",
+      "expected_plant": "Soybean",
+      "expected_scientific": "Glycine max",
+      "expected_disease_raw": "Soybean___healthy",
+      "source": "PlantDoc:test/Soyabean leaf/07feb_ma_sbr3.JPG.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Soyabean leaf/fresh-soy-leaves-isolated-on-260nw-667193923.jpg",
+      "expected_plant": "Soybean",
+      "expected_scientific": "Glycine max",
+      "expected_disease_raw": "Soybean___healthy",
+      "source": "PlantDoc:test/Soyabean leaf/fresh-soy-leaves-isolated-on-260nw-667193923.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Soyabean leaf/resistance1c.jpg",
+      "expected_plant": "Soybean",
+      "expected_scientific": "Glycine max",
+      "expected_disease_raw": "Soybean___healthy",
+      "source": "PlantDoc:test/Soyabean leaf/resistance1c.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Squash Powdery mildew leaf/Powdery-Mildew-on-squash.jpg",
+      "expected_plant": "Squash",
+      "expected_scientific": "Cucurbita",
+      "expected_disease_raw": "Squash___Powdery_mildew",
+      "source": "PlantDoc:test/Squash Powdery mildew leaf/Powdery-Mildew-on-squash.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Squash Powdery mildew leaf/powdery-mildew-on-pumpkin-leaves-close-up-2.jpg",
+      "expected_plant": "Squash",
+      "expected_scientific": "Cucurbita",
+      "expected_disease_raw": "Squash___Powdery_mildew",
+      "source": "PlantDoc:test/Squash Powdery mildew leaf/powdery-mildew-on-pumpkin-leaves-close-up-2.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Squash Powdery mildew leaf/powdery-mildew-sphaerotheca-fuliginea-infection-on-pumpkin-leaves-ajdkkx.jpg",
+      "expected_plant": "Squash",
+      "expected_scientific": "Cucurbita",
+      "expected_disease_raw": "Squash___Powdery_mildew",
+      "source": "PlantDoc:test/Squash Powdery mildew leaf/powdery-mildew-sphaerotheca-fuliginea-infection-on-pumpkin-leaves-ajdkkx.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Squash Powdery mildew leaf/squash-leave-w-powd-mild.jpg",
+      "expected_plant": "Squash",
+      "expected_scientific": "Cucurbita",
+      "expected_disease_raw": "Squash___Powdery_mildew",
+      "source": "PlantDoc:test/Squash Powdery mildew leaf/squash-leave-w-powd-mild.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Strawberry leaf/strawberry-leaf--stock-photo-1431216.jpg",
+      "expected_plant": "Strawberry",
+      "expected_scientific": "Fragaria ananassa",
+      "expected_disease_raw": "Strawberry___healthy",
+      "source": "PlantDoc:test/Strawberry leaf/strawberry-leaf--stock-photo-1431216.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Strawberry leaf/strawberry-leaves-collection-white-background-36684676.jpg",
+      "expected_plant": "Strawberry",
+      "expected_scientific": "Fragaria ananassa",
+      "expected_disease_raw": "Strawberry___healthy",
+      "source": "PlantDoc:test/Strawberry leaf/strawberry-leaves-collection-white-background-36684676.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Strawberry leaf/strawberry-leaves-isolated-white-17473157.jpg",
+      "expected_plant": "Strawberry",
+      "expected_scientific": "Fragaria ananassa",
+      "expected_disease_raw": "Strawberry___healthy",
+      "source": "PlantDoc:test/Strawberry leaf/strawberry-leaves-isolated-white-17473157.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Strawberry leaf/strawberry-leaves-isolated-white-34722259.jpg",
+      "expected_plant": "Strawberry",
+      "expected_scientific": "Fragaria ananassa",
+      "expected_disease_raw": "Strawberry___healthy",
+      "source": "PlantDoc:test/Strawberry leaf/strawberry-leaves-isolated-white-34722259.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Early blight leaf/039b47d574bc4bb8a14259a1cd96a741.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Early_blight",
+      "source": "PlantDoc:test/Tomato Early blight leaf/039b47d574bc4bb8a14259a1cd96a741.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Early blight leaf/Shoemaker_7068.JPG.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Early_blight",
+      "source": "PlantDoc:test/Tomato Early blight leaf/Shoemaker_7068.JPG.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Early blight leaf/bugs-and-blight-061.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Early_blight",
+      "source": "PlantDoc:test/Tomato Early blight leaf/bugs-and-blight-061.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Early blight leaf/earlyblight21_.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Early_blight",
+      "source": "PlantDoc:test/Tomato Early blight leaf/earlyblight21_.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Septoria leaf spot/2septoria-tomato.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Septoria_leaf_spot",
+      "source": "PlantDoc:test/Tomato Septoria leaf spot/2septoria-tomato.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Septoria leaf spot/6134794031202304.jpeg.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Septoria_leaf_spot",
+      "source": "PlantDoc:test/Tomato Septoria leaf spot/6134794031202304.jpeg.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Septoria leaf spot/636227737977191231-septoria-leaf-spot-VT.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Septoria_leaf_spot",
+      "source": "PlantDoc:test/Tomato Septoria leaf spot/636227737977191231-septoria-leaf-spot-VT.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Septoria leaf spot/6447731_orig.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Septoria_leaf_spot",
+      "source": "PlantDoc:test/Tomato Septoria leaf spot/6447731_orig.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Septoria leaf spot/7-17-Photo3_Septoria-MARY.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Septoria_leaf_spot",
+      "source": "PlantDoc:test/Tomato Septoria leaf spot/7-17-Photo3_Septoria-MARY.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato Septoria leaf spot/sept4disease-019.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Septoria_leaf_spot",
+      "source": "PlantDoc:test/Tomato Septoria leaf spot/sept4disease-019.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf/1684.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___healthy",
+      "source": "PlantDoc:test/Tomato leaf/1684.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf/Tomato_leaf.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___healthy",
+      "source": "PlantDoc:test/Tomato leaf/Tomato_leaf.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf bacterial spot/Bacterial_spots563.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Bacterial_spot",
+      "source": "PlantDoc:test/Tomato leaf bacterial spot/Bacterial_spots563.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf bacterial spot/Tom_Bact3.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Bacterial_spot",
+      "source": "PlantDoc:test/Tomato leaf bacterial spot/Tom_Bact3.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf bacterial spot/Tom_Bact7.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Bacterial_spot",
+      "source": "PlantDoc:test/Tomato leaf bacterial spot/Tom_Bact7.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf bacterial spot/Tomato%2BBacterial%2BSpot%2Bon%2BLeaves.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Bacterial_spot",
+      "source": "PlantDoc:test/Tomato leaf bacterial spot/Tomato%2BBacterial%2BSpot%2Bon%2BLeaves.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf bacterial spot/bact-spot-fig-1.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Bacterial_spot",
+      "source": "PlantDoc:test/Tomato leaf bacterial spot/bact-spot-fig-1.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf bacterial spot/tomato_V8.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Bacterial_spot",
+      "source": "PlantDoc:test/Tomato leaf bacterial spot/tomato_V8.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf bacterial spot/tomato_bacterial-speck_01_zoom.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Bacterial_spot",
+      "source": "PlantDoc:test/Tomato leaf bacterial spot/tomato_bacterial-speck_01_zoom.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf late blight/110822-206-Tomato-blight.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Late_blight",
+      "source": "PlantDoc:test/Tomato leaf late blight/110822-206-Tomato-blight.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf late blight/E%29Tomato-late-blight-foliar.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Late_blight",
+      "source": "PlantDoc:test/Tomato leaf late blight/E%29Tomato-late-blight-foliar.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf late blight/IMG_5808.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Late_blight",
+      "source": "PlantDoc:test/Tomato leaf late blight/IMG_5808.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf mosaic virus/9511.img.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Tomato_mosaic_virus",
+      "source": "PlantDoc:test/Tomato leaf mosaic virus/9511.img.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf mosaic virus/page_2.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Tomato_mosaic_virus",
+      "source": "PlantDoc:test/Tomato leaf mosaic virus/page_2.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf mosaic virus/tmv-tomato-9.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Tomato_mosaic_virus",
+      "source": "PlantDoc:test/Tomato leaf mosaic virus/tmv-tomato-9.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf mosaic virus/tomato_virus_04_zoom.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Tomato_mosaic_virus",
+      "source": "PlantDoc:test/Tomato leaf mosaic virus/tomato_virus_04_zoom.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf yellow virus/11-40580_5.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+      "source": "PlantDoc:test/Tomato leaf yellow virus/11-40580_5.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf yellow virus/8226402877_9abf151b5b_b.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+      "source": "PlantDoc:test/Tomato leaf yellow virus/8226402877_9abf151b5b_b.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf yellow virus/fwa2013313115151.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+      "source": "PlantDoc:test/Tomato leaf yellow virus/fwa2013313115151.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf yellow virus/glyphosate.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+      "source": "PlantDoc:test/Tomato leaf yellow virus/glyphosate.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato leaf yellow virus/tylcv-seminar-1-638.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+      "source": "PlantDoc:test/Tomato leaf yellow virus/tylcv-seminar-1-638.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato mold leaf/black_leaf_mold_in_zina_tina.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Leaf_Mold",
+      "source": "PlantDoc:test/Tomato mold leaf/black_leaf_mold_in_zina_tina.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/Tomato mold leaf/fungus-univ-of-minnesoeta.jpg",
+      "expected_plant": "Tomato",
+      "expected_scientific": "Solanum lycopersicum",
+      "expected_disease_raw": "Tomato___Leaf_Mold",
+      "source": "PlantDoc:test/Tomato mold leaf/fungus-univ-of-minnesoeta.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf/0000.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___healthy",
+      "source": "PlantDoc:test/grape leaf/0000.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf/730-grape-leaf-2560x1600-nature-wallpaper.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___healthy",
+      "source": "PlantDoc:test/grape leaf/730-grape-leaf-2560x1600-nature-wallpaper.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf/P1130286.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___healthy",
+      "source": "PlantDoc:test/grape leaf/P1130286.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf/depositphotos_3443387-stock-photo-the-green-grape-leaf-on.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___healthy",
+      "source": "PlantDoc:test/grape leaf/depositphotos_3443387-stock-photo-the-green-grape-leaf-on.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf/grape-leaf-picture-id119212425?k=6&m=119212425&s=612x612&w=0&h=8RZBWGcvXe4tAwhhvYZVFzWyRyiN5iTxKfWBpPT1FcU=.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___healthy",
+      "source": "PlantDoc:test/grape leaf/grape-leaf-picture-id119212425?k=6&m=119212425&s=612x612&w=0&h=8RZBWGcvXe4tAwhhvYZVFzWyRyiN5iTxKfWBpPT1FcU=.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf/grapevine-leaf-7466071.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___healthy",
+      "source": "PlantDoc:test/grape leaf/grapevine-leaf-7466071.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf/latest?cb=20100621160325.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___healthy",
+      "source": "PlantDoc:test/grape leaf/latest?cb=20100621160325.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf/vitis-riparia-le-ahaines-b.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___healthy",
+      "source": "PlantDoc:test/grape leaf/vitis-riparia-le-ahaines-b.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf black rot/03gb.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___Black_rot",
+      "source": "PlantDoc:test/grape leaf black rot/03gb.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf black rot/5-29black-rot-chardRR.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___Black_rot",
+      "source": "PlantDoc:test/grape leaf black rot/5-29black-rot-chardRR.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf black rot/Black%20rot%20on%20foliage2.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___Black_rot",
+      "source": "PlantDoc:test/grape leaf black rot/Black%20rot%20on%20foliage2.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    },
+    {
+      "image_path": "/tmp/PlantDoc-Dataset/test/grape leaf black rot/brleaf2_zoom.jpg",
+      "expected_plant": "Grape",
+      "expected_scientific": "Vitis vinifera",
+      "expected_disease_raw": "Grape___Black_rot",
+      "source": "PlantDoc:test/grape leaf black rot/brleaf2_zoom.jpg",
+      "license": "CC BY 4.0 (PlantDoc Dataset, Singh et al. 2020)"
+    }
+  ]
+}

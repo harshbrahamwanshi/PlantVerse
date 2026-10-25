@@ -4,7 +4,8 @@ import streamlit as st
 from PIL import Image
 
 from ar_location_plant_map import PlantLocationFinder
-from ml_config import LOW_CONFIDENCE_PLANT_MESSAGE
+from ml_config import LOW_CONFIDENCE_PLANT_MESSAGE, UNSUPPORTED_CROP_DISEASE_MESSAGE
+from plant_disease_detection import predict_disease
 from plant_identification import (
     LANGUAGES,
     get_medicinal_uses_from_wikipedia,
@@ -15,8 +16,8 @@ from plant_identification import (
     predict_species_detailed,
     translate_text,
 )
-from plant_disease_detection import predict_disease
 from ui.chrome import definition_row, init_state, kicker, section_rule
+from ui.feedback import render_feedback_widget
 from ui.presentation import (
     remaining_taxonomy,
     render_taxonomy,
@@ -46,14 +47,15 @@ with top_left:
         "the biological identity through Wikidata, and compiles pharmacological and ecological data."
     )
     supported_info = get_supported_plants_info()
-    with st.expander(":material/eco: Supported plants & model scope", expanded=False):
+    with st.expander(":material/eco: Supported plants & model scope (68 species + non-plant filter)", expanded=False):
         st.markdown(
-            f"**Active Plant Classifier:** `{supported_info.get('model_name', 'FloraSense')}`  \n"
-            f"**Indexed Botanical Taxa:** `{supported_info.get('unique_binomials', 9481):,}` unique species binomials"
+            f"**Primary Plant Classifier:** `{supported_info.get('model_name', 'ConvNeXt-Tiny ONNX')}`  \n"
+            f"**Supported Species Count:** `{supported_info.get('unique_binomials', 68)}` regional & crop species (+ `not_plant` rejection)  \n"
+            f"**License:** {supported_info.get('license', 'Apache-2.0 / CC BY-NC-SA 4.0')}"
         )
-        genera_list = supported_info.get("key_supported_genera", [])
-        if genera_list:
-            st.markdown("**Supported plants (representative genera & species):** " + ", ".join(genera_list))
+        sp_list = supported_info.get("supported_species_list", [])
+        if sp_list:
+            st.markdown("**Supported plants:** " + ", ".join(sp_list))
 
 with top_right:
     with st.container(border=True):
@@ -107,9 +109,14 @@ with upload_col:
 
         st.space("small")
         enable_disease_check = st.checkbox(
-            translate_text("Screen for Foliar Diseases & Health Status", lang_code),
+            translate_text("Screen for Foliar Diseases & Health Status (for supported crops)", lang_code),
             value=True,
-            help="Simultaneously evaluate leaf health and classify crop disease pathologies using the PlantVillage neural model.",
+            help="When the identified plant is one of the 14 supported agricultural crops, runs the 38-class ViT disease classifier gated to that crop.",
+        )
+        include_florasense_opt = st.checkbox(
+            translate_text("Include secondary FloraSense top-5 suggestions (low confidence)", lang_code),
+            value=False,
+            help="Optionally query the secondary 9,985-taxon FloraSense model for additional low-confidence candidate suggestions.",
         )
         st.space("small")
         run_identify = st.button(
@@ -176,13 +183,19 @@ if img_file and run_identify:
         st.stop()
 
     with st.status(translate_text("Processing specimen through identification pipeline...", lang_code), expanded=True) as status:
-        st.write(translate_text("1. Computing morphological feature representations...", lang_code))
+        st.write(translate_text("1. Computing morphological feature representations with ConvNeXt-Tiny ONNX...", lang_code))
         try:
-            plant_pred = predict_species_detailed(image)
+            plant_pred = predict_species_detailed(
+                image,
+                include_secondary_florasense=include_florasense_opt,
+            )
             label = plant_pred["species"]
+            sci_from_model = plant_pred.get("scientific_name", label)
+            wiki_query = plant_pred.get("wiki_query") or sci_from_model
             score = plant_pred["score"]
             conf_tier = plant_pred["confidence_tier"]
             is_reliable = plant_pred["is_reliable"]
+            is_not_plant = plant_pred.get("is_not_plant", False)
         except Exception as exc:
             status.update(label="Inference execution halted", state="error")
             st.error(f"Plant identification failed: {exc}")
@@ -193,27 +206,31 @@ if img_file and run_identify:
         rgb.save(buffer, format="JPEG", quality=88)
         image_bytes = buffer.getvalue()
 
-        if is_reliable:
+        if is_reliable and not is_not_plant:
             st.write(translate_text("2. Resolving taxonomic entity against Wikipedia & Wikidata...", lang_code))
-            wiki_title = get_wikipedia_title(label)
-            taxonomy = get_taxonomy_from_wikidata(wiki_title)
+            wiki_title = get_wikipedia_title(wiki_query)
+            taxonomy = get_taxonomy_from_wikidata(sci_from_model or wiki_title)
 
             st.write(translate_text("3. Extracting pharmacological data & botanical encyclopedia summary...", lang_code))
             medicinal = get_medicinal_uses_from_wikipedia(wiki_title, target_lang="en")
             description = PlantLocationFinder().get_wikipedia_summary(wiki_title)
         else:
-            wiki_title = label
+            wiki_title = sci_from_model
             taxonomy = {}
             medicinal = None
             description = ""
 
         disease_res = None
-        if enable_disease_check:
-            st.write(translate_text("4. Screening foliar health and agricultural disease pathologies...", lang_code))
+        if enable_disease_check and is_reliable and not is_not_plant:
+            st.write(translate_text("4. Evaluating host crop eligibility & foliar pathology...", lang_code))
             try:
-                disease_res = predict_disease(image, host_plant=label if is_reliable else None)
+                disease_res = predict_disease(image, host_plant=label)
                 st.session_state.disease_result = disease_res
-                if disease_res.get("is_supported_crop", True) and disease_res.get("health_status") not in ("Unsupported", "Uncertain"):
+                if (
+                    disease_res.get("is_supported_crop", False)
+                    and disease_res.get("health_status") not in ("Unsupported", "Uncertain")
+                    and not disease_res.get("is_uncertain", False)
+                ):
                     upsert_disease_diagnosis({
                         "plant_name": disease_res["plant"],
                         "disease_name": disease_res["disease_name"],
@@ -227,23 +244,23 @@ if img_file and run_identify:
                         "image_bytes": image_bytes,
                         "is_sighting": False,
                     })
-            except TypeError:
-                # Backward compatibility before predict_disease accepts host_plant in Phase 4
-                disease_res = predict_disease(image)
-                st.session_state.disease_result = disease_res
             except Exception as d_exc:
                 st.warning(f"Disease screening skipped: {d_exc}")
 
         result = {
-            "common_name": label if is_reliable else "Unidentified Plant",
-            "scientific_name": wiki_title if is_reliable else "Unverified",
+            "common_name": label if (is_reliable and not is_not_plant) else "Unidentified Plant",
+            "scientific_name": sci_from_model if (is_reliable and not is_not_plant) else "Unverified",
+            "wiki_title": wiki_title,
             "candidate_species": label,
             "score": float(score),
             "confidence_tier": conf_tier,
             "is_reliable": is_reliable,
+            "is_not_plant": is_not_plant,
             "warning_message": plant_pred.get("warning_message", ""),
             "top_candidates": plant_pred.get("top_candidates", []),
-            "model_name": plant_pred.get("model_name", "FloraSense"),
+            "secondary_suggestions": plant_pred.get("secondary_suggestions", []),
+            "plant_metadata": plant_pred.get("plant_metadata", {}),
+            "model_name": plant_pred.get("model_name", "ConvNeXt-Tiny ONNX"),
             "taxonomy": taxonomy,
             "medicinal": medicinal,
             "description": description,
@@ -251,7 +268,7 @@ if img_file and run_identify:
             "disease_diagnosis": disease_res,
         }
         st.session_state.ident_result = result
-        if is_reliable:
+        if is_reliable and not is_not_plant:
             upsert_library_entry(result)
         status.update(label=translate_text("Pipeline execution completed!", lang_code), state="complete")
 
@@ -268,31 +285,51 @@ st.space("small")
 # ==============================================================================
 kicker(translate_text("Identification Analysis Result", lang_code), key="kicker-result")
 
-if not result.get("is_reliable", True):
+if not result.get("is_reliable", True) or result.get("is_not_plant", False):
     st.error(translate_text(result.get("warning_message") or LOW_CONFIDENCE_PLANT_MESSAGE, lang_code))
     with st.container(border=True):
         c1, c2 = st.columns([0.85, 1.15], gap="large")
         with c1:
             st.image(result["image_bytes"], width="stretch")
         with c2:
-            st.markdown(f":red-badge[Low Confidence — Top-1 Score: {result['score'] * 100:.2f}%]")
-            st.markdown(f"### {translate_text('Identification Rejected by Confidence Policy', lang_code)}")
+            if result.get("is_not_plant"):
+                st.markdown(":red-badge[Non-Botanical / No Plant Detected]")
+            else:
+                st.markdown(f":red-badge[Low Confidence — Top-1 Score: {result['score'] * 100:.2f}%]")
+            st.markdown(f"### {translate_text(LOW_CONFIDENCE_PLANT_MESSAGE, lang_code)}")
             st.markdown(
                 translate_text(
-                    "The model's confidence score fell below the minimum reliability threshold. "
+                    "The model's confidence score fell below the minimum reliability threshold (or no plant was detected). "
                     "To prevent false botanical identifications, no species headline is assigned.",
                     lang_code,
                 )
             )
             cands = result.get("top_candidates", [])
             if cands:
-                with st.expander("View raw low-confidence model candidates (diagnostic only)"):
+                with st.expander("View top-5 primary model candidates (low confidence — diagnostic only)"):
                     for c in cands:
-                        st.markdown(f"- *{c['species']}* — `{c['confidence_pct']:.2f}%`")
+                        st.markdown(f"- **{c['species']}** (*{c.get('scientific_name', '')}*) — `{c['confidence_pct']:.2f}%`")
+            sec = result.get("secondary_suggestions", [])
+            if sec:
+                with st.expander("Other possible matches (low confidence — FloraSense secondary index)"):
+                    for s in sec:
+                        st.markdown(f"- *{s['species']}* — `{s['confidence_pct']:.2f}%`")
+    render_feedback_widget(
+        task_type="plant_identification",
+        predicted_label=result.get("candidate_species", "Unidentified Plant"),
+        confidence=result.get("score", 0.0),
+        model_name=result.get("model_name", "ConvNeXt-Tiny ONNX"),
+        key_prefix="fb_ident_low",
+    )
     st.stop()
 
 if result.get("confidence_tier") == "medium" and result.get("warning_message"):
     st.warning(translate_text(result["warning_message"], lang_code))
+
+dis_diag = result.get("disease_diagnosis")
+if dis_diag:
+    for qw in dis_diag.get("quality_warnings", []):
+        st.warning(f":material/warning: {translate_text(qw, lang_code)}")
 
 with st.container(border=True):
     image_col, identity_col = st.columns([0.92, 1.08], gap="large", vertical_alignment="center")
@@ -316,39 +353,56 @@ with st.container(border=True):
 
         st.markdown(conf_badge)
 
-        dis_diag = result.get("disease_diagnosis")
         if dis_diag:
-            if dis_diag["health_status"] == "Healthy":
+            if not dis_diag.get("is_supported_crop", True) or dis_diag["health_status"] == "Unsupported":
+                st.markdown(f":gray-badge[ℹ {translate_text(UNSUPPORTED_CROP_DISEASE_MESSAGE, lang_code)}]")
+            elif dis_diag.get("confidence_tier") == "low":
+                st.markdown(f":orange-badge[? {translate_text('Disease Diagnosis Uncertain (Low Confidence)', lang_code)}]")
+            elif dis_diag["health_status"] == "Healthy":
                 st.markdown(f":green-badge[✓ {translate_text('Foliar Health: Healthy', lang_code)} ({dis_diag['confidence_pct']}%) ]")
-            elif dis_diag["health_status"] in ("Unsupported", "Uncertain"):
-                st.markdown(f":gray-badge[ℹ {translate_text(dis_diag.get('disease_name', 'Disease classification not available'), lang_code)}]")
             else:
                 st.markdown(f":red-badge[⚠ {translate_text('Pathology Detected', lang_code)}: {translate_text(dis_diag['disease_name'], lang_code)} ({dis_diag['confidence_pct']}%) ]")
 
         st.markdown(f"## {translate_text(result['common_name'], lang_code)}")
         st.markdown(f"### *{result['scientific_name']}*")
 
+        p_meta = result.get("plant_metadata") or {}
+        if p_meta.get("toxic"):
+            st.warning(f":material/warning: **Toxicity Notice:** {translate_text(p_meta['toxic'], lang_code)}")
+
         st.space("small")
         stat_col1, stat_col2 = st.columns(2)
         with stat_col1:
             st.metric(
-                label=translate_text("Species Confidence", lang_code),
+                label=translate_text("Species Confidence (Model Output)", lang_code),
                 value=f"{score_pct:.1f}%",
-                help="Softmax probability output by the plant classification model.",
+                help="Softmax probability output by the primary ConvNeXt-Tiny ONNX plant classification model.",
             )
         with stat_col2:
-            if dis_diag:
+            if dis_diag and dis_diag.get("is_supported_crop", False):
                 st.metric(
-                    label=translate_text("Health Status", lang_code),
+                    label=translate_text("Crop Health Status", lang_code),
                     value=translate_text(dis_diag["health_status"], lang_code),
                     help="Agricultural leaf disease classification result.",
                 )
             else:
                 st.metric(
-                    label=translate_text("Model Architecture", lang_code),
-                    value=str(result.get("model_name", "FloraSense")).split("/")[-1],
-                    help="Plant image classification model.",
+                    label=translate_text("Disease Classification", lang_code),
+                    value=translate_text("Not Available (Non-Crop)", lang_code),
+                    help=UNSUPPORTED_CROP_DISEASE_MESSAGE,
                 )
+
+        cands = result.get("top_candidates", [])
+        if len(cands) > 1:
+            with st.expander("Top-5 species candidates (Primary Model Output)"):
+                for c in cands:
+                    st.markdown(f"- **{c['species']}** (*{c.get('scientific_name', '')}*) — `{c['confidence_pct']:.2f}%`")
+
+        sec = result.get("secondary_suggestions", [])
+        if sec:
+            with st.expander("Other possible matches (low confidence — FloraSense 9,985-taxon secondary index)"):
+                for s in sec:
+                    st.markdown(f"- *{s['species']}* — `{s['confidence_pct']:.2f}%`")
 
         st.space("small")
         action_row = st.container(horizontal=True, gap="small")
@@ -359,7 +413,7 @@ with st.container(border=True):
             ):
                 st.session_state.ar_query = result["scientific_name"]
                 st.switch_page("app_pages/ar_explorer.py")
-            if dis_diag and st.button(
+            if dis_diag and dis_diag.get("is_supported_crop", False) and st.button(
                 translate_text("Disease Diagnostic Studio", lang_code),
                 icon=":material/biotech:",
             ):
@@ -450,9 +504,10 @@ with tab_meta:
             f"*{result['scientific_name']}*",
             key="meta-sci",
         )
+        wiki_link_title = result.get("wiki_title") or result["scientific_name"]
         definition_row(
             translate_text("Wikipedia Page", lang_code),
-            f"[{result['scientific_name']}](https://en.wikipedia.org/wiki/{result['scientific_name'].replace(' ', '_')})",
+            f"[{wiki_link_title}](https://en.wikipedia.org/wiki/{wiki_link_title.replace(' ', '_')})",
             key="meta-wiki",
         )
         extra_ranks = remaining_taxonomy(result.get("taxonomy"))
@@ -470,51 +525,81 @@ with tab_path:
     st.markdown(f"#### {translate_text('Foliar Pathology & Disease Diagnosis', lang_code)}")
     d_info = result.get("disease_diagnosis")
     if d_info:
-        with st.container(border=True):
-            definition_row(
-                translate_text("Health Status", lang_code),
-                f"**{translate_text(d_info['health_status'], lang_code)}**",
-                key="id-path-health",
+        if not d_info.get("is_supported_crop", True) or d_info["health_status"] == "Unsupported":
+            st.info(f":material/info: **{translate_text(UNSUPPORTED_CROP_DISEASE_MESSAGE, lang_code)}**")
+            st.caption(
+                translate_text(
+                    "The 38-class disease classifier supports only 14 agricultural crops (Apple, Blueberry, Cherry, Corn, "
+                    "Grape, Orange/Citrus, Peach, Bell Pepper, Potato, Raspberry, Soybean, Squash, Strawberry, Tomato). "
+                    "Impossible cross-crop combinations are strictly blocked.",
+                    lang_code,
+                )
             )
-            definition_row(
-                translate_text("Condition", lang_code),
-                f"**{translate_text(d_info['disease_name'], lang_code)}**",
-                key="id-path-cond",
-            )
-            definition_row(
-                translate_text("Diagnostic Confidence", lang_code),
-                f"**{d_info['confidence_pct']}%**",
-                key="id-path-conf",
-            )
-            definition_row(
-                translate_text("Causal Agent", lang_code),
-                f"*{d_info['pathogen']}*",
-                key="id-path-agent",
-            )
-            definition_row(
-                translate_text("Symptoms", lang_code),
-                translate_text(d_info["symptoms"], lang_code),
-                key="id-path-symp",
-            )
-
-        st.space("small")
-        st.markdown(f"#### {translate_text('Targeted Actionable Recommendations', lang_code)}")
-        recs = d_info.get("recommendations", [])
-        if recs:
-            with st.container(border=True):
-                for idx, r in enumerate(recs, 1):
-                    st.markdown(f"**{idx}.** {translate_text(r, lang_code)}")
+        elif d_info.get("confidence_tier") == "low":
+            st.error(translate_text(d_info.get("uncertainty_message", "Disease could not be diagnosed reliably."), lang_code))
         else:
-            st.info(translate_text("No corrective interventions required for this healthy specimen.", lang_code))
+            if d_info.get("is_uncertain"):
+                st.warning(translate_text(d_info.get("uncertainty_message", ""), lang_code))
+            with st.container(border=True):
+                definition_row(
+                    translate_text("Health Status (Model Output)", lang_code),
+                    f"**{translate_text(d_info['health_status'], lang_code)}**",
+                    key="id-path-health",
+                )
+                definition_row(
+                    translate_text("Condition (Model Output)", lang_code),
+                    f"**{translate_text(d_info['disease_name'], lang_code)}**",
+                    key="id-path-cond",
+                )
+                definition_row(
+                    translate_text("Diagnostic Confidence", lang_code),
+                    f"**{d_info['confidence_pct']}%**",
+                    key="id-path-conf",
+                )
+                definition_row(
+                    translate_text("Causal Agent", lang_code),
+                    f"*{d_info['pathogen']}*",
+                    key="id-path-agent",
+                )
+                definition_row(
+                    translate_text("Symptoms", lang_code),
+                    translate_text(d_info["symptoms"], lang_code),
+                    key="id-path-symp",
+                )
 
-        st.space("small")
-        if st.button(
-            translate_text("Open Full Pathology Studio", lang_code),
-            icon=":material/biotech:",
-            type="primary",
-            key="btn_open_disease_studio",
-        ):
-            st.session_state.disease_result = d_info
-            st.switch_page("app_pages/disease_detection.py")
+            st.space("small")
+            st.markdown(f"#### {translate_text('Targeted Actionable Recommendations', lang_code)}")
+            recs = d_info.get("recommendations", [])
+            if recs:
+                with st.container(border=True):
+                    for idx, r in enumerate(recs, 1):
+                        st.markdown(f"**{idx}.** {translate_text(r, lang_code)}")
+                if d_info.get("expert_review_notice"):
+                    st.caption(f":material/warning: {translate_text(d_info['expert_review_notice'], lang_code)}")
+            else:
+                st.info(translate_text(d_info.get("no_recommendation_message") or "No corrective interventions required.", lang_code))
+
+            st.space("small")
+            if st.button(
+                translate_text("Open Full Pathology Studio", lang_code),
+                icon=":material/biotech:",
+                type="primary",
+                key="btn_open_disease_studio",
+            ):
+                st.session_state.disease_result = d_info
+                st.switch_page("app_pages/disease_detection.py")
     else:
         st.info(translate_text("Foliar pathology screening was not enabled for this analysis run.", lang_code))
+
+st.space("medium")
+render_feedback_widget(
+    task_type="plant_identification",
+    predicted_label=f"{result['common_name']} ({result['scientific_name']})",
+    confidence=result["score"],
+    model_name=result.get("model_name", "ConvNeXt-Tiny ONNX"),
+    key_prefix="fb_ident_main",
+)
+st.caption(
+    ":material/copyright: Model Attribution: Plant ID via ConvNeXt-Tiny ONNX (`Apache-2.0` / `CC BY-NC-SA 4.0`, iNaturalist credits in `models/inat_attribution.csv`); "
+    "Crop Disease ViT (`models/model.onnx`) licensed under **CC BY-SA 3.0** (`MODEL_LICENSES.md`)."
+)

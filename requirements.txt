@@ -4,8 +4,10 @@ streamlit>=1.33.0
 # Image processing & Computer Vision
 pillow>=9.0.0
 numpy>=1.22.0
+opencv-python-headless>=4.8.0
 
-# Deep Learning Inference (FloraSense species + PlantVillage disease detection)
+# Deep Learning Inference (ONNX Runtime ConvNeXt-Tiny & ViT primary + PyTorch fallback)
+onnxruntime>=1.16.0
 transformers>=4.41.1
 torch>=2.2.0
 
