@@ -764,22 +764,56 @@ RAW_LABEL_MAP: Dict[str, str] = {
 }
 
 
+import json
+from pathlib import Path
+
+NO_RECOMMENDATION_MESSAGE = "No recommendation available for this disease."
+EXPERT_REVIEW_NOTICE = (
+    "Requires expert agronomic review: Guidance is compiled for educational reference. "
+    "Consult a certified agronomist or local Krishi Vigyan Kendra (KVK) extension officer before applying treatments."
+)
+
+_DATA_DIR = Path(__file__).resolve().parent / "data"
+_EXTRA_KB: Dict[str, Dict[str, Any]] = {}
+_CROP_CARE_MAP: Dict[str, Dict[str, str]] = {}
+
+try:
+    _kb_path = _DATA_DIR / "crop_diseases_kb.json"
+    if _kb_path.exists():
+        _kb_raw = json.loads(_kb_path.read_text(encoding="utf-8"))
+        for _cls in _kb_raw.get("classes", []):
+            _EXTRA_KB[_cls["id"]] = _cls
+    _pl_path = _DATA_DIR / "plants_metadata.json"
+    if _pl_path.exists():
+        _pl_raw = json.loads(_pl_path.read_text(encoding="utf-8"))
+        for _p in _pl_raw.get("plants", []):
+            if _p.get("care"):
+                _CROP_CARE_MAP[_p["name"].lower()] = _p["care"]
+                if _p.get("pv_crop"):
+                    _CROP_CARE_MAP[_p["pv_crop"].lower()] = _p["care"]
+except Exception:
+    pass
+
+_KEY_TO_RAW_ID: Dict[str, str] = {v: k for k, v in RAW_LABEL_MAP.items()}
+
+
 def normalize_disease_label(label: str) -> str:
     """Normalize raw model label strings into standard database keys."""
+    if not label:
+        return "Unknown"
     clean = label.strip()
     if clean in DISEASE_DATABASE:
         return clean
     if clean in RAW_LABEL_MAP:
         return RAW_LABEL_MAP[clean]
 
-    # Try fuzzy key match
     lower_clean = clean.lower().replace("_", " ").replace("-", " ")
     for key in DISEASE_DATABASE:
         if key.lower() == lower_clean:
             return key
 
     for raw, key in RAW_LABEL_MAP.items():
-        if raw.lower().replace("_", " ") in lower_clean or lower_clean in raw.lower().replace("_", " "):
+        if raw.lower().replace("_", " ") == lower_clean:
             return key
 
     return clean
@@ -787,32 +821,58 @@ def normalize_disease_label(label: str) -> str:
 
 def get_disease_info(label: str) -> Dict[str, Any]:
     """
-    Retrieve comprehensive pathology, health status, and agronomic recommendations
-    for any predicted plant disease class.
+    Retrieve verified pathology, health status, treatment, prevention, and care
+    for a known plant disease class.
+    If the disease is not in the verified knowledge base, returns empty recommendations
+    and 'No recommendation available for this disease.' (never invents advice).
     """
     norm_key = normalize_disease_label(label)
     if norm_key in DISEASE_DATABASE:
         data = dict(DISEASE_DATABASE[norm_key])
+        raw_id = _KEY_TO_RAW_ID.get(norm_key, label)
+        kb_entry = _EXTRA_KB.get(raw_id, {})
+        crop_name = data.get("crop", "Plant")
+        care_key = crop_name.lower().split("/")[0].split("(")[0].strip()
+        care_info = (
+            _CROP_CARE_MAP.get(crop_name.lower())
+            or _CROP_CARE_MAP.get(care_key)
+            or {
+                "sun": "Full sun (6–8 hours daily)",
+                "water": "Moderate base irrigation; avoid wetting foliage",
+                "soil": "Well-drained, fertile soil with organic matter",
+            }
+        )
         data["key"] = norm_key
+        data["raw_id"] = raw_id
+        data["known_disease"] = True
+        data["chemical_treatments"] = kb_entry.get("chemical", [])
+        data["organic_treatments"] = kb_entry.get(
+            "organic",
+            ["No chemical/organic intervention needed"] if data.get("health_status") == "Healthy" else [],
+        )
+        data["care"] = care_info
+        data["needs_expert_review"] = True
+        data["expert_review_notice"] = EXPERT_REVIEW_NOTICE
+        data["no_recommendation_message"] = ""
         return data
 
-    # Fallback heuristic for unknown or novel classes
-    is_healthy = "healthy" in label.lower()
-    crop = label.split("___")[0].replace("_", " ") if "___" in label else label.split()[0]
+    # Unknown or unsupported disease class: never fabricate recommendations
     return {
-        "crop": crop.capitalize(),
-        "condition": "Healthy Foliage" if is_healthy else label,
-        "health_status": "Healthy" if is_healthy else "Diseased",
-        "pathogen": "None detected" if is_healthy else "Pathological condition suspected",
-        "severity": "None" if is_healthy else "Moderate",
-        "symptoms": "No noticeable pathology detected." if is_healthy else "Atypical discoloration or structural irregularity detected.",
-        "recommendations": [
-            "Maintain regular botanical inspection and clean irrigation practices.",
-            "Consult local agricultural extension service for specialized regional guidance."
-        ],
-        "preventive_measures": [
-            "Ensure proper crop spacing and balanced soil nutrient levels.",
-            "Isolate plants exhibiting symptoms until definitive diagnosis."
-        ],
-        "key": label
+        "crop": "Unknown",
+        "condition": label or "Unknown",
+        "health_status": "Unknown",
+        "pathogen": "N/A",
+        "severity": "N/A",
+        "symptoms": NO_RECOMMENDATION_MESSAGE,
+        "recommendations": [],
+        "preventive_measures": [],
+        "chemical_treatments": [],
+        "organic_treatments": [],
+        "care": {},
+        "known_disease": False,
+        "needs_expert_review": True,
+        "expert_review_notice": EXPERT_REVIEW_NOTICE,
+        "no_recommendation_message": NO_RECOMMENDATION_MESSAGE,
+        "key": label or "Unknown",
     }
+

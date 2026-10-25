@@ -1,0 +1,46 @@
+dataset,image,predicted_plant,confidence,expected_plant,correct
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",tulsi_380918853.jpg,Ocimum kilimandscharicum,0.0091,Tulsi (Holy basil) (Ocimum tenuiflorum),True
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",tulsi_64287124.jpg,Tomato,0.6207,Tulsi (Holy basil) (Ocimum tenuiflorum),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",tulsi_58917293.jpg,Ballota acetabulosa,0.0009,Tulsi (Holy basil) (Ocimum tenuiflorum),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",neem_369551525.jpg,Azadirachta indica,0.0033,Neem (Azadirachta indica),True
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",neem_114153293.jpg,Ekebergia capensis,0.0011,Neem (Azadirachta indica),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",neem_390983363.jpg,Azadirachta indica,0.0328,Neem (Azadirachta indica),True
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",peepal_113736804.jpg,Oenothera suaveolens,0.0042,Peepal (Sacred fig) (Ficus religiosa),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",peepal_280480426.jpg,Cucurbita,0.7213,Peepal (Sacred fig) (Ficus religiosa),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",peepal_12520769.jpg,Grape,0.9607,Peepal (Sacred fig) (Ficus religiosa),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",curry_leaf_157448360.jpg,Toxicodendron vernix,0.0021,Curry leaf (Bergera koenigii),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",curry_leaf_52820495.jpg,Grape,0.7233,Curry leaf (Bergera koenigii),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",curry_leaf_101342948.jpg,Murraya koenigii,0.0015,Curry leaf (Bergera koenigii),True
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",hibiscus_32479230.jpg,Hibiscus rosa,0.0032,Hibiscus (Gudhal) (Hibiscus rosa-sinensis),True
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",hibiscus_68413783.jpg,Tomato,0.707,Hibiscus (Gudhal) (Hibiscus rosa-sinensis),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",hibiscus_298931869.jpg,Grape,0.6833,Hibiscus (Gudhal) (Hibiscus rosa-sinensis),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",money_plant_104746694.jpg,Grape,0.8108,Money plant (Pothos) (Epipremnum aureum),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",money_plant_193606010.jpg,Epipremnum aureum,0.0858,Money plant (Pothos) (Epipremnum aureum),True
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",money_plant_117240294.jpg,Strawberry,0.6889,Money plant (Pothos) (Epipremnum aureum),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",banyan_113736743.jpg,Eugenia uniflora,0.0005,Banyan (Ficus benghalensis),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",banyan_114153488.jpg,Ficus macrophylla,0.0117,Banyan (Ficus benghalensis),True
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",banyan_113736791.jpg,Rhododendron indicum,0.0006,Banyan (Ficus benghalensis),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",rose_36758591.jpg,Berberis vulgaris,0.0239,Rose (Rosa),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",rose_33167954.jpg,Rosa stylosa,0.0148,Rose (Rosa),True
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",rose_317227925.jpg,Schinus terebinthifolia,0.0019,Rose (Rosa),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",aloe_117192404.jpg,Muehlenbeckia platyclados,0.0006,Aloe vera,False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",aloe_262170032.jpg,Aloe marlothii,0.0237,Aloe vera,True
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",aloe_106550388.jpg,Aloe vera,0.0137,Aloe vera,True
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",mango_19655004.jpg,Mangifera indica,0.0158,Mango (Mangifera indica),True
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",mango_331796879.jpg,Mangifera indica,0.0014,Mango (Mangifera indica),True
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",mango_70910208.jpg,Mangifera indica,0.0008,Mango (Mangifera indica),True
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",snake_plant_223497256.jpg,Sorghastrum nutans,0.0009,Snake plant (Dracaena trifasciata),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",snake_plant_161046655.jpg,Cenchrus purpureus,0.003,Snake plant (Dracaena trifasciata),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",snake_plant_218071479.jpg,Sansevieria metallica,0.1106,Snake plant (Dracaena trifasciata),True
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",croton_254988627.jpg,Ginkgo biloba,0.0011,Croton (Codiaeum variegatum),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",croton_12299543.jpg,Xylopia crinita,0.0009,Croton (Codiaeum variegatum),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",croton_102706603.jpg,Bell pepper,0.7916,Croton (Codiaeum variegatum),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",tomato_64241091.jpg,Crocus nudiflorus,0.0006,Tomato (Solanum lycopersicum),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",tomato_372633474.jpg,Cucurbita,0.6104,Tomato (Solanum lycopersicum),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",tomato_338947286.jpg,Caragana arborescens,0.0008,Tomato (Solanum lycopersicum),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",apple_35253084.jpg,Crataegus pedicellata,0.0009,Apple (Malus domestica),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",apple_273510153.jpg,Malus domestica,0.0037,Apple (Malus domestica),True
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",apple_400320485.jpg,Grape,0.6458,Apple (Malus domestica),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",potato_22073246.jpg,Veronica urticifolia,0.0007,Potato (Solanum tuberosum),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",potato_22452271.jpg,Eucomis autumnalis,0.0007,Potato (Solanum tuberosum),False
+"Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",potato_159043837.jpg,Legousia falcata,0.0006,Potato (Solanum tuberosum),False

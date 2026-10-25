@@ -1,0 +1,119 @@
+dataset,backend,image,predicted_disease,confidence,expected_disease,correct,top5_correct
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,1b321015-6e33-4f18-aade-888f4383fe92.jpeg.jpg,Bell Pepper with Bacterial Spot,0.9504,Apple Scab,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,apple-scab-5366820.jpg,Apple Scab,0.8037,Apple Scab,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,apples_apple-scab_01_zoom.jpg,Apple Scab,0.9197,Apple Scab,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,apples_apple-scab_02_thm.jpg,Apple Scab,0.3938,Apple Scab,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,20180511_091133-24l1vhg-e1526047988236.jpg,Healthy Apple,0.9085,Healthy Apple,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,Apple-Leaf-Wallpaper-17.jpg,Healthy Strawberry Plant,0.1462,Healthy Apple,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,apple-leaf-9834637.jpg,Healthy Blueberry Plant,0.8186,Healthy Apple,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,apple-leaf-closeup-37636177.jpg,Healthy Blueberry Plant,0.7336,Healthy Apple,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,apple-leaf-isolated-white-background-56631026.jpg,Healthy Blueberry Plant,0.9177,Healthy Apple,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,0605_Rust-induced_leafspot.jpg,Cedar Apple Rust,0.5917,Cedar Apple Rust,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,2011-011.jpg,Grape with Esca (Black Measles),0.9827,Cedar Apple Rust,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,20130519cedarapplerust.jpg,Apple Scab,0.3694,Cedar Apple Rust,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,20130610_110514.jpg,Grape with Black Rot,0.7582,Cedar Apple Rust,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,20130802_111632.jpg,Apple Scab,0.4967,Cedar Apple Rust,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,4-apple-rust2_19011_matt-bertone.jpg,Bell Pepper with Bacterial Spot,0.8841,Cedar Apple Rust,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,99e886623c2080c22f6519b0e708c531.jpg,Bell Pepper with Bacterial Spot,0.7475,Cedar Apple Rust,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,GREEN%20BELL%20PLANT%20YELLOW%20LEAF.JPG.jpg,Orange with Citrus Greening,0.4723,Healthy Bell Pepper Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,RnGnC.jpg,Healthy Cherry Plant,0.1911,Healthy Bell Pepper Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,pepper_leaf.jpg,Healthy Bell Pepper Plant,0.3821,Healthy Bell Pepper Plant,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,why-are-my-pepper-plants-yellow-yellow-pepper-plants-yellow-leaves-green-veins-pepper-plants-yellow-veins.jpg,Healthy Bell Pepper Plant,0.6108,Healthy Bell Pepper Plant,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,01.jpg,Tomato with Early Blight,0.4118,Bell Pepper with Bacterial Spot,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,Bacterial-spot-pepper2.jpg,Bell Pepper with Bacterial Spot,0.5697,Bell Pepper with Bacterial Spot,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,CMVpepperLeafShock-copy-50QUALITY-1ge8umw.jpg,Bell Pepper with Bacterial Spot,0.6388,Bell Pepper with Bacterial Spot,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,bacterial_leaf_spot_pepper_l.jpg,Bell Pepper with Bacterial Spot,0.6282,Bell Pepper with Bacterial Spot,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,blueberrysilverleaf16-1372b.jpg,Healthy Blueberry Plant,0.9869,Healthy Blueberry Plant,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,leaf-blueberry-15281271.jpg,Healthy Grape Plant,0.3469,Healthy Blueberry Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,stock-photo-green-blueberry-leaf-isolated-with-clipping-path-550344304.jpg,Healthy Blueberry Plant,0.8005,Healthy Blueberry Plant,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,stock-photo-two-sides-of-blueberry-leaf-isolated-on-white-15582232.jpg,Healthy Blueberry Plant,0.9987,Healthy Blueberry Plant,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,vaccinium-angustifolium-low-bush-blueberry_0830_124221.jpg,Tomato with Late Blight,0.4935,Healthy Blueberry Plant,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,vaccinium_angustifolium_leaf2.JPG.jpg,Orange with Citrus Greening,0.696,Healthy Blueberry Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,d7b79dbc0bca0eb3e63fbe5dfb256ccd53d90a4eb1413_1260x1260.jpg,Healthy Blueberry Plant,0.7479,Healthy Cherry Plant,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,e52bbb9a08ede2948ba0c006f02fe7b053ad7831d1df6_1260x1260.jpg,Healthy Strawberry Plant,0.2296,Healthy Cherry Plant,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,ed12ff77ce021883de241830dee55e2e53d2c93231699_1260x1260.jpg,Healthy Apple,0.7071,Healthy Cherry Plant,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,prunsero_leaf1.jpg,Healthy Peach Plant,0.4174,Healthy Cherry Plant,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,IMG_42231.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.7307,Corn (Maize) with Cercospora and Gray Leaf Spot,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,rsz0803Figure6.jpg,Corn (Maize) with Northern Leaf Blight,0.5459,Corn (Maize) with Cercospora and Gray Leaf Spot,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,"show_picture.asp?id=aaaaaaaaaaogcqq&w2=420&h2=378&clip=center,420,378&meta=0.jpg",Corn (Maize) with Cercospora and Gray Leaf Spot,0.8998,Corn (Maize) with Cercospora and Gray Leaf Spot,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,strom5.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.9545,Corn (Maize) with Cercospora and Gray Leaf Spot,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,02c.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.6758,Corn (Maize) with Northern Leaf Blight,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,0c.jpg,Healthy Corn (Maize) Plant,0.9859,Corn (Maize) with Northern Leaf Blight,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,1321189.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.5675,Corn (Maize) with Northern Leaf Blight,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,Corn-SCLB-2017-1.jpg,Corn (Maize) with Common Rust,0.6631,Corn (Maize) with Northern Leaf Blight,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,0796.39maizerust.jpg,Corn (Maize) with Common Rust,0.6418,Corn (Maize) with Common Rust,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,0796.52srusttelia.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.6654,Corn (Maize) with Common Rust,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,12-19striprustJIM.jpg,Corn (Maize) with Common Rust,0.7968,Corn (Maize) with Common Rust,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,1355.50commonrust.jpg,Corn (Maize) with Northern Leaf Blight,0.9913,Corn (Maize) with Common Rust,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,393.jpg,Corn (Maize) with Northern Leaf Blight,0.8316,Corn (Maize) with Common Rust,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,5496239405_d95bdb97d1_z.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.8661,Corn (Maize) with Common Rust,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,80104747.jpg,Corn (Maize) with Common Rust,0.9001,Corn (Maize) with Common Rust,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,00pe.jpg,Apple Scab,0.7992,Healthy Peach Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,7190f27ead55c0f6e3ff8b982972810a5446a9713a49d_1260x1260.jpg,Healthy Blueberry Plant,0.3572,Healthy Peach Plant,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,depositphotos_3786198-Peach-leaf.jpg,Healthy Blueberry Plant,0.9753,Healthy Peach Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,peach-leaf-10223898.jpg,Healthy Blueberry Plant,0.7618,Healthy Peach Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,peach-leaf-16690421.jpg,Healthy Blueberry Plant,0.2135,Healthy Peach Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,stock-photo-peach-tree-leaf-isolated-over-white-background-back-side-64472731.jpg,Healthy Blueberry Plant,0.7466,Healthy Peach Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,3023.jpg,Grape with Black Rot,0.8371,Potato with Early Blight,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,potato-blight-phytophthora-infestans-close-up-of-upper-surface-of-BMMRXC.jpg,Healthy Potato Plant,0.2953,Potato with Early Blight,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,potato-early-blight-alternaria-alternata-lesion-on-a-potato-leaf-a1w1em.jpg,Tomato with Septoria Leaf Spot,0.2533,Potato with Early Blight,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,B2750109-Late_blight_on_a_potato_plant-SPL.jpg,Tomato with Late Blight,0.3231,Potato with Late Blight,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,irish-blight-symptoms-on-potato-leaves-atmf8b.jpg,Healthy Strawberry Plant,0.4187,Potato with Late Blight,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,potato-late-blight.jpg,Tomato with Late Blight,0.4306,Potato with Late Blight,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,Raspberry-leaf.jpg,Healthy Raspberry Plant,0.9994,Healthy Raspberry Plant,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,07feb_ma_sbr3.JPG.jpg,Peach with Bacterial Spot,0.1518,Healthy Soybean Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,fresh-soy-leaves-isolated-on-260nw-667193923.jpg,Healthy Bell Pepper Plant,0.3462,Healthy Soybean Plant,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,resistance1c.jpg,Healthy Blueberry Plant,0.6752,Healthy Soybean Plant,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,Powdery-Mildew-on-squash.jpg,Cedar Apple Rust,0.231,Squash with Powdery Mildew,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,powdery-mildew-on-pumpkin-leaves-close-up-2.jpg,Squash with Powdery Mildew,0.9985,Squash with Powdery Mildew,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,powdery-mildew-sphaerotheca-fuliginea-infection-on-pumpkin-leaves-ajdkkx.jpg,Squash with Powdery Mildew,0.3096,Squash with Powdery Mildew,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,squash-leave-w-powd-mild.jpg,Squash with Powdery Mildew,0.9786,Squash with Powdery Mildew,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,strawberry-leaf--stock-photo-1431216.jpg,Healthy Raspberry Plant,0.8822,Healthy Strawberry Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,strawberry-leaves-collection-white-background-36684676.jpg,Healthy Strawberry Plant,0.7556,Healthy Strawberry Plant,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,strawberry-leaves-isolated-white-17473157.jpg,Healthy Apple,0.2494,Healthy Strawberry Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,strawberry-leaves-isolated-white-34722259.jpg,Healthy Grape Plant,0.1459,Healthy Strawberry Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,039b47d574bc4bb8a14259a1cd96a741.jpg,Tomato with Early Blight,0.4406,Tomato with Early Blight,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,Shoemaker_7068.JPG.jpg,Tomato with Septoria Leaf Spot,0.3329,Tomato with Early Blight,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,bugs-and-blight-061.jpg,Grape with Black Rot,0.4033,Tomato with Early Blight,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,earlyblight21_.jpg,Tomato with Late Blight,0.6269,Tomato with Early Blight,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,2septoria-tomato.jpg,Tomato with Septoria Leaf Spot,0.9906,Tomato with Septoria Leaf Spot,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,6134794031202304.jpeg.jpg,Tomato with Septoria Leaf Spot,0.51,Tomato with Septoria Leaf Spot,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,636227737977191231-septoria-leaf-spot-VT.jpg,Tomato with Septoria Leaf Spot,0.8712,Tomato with Septoria Leaf Spot,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,6447731_orig.jpg,Tomato with Septoria Leaf Spot,0.9968,Tomato with Septoria Leaf Spot,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,7-17-Photo3_Septoria-MARY.jpg,Strawberry with Leaf Scorch,0.2007,Tomato with Septoria Leaf Spot,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,sept4disease-019.jpg,Tomato with Septoria Leaf Spot,0.8916,Tomato with Septoria Leaf Spot,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,1684.jpg,Squash with Powdery Mildew,0.3835,Healthy Tomato Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,Tomato_leaf.jpg,Tomato with Late Blight,0.2314,Healthy Tomato Plant,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,Bacterial_spots563.jpg,Bell Pepper with Bacterial Spot,0.9195,Tomato with Bacterial Spot,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,Tom_Bact3.jpg,Corn (Maize) with Common Rust,0.8927,Tomato with Bacterial Spot,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,Tom_Bact7.jpg,Healthy Raspberry Plant,0.2553,Tomato with Bacterial Spot,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,Tomato%2BBacterial%2BSpot%2Bon%2BLeaves.jpg,Tomato with Septoria Leaf Spot,0.7392,Tomato with Bacterial Spot,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,bact-spot-fig-1.jpg,Cedar Apple Rust,0.452,Tomato with Bacterial Spot,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,tomato_V8.jpg,Tomato with Septoria Leaf Spot,0.9347,Tomato with Bacterial Spot,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,tomato_bacterial-speck_01_zoom.jpg,Tomato with Septoria Leaf Spot,0.5997,Tomato with Bacterial Spot,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,110822-206-Tomato-blight.jpg,Tomato with Late Blight,0.5095,Tomato with Late Blight,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,E%29Tomato-late-blight-foliar.jpg,Tomato with Late Blight,0.8099,Tomato with Late Blight,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,IMG_5808.jpg,Apple Scab,0.5594,Tomato with Late Blight,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,9511.img.jpg,Grape with Esca (Black Measles),0.9578,Tomato Mosaic Virus,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,page_2.jpg,Tomato with Septoria Leaf Spot,0.1409,Tomato Mosaic Virus,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,tmv-tomato-9.jpg,Squash with Powdery Mildew,0.9453,Tomato Mosaic Virus,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,tomato_virus_04_zoom.jpg,Bell Pepper with Bacterial Spot,0.3835,Tomato Mosaic Virus,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,11-40580_5.jpg,Squash with Powdery Mildew,0.1905,Tomato Yellow Leaf Curl Virus,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,8226402877_9abf151b5b_b.jpg,Squash with Powdery Mildew,0.5745,Tomato Yellow Leaf Curl Virus,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,fwa2013313115151.jpg,Healthy Strawberry Plant,0.5219,Tomato Yellow Leaf Curl Virus,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,glyphosate.jpg,Tomato with Septoria Leaf Spot,0.7878,Tomato Yellow Leaf Curl Virus,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,tylcv-seminar-1-638.jpg,Tomato with Early Blight,0.2111,Tomato Yellow Leaf Curl Virus,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,black_leaf_mold_in_zina_tina.jpg,Apple Scab,0.3851,Tomato with Leaf Mold,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,fungus-univ-of-minnesoeta.jpg,Tomato with Septoria Leaf Spot,0.6533,Tomato with Leaf Mold,False,False
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,0000.jpg,Healthy Grape Plant,0.6876,Healthy Grape Plant,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,730-grape-leaf-2560x1600-nature-wallpaper.jpg,Healthy Grape Plant,0.3244,Healthy Grape Plant,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,P1130286.jpg,Grape with Black Rot,0.1376,Healthy Grape Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,depositphotos_3443387-stock-photo-the-green-grape-leaf-on.jpg,Healthy Raspberry Plant,0.6338,Healthy Grape Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,grape-leaf-picture-id119212425?k=6&m=119212425&s=612x612&w=0&h=8RZBWGcvXe4tAwhhvYZVFzWyRyiN5iTxKfWBpPT1FcU=.jpg,Healthy Grape Plant,0.9442,Healthy Grape Plant,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,grapevine-leaf-7466071.jpg,Healthy Grape Plant,0.2451,Healthy Grape Plant,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,latest?cb=20100621160325.jpg,Healthy Grape Plant,0.9285,Healthy Grape Plant,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,vitis-riparia-le-ahaines-b.jpg,Apple Scab,0.3566,Healthy Grape Plant,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,03gb.jpg,Grape with Black Rot,0.5677,Grape with Black Rot,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,5-29black-rot-chardRR.jpg,Grape with Esca (Black Measles),0.5141,Grape with Black Rot,False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,Black%20rot%20on%20foliage2.jpg,Grape with Black Rot,0.5173,Grape with Black Rot,True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, Old MobileNetV2 Standalone Raw)",mobilenet_v2_raw,brleaf2_zoom.jpg,Cedar Apple Rust,0.6731,Grape with Black Rot,False,False

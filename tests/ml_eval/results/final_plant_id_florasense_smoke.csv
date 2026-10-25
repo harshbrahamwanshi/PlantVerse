@@ -1,0 +1,21 @@
+dataset,backend,image,predicted_plant,confidence,expected_plant,correct,top5_correct
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,hero.jpg,Adiantum pedatum,0.2954,Adiantum pedatum,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,ginkgo.jpg,Abies alba,0.0009,Ginkgo biloba,False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,fern-plate.jpg,Phegopteris connectilis,0.0198,Fern (Polypodiopsida),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,tomato_early_blight.jpg,Valerianella locusta,0.0007,Tomato (Solanum lycopersicum),False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,apple_scab.jpg,Malus domestica,0.0006,Apple (Malus domestica),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,healthy_tomato.jpg,Populus canescens,0.0137,Tomato (Solanum lycopersicum),False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,healthy_apple.jpg,Salix lasiolepis,0.0014,Apple (Malus domestica),False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,hibiscus.jpg,Hibiscus rosa,0.0166,Hibiscus (Hibiscus rosa-sinensis),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,tulsi.jpg,Ocimum americanum,0.0139,Tulsi (Ocimum tenuiflorum),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,neem.jpg,Agonis flexuosa,0.0008,Neem (Azadirachta indica),False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,peepal.jpg,Populus tremuloides,0.0255,Peepal (Ficus religiosa),False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,money_plant.jpg,Piper hispidum,0.0008,Money plant (Epipremnum aureum),False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,curry_leaf.jpg,Quercus pyrenaica,0.0006,Curry leaf (Bergera koenigii),False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,snake_plant.jpg,Sansevieria metallica,0.1129,Snake plant (Dracaena trifasciata),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,croton.jpg,Codiaeum variegatum,0.2212,Croton (Codiaeum variegatum),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,rose_black_spot.jpg,Rosa moschata,0.0008,Rose (Rosa),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,rose_powdery_mildew.jpg,Rosa glauca,0.0006,Rose (Rosa),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,late_blight.jpg,Solanum lycopersicum,0.0116,Tomato (Solanum lycopersicum),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,corn_rust.jpg,Hordeum vulgare,0.0022,Corn (Maize) (Zea mays),False,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old FloraSense)",florasense,Potato_Late_blight_5305.jpg,Solanum torvum,0.0009,Potato (Solanum tuberosum),False,False

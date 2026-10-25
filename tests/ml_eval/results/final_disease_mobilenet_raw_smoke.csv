@@ -1,0 +1,21 @@
+dataset,backend,image,predicted_disease,confidence,expected_disease,correct,top5_correct
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,hero.jpg,Healthy Raspberry Plant,0.2836,UNSUPPORTED_NON_CROP,False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,ginkgo.jpg,Squash with Powdery Mildew,0.4625,UNSUPPORTED_NON_CROP,False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,fern-plate.jpg,Healthy Raspberry Plant,0.8689,UNSUPPORTED_NON_CROP,False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,tomato_early_blight.jpg,Tomato with Early Blight,0.7837,Tomato with Early Blight,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,apple_scab.jpg,Apple Scab,0.9794,Apple Scab,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,healthy_tomato.jpg,Healthy Tomato Plant,0.9922,Healthy Tomato Plant,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,healthy_apple.jpg,Healthy Blueberry Plant,0.4823,Healthy Apple,False,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,hibiscus.jpg,Tomato with Late Blight,0.6765,UNSUPPORTED_NON_CROP,False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,tulsi.jpg,Tomato with Late Blight,0.626,UNSUPPORTED_NON_CROP,False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,neem.jpg,Squash with Powdery Mildew,0.6068,UNSUPPORTED_NON_CROP,False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,peepal.jpg,Grape with Black Rot,0.946,UNSUPPORTED_NON_CROP,False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,money_plant.jpg,Grape with Black Rot,0.807,UNSUPPORTED_NON_CROP,False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,curry_leaf.jpg,Grape with Black Rot,0.7473,UNSUPPORTED_NON_CROP,False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,snake_plant.jpg,Healthy Strawberry Plant,0.181,UNSUPPORTED_NON_CROP,False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,croton.jpg,Grape with Esca (Black Measles),0.3318,UNSUPPORTED_NON_CROP,False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,rose_black_spot.jpg,Apple Scab,0.4588,UNSUPPORTED_NON_CROP,False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,rose_powdery_mildew.jpg,Grape with Black Rot,0.7666,UNSUPPORTED_NON_CROP,False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,late_blight.jpg,Tomato with Early Blight,0.984,Tomato with Late Blight,False,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,corn_rust.jpg,Corn (Maize) with Northern Leaf Blight,0.533,Corn (Maize) with Common Rust,False,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, Old MobileNetV2 Raw without Gate)",mobilenet_v2_raw,Potato_Late_blight_5305.jpg,Tomato with Late Blight,0.994,Potato with Late Blight,False,True

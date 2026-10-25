@@ -122,25 +122,23 @@ with spec_col1:
         st.markdown("#### Core Software Libraries & ML Pipeline")
         st.markdown(
             "- **Framework**: Streamlit 1.65 (Component v2 Architecture)\n"
-            "- **Species Identification Pipeline**: FloraSense (Transformers & PyTorch)\n"
-            "- **Disease Classification Engine**: MobileNetV2 / PlantVillage CNN (38 Crop Classes)\n"
+            "- **Primary Species Identification Pipeline**: ConvNeXt-Tiny ONNX (`models/plant_model.onnx`, 68 species + `not_plant` + 7 foliar conditions)\n"
+            "- **Secondary Taxonomic Index**: `Sisigoks/FloraSense` (9,985 classes, optional low-confidence suggestions)\n"
+            "- **Primary Crop Disease Engine**: Vision Transformer ONNX (`models/model.onnx`, 38 PlantVillage + PlantDoc classes, gated by host crop)\n"
+            "- **Classical CV Lesion & Severity Analysis**: OpenCV HSV + Excess-Green ($2G - R - B > 25$) + CIE LAB border background segmentation\n"
             "- **Standalone ML Microservice**: ASGI / Starlette & Uvicorn REST Service\n"
-            "- **Image Preprocessing**: Pillow (PIL) RGB Standardization & Bilinear Rescaling\n"
-            "- **Knowledge Parsing**: BeautifulSoup4, Wikidata API, Wikipedia REST\n"
-            "- **Geospatial & Geodesy**: Haversine Spherical Distance Algorithm\n"
-            "- **Cross-Lingual Engine**: Indic & Google Translate Bridge"
+            "- **Knowledge Parsing**: Wikidata SPARQL & REST API, Wikipedia REST Summary API\n"
+            "- **Geospatial & Geodesy**: iNaturalist API + Haversine Spherical Distance Algorithm"
         )
 
 with spec_col2:
     with st.container(border=True):
-        st.markdown("#### Dataset & Model Attribution")
+        st.markdown("#### Dataset & Model Licenses (Attribution & ShareAlike Notice)")
         st.markdown(
-            "- **Plant Disease Model Base**: Architecture and 38-class taxonomy adapted from "
-            "[animesh1012/machineLearning/Plant_Disease_Prediction](https://github.com/animesh1012/machineLearning/tree/main/Plant_Disease_Prediction)\n"
-            "- **Training Foundation**: PlantVillage Open Dataset (~87,000 foliar photographs)\n"
-            "- **FloraSense Specimen Model**: Sisigoks/FloraSense (Hugging Face)\n"
-            "- **Geospatial Network**: iNaturalist Open Observation Registry\n"
-            "- **Botanical Lineages**: Wikidata Foundation & Wikipedia REST Summary API"
+            "- **Primary Disease Model (`models/model.onnx`)**: Fine-tuned from [`kimcomehome/plantvillage-vit-leaf-disease`](https://huggingface.co/kimcomehome/plantvillage-vit-leaf-disease) (`google/vit-base-patch16-224`, Apache-2.0) on PlantVillage + PlantDoc field photos. Licensed under **[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)** — any adaptations or redistributions of these weights must retain attribution and be shared under CC BY-SA 3.0.\n"
+            "- **Primary Plant Model (`models/plant_model.onnx`)**: ConvNeXt-Tiny (`timm`, Apache-2.0) trained on openly licensed iNaturalist observations (`CC0`, `CC BY`, `CC BY-SA`, `CC BY-NC`, `CC BY-NC-SA`), PlantVillage, PlantDoc, and Imagenette. Distributed for non-commercial academic/educational use under **CC BY-NC-SA 4.0**; per-photo photographer credits for all 26,946 observations are included in `models/inat_attribution.csv`.\n"
+            "- **Benchmark & Training Datasets**: PlantVillage (Hughes & Salathé, 2015, CC0 / CC BY-SA 3.0) and PlantDoc (Singh et al., 2020, ACM CoDS COMAD, CC BY 4.0).\n"
+            "- **Full License Registry**: See `MODEL_LICENSES.md` in the repository root."
         )
 
 st.space("large")
@@ -163,4 +161,7 @@ with st.container(border=True):
         "- Always consult certified botanists, toxicologists, or healthcare specialists before interacting with unfamiliar flora."
     )
     st.space("small")
-    st.caption("Curated and compiled for Major Project Evaluation • Open Source Biological Computing.")
+    st.caption(
+        "Curated and compiled for Major Project Evaluation • Models licensed under CC BY-SA 3.0 / CC BY-NC-SA 4.0 (see MODEL_LICENSES.md)."
+    )
+

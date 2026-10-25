@@ -1,0 +1,237 @@
+dataset,image,predicted_disease,confidence,expected_disease,correct
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",052609%20Hartman%20Crabapple%20scab%20single%20leaf.JPG.jpg,Apple Scab,0.9997,Apple Scab,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",1b321015-6e33-4f18-aade-888f4383fe92.jpeg.jpg,Bell Pepper with Bacterial Spot,0.9504,Apple Scab,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",28-500x375.jpg,Tomato with Septoria Leaf Spot,0.4058,Apple Scab,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",816.jpg,Cedar Apple Rust,0.5115,Apple Scab,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",apple%20scab%20leaf.jpg,Strawberry with Leaf Scorch,0.8477,Apple Scab,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",apple%20scabnew.jpg,Healthy Blueberry Plant,0.203,Apple Scab,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",apple-scab-5366820.jpg,Apple Scab,0.8037,Apple Scab,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",apples_apple-scab_01_zoom.jpg,Apple Scab,0.9197,Apple Scab,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",apples_apple-scab_02_thm.jpg,Apple Scab,0.3938,Apple Scab,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",apples_apple-scab_10_zoom.jpg,Apple Scab,0.6495,Apple Scab,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",20180511_090912-14gtw8a-e1526047952754.jpg,Bell Pepper with Bacterial Spot,0.5397,Healthy Apple,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",20180511_091133-24l1vhg-e1526047988236.jpg,Healthy Apple,0.9085,Healthy Apple,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",20180511_091252-1gy5xf5-e1526048000596.jpg,Healthy Apple,0.4426,Healthy Apple,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",4120978-single-green-leaf-of-apple-tree.jpg,Healthy Cherry Plant,0.9711,Healthy Apple,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Apple-Leaf-Wallpaper-17.jpg,Healthy Strawberry Plant,0.1462,Healthy Apple,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",apple-leaf-14319997.jpg,Healthy Blueberry Plant,0.5351,Healthy Apple,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",apple-leaf-9834637.jpg,Healthy Blueberry Plant,0.8186,Healthy Apple,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",apple-leaf-closeup-37636177.jpg,Healthy Blueberry Plant,0.7336,Healthy Apple,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",apple-leaf-isolated-white-background-56631026.jpg,Healthy Blueberry Plant,0.9177,Healthy Apple,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",02.-Rust-2017-207u24s.jpg,Apple Scab,0.3381,Cedar Apple Rust,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",0605_Rust-induced_leafspot.jpg,Cedar Apple Rust,0.5917,Cedar Apple Rust,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",185161-004-EAF28842.jpg,Cedar Apple Rust,0.3547,Cedar Apple Rust,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",2011-011.jpg,Grape with Esca (Black Measles),0.9827,Cedar Apple Rust,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",20130519cedarapplerust.jpg,Apple Scab,0.3694,Cedar Apple Rust,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",20130610_110514.jpg,Grape with Black Rot,0.7582,Cedar Apple Rust,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",20130802_111632.jpg,Apple Scab,0.4967,Cedar Apple Rust,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",4-apple-rust2_19011_matt-bertone.jpg,Bell Pepper with Bacterial Spot,0.8841,Cedar Apple Rust,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",9343310-small.jpg,Grape with Esca (Black Measles),0.2998,Cedar Apple Rust,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",99e886623c2080c22f6519b0e708c531.jpg,Bell Pepper with Bacterial Spot,0.7475,Cedar Apple Rust,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",10148582-green-leaf-of-pepper.jpg,Healthy Bell Pepper Plant,0.9938,Healthy Bell Pepper Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",4825902504_5fa80b65b8_z.jpg,Tomato with Late Blight,0.2793,Healthy Bell Pepper Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",GREEN%20BELL%20PLANT%20YELLOW%20LEAF.JPG.jpg,Orange with Citrus Greening,0.4723,Healthy Bell Pepper Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",IMG_1629.JPG?1507122477.jpg,Bell Pepper with Bacterial Spot,0.816,Healthy Bell Pepper Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",RnGnC.jpg,Healthy Cherry Plant,0.1911,Healthy Bell Pepper Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",e33155.jpg,Healthy Blueberry Plant,0.8087,Healthy Bell Pepper Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",pepper_leaf.jpg,Healthy Bell Pepper Plant,0.3821,Healthy Bell Pepper Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",why-are-my-pepper-plants-yellow-yellow-pepper-plants-yellow-leaves-green-veins-pepper-plants-yellow-veins.jpg,Healthy Bell Pepper Plant,0.6108,Healthy Bell Pepper Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",00.jpg,Strawberry with Leaf Scorch,0.4771,Bell Pepper with Bacterial Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",000.jpg,Corn (Maize) with Common Rust,0.3629,Bell Pepper with Bacterial Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",01.jpg,Tomato with Early Blight,0.4118,Bell Pepper with Bacterial Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Bacterial-spot-pepper2.jpg,Bell Pepper with Bacterial Spot,0.5697,Bell Pepper with Bacterial Spot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",CMVpepperLeafShock-copy-50QUALITY-1ge8umw.jpg,Bell Pepper with Bacterial Spot,0.6388,Bell Pepper with Bacterial Spot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",H5w92.jpg,Bell Pepper with Bacterial Spot,0.4411,Bell Pepper with Bacterial Spot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",bacterial_leaf_spot_pepper_l.jpg,Bell Pepper with Bacterial Spot,0.6282,Bell Pepper with Bacterial Spot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",pepper-spot.jpg,Bell Pepper with Bacterial Spot,0.8999,Bell Pepper with Bacterial Spot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",pepper_bacterial-spot_03_zoom.jpg,Tomato with Bacterial Spot,0.7916,Bell Pepper with Bacterial Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",P1200665+Vaccinium+alaskaense+vs+ovalifolium+leaf+and++twig+cr.jpg,Healthy Blueberry Plant,0.8408,Healthy Blueberry Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",P1200701+Vaccinium+ovalifolium+Oval-leaf+Blueberry+leaf+margin+Heather+Meadows+cr.jpg,Cedar Apple Rust,0.3212,Healthy Blueberry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",blueberry-leaves-normal-above-and-iron-deficient-below-bgahf8.jpg,Healthy Raspberry Plant,0.3271,Healthy Blueberry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",blueberrysilverleaf16-1372b.jpg,Healthy Blueberry Plant,0.9869,Healthy Blueberry Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",leaf-blueberry-15281271.jpg,Healthy Grape Plant,0.3469,Healthy Blueberry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",northern-highbush-blueberry-blue-huckleberry-vaccinium-corymbosum-EHNXRR.jpg,Orange with Citrus Greening,0.7033,Healthy Blueberry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",stock-photo-blueberry-leaf-closeup-isolated-on-white-306486470.jpg,Healthy Blueberry Plant,0.9901,Healthy Blueberry Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",stock-photo-green-blueberry-leaf-isolated-with-clipping-path-550344304.jpg,Healthy Blueberry Plant,0.8005,Healthy Blueberry Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",stock-photo-two-sides-of-blueberry-leaf-isolated-on-white-15582232.jpg,Healthy Blueberry Plant,0.9987,Healthy Blueberry Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",vaccinium-angustifolium-low-bush-blueberry_0830_124221.jpg,Tomato with Late Blight,0.4935,Healthy Blueberry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",vaccinium_angustifolium_leaf2.JPG.jpg,Orange with Citrus Greening,0.696,Healthy Blueberry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",d7b79dbc0bca0eb3e63fbe5dfb256ccd53d90a4eb1413_1260x1260.jpg,Healthy Blueberry Plant,0.7479,Healthy Cherry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",e52bbb9a08ede2948ba0c006f02fe7b053ad7831d1df6_1260x1260.jpg,Healthy Strawberry Plant,0.2296,Healthy Cherry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",ed12ff77ce021883de241830dee55e2e53d2c93231699_1260x1260.jpg,Healthy Apple,0.7071,Healthy Cherry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",fc729af279e9087d00bd32d89a1552a756a3ad9de7f2b_1260x1260.jpg,Healthy Apple,0.8324,Healthy Cherry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",five-cherry-tree-green-leaves-white-isolated-background-34493587.jpg,Healthy Bell Pepper Plant,0.5964,Healthy Cherry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",prunsero_leaf1.jpg,Healthy Peach Plant,0.4174,Healthy Cherry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",prunsero_leaf2.jpg,Healthy Apple,0.4181,Healthy Cherry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",prunus-virginiana-le-gmittelhauser.jpg,Healthy Blueberry Plant,0.5833,Healthy Cherry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",red-cherry-tree-leaf-isolated-crisp-white-background-35742030.jpg,Healthy Blueberry Plant,0.4958,Healthy Cherry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",three-vibrant-leaves-bird-cherry-tree-13905898.jpg,Orange with Citrus Greening,0.5649,Healthy Cherry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",IMG_42231.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.7307,Corn (Maize) with Cercospora and Gray Leaf Spot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",rsz0803Figure6.jpg,Corn (Maize) with Northern Leaf Blight,0.5459,Corn (Maize) with Cercospora and Gray Leaf Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)","show_picture.asp?id=aaaaaaaaaaogcqq&w2=420&h2=378&clip=center,420,378&meta=0.jpg",Corn (Maize) with Cercospora and Gray Leaf Spot,0.8998,Corn (Maize) with Cercospora and Gray Leaf Spot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",strom5.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.9545,Corn (Maize) with Cercospora and Gray Leaf Spot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",02c.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.6758,Corn (Maize) with Northern Leaf Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",0796.20graylssymt.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.9981,Corn (Maize) with Northern Leaf Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",07c.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.7763,Corn (Maize) with Northern Leaf Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",0c.jpg,Healthy Corn (Maize) Plant,0.9859,Corn (Maize) with Northern Leaf Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",1321189.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.5675,Corn (Maize) with Northern Leaf Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",160314_web.jpg,Corn (Maize) with Northern Leaf Blight,0.9846,Corn (Maize) with Northern Leaf Blight,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",2013Corn_GrayLeafSpot_0815_0003.JPG.jpg,Corn (Maize) with Common Rust,0.9408,Corn (Maize) with Northern Leaf Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",2015070295153021.jpg,Corn (Maize) with Northern Leaf Blight,0.5846,Corn (Maize) with Northern Leaf Blight,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Common%20Diseases%20Figure%201.JPG.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.8038,Corn (Maize) with Northern Leaf Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Corn-SCLB-2017-1.jpg,Corn (Maize) with Common Rust,0.6631,Corn (Maize) with Northern Leaf Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",corn-disease-update-fig-3-gray-leaf-spot.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.9981,Corn (Maize) with Northern Leaf Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",corn-gray-leaf-spot-f4.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.6589,Corn (Maize) with Northern Leaf Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",0796.39maizerust.jpg,Corn (Maize) with Common Rust,0.6418,Corn (Maize) with Common Rust,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",0796.40comrust.jpg,Corn (Maize) with Common Rust,0.6369,Corn (Maize) with Common Rust,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",0796.47southrust.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.7173,Corn (Maize) with Common Rust,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",0796.52srusttelia.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.6654,Corn (Maize) with Common Rust,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",12-19striprustJIM.jpg,Corn (Maize) with Common Rust,0.7968,Corn (Maize) with Common Rust,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",1355.50commonrust.jpg,Corn (Maize) with Northern Leaf Blight,0.9913,Corn (Maize) with Common Rust,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",2256-body-1501555581-1.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.8429,Corn (Maize) with Common Rust,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",393.jpg,Corn (Maize) with Northern Leaf Blight,0.8316,Corn (Maize) with Common Rust,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",5496239405_d95bdb97d1_z.jpg,Corn (Maize) with Cercospora and Gray Leaf Spot,0.8661,Corn (Maize) with Common Rust,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",80104747.jpg,Corn (Maize) with Common Rust,0.9001,Corn (Maize) with Common Rust,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",00pe.jpg,Apple Scab,0.7992,Healthy Peach Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",7190f27ead55c0f6e3ff8b982972810a5446a9713a49d_1260x1260.jpg,Healthy Blueberry Plant,0.3572,Healthy Peach Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",depositphotos_3786198-Peach-leaf.jpg,Healthy Blueberry Plant,0.9753,Healthy Peach Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",peach-leaf-10223898.jpg,Healthy Blueberry Plant,0.7618,Healthy Peach Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",peach-leaf-16690421.jpg,Healthy Blueberry Plant,0.2135,Healthy Peach Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",peach-leaf-isolated-white-background-42295220.jpg,Healthy Blueberry Plant,0.9396,Healthy Peach Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",rose_tree_220430.jpg,Apple Scab,0.8227,Healthy Peach Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",stock-photo-peach-leaf-isolated-on-white-background-281097503.jpg,Healthy Peach Plant,0.3507,Healthy Peach Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",stock-photo-peach-tree-leaf-isolated-over-white-background-back-side-64472731.jpg,Healthy Blueberry Plant,0.7466,Healthy Peach Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",3023.jpg,Grape with Black Rot,0.8371,Potato with Early Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",backus-056-potato-blight.jpg,Potato with Early Blight,0.3597,Potato with Early Blight,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",early-blight-alternaria-alternata-leaf-spotting-on-potato-leaf-X91XJE.jpg,Cedar Apple Rust,0.275,Potato with Early Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",early-blight-or-target-spot-alternaria-solani-lesions-on-a-tomato-AXK6AY.jpg,Tomato with Early Blight,0.6407,Potato with Early Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",earlyblightpotato.jpg,Potato with Early Blight,0.3596,Potato with Early Blight,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",potato-blight-phytophthora-infestans-close-up-of-upper-surface-of-BMMRXC.jpg,Healthy Potato Plant,0.2953,Potato with Early Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",potato-early-blight-alternaria-alternata-lesion-on-a-potato-leaf-a1w1em.jpg,Tomato with Septoria Leaf Spot,0.2533,Potato with Early Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",potatobd001.jpg,Tomato with Early Blight,0.3423,Potato with Early Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",1421_0.jpeg?itok=FMtmgePj.jpg,Potato with Late Blight,0.773,Potato with Late Blight,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",20090710-lateblight.jpg,Tomato with Late Blight,0.531,Potato with Late Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",2540_600.jpg,Healthy Bell Pepper Plant,0.4757,Potato with Late Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",5816740026_d42ef24413_Phytophthora-Infestans.jpg,Tomato with Late Blight,0.984,Potato with Late Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",B2750109-Late_blight_on_a_potato_plant-SPL.jpg,Tomato with Late Blight,0.3231,Potato with Late Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",LateBlight04.jpg,Apple with Black Rot,0.6302,Potato with Late Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",irish-blight-symptoms-on-potato-leaves-atmf8b.jpg,Healthy Strawberry Plant,0.4187,Potato with Late Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",potato-late-blight.jpg,Tomato with Late Blight,0.4306,Potato with Late Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Raspberry-leaf.jpg,Healthy Raspberry Plant,0.9994,Healthy Raspberry Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",depositphotos_1323264-Raspberry-leaf-on-white.jpg,Healthy Raspberry Plant,0.9975,Healthy Raspberry Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",depositphotos_1323551-stock-photo-raspberry-leaves.jpg,Healthy Raspberry Plant,0.9521,Healthy Raspberry Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",depositphotos_2795312-stock-photo-green-raspberry-leaf.jpg,Healthy Grape Plant,0.9368,Healthy Raspberry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",iron-deficiency-raspberry-leaf-chlorosis-isolated-32457798.jpg,Healthy Raspberry Plant,0.65,Healthy Raspberry Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",leaves-of-raspberry-stock-picture-2529053.jpg,Healthy Raspberry Plant,0.4382,Healthy Raspberry Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",three-raspberry-green-leaves-isolated-white-background-62022932.jpg,Healthy Raspberry Plant,0.933,Healthy Raspberry Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",07feb_ma_sbr3.JPG.jpg,Peach with Bacterial Spot,0.1518,Healthy Soybean Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Soybean%20edamame%20leaf1.JPG.jpg,Healthy Blueberry Plant,0.5409,Healthy Soybean Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",fresh-soy-leaves-isolated-on-260nw-667193923.jpg,Healthy Bell Pepper Plant,0.3462,Healthy Soybean Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",leaf-raspberry-isolated-on-a-white-stock-photography-image-10106222-1625198.jpg,Healthy Blueberry Plant,0.4545,Healthy Soybean Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",resistance1c.jpg,Healthy Blueberry Plant,0.6752,Healthy Soybean Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",stock-photo-fresh-soy-leaves-isolated-on-white-94266130.jpg,Healthy Blueberry Plant,0.9922,Healthy Soybean Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",stock-photo-fresh-soy-leaves-isolated-on-white-94700095.jpg,Healthy Blueberry Plant,0.987,Healthy Soybean Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",stock-photo-soy-leaf-isolated-on-white-background-120961801.jpg,Healthy Blueberry Plant,0.3197,Healthy Soybean Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Powdery-Mildew-on-squash.jpg,Cedar Apple Rust,0.231,Squash with Powdery Mildew,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",powdery-mildew-erysiphe-plantani-on-young-sycamore-leaves-b774tm.jpg,Squash with Powdery Mildew,0.5016,Squash with Powdery Mildew,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",powdery-mildew-on-pumpkin-leaves-close-up-2.jpg,Squash with Powdery Mildew,0.9985,Squash with Powdery Mildew,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",powdery-mildew-sphaerotheca-fuliginea-infection-on-pumpkin-leaves-ajdkkx.jpg,Squash with Powdery Mildew,0.3096,Squash with Powdery Mildew,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",squash-leave-w-powd-mild.jpg,Squash with Powdery Mildew,0.9786,Squash with Powdery Mildew,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",surface.jpg,Grape with Black Rot,0.4279,Squash with Powdery Mildew,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",strawberry-leaf--stock-photo-1431216.jpg,Healthy Raspberry Plant,0.8822,Healthy Strawberry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",strawberry-leaf-22360816.jpg,Healthy Strawberry Plant,0.5549,Healthy Strawberry Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",strawberry-leaves-collection-white-background-36684676.jpg,Healthy Strawberry Plant,0.7556,Healthy Strawberry Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",strawberry-leaves-isolated-white-17473157.jpg,Healthy Apple,0.2494,Healthy Strawberry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",strawberry-leaves-isolated-white-34722259.jpg,Healthy Grape Plant,0.1459,Healthy Strawberry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",strawberry-leaves-stock-image-948674.jpg,Grape with Black Rot,0.1354,Healthy Strawberry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",strawberry-leaves-stock-picture-948708.jpg,Apple Scab,0.306,Healthy Strawberry Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",wild-strawberry-leaf-top-view-rotated-KTBXCY.jpg,Healthy Strawberry Plant,0.5326,Healthy Strawberry Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",039b47d574bc4bb8a14259a1cd96a741.jpg,Tomato with Early Blight,0.4406,Tomato with Early Blight,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",100983448.jpg,Tomato with Septoria Leaf Spot,0.5438,Tomato with Early Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",1234080-Early-Blight.jpg,Tomato with Early Blight,0.4392,Tomato with Early Blight,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Shoemaker_7068.JPG.jpg,Tomato with Septoria Leaf Spot,0.3329,Tomato with Early Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",bugs-and-blight-061.jpg,Grape with Black Rot,0.4033,Tomato with Early Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",dscn3175.jpg,Tomato with Septoria Leaf Spot,0.5138,Tomato with Early Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",early_blight1-150x150.jpg,Tomato with Early Blight,0.9132,Tomato with Early Blight,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",earlyblight21_.jpg,Tomato with Late Blight,0.6269,Tomato with Early Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",tomato_early-blight_01_zoom.jpg,Tomato with Early Blight,0.4099,Tomato with Early Blight,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",0.jpg,Tomato with Septoria Leaf Spot,0.6614,Tomato with Septoria Leaf Spot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",2STEM.jpg,Tomato with Septoria Leaf Spot,0.9564,Tomato with Septoria Leaf Spot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",2septoria-tomato.jpg,Tomato with Septoria Leaf Spot,0.9906,Tomato with Septoria Leaf Spot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",55830b60a7cf2.image.jpg,Tomato with Septoria Leaf Spot,0.9556,Tomato with Septoria Leaf Spot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",6134794031202304.jpeg.jpg,Tomato with Septoria Leaf Spot,0.51,Tomato with Septoria Leaf Spot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",636227737977191231-septoria-leaf-spot-VT.jpg,Tomato with Septoria Leaf Spot,0.8712,Tomato with Septoria Leaf Spot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",6447731_orig.jpg,Tomato with Septoria Leaf Spot,0.9968,Tomato with Septoria Leaf Spot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",7-17-Photo3_Septoria-MARY.jpg,Strawberry with Leaf Scorch,0.2007,Tomato with Septoria Leaf Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",RARZ4.jpg,Tomato with Early Blight,0.5541,Tomato with Septoria Leaf Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",early-blight-septoria-ls-fig-3.jpg,Strawberry with Leaf Scorch,0.2762,Tomato with Septoria Leaf Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",sept4disease-019.jpg,Tomato with Septoria Leaf Spot,0.8916,Tomato with Septoria Leaf Spot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",1684.jpg,Squash with Powdery Mildew,0.3835,Healthy Tomato Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",2013-08-20-06.jpg,Tomato with Early Blight,0.6199,Healthy Tomato Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",90e2c0.jpg,Tomato with Early Blight,0.4563,Healthy Tomato Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",DSCN1015.JPG.jpg,Healthy Strawberry Plant,0.3549,Healthy Tomato Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",IMG_1246.jpg,Squash with Powdery Mildew,0.377,Healthy Tomato Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Tomato59.JPG.jpg,Tomato with Early Blight,0.3915,Healthy Tomato Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Tomato_leaf.jpg,Tomato with Late Blight,0.2314,Healthy Tomato Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",main-qimg-d9c2a93f60568485c989670d9bbf703b.jpg,Healthy Raspberry Plant,0.9023,Healthy Tomato Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",%2320+Bacterial+Spot+and+Speck.jpg,Bell Pepper with Bacterial Spot,0.8309,Tomato with Bacterial Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",07.17.18-Common_Tomato_Diseases_Canker-258x300.jpg,Tomato with Early Blight,0.2209,Tomato with Bacterial Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Bacterial_spots563.jpg,Bell Pepper with Bacterial Spot,0.9195,Tomato with Bacterial Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Tom_Bact3.jpg,Corn (Maize) with Common Rust,0.8927,Tomato with Bacterial Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Tom_Bact7.jpg,Healthy Raspberry Plant,0.2553,Tomato with Bacterial Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Tomato%2BBacterial%2BSpot%2Bon%2BLeaves.jpg,Tomato with Septoria Leaf Spot,0.7392,Tomato with Bacterial Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",bact-spot-fig-1.jpg,Cedar Apple Rust,0.452,Tomato with Bacterial Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",tomato_V8.jpg,Tomato with Septoria Leaf Spot,0.9347,Tomato with Bacterial Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",tomato_bacterial-speck_01_zoom.jpg,Tomato with Septoria Leaf Spot,0.5997,Tomato with Bacterial Spot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",110822-206-Tomato-blight.jpg,Tomato with Late Blight,0.5095,Tomato with Late Blight,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",18c.jpg,Potato with Late Blight,0.7296,Tomato with Late Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",636368370164094909-late-blight-15-.jpg,Tomato with Late Blight,0.9722,Tomato with Late Blight,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",70.jpg,Grape with Black Rot,0.6325,Tomato with Late Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",E%29Tomato-late-blight-foliar.jpg,Tomato with Late Blight,0.8099,Tomato with Late Blight,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",IMG_5808.jpg,Apple Scab,0.5594,Tomato with Late Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",LateBlt09_06.jpg,Tomato with Early Blight,0.8974,Tomato with Late Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",dsc_8148cs.jpg,Tomato with Early Blight,0.7752,Tomato with Late Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",image.jpg,Tomato with Early Blight,0.711,Tomato with Late Blight,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",late_blight_tomato_leaf_spore1x1200.jpg,Tomato with Late Blight,0.95,Tomato with Late Blight,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",9511.img.jpg,Grape with Esca (Black Measles),0.9578,Tomato Mosaic Virus,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",D%29AlfMov.jpg,Squash with Powdery Mildew,0.4808,Tomato Mosaic Virus,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Tomato-Mosaic-1wdr2jx-300x225.jpg,Tomato Yellow Leaf Curl Virus,0.5803,Tomato Mosaic Virus,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",everystockphoto-21099455-l.jpg,Healthy Strawberry Plant,0.5171,Tomato Mosaic Virus,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",ill-tomato-of-tomato-mosaic-virus-DBE17N.jpg,Tomato with Early Blight,0.8163,Tomato Mosaic Virus,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",page_2.jpg,Tomato with Septoria Leaf Spot,0.1409,Tomato Mosaic Virus,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",tmv-tomato-34.jpg,Tomato with Septoria Leaf Spot,0.6064,Tomato Mosaic Virus,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",tmv-tomato-9.jpg,Squash with Powdery Mildew,0.9453,Tomato Mosaic Virus,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",toma_TMV.jpg,Healthy Tomato Plant,0.4198,Tomato Mosaic Virus,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",tomato_virus_04_zoom.jpg,Bell Pepper with Bacterial Spot,0.3835,Tomato Mosaic Virus,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",11-40580_5.jpg,Squash with Powdery Mildew,0.1905,Tomato Yellow Leaf Curl Virus,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",17fc47.jpg,Tomato with Septoria Leaf Spot,0.2445,Tomato Yellow Leaf Curl Virus,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",8226402877_9abf151b5b_b.jpg,Squash with Powdery Mildew,0.5745,Tomato Yellow Leaf Curl Virus,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",fwa2013313115151.jpg,Healthy Strawberry Plant,0.5219,Tomato Yellow Leaf Curl Virus,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",glyphosate.jpg,Tomato with Septoria Leaf Spot,0.7878,Tomato Yellow Leaf Curl Virus,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",tylcv-seminar-1-638.jpg,Tomato with Early Blight,0.2111,Tomato Yellow Leaf Curl Virus,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",49%20Leafmold%20Bottom.jpg,Potato with Late Blight,0.3478,Tomato with Leaf Mold,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",50%20Leafmold%20Top.jpg,Tomato with Leaf Mold,0.9802,Tomato with Leaf Mold,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",BIGSD.jpg,Healthy Peach Plant,0.9415,Tomato with Leaf Mold,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",black_leaf_mold_in_zina_tina.jpg,Apple Scab,0.3851,Tomato with Leaf Mold,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",dscn6689.jpg,Squash with Powdery Mildew,0.2327,Tomato with Leaf Mold,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",fungus-univ-of-minnesoeta.jpg,Tomato with Septoria Leaf Spot,0.6533,Tomato with Leaf Mold,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",0000.jpg,Healthy Grape Plant,0.6876,Healthy Grape Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",730-grape-leaf-2560x1600-nature-wallpaper.jpg,Healthy Grape Plant,0.3244,Healthy Grape Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",DSCN7317.JPG.jpg,Grape with Black Rot,0.7931,Healthy Grape Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",P1130286.jpg,Grape with Black Rot,0.1376,Healthy Grape Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",depositphotos_3443387-stock-photo-the-green-grape-leaf-on.jpg,Healthy Raspberry Plant,0.6338,Healthy Grape Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",depositphotos_6898486-stock-photo-grape-leaves.jpg,Healthy Grape Plant,0.889,Healthy Grape Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",grape-leaf-14309623.jpg,Healthy Grape Plant,0.9411,Healthy Grape Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",grape-leaf-picture-id119212425?k=6&m=119212425&s=612x612&w=0&h=8RZBWGcvXe4tAwhhvYZVFzWyRyiN5iTxKfWBpPT1FcU=.jpg,Healthy Grape Plant,0.9442,Healthy Grape Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",grapes-leaves.jpg,Healthy Grape Plant,0.992,Healthy Grape Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",grapevine-leaf-7466071.jpg,Healthy Grape Plant,0.2451,Healthy Grape Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",latest?cb=20100621160325.jpg,Healthy Grape Plant,0.9285,Healthy Grape Plant,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",vitis-riparia-le-ahaines-b.jpg,Apple Scab,0.3566,Healthy Grape Plant,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",03gb.jpg,Grape with Black Rot,0.5677,Grape with Black Rot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",35589125035_662dd5b258_b.jpg,Grape with Black Rot,0.2031,Grape with Black Rot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",5-29black-rot-chardRR.jpg,Grape with Esca (Black Measles),0.5141,Grape with Black Rot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Black%20rot%20on%20foliage.jpg,Apple Scab,0.3148,Grape with Black Rot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",Black%20rot%20on%20foliage2.jpg,Grape with Black Rot,0.5173,Grape with Black Rot,True
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",brleaf2_zoom.jpg,Cedar Apple Rust,0.6731,Grape with Black Rot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",grape_F15a.jpg,Grape with Esca (Black Measles),0.5389,Grape with Black Rot,False
+"Public Field-Photo Set (PlantDoc Test Split, 236 images)",piano%20gully%20spray%20seed%20damage%2006%20%289%29.JPG.jpg,Healthy Grape Plant,0.5453,Grape with Black Rot,False

@@ -1,0 +1,237 @@
+dataset,image,predicted_plant,confidence,expected_plant,correct
+Public Field Crops Set (PlantDoc Test Split),052609%20Hartman%20Crabapple%20scab%20single%20leaf.JPG.jpg,Lysimachia quadrifolia,0.0011,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),1b321015-6e33-4f18-aade-888f4383fe92.jpeg.jpg,Citharexylum spinosum,0.0006,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),28-500x375.jpg,Ribes aureum,0.0005,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),816.jpg,Lysimachia quadrifolia,0.0008,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),apple%20scab%20leaf.jpg,Hordeum vulgare,0.0009,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),apple%20scabnew.jpg,Indigofera binderi,0.0006,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),apple-scab-5366820.jpg,Tectona grandis,0.0009,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),apples_apple-scab_01_zoom.jpg,Lepidium heterophyllum,0.0009,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),apples_apple-scab_02_thm.jpg,Sorghum arundinaceum,0.0045,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),apples_apple-scab_10_zoom.jpg,Helleborus viridis,0.0009,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),20180511_090912-14gtw8a-e1526047952754.jpg,Citrus limon,0.003,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),20180511_091133-24l1vhg-e1526047988236.jpg,Malus prunifolia,0.0033,Apple (Malus domestica),True
+Public Field Crops Set (PlantDoc Test Split),20180511_091252-1gy5xf5-e1526048000596.jpg,Toxicodendron diversilobum,0.0006,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),4120978-single-green-leaf-of-apple-tree.jpg,Prunus cerasus,0.0016,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),Apple-Leaf-Wallpaper-17.jpg,Ficus lutea,0.0009,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),apple-leaf-14319997.jpg,Pereskia lychnidiflora,0.0008,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),apple-leaf-9834637.jpg,Olearia macrodonta,0.0005,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),apple-leaf-closeup-37636177.jpg,Bignonia magnifica,0.0005,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),apple-leaf-isolated-white-background-56631026.jpg,Malus prunifolia,0.0022,Apple (Malus domestica),True
+Public Field Crops Set (PlantDoc Test Split),02.-Rust-2017-207u24s.jpg,Malus prunifolia,0.0045,Apple (Malus domestica),True
+Public Field Crops Set (PlantDoc Test Split),0605_Rust-induced_leafspot.jpg,Lysimachia quadrifolia,0.0006,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),185161-004-EAF28842.jpg,Lysimachia quadrifolia,0.0011,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),2011-011.jpg,Sorghum arundinaceum,0.0007,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),20130519cedarapplerust.jpg,Lysimachia quadrifolia,0.001,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),20130610_110514.jpg,Rubus ellipticus,0.0007,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),20130802_111632.jpg,Liatris squarrosa,0.0008,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),4-apple-rust2_19011_matt-bertone.jpg,Lysimachia quadrifolia,0.0009,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),9343310-small.jpg,Lysimachia quadrifolia,0.0009,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),99e886623c2080c22f6519b0e708c531.jpg,Sorghum arundinaceum,0.0013,Apple (Malus domestica),False
+Public Field Crops Set (PlantDoc Test Split),10148582-green-leaf-of-pepper.jpg,Alocasia cucullata,0.001,Bell Pepper (Capsicum annuum),False
+Public Field Crops Set (PlantDoc Test Split),4825902504_5fa80b65b8_z.jpg,Euphorbia heterophylla,0.0006,Bell Pepper (Capsicum annuum),False
+Public Field Crops Set (PlantDoc Test Split),GREEN%20BELL%20PLANT%20YELLOW%20LEAF.JPG.jpg,Capsicum baccatum,0.0033,Bell Pepper (Capsicum annuum),True
+Public Field Crops Set (PlantDoc Test Split),IMG_1629.JPG?1507122477.jpg,Monstera lechleriana,0.0011,Bell Pepper (Capsicum annuum),False
+Public Field Crops Set (PlantDoc Test Split),RnGnC.jpg,Solanum muricatum,0.0011,Bell Pepper (Capsicum annuum),False
+Public Field Crops Set (PlantDoc Test Split),e33155.jpg,Capsicum chinense,0.0025,Bell Pepper (Capsicum annuum),True
+Public Field Crops Set (PlantDoc Test Split),pepper_leaf.jpg,Capsicum baccatum,0.0019,Bell Pepper (Capsicum annuum),True
+Public Field Crops Set (PlantDoc Test Split),why-are-my-pepper-plants-yellow-yellow-pepper-plants-yellow-leaves-green-veins-pepper-plants-yellow-veins.jpg,Alocasia cucullata,0.0015,Bell Pepper (Capsicum annuum),False
+Public Field Crops Set (PlantDoc Test Split),00.jpg,Solanum villosum,0.0006,Bell Pepper (Capsicum annuum),False
+Public Field Crops Set (PlantDoc Test Split),000.jpg,Lonicera dioica,0.0007,Bell Pepper (Capsicum annuum),False
+Public Field Crops Set (PlantDoc Test Split),01.jpg,Catharanthus roseus,0.0009,Bell Pepper (Capsicum annuum),False
+Public Field Crops Set (PlantDoc Test Split),Bacterial-spot-pepper2.jpg,Sorghum arundinaceum,0.0013,Bell Pepper (Capsicum annuum),False
+Public Field Crops Set (PlantDoc Test Split),CMVpepperLeafShock-copy-50QUALITY-1ge8umw.jpg,Capsicum frutescens,0.0027,Bell Pepper (Capsicum annuum),True
+Public Field Crops Set (PlantDoc Test Split),H5w92.jpg,Capsicum baccatum,0.0006,Bell Pepper (Capsicum annuum),True
+Public Field Crops Set (PlantDoc Test Split),bacterial_leaf_spot_pepper_l.jpg,Sorghum arundinaceum,0.0014,Bell Pepper (Capsicum annuum),False
+Public Field Crops Set (PlantDoc Test Split),pepper-spot.jpg,Capsicum baccatum,0.0012,Bell Pepper (Capsicum annuum),True
+Public Field Crops Set (PlantDoc Test Split),pepper_bacterial-spot_03_zoom.jpg,Acer macrophyllum,0.0006,Bell Pepper (Capsicum annuum),False
+Public Field Crops Set (PlantDoc Test Split),P1200665+Vaccinium+alaskaense+vs+ovalifolium+leaf+and++twig+cr.jpg,Parthenocissus tricuspidata,0.0007,Blueberry (Vaccinium corymbosum),False
+Public Field Crops Set (PlantDoc Test Split),P1200701+Vaccinium+ovalifolium+Oval-leaf+Blueberry+leaf+margin+Heather+Meadows+cr.jpg,Vaccinium ovalifolium,0.0059,Blueberry (Vaccinium corymbosum),True
+Public Field Crops Set (PlantDoc Test Split),blueberry-leaves-normal-above-and-iron-deficient-below-bgahf8.jpg,Leucothoe axillaris,0.0007,Blueberry (Vaccinium corymbosum),False
+Public Field Crops Set (PlantDoc Test Split),blueberrysilverleaf16-1372b.jpg,Ribes petraeum,0.0009,Blueberry (Vaccinium corymbosum),False
+Public Field Crops Set (PlantDoc Test Split),leaf-blueberry-15281271.jpg,Richardia brasiliensis,0.0013,Blueberry (Vaccinium corymbosum),False
+Public Field Crops Set (PlantDoc Test Split),northern-highbush-blueberry-blue-huckleberry-vaccinium-corymbosum-EHNXRR.jpg,Rhus aromatica,0.0007,Blueberry (Vaccinium corymbosum),False
+Public Field Crops Set (PlantDoc Test Split),stock-photo-blueberry-leaf-closeup-isolated-on-white-306486470.jpg,Plantago major,0.0007,Blueberry (Vaccinium corymbosum),False
+Public Field Crops Set (PlantDoc Test Split),stock-photo-green-blueberry-leaf-isolated-with-clipping-path-550344304.jpg,Sonchus oleraceus,0.0008,Blueberry (Vaccinium corymbosum),False
+Public Field Crops Set (PlantDoc Test Split),stock-photo-two-sides-of-blueberry-leaf-isolated-on-white-15582232.jpg,Catharanthus roseus,0.0008,Blueberry (Vaccinium corymbosum),False
+Public Field Crops Set (PlantDoc Test Split),vaccinium-angustifolium-low-bush-blueberry_0830_124221.jpg,Philadelphus coronarius,0.0026,Blueberry (Vaccinium corymbosum),False
+Public Field Crops Set (PlantDoc Test Split),vaccinium_angustifolium_leaf2.JPG.jpg,Oemleria cerasiformis,0.0014,Blueberry (Vaccinium corymbosum),False
+Public Field Crops Set (PlantDoc Test Split),d7b79dbc0bca0eb3e63fbe5dfb256ccd53d90a4eb1413_1260x1260.jpg,Prunus avium,0.0149,Cherry (Prunus avium),True
+Public Field Crops Set (PlantDoc Test Split),e52bbb9a08ede2948ba0c006f02fe7b053ad7831d1df6_1260x1260.jpg,Anethum graveolens,0.0008,Cherry (Prunus avium),False
+Public Field Crops Set (PlantDoc Test Split),ed12ff77ce021883de241830dee55e2e53d2c93231699_1260x1260.jpg,Carpinus caroliniana,0.0007,Cherry (Prunus avium),False
+Public Field Crops Set (PlantDoc Test Split),fc729af279e9087d00bd32d89a1552a756a3ad9de7f2b_1260x1260.jpg,Raphanus raphanistrum,0.0006,Cherry (Prunus avium),False
+Public Field Crops Set (PlantDoc Test Split),five-cherry-tree-green-leaves-white-isolated-background-34493587.jpg,Schrebera alata,0.0006,Cherry (Prunus avium),False
+Public Field Crops Set (PlantDoc Test Split),prunsero_leaf1.jpg,Prunus serotina,0.0028,Cherry (Prunus avium),False
+Public Field Crops Set (PlantDoc Test Split),prunsero_leaf2.jpg,Prunus serotina,0.004,Cherry (Prunus avium),False
+Public Field Crops Set (PlantDoc Test Split),prunus-virginiana-le-gmittelhauser.jpg,Prunus brigantina,0.0006,Cherry (Prunus avium),False
+Public Field Crops Set (PlantDoc Test Split),red-cherry-tree-leaf-isolated-crisp-white-background-35742030.jpg,Viburnum lentago,0.0006,Cherry (Prunus avium),False
+Public Field Crops Set (PlantDoc Test Split),three-vibrant-leaves-bird-cherry-tree-13905898.jpg,Lagerstroemia speciosa,0.0005,Cherry (Prunus avium),False
+Public Field Crops Set (PlantDoc Test Split),IMG_42231.jpg,Zea mays,0.0032,Corn (Maize) (Zea mays),True
+Public Field Crops Set (PlantDoc Test Split),rsz0803Figure6.jpg,Sorghum arundinaceum,0.0013,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),"show_picture.asp?id=aaaaaaaaaaogcqq&w2=420&h2=378&clip=center,420,378&meta=0.jpg",Sorghum arundinaceum,0.0022,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),strom5.jpg,Triticum aestivum,0.0063,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),02c.jpg,Zea mays,0.0024,Corn (Maize) (Zea mays),True
+Public Field Crops Set (PlantDoc Test Split),0796.20graylssymt.jpg,Sorghum arundinaceum,0.0024,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),07c.jpg,Triticum aestivum,0.0009,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),0c.jpg,Seseli annuum,0.0005,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),1321189.jpg,Acacia confluens,0.0005,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),160314_web.jpg,Zea mays,0.001,Corn (Maize) (Zea mays),True
+Public Field Crops Set (PlantDoc Test Split),2013Corn_GrayLeafSpot_0815_0003.JPG.jpg,Sorghum arundinaceum,0.0158,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),2015070295153021.jpg,Dracaena fragrans,0.0012,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),Common%20Diseases%20Figure%201.JPG.jpg,Sorghum arundinaceum,0.0252,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),Corn-SCLB-2017-1.jpg,Sorghum arundinaceum,0.0015,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),corn-disease-update-fig-3-gray-leaf-spot.jpg,Sorghum arundinaceum,0.0129,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),corn-gray-leaf-spot-f4.jpg,Hordeum vulgare,0.0023,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),0796.39maizerust.jpg,Sorghum arundinaceum,0.01,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),0796.40comrust.jpg,Sorghum arundinaceum,0.0028,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),0796.47southrust.jpg,Apodytes dimidiata,0.0006,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),0796.52srusttelia.jpg,Sorghum arundinaceum,0.0099,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),12-19striprustJIM.jpg,Hordeum vulgare,0.004,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),1355.50commonrust.jpg,Sorghum arundinaceum,0.0036,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),2256-body-1501555581-1.jpg,Hordeum vulgare,0.0052,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),393.jpg,Hordeum vulgare,0.0036,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),5496239405_d95bdb97d1_z.jpg,Sorghum arundinaceum,0.0042,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),80104747.jpg,Hordeum vulgare,0.0027,Corn (Maize) (Zea mays),False
+Public Field Crops Set (PlantDoc Test Split),00pe.jpg,Salix alba,0.0014,Peach (Prunus persica),False
+Public Field Crops Set (PlantDoc Test Split),7190f27ead55c0f6e3ff8b982972810a5446a9713a49d_1260x1260.jpg,Pittosporum senacia,0.0007,Peach (Prunus persica),False
+Public Field Crops Set (PlantDoc Test Split),depositphotos_3786198-Peach-leaf.jpg,Quercus coccinea,0.0008,Peach (Prunus persica),False
+Public Field Crops Set (PlantDoc Test Split),peach-leaf-10223898.jpg,Polystichum aculeatum,0.0009,Peach (Prunus persica),False
+Public Field Crops Set (PlantDoc Test Split),peach-leaf-16690421.jpg,Orobanche foetida,0.0006,Peach (Prunus persica),False
+Public Field Crops Set (PlantDoc Test Split),peach-leaf-isolated-white-background-42295220.jpg,Melampyrum subalpinum,0.0008,Peach (Prunus persica),False
+Public Field Crops Set (PlantDoc Test Split),rose_tree_220430.jpg,Sorbus chamaemespilus,0.0005,Peach (Prunus persica),False
+Public Field Crops Set (PlantDoc Test Split),stock-photo-peach-leaf-isolated-on-white-background-281097503.jpg,Broussonetia papyrifera,0.0013,Peach (Prunus persica),False
+Public Field Crops Set (PlantDoc Test Split),stock-photo-peach-tree-leaf-isolated-over-white-background-back-side-64472731.jpg,Xanthorhiza simplicissima,0.0007,Peach (Prunus persica),False
+Public Field Crops Set (PlantDoc Test Split),3023.jpg,Solanum bonariense,0.0036,Potato (Solanum tuberosum),False
+Public Field Crops Set (PlantDoc Test Split),backus-056-potato-blight.jpg,Solanum bonariense,0.0016,Potato (Solanum tuberosum),False
+Public Field Crops Set (PlantDoc Test Split),early-blight-alternaria-alternata-leaf-spotting-on-potato-leaf-X91XJE.jpg,Solanum torvum,0.0008,Potato (Solanum tuberosum),False
+Public Field Crops Set (PlantDoc Test Split),early-blight-or-target-spot-alternaria-solani-lesions-on-a-tomato-AXK6AY.jpg,Chrozophora tinctoria,0.0013,Potato (Solanum tuberosum),False
+Public Field Crops Set (PlantDoc Test Split),earlyblightpotato.jpg,Solanum bonariense,0.0018,Potato (Solanum tuberosum),False
+Public Field Crops Set (PlantDoc Test Split),potato-blight-phytophthora-infestans-close-up-of-upper-surface-of-BMMRXC.jpg,Solanum bonariense,0.0011,Potato (Solanum tuberosum),False
+Public Field Crops Set (PlantDoc Test Split),potato-early-blight-alternaria-alternata-lesion-on-a-potato-leaf-a1w1em.jpg,Polystichum setiferum,0.0011,Potato (Solanum tuberosum),False
+Public Field Crops Set (PlantDoc Test Split),potatobd001.jpg,Solanum douglasii,0.0011,Potato (Solanum tuberosum),False
+Public Field Crops Set (PlantDoc Test Split),1421_0.jpeg?itok=FMtmgePj.jpg,Sorghum arundinaceum,0.0017,Potato (Solanum tuberosum),False
+Public Field Crops Set (PlantDoc Test Split),20090710-lateblight.jpg,Heteromorpha arborescens,0.0006,Potato (Solanum tuberosum),False
+Public Field Crops Set (PlantDoc Test Split),2540_600.jpg,Solanum bonariense,0.0029,Potato (Solanum tuberosum),False
+Public Field Crops Set (PlantDoc Test Split),5816740026_d42ef24413_Phytophthora-Infestans.jpg,Solanum lycopersicum,0.0023,Potato (Solanum tuberosum),False
+Public Field Crops Set (PlantDoc Test Split),B2750109-Late_blight_on_a_potato_plant-SPL.jpg,Solanum bonariense,0.0033,Potato (Solanum tuberosum),False
+Public Field Crops Set (PlantDoc Test Split),LateBlight04.jpg,Solanum bonariense,0.0026,Potato (Solanum tuberosum),False
+Public Field Crops Set (PlantDoc Test Split),irish-blight-symptoms-on-potato-leaves-atmf8b.jpg,Lygodium palmatum,0.0006,Potato (Solanum tuberosum),False
+Public Field Crops Set (PlantDoc Test Split),potato-late-blight.jpg,Martynia annua,0.0012,Potato (Solanum tuberosum),False
+Public Field Crops Set (PlantDoc Test Split),Raspberry-leaf.jpg,Parthenocissus quinquefolia,0.0015,Raspberry (Rubus idaeus),False
+Public Field Crops Set (PlantDoc Test Split),depositphotos_1323264-Raspberry-leaf-on-white.jpg,Acer pseudoplatanus,0.0013,Raspberry (Rubus idaeus),False
+Public Field Crops Set (PlantDoc Test Split),depositphotos_1323551-stock-photo-raspberry-leaves.jpg,Quercus nigra,0.0005,Raspberry (Rubus idaeus),False
+Public Field Crops Set (PlantDoc Test Split),depositphotos_2795312-stock-photo-green-raspberry-leaf.jpg,Rubus imbricatus,0.0012,Raspberry (Rubus idaeus),True
+Public Field Crops Set (PlantDoc Test Split),iron-deficiency-raspberry-leaf-chlorosis-isolated-32457798.jpg,Trifolium pallescens,0.0011,Raspberry (Rubus idaeus),False
+Public Field Crops Set (PlantDoc Test Split),leaves-of-raspberry-stock-picture-2529053.jpg,Carpinus orientalis,0.0032,Raspberry (Rubus idaeus),False
+Public Field Crops Set (PlantDoc Test Split),three-raspberry-green-leaves-isolated-white-background-62022932.jpg,Spiraea tomentosa,0.0007,Raspberry (Rubus idaeus),False
+Public Field Crops Set (PlantDoc Test Split),07feb_ma_sbr3.JPG.jpg,Lathyrus venetus,0.0019,Soybean (Glycine max),False
+Public Field Crops Set (PlantDoc Test Split),Soybean%20edamame%20leaf1.JPG.jpg,Piper hispidum,0.001,Soybean (Glycine max),False
+Public Field Crops Set (PlantDoc Test Split),fresh-soy-leaves-isolated-on-260nw-667193923.jpg,Atriplex littoralis,0.0007,Soybean (Glycine max),False
+Public Field Crops Set (PlantDoc Test Split),leaf-raspberry-isolated-on-a-white-stock-photography-image-10106222-1625198.jpg,Fraxinus americana,0.0016,Soybean (Glycine max),False
+Public Field Crops Set (PlantDoc Test Split),resistance1c.jpg,Scolopia zeyheri,0.0012,Soybean (Glycine max),False
+Public Field Crops Set (PlantDoc Test Split),stock-photo-fresh-soy-leaves-isolated-on-white-94266130.jpg,Phaseolus lunatus,0.0011,Soybean (Glycine max),False
+Public Field Crops Set (PlantDoc Test Split),stock-photo-fresh-soy-leaves-isolated-on-white-94700095.jpg,Glycine max,0.0014,Soybean (Glycine max),True
+Public Field Crops Set (PlantDoc Test Split),stock-photo-soy-leaf-isolated-on-white-background-120961801.jpg,Glycine max,0.0053,Soybean (Glycine max),True
+Public Field Crops Set (PlantDoc Test Split),Powdery-Mildew-on-squash.jpg,Cucurbita ficifolia,0.0015,Squash (Cucurbita),True
+Public Field Crops Set (PlantDoc Test Split),powdery-mildew-erysiphe-plantani-on-young-sycamore-leaves-b774tm.jpg,Cucurbita ficifolia,0.0016,Squash (Cucurbita),True
+Public Field Crops Set (PlantDoc Test Split),powdery-mildew-on-pumpkin-leaves-close-up-2.jpg,Cucurbita ficifolia,0.001,Squash (Cucurbita),True
+Public Field Crops Set (PlantDoc Test Split),powdery-mildew-sphaerotheca-fuliginea-infection-on-pumpkin-leaves-ajdkkx.jpg,Cucurbita ficifolia,0.0029,Squash (Cucurbita),True
+Public Field Crops Set (PlantDoc Test Split),squash-leave-w-powd-mild.jpg,Cucumis melo,0.0017,Squash (Cucurbita),False
+Public Field Crops Set (PlantDoc Test Split),surface.jpg,Vitis californica,0.0029,Squash (Cucurbita),False
+Public Field Crops Set (PlantDoc Test Split),strawberry-leaf--stock-photo-1431216.jpg,Duchesnea indica,0.0089,Strawberry (Fragaria ananassa),False
+Public Field Crops Set (PlantDoc Test Split),strawberry-leaf-22360816.jpg,Fragaria x,0.0011,Strawberry (Fragaria ananassa),True
+Public Field Crops Set (PlantDoc Test Split),strawberry-leaves-collection-white-background-36684676.jpg,Fragaria virginiana,0.0046,Strawberry (Fragaria ananassa),True
+Public Field Crops Set (PlantDoc Test Split),strawberry-leaves-isolated-white-17473157.jpg,Duchesnea indica,0.0128,Strawberry (Fragaria ananassa),False
+Public Field Crops Set (PlantDoc Test Split),strawberry-leaves-isolated-white-34722259.jpg,Fragaria chiloensis,0.0116,Strawberry (Fragaria ananassa),True
+Public Field Crops Set (PlantDoc Test Split),strawberry-leaves-stock-image-948674.jpg,Fragaria moschata,0.0023,Strawberry (Fragaria ananassa),True
+Public Field Crops Set (PlantDoc Test Split),strawberry-leaves-stock-picture-948708.jpg,Duchesnea indica,0.0039,Strawberry (Fragaria ananassa),False
+Public Field Crops Set (PlantDoc Test Split),wild-strawberry-leaf-top-view-rotated-KTBXCY.jpg,Duchesnea indica,0.0021,Strawberry (Fragaria ananassa),False
+Public Field Crops Set (PlantDoc Test Split),039b47d574bc4bb8a14259a1cd96a741.jpg,Pisonia grandis,0.0006,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),100983448.jpg,Bryonia cretica,0.0039,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),1234080-Early-Blight.jpg,Chrozophora tinctoria,0.0017,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),Shoemaker_7068.JPG.jpg,Solanum lycopersicum,0.0032,Tomato (Solanum lycopersicum),True
+Public Field Crops Set (PlantDoc Test Split),bugs-and-blight-061.jpg,Lindernia dubia,0.0006,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),dscn3175.jpg,Chrozophora tinctoria,0.0012,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),early_blight1-150x150.jpg,Sorghum arundinaceum,0.0029,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),earlyblight21_.jpg,Solanum lycopersicum,0.0031,Tomato (Solanum lycopersicum),True
+Public Field Crops Set (PlantDoc Test Split),tomato_early-blight_01_zoom.jpg,Sorghum arundinaceum,0.0027,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),0.jpg,Fritillaria camschatcensis,0.0008,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),2STEM.jpg,Sorghum arundinaceum,0.0023,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),2septoria-tomato.jpg,Sagittaria sagittifolia,0.0006,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),55830b60a7cf2.image.jpg,Solanum lycopersicum,0.0092,Tomato (Solanum lycopersicum),True
+Public Field Crops Set (PlantDoc Test Split),6134794031202304.jpeg.jpg,Physalis angulata,0.0021,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),636227737977191231-septoria-leaf-spot-VT.jpg,Pterospora andromedea,0.0007,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),6447731_orig.jpg,Solanum lycopersicum,0.0136,Tomato (Solanum lycopersicum),True
+Public Field Crops Set (PlantDoc Test Split),7-17-Photo3_Septoria-MARY.jpg,Sorghum arundinaceum,0.0027,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),RARZ4.jpg,Solanum lycopersicum,0.0028,Tomato (Solanum lycopersicum),True
+Public Field Crops Set (PlantDoc Test Split),early-blight-septoria-ls-fig-3.jpg,Solanum lycopersicum,0.0023,Tomato (Solanum lycopersicum),True
+Public Field Crops Set (PlantDoc Test Split),sept4disease-019.jpg,Sorghum arundinaceum,0.002,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),1684.jpg,Solanum torvum,0.0011,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),2013-08-20-06.jpg,Helichrysum petiolare,0.0013,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),90e2c0.jpg,Solanum lycopersicum,0.001,Tomato (Solanum lycopersicum),True
+Public Field Crops Set (PlantDoc Test Split),DSCN1015.JPG.jpg,Capsicum baccatum,0.0011,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),IMG_1246.jpg,Alocasia cucullata,0.0009,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),Tomato59.JPG.jpg,Solanum lycopersicum,0.0022,Tomato (Solanum lycopersicum),True
+Public Field Crops Set (PlantDoc Test Split),Tomato_leaf.jpg,Ribes missouriense,0.0008,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),main-qimg-d9c2a93f60568485c989670d9bbf703b.jpg,Dryopteris cristata,0.0016,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),%2320+Bacterial+Spot+and+Speck.jpg,Sicyos angulatus,0.0006,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),07.17.18-Common_Tomato_Diseases_Canker-258x300.jpg,Alocasia cucullata,0.0015,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),Bacterial_spots563.jpg,Plukenetia volubilis,0.001,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),Tom_Bact3.jpg,Solanum bonariense,0.0045,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),Tom_Bact7.jpg,Colchicum montanum,0.0012,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),Tomato%2BBacterial%2BSpot%2Bon%2BLeaves.jpg,Glycine max,0.0011,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),bact-spot-fig-1.jpg,Glycine max,0.0019,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),tomato_V8.jpg,Sorghum arundinaceum,0.0009,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),tomato_bacterial-speck_01_zoom.jpg,Sorghum arundinaceum,0.0019,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),110822-206-Tomato-blight.jpg,Solanum bonariense,0.0025,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),18c.jpg,Solanum bonariense,0.0016,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),636368370164094909-late-blight-15-.jpg,Solanum bonariense,0.0023,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),70.jpg,Lygodium palmatum,0.0006,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),E%29Tomato-late-blight-foliar.jpg,Solanum bonariense,0.0018,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),IMG_5808.jpg,Martynia annua,0.0014,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),LateBlt09_06.jpg,Solanum lycopersicum,0.0025,Tomato (Solanum lycopersicum),True
+Public Field Crops Set (PlantDoc Test Split),dsc_8148cs.jpg,Solanum bonariense,0.0015,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),image.jpg,Solanum lycopersicum,0.0234,Tomato (Solanum lycopersicum),True
+Public Field Crops Set (PlantDoc Test Split),late_blight_tomato_leaf_spore1x1200.jpg,Solanum bonariense,0.0014,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),9511.img.jpg,Solanum pimpinellifolium,0.0068,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),D%29AlfMov.jpg,Sorghum arundinaceum,0.0008,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),Tomato-Mosaic-1wdr2jx-300x225.jpg,Nicotiana tabacum,0.0022,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),everystockphoto-21099455-l.jpg,Citrus limon,0.0018,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),ill-tomato-of-tomato-mosaic-virus-DBE17N.jpg,Solanum pimpinellifolium,0.0026,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),page_2.jpg,Toddalia asiatica,0.0006,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),tmv-tomato-34.jpg,Sorghum arundinaceum,0.0035,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),tmv-tomato-9.jpg,Xanthoselinum alsaticum,0.0007,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),toma_TMV.jpg,Chrozophora tinctoria,0.0016,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),tomato_virus_04_zoom.jpg,Philodendron melanochrysum,0.0007,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),11-40580_5.jpg,Euonymus europaeus,0.0007,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),17fc47.jpg,Corchorus olitorius,0.0023,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),8226402877_9abf151b5b_b.jpg,Leucothoe fontanesiana,0.0013,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),fwa2013313115151.jpg,Aloysia triphylla,0.0009,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),glyphosate.jpg,Solanum pimpinellifolium,0.0025,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),tylcv-seminar-1-638.jpg,Carthamus tinctorius,0.0128,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),49%20Leafmold%20Bottom.jpg,Sorghum arundinaceum,0.0008,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),50%20Leafmold%20Top.jpg,Cucumis melo,0.0014,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),BIGSD.jpg,Nymphoides indica,0.0008,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),black_leaf_mold_in_zina_tina.jpg,Michelia alba,0.0005,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),dscn6689.jpg,Sorghum arundinaceum,0.0013,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),fungus-univ-of-minnesoeta.jpg,Chrozophora tinctoria,0.0018,Tomato (Solanum lycopersicum),False
+Public Field Crops Set (PlantDoc Test Split),0000.jpg,Acer circinatum,0.0007,Grape (Vitis vinifera),False
+Public Field Crops Set (PlantDoc Test Split),730-grape-leaf-2560x1600-nature-wallpaper.jpg,Vitis californica,0.002,Grape (Vitis vinifera),True
+Public Field Crops Set (PlantDoc Test Split),DSCN7317.JPG.jpg,Vitis riparia,0.0028,Grape (Vitis vinifera),True
+Public Field Crops Set (PlantDoc Test Split),P1130286.jpg,Rubus parviflorus,0.0025,Grape (Vitis vinifera),False
+Public Field Crops Set (PlantDoc Test Split),depositphotos_3443387-stock-photo-the-green-grape-leaf-on.jpg,Vitis californica,0.0035,Grape (Vitis vinifera),True
+Public Field Crops Set (PlantDoc Test Split),depositphotos_6898486-stock-photo-grape-leaves.jpg,Valerianella locusta,0.001,Grape (Vitis vinifera),False
+Public Field Crops Set (PlantDoc Test Split),grape-leaf-14309623.jpg,Vitis californica,0.0066,Grape (Vitis vinifera),True
+Public Field Crops Set (PlantDoc Test Split),grape-leaf-picture-id119212425?k=6&m=119212425&s=612x612&w=0&h=8RZBWGcvXe4tAwhhvYZVFzWyRyiN5iTxKfWBpPT1FcU=.jpg,Platanus orientalis,0.0009,Grape (Vitis vinifera),False
+Public Field Crops Set (PlantDoc Test Split),grapes-leaves.jpg,Vitis californica,0.0013,Grape (Vitis vinifera),True
+Public Field Crops Set (PlantDoc Test Split),grapevine-leaf-7466071.jpg,Vitis californica,0.0028,Grape (Vitis vinifera),True
+Public Field Crops Set (PlantDoc Test Split),latest?cb=20100621160325.jpg,Vitis californica,0.0009,Grape (Vitis vinifera),True
+Public Field Crops Set (PlantDoc Test Split),vitis-riparia-le-ahaines-b.jpg,Vitis californica,0.0095,Grape (Vitis vinifera),True
+Public Field Crops Set (PlantDoc Test Split),03gb.jpg,Vitis riparia,0.0041,Grape (Vitis vinifera),True
+Public Field Crops Set (PlantDoc Test Split),35589125035_662dd5b258_b.jpg,Vitis riparia,0.0029,Grape (Vitis vinifera),True
+Public Field Crops Set (PlantDoc Test Split),5-29black-rot-chardRR.jpg,Vitis labrusca,0.0007,Grape (Vitis vinifera),True
+Public Field Crops Set (PlantDoc Test Split),Black%20rot%20on%20foliage.jpg,Sorghum arundinaceum,0.0014,Grape (Vitis vinifera),False
+Public Field Crops Set (PlantDoc Test Split),Black%20rot%20on%20foliage2.jpg,Vitis aestivalis,0.004,Grape (Vitis vinifera),True
+Public Field Crops Set (PlantDoc Test Split),brleaf2_zoom.jpg,Vitis californica,0.0008,Grape (Vitis vinifera),True
+Public Field Crops Set (PlantDoc Test Split),grape_F15a.jpg,Sorghum arundinaceum,0.0017,Grape (Vitis vinifera),False
+Public Field Crops Set (PlantDoc Test Split),piano%20gully%20spray%20seed%20damage%2006%20%289%29.JPG.jpg,Vitis labrusca,0.0012,Grape (Vitis vinifera),True

@@ -1,0 +1,119 @@
+dataset,backend,image,predicted_plant,confidence,expected_plant,correct,top5_correct
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,1b321015-6e33-4f18-aade-888f4383fe92.jpeg.jpg,Apple,0.7008,Apple (Malus domestica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,apple-scab-5366820.jpg,Apple,0.7752,Apple (Malus domestica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,apples_apple-scab_01_zoom.jpg,Apple,0.9123,Apple (Malus domestica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,apples_apple-scab_02_thm.jpg,Apple,0.8917,Apple (Malus domestica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,20180511_091133-24l1vhg-e1526047988236.jpg,Apple,0.9366,Apple (Malus domestica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,Apple-Leaf-Wallpaper-17.jpg,Apple,0.7593,Apple (Malus domestica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,apple-leaf-9834637.jpg,Apple,0.9689,Apple (Malus domestica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,apple-leaf-closeup-37636177.jpg,Apple,0.5748,Apple (Malus domestica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,apple-leaf-isolated-white-background-56631026.jpg,Apple,0.9322,Apple (Malus domestica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,0605_Rust-induced_leafspot.jpg,Apple,0.8062,Apple (Malus domestica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,2011-011.jpg,Apple,0.7938,Apple (Malus domestica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,20130519cedarapplerust.jpg,Apple,0.7712,Apple (Malus domestica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,20130610_110514.jpg,Apple,0.9401,Apple (Malus domestica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,20130802_111632.jpg,Apple,0.8982,Apple (Malus domestica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,4-apple-rust2_19011_matt-bertone.jpg,Apple,0.9269,Apple (Malus domestica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,99e886623c2080c22f6519b0e708c531.jpg,Apple,0.9742,Apple (Malus domestica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,GREEN%20BELL%20PLANT%20YELLOW%20LEAF.JPG.jpg,Capsicum / Chilli,0.9369,Bell Pepper (Capsicum annuum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,RnGnC.jpg,Capsicum / Chilli,0.9712,Bell Pepper (Capsicum annuum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,pepper_leaf.jpg,Capsicum / Chilli,0.9815,Bell Pepper (Capsicum annuum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,why-are-my-pepper-plants-yellow-yellow-pepper-plants-yellow-leaves-green-veins-pepper-plants-yellow-veins.jpg,Capsicum / Chilli,0.9382,Bell Pepper (Capsicum annuum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,01.jpg,Capsicum / Chilli,0.6134,Bell Pepper (Capsicum annuum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,Bacterial-spot-pepper2.jpg,Capsicum / Chilli,0.804,Bell Pepper (Capsicum annuum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,CMVpepperLeafShock-copy-50QUALITY-1ge8umw.jpg,Capsicum / Chilli,0.966,Bell Pepper (Capsicum annuum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,bacterial_leaf_spot_pepper_l.jpg,Capsicum / Chilli,0.9834,Bell Pepper (Capsicum annuum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,blueberrysilverleaf16-1372b.jpg,Blueberry,0.9443,Blueberry (Vaccinium corymbosum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,leaf-blueberry-15281271.jpg,Blueberry,0.9304,Blueberry (Vaccinium corymbosum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,stock-photo-green-blueberry-leaf-isolated-with-clipping-path-550344304.jpg,Apple,0.8754,Blueberry (Vaccinium corymbosum),False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,stock-photo-two-sides-of-blueberry-leaf-isolated-on-white-15582232.jpg,Blueberry,0.896,Blueberry (Vaccinium corymbosum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,vaccinium-angustifolium-low-bush-blueberry_0830_124221.jpg,Blueberry,0.9772,Blueberry (Vaccinium corymbosum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,vaccinium_angustifolium_leaf2.JPG.jpg,Blueberry,0.9466,Blueberry (Vaccinium corymbosum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,d7b79dbc0bca0eb3e63fbe5dfb256ccd53d90a4eb1413_1260x1260.jpg,Cherry,0.8059,Cherry (Prunus avium),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,e52bbb9a08ede2948ba0c006f02fe7b053ad7831d1df6_1260x1260.jpg,Cherry,0.8084,Cherry (Prunus avium),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,ed12ff77ce021883de241830dee55e2e53d2c93231699_1260x1260.jpg,Cherry,0.9114,Cherry (Prunus avium),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,prunsero_leaf1.jpg,Cherry,0.3172,Cherry (Prunus avium),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,IMG_42231.jpg,Maize (Corn),0.9655,Corn (Maize) (Zea mays),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,rsz0803Figure6.jpg,Maize (Corn),0.951,Corn (Maize) (Zea mays),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,"show_picture.asp?id=aaaaaaaaaaogcqq&w2=420&h2=378&clip=center,420,378&meta=0.jpg",Maize (Corn),0.9447,Corn (Maize) (Zea mays),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,strom5.jpg,Maize (Corn),0.9234,Corn (Maize) (Zea mays),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,02c.jpg,Maize (Corn),0.9558,Corn (Maize) (Zea mays),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,0c.jpg,Maize (Corn),0.9417,Corn (Maize) (Zea mays),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,1321189.jpg,Maize (Corn),0.8976,Corn (Maize) (Zea mays),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,Corn-SCLB-2017-1.jpg,Maize (Corn),0.9296,Corn (Maize) (Zea mays),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,0796.39maizerust.jpg,Maize (Corn),0.9303,Corn (Maize) (Zea mays),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,0796.52srusttelia.jpg,Maize (Corn),0.9489,Corn (Maize) (Zea mays),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,12-19striprustJIM.jpg,Maize (Corn),0.9635,Corn (Maize) (Zea mays),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,1355.50commonrust.jpg,Maize (Corn),0.9719,Corn (Maize) (Zea mays),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,393.jpg,Maize (Corn),0.9591,Corn (Maize) (Zea mays),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,5496239405_d95bdb97d1_z.jpg,Maize (Corn),0.9667,Corn (Maize) (Zea mays),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,80104747.jpg,Maize (Corn),0.9441,Corn (Maize) (Zea mays),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,00pe.jpg,Cherry,0.7969,Peach (Prunus persica),False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,7190f27ead55c0f6e3ff8b982972810a5446a9713a49d_1260x1260.jpg,Peach,0.9437,Peach (Prunus persica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,depositphotos_3786198-Peach-leaf.jpg,Peach,0.8945,Peach (Prunus persica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,peach-leaf-10223898.jpg,Blueberry,0.3683,Peach (Prunus persica),False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,peach-leaf-16690421.jpg,Peach,0.9354,Peach (Prunus persica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,stock-photo-peach-tree-leaf-isolated-over-white-background-back-side-64472731.jpg,Peach,0.8925,Peach (Prunus persica),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,3023.jpg,Potato,0.8346,Potato (Solanum tuberosum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,potato-blight-phytophthora-infestans-close-up-of-upper-surface-of-BMMRXC.jpg,Potato,0.6957,Potato (Solanum tuberosum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,potato-early-blight-alternaria-alternata-lesion-on-a-potato-leaf-a1w1em.jpg,Potato,0.7434,Potato (Solanum tuberosum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,B2750109-Late_blight_on_a_potato_plant-SPL.jpg,Potato,0.9258,Potato (Solanum tuberosum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,irish-blight-symptoms-on-potato-leaves-atmf8b.jpg,Potato,0.7806,Potato (Solanum tuberosum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,potato-late-blight.jpg,Potato,0.9161,Potato (Solanum tuberosum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,Raspberry-leaf.jpg,Raspberry,0.9591,Raspberry (Rubus idaeus),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,07feb_ma_sbr3.JPG.jpg,Soybean,0.5851,Soybean (Glycine max),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,fresh-soy-leaves-isolated-on-260nw-667193923.jpg,Soybean,0.5949,Soybean (Glycine max),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,resistance1c.jpg,Blueberry,0.7309,Soybean (Glycine max),False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,Powdery-Mildew-on-squash.jpg,Squash / Pumpkin,0.9541,Squash (Cucurbita),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,powdery-mildew-on-pumpkin-leaves-close-up-2.jpg,Squash / Pumpkin,0.9608,Squash (Cucurbita),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,powdery-mildew-sphaerotheca-fuliginea-infection-on-pumpkin-leaves-ajdkkx.jpg,Squash / Pumpkin,0.927,Squash (Cucurbita),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,squash-leave-w-powd-mild.jpg,Squash / Pumpkin,0.9829,Squash (Cucurbita),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,strawberry-leaf--stock-photo-1431216.jpg,Strawberry,0.9551,Strawberry (Fragaria ananassa),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,strawberry-leaves-collection-white-background-36684676.jpg,Strawberry,0.9607,Strawberry (Fragaria ananassa),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,strawberry-leaves-isolated-white-17473157.jpg,Strawberry,0.9635,Strawberry (Fragaria ananassa),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,strawberry-leaves-isolated-white-34722259.jpg,Strawberry,0.9598,Strawberry (Fragaria ananassa),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,039b47d574bc4bb8a14259a1cd96a741.jpg,Tomato,0.9622,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,Shoemaker_7068.JPG.jpg,Tomato,0.8274,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,bugs-and-blight-061.jpg,Tomato,0.9279,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,earlyblight21_.jpg,Tomato,0.8409,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,2septoria-tomato.jpg,Tomato,0.8743,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,6134794031202304.jpeg.jpg,Tomato,0.9604,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,636227737977191231-septoria-leaf-spot-VT.jpg,Tomato,0.9219,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,6447731_orig.jpg,Tomato,0.9394,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,7-17-Photo3_Septoria-MARY.jpg,Tomato,0.6049,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,sept4disease-019.jpg,Tomato,0.8376,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,1684.jpg,Tomato,0.9095,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,Tomato_leaf.jpg,Tomato,0.9656,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,Bacterial_spots563.jpg,Potato,0.4854,Tomato (Solanum lycopersicum),False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,Tom_Bact3.jpg,Tomato,0.9096,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,Tom_Bact7.jpg,Tomato,0.6646,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,Tomato%2BBacterial%2BSpot%2Bon%2BLeaves.jpg,Tomato,0.9194,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,bact-spot-fig-1.jpg,Capsicum / Chilli,0.8743,Tomato (Solanum lycopersicum),False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,tomato_V8.jpg,Tomato,0.8752,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,tomato_bacterial-speck_01_zoom.jpg,Tomato,0.8677,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,110822-206-Tomato-blight.jpg,Potato,0.5818,Tomato (Solanum lycopersicum),False,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,E%29Tomato-late-blight-foliar.jpg,Tomato,0.8705,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,IMG_5808.jpg,Tomato,0.886,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,9511.img.jpg,Tomato,0.9141,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,page_2.jpg,Tomato,0.9418,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,tmv-tomato-9.jpg,Tomato,0.9568,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,tomato_virus_04_zoom.jpg,Tomato,0.9064,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,11-40580_5.jpg,Tomato,0.8039,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,8226402877_9abf151b5b_b.jpg,Tomato,0.9311,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,fwa2013313115151.jpg,Tomato,0.9541,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,glyphosate.jpg,Tomato,0.9636,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,tylcv-seminar-1-638.jpg,Tomato,0.9625,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,black_leaf_mold_in_zina_tina.jpg,Tomato,0.8114,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,fungus-univ-of-minnesoeta.jpg,Tomato,0.9092,Tomato (Solanum lycopersicum),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,0000.jpg,Grape,0.9566,Grape (Vitis vinifera),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,730-grape-leaf-2560x1600-nature-wallpaper.jpg,Grape,0.9716,Grape (Vitis vinifera),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,P1130286.jpg,Grape,0.9759,Grape (Vitis vinifera),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,depositphotos_3443387-stock-photo-the-green-grape-leaf-on.jpg,Grape,0.9497,Grape (Vitis vinifera),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,grape-leaf-picture-id119212425?k=6&m=119212425&s=612x612&w=0&h=8RZBWGcvXe4tAwhhvYZVFzWyRyiN5iTxKfWBpPT1FcU=.jpg,Grape,0.9504,Grape (Vitis vinifera),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,grapevine-leaf-7466071.jpg,Grape,0.8776,Grape (Vitis vinifera),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,latest?cb=20100621160325.jpg,Grape,0.9584,Grape (Vitis vinifera),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,vitis-riparia-le-ahaines-b.jpg,Grape,0.9855,Grape (Vitis vinifera),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,03gb.jpg,Grape,0.9884,Grape (Vitis vinifera),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,5-29black-rot-chardRR.jpg,Grape,0.963,Grape (Vitis vinifera),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,Black%20rot%20on%20foliage2.jpg,Grape,0.987,Grape (Vitis vinifera),True,True
+"PlantDoc HELD-OUT Half (n=118, seed=42, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,brleaf2_zoom.jpg,Grape,0.9174,Grape (Vitis vinifera),True,True

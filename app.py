@@ -10,16 +10,27 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-import ar_location_plant_map
-import plant_disease_detection
+import ml_config
+import vision_analysis
+import disease_recommendations
+import ui.feedback
 import plant_identification
-import ui.presentation
+import plant_disease_detection
 
-if not hasattr(plant_identification, "_CROP_BOTANICAL_MAP"):
-    importlib.reload(ar_location_plant_map)
-    importlib.reload(plant_disease_detection)
+if getattr(plant_disease_detection, "_PIPELINE_VERSION", None) != "v4_healthy_foliage_fix":
+    importlib.reload(ml_config)
+    importlib.reload(vision_analysis)
+    importlib.reload(disease_recommendations)
+    importlib.reload(ui.feedback)
     importlib.reload(plant_identification)
-    importlib.reload(ui.presentation)
+    importlib.reload(plant_disease_detection)
+    try:
+        plant_identification.load_onnx_plant_classifier.clear()
+    except Exception:
+        pass
+
+import ar_location_plant_map
+import ui.presentation
 
 st.logo("static/logo.svg", size="large")
 apply_chrome()
