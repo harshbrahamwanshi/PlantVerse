@@ -2,13 +2,29 @@
 # PlantVerse - Plant Identification
 # ============================================================
 
-import streamlit as st
-import requests
-from PIL import Image
-from transformers import pipeline
 from functools import lru_cache
-from bs4 import BeautifulSoup
 import re
+from typing import Any, Dict, List, Tuple
+
+from bs4 import BeautifulSoup
+import numpy as np
+from PIL import Image, ImageOps
+import requests
+import streamlit as st
+import torch
+from transformers import AutoImageProcessor, AutoModelForImageClassification
+
+from ml_config import (
+    FLORASENSE_HIGH_CONF_THRESHOLD,
+    FLORASENSE_INPUT_SIZE,
+    FLORASENSE_MEAN,
+    FLORASENSE_MEDIUM_CONF_THRESHOLD,
+    FLORASENSE_MIN_TOP1_TOP2_RATIO,
+    FLORASENSE_MODEL_NAME,
+    FLORASENSE_STD,
+    LOW_CONFIDENCE_PLANT_MESSAGE,
+    SUPPORTED_PLANT_SUMMARY,
+)
 
 
 # ============================================================
@@ -87,19 +103,41 @@ def translate_text(text, target_lang):
 
 
 # ============================================================
-# 3. Plant Classifier
+# 3. Plant Classifier & Preprocessing
 # ============================================================
 
-@st.cache_resource
-def load_classifier():
-    """
-    Load the FloraSense image classification model.
-    """
+_CROP_BOTANICAL_MAP = {
+    "Squash": "Cucurbita",
+    "Orange": "Orange (fruit)",
+    "Corn (Maize)": "Maize",
+    "Corn": "Maize",
+    "Cherry (including sour)": "Prunus cerasus",
+    "Cherry": "Prunus avium",
+    "Pepper, bell": "Bell pepper",
+    "Bell Pepper": "Bell pepper",
+}
 
-    return pipeline(
-        "image-classification",
-        model="Sisigoks/FloraSense"
-    )
+
+@st.cache_resource
+def load_classifier() -> Dict[str, Any]:
+    """
+    Load the FloraSense Vision Transformer model and processor in eval mode.
+    Raises RuntimeError with a clear message if the model or weights cannot be loaded.
+    """
+    try:
+        model = AutoModelForImageClassification.from_pretrained(FLORASENSE_MODEL_NAME)
+        model.eval()
+        processor = AutoImageProcessor.from_pretrained(FLORASENSE_MODEL_NAME)
+        return {
+            "model": model,
+            "processor": processor,
+            "id2label": model.config.id2label,
+        }
+    except Exception as exc:
+        raise RuntimeError(
+            f"Unable to load plant identification model '{FLORASENSE_MODEL_NAME}'. "
+            f"Verify model weights are available locally or check network connection: {exc}"
+        ) from exc
 
 
 def _clean_florasense_label(raw_label: str) -> str:
@@ -117,57 +155,125 @@ def _clean_florasense_label(raw_label: str) -> str:
     return " ".join(parts[:2]) if len(parts) >= 2 else parts[0]
 
 
-_CROP_BOTANICAL_MAP = {
-    "Squash": "Cucurbita",
-    "Orange": "Orange (fruit)",
-    "Corn (Maize)": "Maize",
-    "Corn": "Maize",
-    "Cherry (including sour)": "Prunus cerasus",
-    "Cherry": "Prunus avium",
-    "Pepper, bell": "Bell pepper",
-    "Bell Pepper": "Bell pepper",
-}
+def preprocess_for_florasense(image: Image.Image) -> torch.Tensor:
+    """
+    Exact training-matched preprocessing for Sisigoks/FloraSense (google/vit-base-patch16-224):
+    1. Apply EXIF orientation transpose so portrait mobile photos are upright.
+    2. Convert to 3-channel RGB.
+    3. Squash-resize to (224, 224) using BILINEAR interpolation (matching ViTImageProcessor default_to_square=True).
+    4. Scale pixel intensities to [0.0, 1.0] (rescale_factor = 1/255).
+    5. Normalize with mean=[0.5, 0.5, 0.5] and std=[0.5, 0.5, 0.5].
+    6. Transpose HWC -> CHW and add batch dimension [1, 3, 224, 224].
+    """
+    if image is None:
+        raise ValueError("No image provided for plant identification.")
+    img = ImageOps.exif_transpose(image)
+    if img.mode != "RGB":
+        img = img.convert("RGB")
+    if img.width < 32 or img.height < 32:
+        raise ValueError(f"Image is too small ({img.width}x{img.height} px). Minimum dimension is 32x32 px.")
+
+    resized = img.resize(FLORASENSE_INPUT_SIZE, Image.Resampling.BILINEAR)
+    arr = np.asarray(resized, dtype=np.float32) / 255.0
+    mean = np.array(FLORASENSE_MEAN, dtype=np.float32)
+    std = np.array(FLORASENSE_STD, dtype=np.float32)
+    norm = (arr - mean) / std
+    chw = np.transpose(norm, (2, 0, 1))
+    return torch.from_numpy(chw).unsqueeze(0)
 
 
-def predict_species(image: Image.Image):
+def evaluate_plant_confidence_policy(
+    top1_score: float,
+    top2_score: float,
+    high_threshold: float = FLORASENSE_HIGH_CONF_THRESHOLD,
+    medium_threshold: float = FLORASENSE_MEDIUM_CONF_THRESHOLD,
+    min_ratio: float = FLORASENSE_MIN_TOP1_TOP2_RATIO,
+) -> Tuple[str, str]:
+    """
+    Evaluate confidence tier ('high', 'medium', 'low') using measured top-1 probability
+    and top-1 / top-2 probability ratio.
+    """
+    ratio = top1_score / max(top2_score, 1e-7)
+    if top1_score >= high_threshold and ratio >= min_ratio:
+        return "high", ""
+    if top1_score >= medium_threshold and ratio >= min_ratio:
+        return (
+            "medium",
+            "Moderate confidence prediction: fine-grained visual similarity detected across related taxa. Verify diagnostic traits below.",
+        )
+    return "low", LOW_CONFIDENCE_PLANT_MESSAGE
+
+
+def predict_species_detailed(image: Image.Image) -> Dict[str, Any]:
+    """
+    Run genuine plant species identification using FloraSense without any cross-model
+    hijacking or fake fallbacks. Aggregates probability mass across duplicate synonym
+    authorities in FloraSense's 9,985-class head and applies the confidence policy.
+    """
+    pixel_values = preprocess_for_florasense(image)
+    bundle = load_classifier()
+    model = bundle["model"]
+    id2label = bundle["id2label"]
+
+    with torch.no_grad():
+        outputs = model(pixel_values=pixel_values)
+        logits = outputs.logits[0]
+        probs = torch.softmax(logits, dim=-1).cpu().numpy()
+
+    # Aggregate top-50 raw classes by cleaned binomial so duplicate authority strings
+    # (e.g. 'Adiantum_raddianum_C_Presl' and 'Adiantum_raddianum_C__Presl') sum together
+    top_indices = np.argsort(probs)[::-1][:50]
+    species_scores: Dict[str, float] = {}
+    species_raw_map: Dict[str, str] = {}
+    for idx in top_indices:
+        raw_lbl = id2label[int(idx)]
+        clean_lbl = _clean_florasense_label(raw_lbl)
+        species_scores[clean_lbl] = species_scores.get(clean_lbl, 0.0) + float(probs[int(idx)])
+        if clean_lbl not in species_raw_map:
+            species_raw_map[clean_lbl] = raw_lbl
+
+    ranked = sorted(species_scores.items(), key=lambda kv: -kv[1])
+    top1_label, top1_score = ranked[0] if ranked else ("Unknown", 0.0)
+    top2_score = ranked[1][1] if len(ranked) > 1 else 0.0
+
+    tier, message = evaluate_plant_confidence_policy(top1_score, top2_score)
+    top_candidates = [
+        {
+            "species": sp,
+            "raw_label": species_raw_map.get(sp, sp),
+            "score": float(sc),
+            "confidence_pct": round(float(sc) * 100, 2),
+        }
+        for sp, sc in ranked[:5]
+    ]
+
+    return {
+        "species": top1_label,
+        "raw_label": species_raw_map.get(top1_label, top1_label),
+        "score": float(top1_score),
+        "top2_score": float(top2_score),
+        "margin_ratio": round(float(top1_score) / max(float(top2_score), 1e-7), 2),
+        "confidence_tier": tier,
+        "is_reliable": tier in ("high", "medium"),
+        "warning_message": message,
+        "top_candidates": top_candidates,
+        "model_name": FLORASENSE_MODEL_NAME,
+    }
+
+
+def predict_species(image: Image.Image) -> Tuple[str, float]:
     """
     Predict plant species from uploaded image.
-    Uses FloraSense for general flora and cross-checks with the leaf/crop
-    classifier when FloraSense confidence is low on agricultural/crop leaves.
+    Returns (species_name, confidence_score).
+    Note: Does NOT hijack predictions with the crop disease model.
     """
+    res = predict_species_detailed(image)
+    return res["species"], res["score"]
 
-    if image.mode != "RGB":
-        image = image.convert("RGB")
 
-    raw_label = "Unknown"
-    score = 0.0
-
-    try:
-        classifier = load_classifier()
-        preds = classifier(image)
-        if preds:
-            raw_label = preds[0]["label"]
-            score = float(preds[0]["score"])
-    except Exception as e:
-        print(f"FloraSense prediction warning: {e}")
-
-    clean_label = _clean_florasense_label(raw_label)
-
-    # If FloraSense has low confidence (e.g. on crop/garden leaves like Tomato, Apple, Potato),
-    # cross-check with the PlantVillage crop/leaf classifier when crop confidence is high.
-    if score < 0.15:
-        try:
-            from plant_disease_detection import predict_disease
-            dis_res = predict_disease(image)
-            crop_name = dis_res.get("plant")
-            crop_conf = float(dis_res.get("confidence", 0.0))
-            if crop_name and crop_name != "Plant" and crop_conf >= 0.55:
-                resolved_crop = _CROP_BOTANICAL_MAP.get(crop_name, crop_name)
-                return resolved_crop, crop_conf
-        except Exception:
-            pass
-
-    return clean_label, score
+def get_supported_plants_info() -> Dict[str, Any]:
+    """Return metadata on supported plant classes for config/UI display."""
+    return SUPPORTED_PLANT_SUMMARY["florasense"]
 
 
 # ============================================================

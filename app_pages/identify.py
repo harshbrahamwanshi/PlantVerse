@@ -4,12 +4,15 @@ import streamlit as st
 from PIL import Image
 
 from ar_location_plant_map import PlantLocationFinder
+from ml_config import LOW_CONFIDENCE_PLANT_MESSAGE
 from plant_identification import (
     LANGUAGES,
     get_medicinal_uses_from_wikipedia,
+    get_supported_plants_info,
     get_taxonomy_from_wikidata,
     get_wikipedia_title,
     predict_species,
+    predict_species_detailed,
     translate_text,
 )
 from plant_disease_detection import predict_disease
@@ -42,6 +45,15 @@ with top_left:
         "The system processes the visual morphology using deep neural classification, resolves "
         "the biological identity through Wikidata, and compiles pharmacological and ecological data."
     )
+    supported_info = get_supported_plants_info()
+    with st.expander(":material/eco: Supported plants & model scope", expanded=False):
+        st.markdown(
+            f"**Active Plant Classifier:** `{supported_info.get('model_name', 'FloraSense')}`  \n"
+            f"**Indexed Botanical Taxa:** `{supported_info.get('unique_binomials', 9481):,}` unique species binomials"
+        )
+        genera_list = supported_info.get("key_supported_genera", [])
+        if genera_list:
+            st.markdown("**Supported plants (representative genera & species):** " + ", ".join(genera_list))
 
 with top_right:
     with st.container(border=True):
@@ -164,53 +176,74 @@ if img_file and run_identify:
         st.stop()
 
     with st.status(translate_text("Processing specimen through identification pipeline...", lang_code), expanded=True) as status:
-        st.write(translate_text("1. Computing morphological feature representations with FloraSense...", lang_code))
+        st.write(translate_text("1. Computing morphological feature representations...", lang_code))
         try:
-            label, score = predict_species(image)
+            plant_pred = predict_species_detailed(image)
+            label = plant_pred["species"]
+            score = plant_pred["score"]
+            conf_tier = plant_pred["confidence_tier"]
+            is_reliable = plant_pred["is_reliable"]
         except Exception as exc:
             status.update(label="Inference execution halted", state="error")
             st.error(f"Plant identification failed: {exc}")
             st.stop()
-
-        st.write(translate_text("2. Resolving taxonomic entity against Wikipedia & Wikidata...", lang_code))
-        wiki_title = get_wikipedia_title(label)
-        taxonomy = get_taxonomy_from_wikidata(wiki_title)
-
-        st.write(translate_text("3. Extracting pharmacological data & botanical encyclopedia summary...", lang_code))
-        medicinal = get_medicinal_uses_from_wikipedia(wiki_title, target_lang="en")
-        description = PlantLocationFinder().get_wikipedia_summary(wiki_title)
 
         buffer = BytesIO()
         rgb = image.convert("RGB")
         rgb.save(buffer, format="JPEG", quality=88)
         image_bytes = buffer.getvalue()
 
+        if is_reliable:
+            st.write(translate_text("2. Resolving taxonomic entity against Wikipedia & Wikidata...", lang_code))
+            wiki_title = get_wikipedia_title(label)
+            taxonomy = get_taxonomy_from_wikidata(wiki_title)
+
+            st.write(translate_text("3. Extracting pharmacological data & botanical encyclopedia summary...", lang_code))
+            medicinal = get_medicinal_uses_from_wikipedia(wiki_title, target_lang="en")
+            description = PlantLocationFinder().get_wikipedia_summary(wiki_title)
+        else:
+            wiki_title = label
+            taxonomy = {}
+            medicinal = None
+            description = ""
+
         disease_res = None
         if enable_disease_check:
             st.write(translate_text("4. Screening foliar health and agricultural disease pathologies...", lang_code))
             try:
+                disease_res = predict_disease(image, host_plant=label if is_reliable else None)
+                st.session_state.disease_result = disease_res
+                if disease_res.get("is_supported_crop", True) and disease_res.get("health_status") not in ("Unsupported", "Uncertain"):
+                    upsert_disease_diagnosis({
+                        "plant_name": disease_res["plant"],
+                        "disease_name": disease_res["disease_name"],
+                        "health_status": disease_res["health_status"],
+                        "confidence": disease_res["confidence"],
+                        "confidence_pct": disease_res["confidence_pct"],
+                        "pathogen": disease_res["pathogen"],
+                        "severity": disease_res["severity"],
+                        "symptoms": disease_res["symptoms"],
+                        "recommendations": disease_res["recommendations"],
+                        "image_bytes": image_bytes,
+                        "is_sighting": False,
+                    })
+            except TypeError:
+                # Backward compatibility before predict_disease accepts host_plant in Phase 4
                 disease_res = predict_disease(image)
                 st.session_state.disease_result = disease_res
-                upsert_disease_diagnosis({
-                    "plant_name": disease_res["plant"],
-                    "disease_name": disease_res["disease_name"],
-                    "health_status": disease_res["health_status"],
-                    "confidence": disease_res["confidence"],
-                    "confidence_pct": disease_res["confidence_pct"],
-                    "pathogen": disease_res["pathogen"],
-                    "severity": disease_res["severity"],
-                    "symptoms": disease_res["symptoms"],
-                    "recommendations": disease_res["recommendations"],
-                    "image_bytes": image_bytes,
-                    "is_sighting": False,
-                })
             except Exception as d_exc:
                 st.warning(f"Disease screening skipped: {d_exc}")
 
         result = {
-            "common_name": label,
-            "scientific_name": wiki_title,
+            "common_name": label if is_reliable else "Unidentified Plant",
+            "scientific_name": wiki_title if is_reliable else "Unverified",
+            "candidate_species": label,
             "score": float(score),
+            "confidence_tier": conf_tier,
+            "is_reliable": is_reliable,
+            "warning_message": plant_pred.get("warning_message", ""),
+            "top_candidates": plant_pred.get("top_candidates", []),
+            "model_name": plant_pred.get("model_name", "FloraSense"),
             "taxonomy": taxonomy,
             "medicinal": medicinal,
             "description": description,
@@ -218,8 +251,9 @@ if img_file and run_identify:
             "disease_diagnosis": disease_res,
         }
         st.session_state.ident_result = result
-        upsert_library_entry(result)
-        status.update(label=translate_text("Pipeline execution completed successfully!", lang_code), state="complete")
+        if is_reliable:
+            upsert_library_entry(result)
+        status.update(label=translate_text("Pipeline execution completed!", lang_code), state="complete")
 
 result = st.session_state.get("ident_result")
 if not result:
@@ -233,6 +267,32 @@ st.space("small")
 # SPECIMEN DOSSIER HERO CARD
 # ==============================================================================
 kicker(translate_text("Identification Analysis Result", lang_code), key="kicker-result")
+
+if not result.get("is_reliable", True):
+    st.error(translate_text(result.get("warning_message") or LOW_CONFIDENCE_PLANT_MESSAGE, lang_code))
+    with st.container(border=True):
+        c1, c2 = st.columns([0.85, 1.15], gap="large")
+        with c1:
+            st.image(result["image_bytes"], width="stretch")
+        with c2:
+            st.markdown(f":red-badge[Low Confidence — Top-1 Score: {result['score'] * 100:.2f}%]")
+            st.markdown(f"### {translate_text('Identification Rejected by Confidence Policy', lang_code)}")
+            st.markdown(
+                translate_text(
+                    "The model's confidence score fell below the minimum reliability threshold. "
+                    "To prevent false botanical identifications, no species headline is assigned.",
+                    lang_code,
+                )
+            )
+            cands = result.get("top_candidates", [])
+            if cands:
+                with st.expander("View raw low-confidence model candidates (diagnostic only)"):
+                    for c in cands:
+                        st.markdown(f"- *{c['species']}* — `{c['confidence_pct']:.2f}%`")
+    st.stop()
+
+if result.get("confidence_tier") == "medium" and result.get("warning_message"):
+    st.warning(translate_text(result["warning_message"], lang_code))
 
 with st.container(border=True):
     image_col, identity_col = st.columns([0.92, 1.08], gap="large", vertical_alignment="center")
@@ -248,12 +308,11 @@ with st.container(border=True):
 
     with identity_col:
         score_pct = result["score"] * 100
-        if score_pct >= 85:
+        tier = result.get("confidence_tier", "high")
+        if tier == "high":
             conf_badge = f":green-badge[Certainty: {score_pct:.1f}% — High Confidence]"
-        elif score_pct >= 60:
-            conf_badge = f":blue-badge[Certainty: {score_pct:.1f}% — Moderate Confidence]"
         else:
-            conf_badge = f":orange-badge[Certainty: {score_pct:.1f}% — Tentative Candidate]"
+            conf_badge = f":orange-badge[Certainty: {score_pct:.1f}% — Medium Confidence (Verify Traits)]"
 
         st.markdown(conf_badge)
 
@@ -261,6 +320,8 @@ with st.container(border=True):
         if dis_diag:
             if dis_diag["health_status"] == "Healthy":
                 st.markdown(f":green-badge[✓ {translate_text('Foliar Health: Healthy', lang_code)} ({dis_diag['confidence_pct']}%) ]")
+            elif dis_diag["health_status"] in ("Unsupported", "Uncertain"):
+                st.markdown(f":gray-badge[ℹ {translate_text(dis_diag.get('disease_name', 'Disease classification not available'), lang_code)}]")
             else:
                 st.markdown(f":red-badge[⚠ {translate_text('Pathology Detected', lang_code)}: {translate_text(dis_diag['disease_name'], lang_code)} ({dis_diag['confidence_pct']}%) ]")
 
@@ -273,7 +334,7 @@ with st.container(border=True):
             st.metric(
                 label=translate_text("Species Confidence", lang_code),
                 value=f"{score_pct:.1f}%",
-                help="Softmax probability output by the FloraSense classification model.",
+                help="Softmax probability output by the plant classification model.",
             )
         with stat_col2:
             if dis_diag:
@@ -285,8 +346,8 @@ with st.container(border=True):
             else:
                 st.metric(
                     label=translate_text("Model Architecture", lang_code),
-                    value="FloraSense",
-                    help="Deep convolutional image classification pipeline hosted on Hugging Face.",
+                    value=str(result.get("model_name", "FloraSense")).split("/")[-1],
+                    help="Plant image classification model.",
                 )
 
         st.space("small")

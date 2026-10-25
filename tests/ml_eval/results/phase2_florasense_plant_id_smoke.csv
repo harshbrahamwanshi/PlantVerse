@@ -1,0 +1,21 @@
+dataset,image,predicted_plant,confidence,expected_plant,correct
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),hero.jpg,Adiantum pedatum,0.2954,Adiantum pedatum,True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),ginkgo.jpg,Abies alba,0.0009,Ginkgo biloba,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),fern-plate.jpg,Phegopteris connectilis,0.0198,Fern (Polypodiopsida),True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),tomato_early_blight.jpg,Valerianella locusta,0.0007,Tomato (Solanum lycopersicum),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),apple_scab.jpg,Malus domestica,0.0006,Apple (Malus domestica),True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),healthy_tomato.jpg,Populus canescens,0.0137,Tomato (Solanum lycopersicum),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),healthy_apple.jpg,Salix lasiolepis,0.0014,Apple (Malus domestica),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),hibiscus.jpg,Hibiscus rosa,0.0166,Hibiscus (Hibiscus rosa-sinensis),True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),tulsi.jpg,Ocimum americanum,0.0139,Tulsi (Ocimum tenuiflorum),True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),neem.jpg,Agonis flexuosa,0.0008,Neem (Azadirachta indica),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),peepal.jpg,Populus tremuloides,0.0255,Peepal (Ficus religiosa),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),money_plant.jpg,Piper hispidum,0.0008,Money plant (Epipremnum aureum),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),curry_leaf.jpg,Quercus pyrenaica,0.0006,Curry leaf (Bergera koenigii),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),snake_plant.jpg,Sansevieria metallica,0.1129,Snake plant (Dracaena trifasciata),True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),croton.jpg,Codiaeum variegatum,0.2212,Croton (Codiaeum variegatum),True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),rose_black_spot.jpg,Rosa moschata,0.0008,Rose (Rosa),True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),rose_powdery_mildew.jpg,Rosa glauca,0.0006,Rose (Rosa),True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),late_blight.jpg,Solanum lycopersicum,0.0116,Tomato (Solanum lycopersicum),True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),corn_rust.jpg,Hordeum vulgare,0.0022,Corn (Maize) (Zea mays),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),Potato_Late_blight_5305.jpg,Solanum torvum,0.0009,Potato (Solanum tuberosum),False

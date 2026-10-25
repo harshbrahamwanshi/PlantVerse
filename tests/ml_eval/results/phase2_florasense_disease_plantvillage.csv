@@ -1,0 +1,77 @@
+dataset,image,predicted_disease,confidence,expected_disease,correct
+Dataset-Image Set (PlantVillage Held-Out Test Split),Apple_healthy_614.jpg,Healthy Apple,0.997,Healthy Apple,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Blueberry_healthy_791.jpg,Healthy Blueberry Plant,1.0,Healthy Blueberry Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Cherry_including_sour_Powdery_mildew_950.jpg,Cherry with Powdery Mildew,0.9999,Cherry with Powdery Mildew,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Cherry_including_sour_healthy_1186.jpg,Healthy Cherry Plant,1.0,Healthy Cherry Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Corn_maize_Common_rust__1542.jpg,Corn (Maize) with Common Rust,0.9993,Corn (Maize) with Common Rust,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Grape_Esca_Black_Measles__2471.jpg,Grape with Esca (Black Measles),0.9985,Grape with Esca (Black Measles),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Orange_Haunglongbing_Citrus_greening__3517.jpg,Orange with Citrus Greening,0.9999,Orange with Citrus Greening,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Potato_Late_blight_5305.jpg,Tomato with Late Blight,0.994,Potato with Late Blight,False
+Dataset-Image Set (PlantVillage Held-Out Test Split),Soybean_healthy_5991.jpg,Healthy Soybean Plant,0.9839,Healthy Soybean Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Soybean_healthy_6468.jpg,Healthy Soybean Plant,0.999,Healthy Soybean Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Tomato_Leaf_Mold_8313.jpg,Tomato with Leaf Mold,0.9895,Tomato with Leaf Mold,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Tomato_Spider_mites_Two_spotted_spider_mite_8779.jpg,Tomato with Spider Mites or Two-spotted Spider Mite,0.9937,Tomato with Spider Mites or Two-spotted Spider Mite,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Tomato_Tomato_Yellow_Leaf_Curl_Virus_9548.jpg,Tomato Yellow Leaf Curl Virus,0.9999,Tomato Yellow Leaf Curl Virus,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Tomato_healthy_10664.jpg,Healthy Tomato Plant,0.9998,Healthy Tomato Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2280.jpg,Grape with Black Rot,0.9972,Grape with Black Rot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2281.jpg,Grape with Black Rot,0.9992,Grape with Black Rot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2282.jpg,Grape with Black Rot,0.9939,Grape with Black Rot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2283.jpg,Grape with Black Rot,0.998,Grape with Black Rot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2284.jpg,Grape with Black Rot,0.9999,Grape with Black Rot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_510.jpg,Healthy Apple,0.9949,Healthy Apple,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_511.jpg,Healthy Apple,0.9941,Healthy Apple,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_512.jpg,Healthy Apple,0.7086,Healthy Apple,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_513.jpg,Healthy Apple,0.9971,Healthy Apple,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_514.jpg,Healthy Apple,0.9386,Healthy Apple,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5630.jpg,Healthy Soybean Plant,0.9993,Healthy Soybean Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5631.jpg,Healthy Soybean Plant,0.9996,Healthy Soybean Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5632.jpg,Healthy Soybean Plant,0.9998,Healthy Soybean Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5633.jpg,Healthy Soybean Plant,0.9999,Healthy Soybean Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5634.jpg,Healthy Soybean Plant,0.9183,Healthy Soybean Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5015.jpg,Healthy Bell Pepper Plant,0.9997,Healthy Bell Pepper Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5016.jpg,Healthy Bell Pepper Plant,0.999,Healthy Bell Pepper Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5017.jpg,Healthy Bell Pepper Plant,0.9853,Healthy Bell Pepper Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5018.jpg,Healthy Bell Pepper Plant,0.9987,Healthy Bell Pepper Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5019.jpg,Healthy Bell Pepper Plant,0.9996,Healthy Bell Pepper Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_4570.jpg,Bell Pepper with Bacterial Spot,0.9957,Bell Pepper with Bacterial Spot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_4571.jpg,Bell Pepper with Bacterial Spot,0.9919,Bell Pepper with Bacterial Spot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_4572.jpg,Bell Pepper with Bacterial Spot,0.9983,Bell Pepper with Bacterial Spot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_4573.jpg,Bell Pepper with Bacterial Spot,0.9999,Bell Pepper with Bacterial Spot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_4574.jpg,Bell Pepper with Bacterial Spot,0.9322,Bell Pepper with Bacterial Spot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2855.jpg,Healthy Grape Plant,0.9988,Healthy Grape Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2856.jpg,Healthy Grape Plant,0.9991,Healthy Grape Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2857.jpg,Healthy Grape Plant,0.9991,Healthy Grape Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2858.jpg,Healthy Grape Plant,0.9976,Healthy Grape Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2859.jpg,Healthy Grape Plant,0.9969,Healthy Grape Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2095.jpg,Grape with Black Rot,0.9939,Grape with Black Rot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2096.jpg,Grape with Black Rot,0.9886,Grape with Black Rot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2097.jpg,Grape with Black Rot,0.8539,Grape with Black Rot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2098.jpg,Grape with Black Rot,0.997,Grape with Black Rot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2099.jpg,Grape with Black Rot,0.9962,Grape with Black Rot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1780.jpg,Corn (Maize) with Northern Leaf Blight,0.7218,Corn (Maize) with Northern Leaf Blight,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1781.jpg,Corn (Maize) with Northern Leaf Blight,0.9016,Corn (Maize) with Northern Leaf Blight,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1782.jpg,Corn (Maize) with Northern Leaf Blight,0.9956,Corn (Maize) with Northern Leaf Blight,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1783.jpg,Corn (Maize) with Northern Leaf Blight,0.9964,Corn (Maize) with Northern Leaf Blight,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1784.jpg,Corn (Maize) with Northern Leaf Blight,0.9999,Corn (Maize) with Northern Leaf Blight,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_8640.jpg,Tomato with Septoria Leaf Spot,0.7025,Tomato with Septoria Leaf Spot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_8641.jpg,Tomato with Late Blight,0.9868,Tomato with Septoria Leaf Spot,False
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_8642.jpg,Tomato with Septoria Leaf Spot,0.9659,Tomato with Septoria Leaf Spot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_8643.jpg,Tomato with Septoria Leaf Spot,0.9871,Tomato with Septoria Leaf Spot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_8644.jpg,Tomato with Septoria Leaf Spot,0.9373,Tomato with Septoria Leaf Spot,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_650.jpg,Healthy Blueberry Plant,0.9997,Healthy Blueberry Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_651.jpg,Healthy Blueberry Plant,0.9997,Healthy Blueberry Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_652.jpg,Healthy Blueberry Plant,0.9999,Healthy Blueberry Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_653.jpg,Healthy Blueberry Plant,0.9997,Healthy Blueberry Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_654.jpg,Healthy Blueberry Plant,0.9985,Healthy Blueberry Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_610.jpg,Healthy Apple,0.9662,Healthy Apple,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_611.jpg,Healthy Apple,0.9997,Healthy Apple,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_612.jpg,Healthy Apple,0.9874,Healthy Apple,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_613.jpg,Healthy Apple,0.8391,Healthy Apple,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_614.jpg,Healthy Apple,0.9978,Healthy Apple,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1915.jpg,Healthy Corn (Maize) Plant,1.0,Healthy Corn (Maize) Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1916.jpg,Healthy Corn (Maize) Plant,0.9996,Healthy Corn (Maize) Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1917.jpg,Healthy Corn (Maize) Plant,0.9999,Healthy Corn (Maize) Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1918.jpg,Healthy Corn (Maize) Plant,0.9999,Healthy Corn (Maize) Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1919.jpg,Healthy Corn (Maize) Plant,0.9986,Healthy Corn (Maize) Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_4475.jpg,Healthy Peach Plant,0.999,Healthy Peach Plant,True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_4476.jpg,Healthy Peach Plant,0.9948,Healthy Peach Plant,True

@@ -1,0 +1,957 @@
+{
+  "tag": "phase2_florasense",
+  "real_phone_camera_accuracy": "NOT MEASURED (no user images provided)",
+  "plant_id": {
+    "inat_field_species": {
+      "dataset": "Public Field Species Set (iNaturalist CC0/CC-BY, 15 species)",
+      "total": 45,
+      "correct": 19,
+      "accuracy": 0.4222222222222222,
+      "correct_conf_mean": 0.02112296975438336,
+      "incorrect_conf_mean": 0.0055687061853509825,
+      "per_class": {
+        "Tulsi (Holy basil)": {
+          "correct": 2,
+          "total": 3,
+          "acc": 0.6666666666666666
+        },
+        "Neem": {
+          "correct": 2,
+          "total": 3,
+          "acc": 0.6666666666666666
+        },
+        "Peepal (Sacred fig)": {
+          "correct": 1,
+          "total": 3,
+          "acc": 0.3333333333333333
+        },
+        "Curry leaf": {
+          "correct": 1,
+          "total": 3,
+          "acc": 0.3333333333333333
+        },
+        "Hibiscus (Gudhal)": {
+          "correct": 3,
+          "total": 3,
+          "acc": 1.0
+        },
+        "Money plant (Pothos)": {
+          "correct": 1,
+          "total": 3,
+          "acc": 0.3333333333333333
+        },
+        "Banyan": {
+          "correct": 1,
+          "total": 3,
+          "acc": 0.3333333333333333
+        },
+        "Rose": {
+          "correct": 1,
+          "total": 3,
+          "acc": 0.3333333333333333
+        },
+        "Aloe vera": {
+          "correct": 2,
+          "total": 3,
+          "acc": 0.6666666666666666
+        },
+        "Mango": {
+          "correct": 3,
+          "total": 3,
+          "acc": 1.0
+        },
+        "Snake plant": {
+          "correct": 1,
+          "total": 3,
+          "acc": 0.3333333333333333
+        },
+        "Croton": {
+          "correct": 0,
+          "total": 3,
+          "acc": 0.0
+        },
+        "Tomato": {
+          "correct": 0,
+          "total": 3,
+          "acc": 0.0
+        },
+        "Apple": {
+          "correct": 1,
+          "total": 3,
+          "acc": 0.3333333333333333
+        },
+        "Potato": {
+          "correct": 0,
+          "total": 3,
+          "acc": 0.0
+        }
+      },
+      "top_confusions": [
+        {
+          "expected": "Tulsi (Holy basil)",
+          "predicted": "Ballota acetabulosa",
+          "count": 1
+        },
+        {
+          "expected": "Neem",
+          "predicted": "Ekebergia capensis",
+          "count": 1
+        },
+        {
+          "expected": "Peepal (Sacred fig)",
+          "predicted": "Oenothera suaveolens",
+          "count": 1
+        },
+        {
+          "expected": "Peepal (Sacred fig)",
+          "predicted": "Avicennia marina",
+          "count": 1
+        },
+        {
+          "expected": "Curry leaf",
+          "predicted": "Toxicodendron vernix",
+          "count": 1
+        },
+        {
+          "expected": "Curry leaf",
+          "predicted": "Astragalus sesameus",
+          "count": 1
+        },
+        {
+          "expected": "Money plant (Pothos)",
+          "predicted": "Piper hispidum",
+          "count": 1
+        },
+        {
+          "expected": "Money plant (Pothos)",
+          "predicted": "Philodendron panduriforme",
+          "count": 1
+        },
+        {
+          "expected": "Banyan",
+          "predicted": "Eugenia uniflora",
+          "count": 1
+        },
+        {
+          "expected": "Banyan",
+          "predicted": "Rhododendron indicum",
+          "count": 1
+        }
+      ]
+    },
+    "plantdoc_field_crops": {
+      "dataset": "Public Field Crops Set (PlantDoc Test Split)",
+      "total": 236,
+      "correct": 49,
+      "accuracy": 0.2076271186440678,
+      "correct_conf_mean": 0.0038968861929844227,
+      "incorrect_conf_mean": 0.002024785443837879,
+      "per_class": {
+        "Apple": {
+          "correct": 3,
+          "total": 29,
+          "acc": 0.10344827586206896
+        },
+        "Bell Pepper": {
+          "correct": 6,
+          "total": 17,
+          "acc": 0.35294117647058826
+        },
+        "Blueberry": {
+          "correct": 1,
+          "total": 11,
+          "acc": 0.09090909090909091
+        },
+        "Cherry": {
+          "correct": 1,
+          "total": 10,
+          "acc": 0.1
+        },
+        "Corn (Maize)": {
+          "correct": 3,
+          "total": 26,
+          "acc": 0.11538461538461539
+        },
+        "Peach": {
+          "correct": 0,
+          "total": 9,
+          "acc": 0.0
+        },
+        "Potato": {
+          "correct": 0,
+          "total": 16,
+          "acc": 0.0
+        },
+        "Raspberry": {
+          "correct": 1,
+          "total": 7,
+          "acc": 0.14285714285714285
+        },
+        "Soybean": {
+          "correct": 2,
+          "total": 8,
+          "acc": 0.25
+        },
+        "Squash": {
+          "correct": 4,
+          "total": 6,
+          "acc": 0.6666666666666666
+        },
+        "Strawberry": {
+          "correct": 4,
+          "total": 8,
+          "acc": 0.5
+        },
+        "Tomato": {
+          "correct": 10,
+          "total": 69,
+          "acc": 0.14492753623188406
+        },
+        "Grape": {
+          "correct": 14,
+          "total": 20,
+          "acc": 0.7
+        }
+      },
+      "top_confusions": [
+        {
+          "expected": "Corn (Maize)",
+          "predicted": "Sorghum arundinaceum",
+          "count": 12
+        },
+        {
+          "expected": "Tomato",
+          "predicted": "Sorghum arundinaceum",
+          "count": 11
+        },
+        {
+          "expected": "Apple",
+          "predicted": "Lysimachia quadrifolia",
+          "count": 7
+        },
+        {
+          "expected": "Potato",
+          "predicted": "Solanum bonariense",
+          "count": 7
+        },
+        {
+          "expected": "Tomato",
+          "predicted": "Solanum bonariense",
+          "count": 7
+        },
+        {
+          "expected": "Corn (Maize)",
+          "predicted": "Hordeum vulgare",
+          "count": 5
+        },
+        {
+          "expected": "Strawberry",
+          "predicted": "Duchesnea indica",
+          "count": 4
+        },
+        {
+          "expected": "Tomato",
+          "predicted": "Chrozophora tinctoria",
+          "count": 4
+        },
+        {
+          "expected": "Apple",
+          "predicted": "Sorghum arundinaceum",
+          "count": 3
+        },
+        {
+          "expected": "Tomato",
+          "predicted": "Solanum pimpinellifolium",
+          "count": 3
+        }
+      ]
+    },
+    "plantvillage_studio": {
+      "dataset": "Dataset-Image Set (PlantVillage Held-Out Test Split)",
+      "total": 76,
+      "correct": 15,
+      "accuracy": 0.19736842105263158,
+      "correct_conf_mean": 0.0014189281423265736,
+      "incorrect_conf_mean": 0.002004167083631743,
+      "per_class": {
+        "Apple": {
+          "correct": 6,
+          "total": 11,
+          "acc": 0.5454545454545454
+        },
+        "Blueberry": {
+          "correct": 0,
+          "total": 6,
+          "acc": 0.0
+        },
+        "Cherry": {
+          "correct": 0,
+          "total": 2,
+          "acc": 0.0
+        },
+        "Corn (Maize)": {
+          "correct": 1,
+          "total": 11,
+          "acc": 0.09090909090909091
+        },
+        "Grape": {
+          "correct": 7,
+          "total": 16,
+          "acc": 0.4375
+        },
+        "Orange / Citrus": {
+          "correct": 0,
+          "total": 1,
+          "acc": 0.0
+        },
+        "Potato": {
+          "correct": 0,
+          "total": 1,
+          "acc": 0.0
+        },
+        "Soybean": {
+          "correct": 1,
+          "total": 7,
+          "acc": 0.14285714285714285
+        },
+        "Tomato": {
+          "correct": 0,
+          "total": 9,
+          "acc": 0.0
+        },
+        "Bell Pepper": {
+          "correct": 0,
+          "total": 10,
+          "acc": 0.0
+        },
+        "Peach": {
+          "correct": 0,
+          "total": 2,
+          "acc": 0.0
+        }
+      },
+      "top_confusions": [
+        {
+          "expected": "Corn (Maize)",
+          "predicted": "Sorghum arundinaceum",
+          "count": 4
+        },
+        {
+          "expected": "Grape",
+          "predicted": "Valerianella locusta",
+          "count": 3
+        },
+        {
+          "expected": "Bell Pepper",
+          "predicted": "Rumex hydrolapathum",
+          "count": 2
+        },
+        {
+          "expected": "Tomato",
+          "predicted": "Sorghum arundinaceum",
+          "count": 2
+        },
+        {
+          "expected": "Apple",
+          "predicted": "Helianthus divaricatus",
+          "count": 1
+        },
+        {
+          "expected": "Blueberry",
+          "predicted": "Xylopia crinita",
+          "count": 1
+        },
+        {
+          "expected": "Cherry",
+          "predicted": "Alocasia scalprum",
+          "count": 1
+        },
+        {
+          "expected": "Cherry",
+          "predicted": "Boehmeria nivea",
+          "count": 1
+        },
+        {
+          "expected": "Orange / Citrus",
+          "predicted": "Eugenia uniflora",
+          "count": 1
+        },
+        {
+          "expected": "Potato",
+          "predicted": "Solanum torvum",
+          "count": 1
+        }
+      ]
+    },
+    "smoke_test": {
+      "dataset": "UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames)",
+      "total": 20,
+      "correct": 10,
+      "accuracy": null,
+      "correct_conf_mean": 0.06933072117972187,
+      "incorrect_conf_mean": 0.004743914038408547,
+      "per_class": {
+        "Adiantum pedatum": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Ginkgo biloba": {
+          "correct": 0,
+          "total": 1,
+          "acc": 0.0
+        },
+        "Fern": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Tomato": {
+          "correct": 1,
+          "total": 3,
+          "acc": 0.3333333333333333
+        },
+        "Apple": {
+          "correct": 1,
+          "total": 2,
+          "acc": 0.5
+        },
+        "Hibiscus": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Tulsi": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Neem": {
+          "correct": 0,
+          "total": 1,
+          "acc": 0.0
+        },
+        "Peepal": {
+          "correct": 0,
+          "total": 1,
+          "acc": 0.0
+        },
+        "Money plant": {
+          "correct": 0,
+          "total": 1,
+          "acc": 0.0
+        },
+        "Curry leaf": {
+          "correct": 0,
+          "total": 1,
+          "acc": 0.0
+        },
+        "Snake plant": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Croton": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Rose": {
+          "correct": 2,
+          "total": 2,
+          "acc": 1.0
+        },
+        "Corn (Maize)": {
+          "correct": 0,
+          "total": 1,
+          "acc": 0.0
+        },
+        "Potato": {
+          "correct": 0,
+          "total": 1,
+          "acc": 0.0
+        }
+      },
+      "top_confusions": [
+        {
+          "expected": "Ginkgo biloba",
+          "predicted": "Abies alba",
+          "count": 1
+        },
+        {
+          "expected": "Tomato",
+          "predicted": "Valerianella locusta",
+          "count": 1
+        },
+        {
+          "expected": "Tomato",
+          "predicted": "Populus canescens",
+          "count": 1
+        },
+        {
+          "expected": "Apple",
+          "predicted": "Salix lasiolepis",
+          "count": 1
+        },
+        {
+          "expected": "Neem",
+          "predicted": "Agonis flexuosa",
+          "count": 1
+        },
+        {
+          "expected": "Peepal",
+          "predicted": "Populus tremuloides",
+          "count": 1
+        },
+        {
+          "expected": "Money plant",
+          "predicted": "Piper hispidum",
+          "count": 1
+        },
+        {
+          "expected": "Curry leaf",
+          "predicted": "Quercus pyrenaica",
+          "count": 1
+        },
+        {
+          "expected": "Corn (Maize)",
+          "predicted": "Hordeum vulgare",
+          "count": 1
+        },
+        {
+          "expected": "Potato",
+          "predicted": "Solanum torvum",
+          "count": 1
+        }
+      ]
+    }
+  },
+  "disease": {
+    "plantvillage_studio": {
+      "dataset": "Dataset-Image Set (PlantVillage Held-Out Test Split)",
+      "total": 76,
+      "correct": 74,
+      "accuracy": 0.9736842105263158,
+      "correct_conf_mean": 0.9757771008723491,
+      "incorrect_conf_mean": 0.9903711378574371,
+      "per_class": {
+        "Healthy Apple": {
+          "correct": 11,
+          "total": 11,
+          "acc": 1.0
+        },
+        "Healthy Blueberry Plant": {
+          "correct": 6,
+          "total": 6,
+          "acc": 1.0
+        },
+        "Cherry with Powdery Mildew": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Healthy Cherry Plant": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Corn (Maize) with Common Rust": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Grape with Esca (Black Measles)": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Orange with Citrus Greening": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Potato with Late Blight": {
+          "correct": 0,
+          "total": 1,
+          "acc": 0.0
+        },
+        "Healthy Soybean Plant": {
+          "correct": 7,
+          "total": 7,
+          "acc": 1.0
+        },
+        "Tomato with Leaf Mold": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Tomato with Spider Mites or Two-spotted Spider Mite": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Tomato Yellow Leaf Curl Virus": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Healthy Tomato Plant": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Grape with Black Rot": {
+          "correct": 10,
+          "total": 10,
+          "acc": 1.0
+        },
+        "Healthy Bell Pepper Plant": {
+          "correct": 5,
+          "total": 5,
+          "acc": 1.0
+        },
+        "Bell Pepper with Bacterial Spot": {
+          "correct": 5,
+          "total": 5,
+          "acc": 1.0
+        },
+        "Healthy Grape Plant": {
+          "correct": 5,
+          "total": 5,
+          "acc": 1.0
+        },
+        "Corn (Maize) with Northern Leaf Blight": {
+          "correct": 5,
+          "total": 5,
+          "acc": 1.0
+        },
+        "Tomato with Septoria Leaf Spot": {
+          "correct": 4,
+          "total": 5,
+          "acc": 0.8
+        },
+        "Healthy Corn (Maize) Plant": {
+          "correct": 5,
+          "total": 5,
+          "acc": 1.0
+        },
+        "Healthy Peach Plant": {
+          "correct": 2,
+          "total": 2,
+          "acc": 1.0
+        }
+      },
+      "top_confusions": [
+        {
+          "expected": "Potato with Late Blight",
+          "predicted": "Tomato with Late Blight",
+          "count": 1
+        },
+        {
+          "expected": "Tomato with Septoria Leaf Spot",
+          "predicted": "Tomato with Late Blight",
+          "count": 1
+        }
+      ]
+    },
+    "plantdoc_field": {
+      "dataset": "Public Field-Photo Set (PlantDoc Test Split, 236 images)",
+      "total": 236,
+      "correct": 76,
+      "accuracy": 0.3220338983050847,
+      "correct_conf_mean": 0.7226073992879767,
+      "incorrect_conf_mean": 0.5729759619571269,
+      "per_class": {
+        "Apple Scab": {
+          "correct": 5,
+          "total": 10,
+          "acc": 0.5
+        },
+        "Healthy Apple": {
+          "correct": 2,
+          "total": 9,
+          "acc": 0.2222222222222222
+        },
+        "Cedar Apple Rust": {
+          "correct": 2,
+          "total": 10,
+          "acc": 0.2
+        },
+        "Healthy Bell Pepper Plant": {
+          "correct": 3,
+          "total": 8,
+          "acc": 0.375
+        },
+        "Bell Pepper with Bacterial Spot": {
+          "correct": 5,
+          "total": 9,
+          "acc": 0.5555555555555556
+        },
+        "Healthy Blueberry Plant": {
+          "correct": 5,
+          "total": 11,
+          "acc": 0.45454545454545453
+        },
+        "Healthy Cherry Plant": {
+          "correct": 0,
+          "total": 10,
+          "acc": 0.0
+        },
+        "Corn (Maize) with Cercospora and Gray Leaf Spot": {
+          "correct": 3,
+          "total": 4,
+          "acc": 0.75
+        },
+        "Corn (Maize) with Northern Leaf Blight": {
+          "correct": 2,
+          "total": 12,
+          "acc": 0.16666666666666666
+        },
+        "Corn (Maize) with Common Rust": {
+          "correct": 4,
+          "total": 10,
+          "acc": 0.4
+        },
+        "Healthy Peach Plant": {
+          "correct": 1,
+          "total": 9,
+          "acc": 0.1111111111111111
+        },
+        "Potato with Early Blight": {
+          "correct": 2,
+          "total": 8,
+          "acc": 0.25
+        },
+        "Potato with Late Blight": {
+          "correct": 1,
+          "total": 8,
+          "acc": 0.125
+        },
+        "Healthy Raspberry Plant": {
+          "correct": 6,
+          "total": 7,
+          "acc": 0.8571428571428571
+        },
+        "Healthy Soybean Plant": {
+          "correct": 0,
+          "total": 8,
+          "acc": 0.0
+        },
+        "Squash with Powdery Mildew": {
+          "correct": 4,
+          "total": 6,
+          "acc": 0.6666666666666666
+        },
+        "Healthy Strawberry Plant": {
+          "correct": 3,
+          "total": 8,
+          "acc": 0.375
+        },
+        "Tomato with Early Blight": {
+          "correct": 4,
+          "total": 9,
+          "acc": 0.4444444444444444
+        },
+        "Tomato with Septoria Leaf Spot": {
+          "correct": 8,
+          "total": 11,
+          "acc": 0.7272727272727273
+        },
+        "Healthy Tomato Plant": {
+          "correct": 0,
+          "total": 8,
+          "acc": 0.0
+        },
+        "Tomato with Bacterial Spot": {
+          "correct": 0,
+          "total": 9,
+          "acc": 0.0
+        },
+        "Tomato with Late Blight": {
+          "correct": 4,
+          "total": 10,
+          "acc": 0.4
+        },
+        "Tomato Mosaic Virus": {
+          "correct": 0,
+          "total": 10,
+          "acc": 0.0
+        },
+        "Tomato Yellow Leaf Curl Virus": {
+          "correct": 0,
+          "total": 6,
+          "acc": 0.0
+        },
+        "Tomato with Leaf Mold": {
+          "correct": 1,
+          "total": 6,
+          "acc": 0.16666666666666666
+        },
+        "Healthy Grape Plant": {
+          "correct": 8,
+          "total": 12,
+          "acc": 0.6666666666666666
+        },
+        "Grape with Black Rot": {
+          "correct": 3,
+          "total": 8,
+          "acc": 0.375
+        }
+      },
+      "top_confusions": [
+        {
+          "expected": "Corn (Maize) with Northern Leaf Blight",
+          "predicted": "Corn (Maize) with Cercospora and Gray Leaf Spot",
+          "count": 7
+        },
+        {
+          "expected": "Healthy Peach Plant",
+          "predicted": "Healthy Blueberry Plant",
+          "count": 6
+        },
+        {
+          "expected": "Healthy Soybean Plant",
+          "predicted": "Healthy Blueberry Plant",
+          "count": 6
+        },
+        {
+          "expected": "Healthy Apple",
+          "predicted": "Healthy Blueberry Plant",
+          "count": 4
+        },
+        {
+          "expected": "Corn (Maize) with Common Rust",
+          "predicted": "Corn (Maize) with Cercospora and Gray Leaf Spot",
+          "count": 4
+        },
+        {
+          "expected": "Potato with Late Blight",
+          "predicted": "Tomato with Late Blight",
+          "count": 4
+        },
+        {
+          "expected": "Cedar Apple Rust",
+          "predicted": "Apple Scab",
+          "count": 3
+        },
+        {
+          "expected": "Healthy Cherry Plant",
+          "predicted": "Healthy Blueberry Plant",
+          "count": 3
+        },
+        {
+          "expected": "Healthy Cherry Plant",
+          "predicted": "Healthy Apple",
+          "count": 3
+        },
+        {
+          "expected": "Tomato with Early Blight",
+          "predicted": "Tomato with Septoria Leaf Spot",
+          "count": 3
+        }
+      ]
+    },
+    "smoke_test": {
+      "dataset": "UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames)",
+      "total": 20,
+      "correct": 3,
+      "accuracy": null,
+      "correct_conf_mean": 0.9184525609016418,
+      "incorrect_conf_mean": 0.6327118926188525,
+      "per_class": {
+        "UNSUPPORTED_NON_CROP": {
+          "correct": 0,
+          "total": 13,
+          "acc": 0.0
+        },
+        "Tomato with Early Blight": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Apple Scab": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Healthy Tomato Plant": {
+          "correct": 1,
+          "total": 1,
+          "acc": 1.0
+        },
+        "Healthy Apple": {
+          "correct": 0,
+          "total": 1,
+          "acc": 0.0
+        },
+        "Tomato with Late Blight": {
+          "correct": 0,
+          "total": 1,
+          "acc": 0.0
+        },
+        "Corn (Maize) with Common Rust": {
+          "correct": 0,
+          "total": 1,
+          "acc": 0.0
+        },
+        "Potato with Late Blight": {
+          "correct": 0,
+          "total": 1,
+          "acc": 0.0
+        }
+      },
+      "top_confusions": [
+        {
+          "expected": "UNSUPPORTED_NON_CROP",
+          "predicted": "Grape with Black Rot",
+          "count": 4
+        },
+        {
+          "expected": "UNSUPPORTED_NON_CROP",
+          "predicted": "Healthy Raspberry Plant",
+          "count": 2
+        },
+        {
+          "expected": "UNSUPPORTED_NON_CROP",
+          "predicted": "Squash with Powdery Mildew",
+          "count": 2
+        },
+        {
+          "expected": "UNSUPPORTED_NON_CROP",
+          "predicted": "Tomato with Late Blight",
+          "count": 2
+        },
+        {
+          "expected": "Healthy Apple",
+          "predicted": "Healthy Blueberry Plant",
+          "count": 1
+        },
+        {
+          "expected": "UNSUPPORTED_NON_CROP",
+          "predicted": "Healthy Strawberry Plant",
+          "count": 1
+        },
+        {
+          "expected": "UNSUPPORTED_NON_CROP",
+          "predicted": "Grape with Esca (Black Measles)",
+          "count": 1
+        },
+        {
+          "expected": "UNSUPPORTED_NON_CROP",
+          "predicted": "Apple Scab",
+          "count": 1
+        },
+        {
+          "expected": "Tomato with Late Blight",
+          "predicted": "Tomato with Early Blight",
+          "count": 1
+        },
+        {
+          "expected": "Corn (Maize) with Common Rust",
+          "predicted": "Corn (Maize) with Northern Leaf Blight",
+          "count": 1
+        }
+      ]
+    }
+  }
+}
