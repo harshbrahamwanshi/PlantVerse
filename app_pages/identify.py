@@ -539,6 +539,9 @@ with tab_path:
             if gc.get("available"):
                 st.space("small")
                 st.markdown(f"##### :material/neurology: {translate_text('7-Class General Foliar Condition & Care Assessment', lang_code)}")
+                gc_cond_name = gc.get("condition_name", "")
+                if gc.get("is_healthy") or gc_cond_name in ("", "Unknown Condition", "Healthy", "healthy"):
+                    gc_cond_name = "Healthy Foliage" if gc.get("is_healthy") else (gc_cond_name or "Foliar Condition")
                 with st.container(border=True):
                     definition_row(
                         translate_text("Foliar Health Status", lang_code),
@@ -547,7 +550,7 @@ with tab_path:
                     )
                     definition_row(
                         translate_text("General Condition (7-Class Head)", lang_code),
-                        f"**{translate_text(gc['condition_name'], lang_code)}** ({gc['confidence_pct']}%)",
+                        f"**{translate_text(gc_cond_name, lang_code)}** ({gc['confidence_pct']}%)",
                         key="id-gc-cond",
                     )
                     definition_row(

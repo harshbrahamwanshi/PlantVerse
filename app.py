@@ -11,24 +11,23 @@ st.set_page_config(
 )
 
 import ml_config
-if not hasattr(ml_config, "load_conditions_metadata"):
-    importlib.reload(ml_config)
-
 import vision_analysis
 import disease_recommendations
 import ui.feedback
-importlib.reload(vision_analysis)
-importlib.reload(disease_recommendations)
-importlib.reload(ui.feedback)
-
 import plant_identification
-if not hasattr(plant_identification, "predict_species_detailed"):
-    importlib.reload(plant_identification)
-
 import plant_disease_detection
-if not hasattr(plant_disease_detection, "_build_general_condition_diagnosis"):
+
+if getattr(plant_disease_detection, "_PIPELINE_VERSION", None) != "v4_healthy_foliage_fix":
+    importlib.reload(ml_config)
+    importlib.reload(vision_analysis)
+    importlib.reload(disease_recommendations)
+    importlib.reload(ui.feedback)
     importlib.reload(plant_identification)
     importlib.reload(plant_disease_detection)
+    try:
+        plant_identification.load_onnx_plant_classifier.clear()
+    except Exception:
+        pass
 
 import ar_location_plant_map
 import ui.presentation

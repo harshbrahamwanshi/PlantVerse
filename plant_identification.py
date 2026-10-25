@@ -477,8 +477,8 @@ def predict_species_detailed(
     session = bundle["session"]
     species_list: List[str] = bundle["species"]
     conditions_list: List[str] = bundle["conditions"]
-    plants_meta: Dict[str, Dict[str, Any]] = bundle["plants_meta"]
-    conditions_meta: Dict[str, Dict[str, Any]] = bundle.get("conditions_meta", {})
+    plants_meta: Dict[str, Dict[str, Any]] = load_plants_metadata() or bundle["plants_meta"]
+    conditions_meta: Dict[str, Dict[str, Any]] = load_conditions_metadata()
 
     inp_full = preprocess_for_onnx_plant(
         img,
@@ -561,13 +561,17 @@ def predict_species_detailed(
         c_id = conditions_list[int(i)]
         c_meta = conditions_meta.get(c_id, {})
         c_score = float(p_condition[int(i)])
+        raw_c_name = c_meta.get("disease") or c_id.replace("_", " ").title()
+        c_name = "Healthy Foliage" if c_id == "healthy" else raw_c_name
+        raw_c_type = c_meta.get("type", "")
+        c_type = "Healthy Physiology" if (c_id == "healthy" or raw_c_type in ("", "None")) else raw_c_type
         condition_predictions.append(
             {
                 "id": c_id,
-                "name": c_meta.get("disease", c_id.replace("_", " ").capitalize()),
-                "type": c_meta.get("type", "General foliar condition"),
-                "pathogen": c_meta.get("pathogen", "N/A"),
-                "urgency": c_meta.get("urgency", "medium"),
+                "name": c_name,
+                "type": c_type,
+                "pathogen": c_meta.get("pathogen", "") or ("None — Healthy physiological state" if c_id == "healthy" else "Foliar pathogen / stress"),
+                "urgency": c_meta.get("urgency", "none" if c_id == "healthy" else "medium"),
                 "healthy": bool(c_meta.get("healthy", c_id == "healthy")),
                 "symptoms": c_meta.get("symptoms", ""),
                 "chemical": c_meta.get("chemical", []),

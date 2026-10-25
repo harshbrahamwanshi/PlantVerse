@@ -316,6 +316,17 @@ result = st.session_state.get("disease_result")
 if not result:
     st.stop()
 
+# Automatically upgrade any cached session_state result from an earlier hot-reload
+if (
+    result.get("_pipeline_version") != "v4_healthy_foliage_fix"
+    or (result.get("general_condition") or {}).get("condition_name") in (None, "", "Unknown Condition", "Healthy")
+) and result.get("image_bytes"):
+    try:
+        result = predict_disease(BytesIO(result["image_bytes"]), host_plant=explicit_host)
+        st.session_state.disease_result = result
+    except Exception:
+        pass
+
 st.space("large")
 section_rule("section-rule-disease-result")
 st.space("small")
@@ -394,16 +405,29 @@ if is_unsupported_crop and gen_cond.get("available"):
     disp_scientific = gen_cond.get("scientific_name", "")
     disp_hindi = gen_cond.get("hindi_name", "")
     disp_category = gen_cond.get("category", "Botanical Specimen")
-    disp_condition = gen_cond["condition_name"]
-    disp_full_title = gen_cond["full_diagnosis_title"]
-    disp_health_status = gen_cond["health_status"]
-    disp_is_healthy = gen_cond["is_healthy"]
+    disp_is_healthy = bool(gen_cond.get("is_healthy") or gen_cond.get("condition_id") == "healthy")
+    raw_cond_name = gen_cond.get("condition_name", "")
+    if disp_is_healthy or raw_cond_name in ("", "Unknown Condition", "Healthy", "healthy"):
+        disp_condition = "Healthy Foliage" if disp_is_healthy else (raw_cond_name or "Foliar Condition")
+    else:
+        disp_condition = raw_cond_name
+    disp_full_title = f"{disp_plant} — {disp_condition}"
+    disp_health_status = "Healthy" if disp_is_healthy else gen_cond.get("health_status", "Diseased")
     disp_conf = gen_cond["confidence"]
     disp_conf_pct = gen_cond["confidence_pct"]
     disp_conf_tier = gen_cond["confidence_tier"]
-    disp_pathogen = gen_cond["pathogen"]
-    disp_type = gen_cond.get("type", "General foliar condition")
-    disp_urgency = gen_cond.get("urgency", "medium")
+    disp_pathogen = (
+        "None — Healthy physiological state"
+        if (disp_is_healthy and gen_cond.get("pathogen") in (None, "", "None"))
+        else gen_cond.get("pathogen", "Foliar condition")
+    )
+    raw_type = gen_cond.get("type", "")
+    disp_type = (
+        "Healthy Physiology"
+        if (disp_is_healthy or raw_type in ("", "None", "General foliar condition"))
+        else raw_type
+    )
+    disp_urgency = gen_cond.get("urgency", "none" if disp_is_healthy else "medium")
     disp_symptoms = gen_cond["symptoms"]
     disp_recs = gen_cond["recommendations"]
     disp_org = gen_cond["organic_treatments"]
@@ -421,15 +445,16 @@ else:
     disp_scientific = result.get("scientific_name") or gen_cond.get("scientific_name", "")
     disp_hindi = result.get("hindi_name") or gen_cond.get("hindi_name", "")
     disp_category = gen_cond.get("category", "Agricultural Crop")
-    disp_condition = result["disease"]
-    disp_full_title = result["disease_name"]
     disp_health_status = result["health_status"]
     disp_is_healthy = disp_health_status == "Healthy"
+    raw_cond_name = result.get("disease", "")
+    disp_condition = "Healthy Foliage" if (disp_is_healthy and raw_cond_name in ("", "Healthy", "Unknown Condition")) else raw_cond_name
+    disp_full_title = result["disease_name"]
     disp_conf = result["confidence"]
     disp_conf_pct = result["confidence_pct"]
     disp_conf_tier = result.get("confidence_tier", "medium")
     disp_pathogen = result["pathogen"]
-    disp_type = "Crop-Specific Pathology (38-Class ViT)"
+    disp_type = "Healthy Physiology" if disp_is_healthy else "Crop-Specific Pathology (38-Class ViT)"
     disp_urgency = result.get("agronomic_severity_note", "Medium")
     disp_symptoms = result["symptoms"]
     disp_recs = result.get("recommendations", [])
@@ -443,6 +468,8 @@ else:
     disp_model_name = result.get("model_name", "ViT-Base ONNX (models/model.onnx)")
     disp_raw_label = result.get("raw_label", "crop_disease")
     disp_kicker = "Model Output • Neural Pathology Classification"
+
+vision_info = result.get("vision_analysis") or {}
 
 # ==============================================================================
 # SECTION 1: MODEL OUTPUT — PATHOLOGY DOSSIER HERO CARD
@@ -488,6 +515,21 @@ with st.container(border=True):
             st.markdown(" • ".join(subtitle_parts))
 
         st.markdown(f"**{translate_text('Causal Agent / Group', lang_code)}:** *{disp_pathogen}*")
+
+        raw_cv_pct = float(vision_info.get("raw_unfiltered_severity_pct") or 0.0)
+        raw_cv_regions = int(vision_info.get("raw_unfiltered_lesion_count") or 0)
+        if disp_is_healthy and raw_cv_pct >= 5.0:
+            st.info(
+                f":material/visibility: **{translate_text('Localized Yellow / Brown Tissue Note', lang_code)}:** "
+                + translate_text(
+                    f"The 7-class neural condition head classified this specimen as **Healthy Foliage ({disp_conf_pct:.1f}%)**, "
+                    f"while classical CV detected **{raw_cv_pct:.1f}% yellow/brown foliar area** ({raw_cv_regions} regions). "
+                    f"On {disp_plant}, localized yellow or brown patches alongside green leaves can reflect either natural golden variegation "
+                    f"or early localized stress (such as over-watering, root moisture imbalance, or minor leaf spot). "
+                    f"Inspect the Classical CV mask and species care checklist below.",
+                    lang_code,
+                )
+            )
 
         if disp_conf_tier == "low":
             st.warning(

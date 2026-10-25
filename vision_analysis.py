@@ -76,8 +76,8 @@ def _resize_for_cv(img_rgb: np.ndarray) -> Tuple[np.ndarray, float]:
 
 def _largest_component_and_multi_check(mask: np.ndarray) -> Tuple[np.ndarray, int]:
     """
-    Return the largest connected component mask and the count of significant
-    foliar components (each >= 2.5% of image area and >= 30% of largest component).
+    Return the significant foliar components mask (each >= 2.0% of image area and
+    >= 30% of largest component) and the count of significant foliar components.
     """
     n, labels, stats, _ = cv2.connectedComponentsWithStats(mask, connectivity=8)
     if n <= 1:
@@ -85,10 +85,12 @@ def _largest_component_and_multi_check(mask: np.ndarray) -> Tuple[np.ndarray, in
     areas = stats[1:, cv2.CC_STAT_AREA]
     max_idx_rel = int(np.argmax(areas))
     max_area = float(areas[max_idx_rel])
-    min_sig_area = max(0.025 * mask.size, 0.30 * max_area)
-    sig_count = int(np.sum(areas >= min_sig_area))
-    largest_mask = np.where(labels == (1 + max_idx_rel), 255, 0).astype(np.uint8)
-    return largest_mask, sig_count
+    min_sig_area = max(0.020 * mask.size, 0.30 * max_area)
+    sig_ids = [1 + idx for idx, a in enumerate(areas) if float(a) >= min_sig_area]
+    if not sig_ids:
+        sig_ids = [1 + max_idx_rel]
+    sig_mask = np.isin(labels, sig_ids).astype(np.uint8) * 255
+    return sig_mask, len(sig_ids)
 
 
 def _fill_holes(mask: np.ndarray) -> np.ndarray:
@@ -161,7 +163,8 @@ def compute_derived_health_score(
 def segment_leaf(img_rgb: np.ndarray) -> Dict[str, Any]:
     """
     Classical CV leaf + lesion segmentation compatible with FloraCare's vision.py,
-    extended with multi-leaf and cluttered-background quality diagnostics.
+    extended with multi-leaf and cluttered-background quality diagnostics and
+    proximity-bounded chlorosis expansion.
     """
     small, _ = _resize_for_cv(img_rgb)
     h, w = small.shape[:2]
@@ -170,12 +173,13 @@ def segment_leaf(img_rgb: np.ndarray) -> Dict[str, Any]:
     hue, sat, val = hsv[..., 0], hsv[..., 1], hsv[..., 2]
     r, g, b = (blurred[..., i].astype(np.int16) for i in range(3))
 
-    # Healthy foliage tissue: green hue (33..95) or Excess-Green index (2G - R - B > 25)
+    # Healthy foliage tissue: green hue (31..95) or Excess-Green index (2G - R - B > 22)
     exg = 2 * g - r - b
-    green = (hue >= 33) & (hue <= 95) & (((sat >= 40) & (val >= 40)) | (exg > 25))
+    green = (hue >= 31) & (hue <= 95) & (((sat >= 40) & (val >= 40)) | (exg > 22))
 
     # Symptom tones: yellowing, tan/brown necrosis, rust, purple-red spots
-    tone = ((hue < 33) | (hue >= 165)) & (sat >= 35) & (val >= 50)
+    tone = ((hue < 31) | (hue >= 165)) & (sat >= 35) & (val >= 50)
+    tone_chlorosis = (hue >= 18) & (hue < 33) & (sat >= 90) & (val >= 90)
 
     # Border background chroma model in CIE LAB space
     lab = cv2.cvtColor(blurred, cv2.COLOR_RGB2LAB).astype(np.int16)
@@ -201,6 +205,7 @@ def segment_leaf(img_rgb: np.ndarray) -> Dict[str, Any]:
     empty_res = {
         "found": False,
         "leaf_polygon": [],
+        "leaf_polygons": [],
         "lesions": [],
         "bbox": None,
         "severity": 0.0,
@@ -221,8 +226,19 @@ def segment_leaf(img_rgb: np.ndarray) -> Dict[str, Any]:
     grown = np.isin(labels, core_labels).astype(np.uint8) * 255
     core_filled = _fill_holes(cv2.morphologyEx(core, cv2.MORPH_CLOSE, kernel))
     touches_border = grown[0].mean() + grown[-1].mean() + grown[:, 0].mean() + grown[:, -1].mean()
-    if (grown > 0).sum() > 3.0 * (core_filled > 0).sum() or touches_border > 2 * 255:
-        leaf = core_filled
+    if (grown > 0).sum() > 2.5 * (core_filled > 0).sum() or touches_border > 2 * 255:
+        # Unbounded tone growth leaked into background; use proximity-bounded chlorosis expansion around core_filled
+        prox_radius = max(15, int(min(h, w) * 0.12))
+        prox_mask = cv2.dilate(core_filled, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (prox_radius, prox_radius)))
+        core_ys = np.where(core_filled > 0)[0]
+        max_core_y = int(np.max(core_ys)) if len(core_ys) else h
+        prox_mask[min(h, max_core_y + int(0.02 * h)) :, :] = 0
+        bounded = cv2.morphologyEx(
+            (((core_filled > 0) | (tone_chlorosis & (prox_mask > 0))) * 255).astype(np.uint8),
+            cv2.MORPH_CLOSE,
+            kernel,
+        )
+        leaf = _fill_holes(bounded)
     else:
         leaf = _fill_holes(grown)
 
@@ -231,7 +247,7 @@ def segment_leaf(img_rgb: np.ndarray) -> Dict[str, Any]:
     if leaf_area_ratio < 0.02:
         return empty_res
 
-    inner = cv2.erode(leaf, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9)))
+    inner = cv2.erode(leaf, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (7, 7)))
     lesion = ((tone | dark | white) & ~green & (inner > 0)).astype(np.uint8) * 255
     lesion = cv2.morphologyEx(lesion, cv2.MORPH_OPEN, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3)))
     lesion = cv2.morphologyEx(lesion, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5)))
@@ -243,8 +259,12 @@ def segment_leaf(img_rgb: np.ndarray) -> Dict[str, Any]:
     lesion_area = sum(cv2.contourArea(c) for c in contours)
 
     leaf_contours, _ = cv2.findContours(leaf, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    leaf_contour = max(leaf_contours, key=cv2.contourArea)
-    x, y, bw, bh = cv2.boundingRect(leaf_contour)
+    sig_leaf_contours = [c for c in leaf_contours if cv2.contourArea(c) >= 0.01 * h * w]
+    if not sig_leaf_contours:
+        sig_leaf_contours = [max(leaf_contours, key=cv2.contourArea)]
+    leaf_contour = max(sig_leaf_contours, key=cv2.contourArea)
+    all_pts = np.vstack(sig_leaf_contours)
+    x, y, bw, bh = cv2.boundingRect(all_pts)
 
     multiple_leaves = sig_components >= 2
     cluttered_bg = (border_chroma_std > 16.0 and leaf_area_ratio < 0.35) or (touches_border > 2.2 * 255 and sig_components >= 2)
@@ -263,6 +283,7 @@ def segment_leaf(img_rgb: np.ndarray) -> Dict[str, Any]:
     return {
         "found": True,
         "leaf_polygon": _normalized_polygon(leaf_contour, w, h, 0.004),
+        "leaf_polygons": [_normalized_polygon(c, w, h, 0.004) for c in sig_leaf_contours],
         "lesions": [_normalized_polygon(c, w, h, 0.006) for c in contours[:40]],
         "bbox": [round(x / w, 4), round(y / h, 4), round(bw / w, 4), round(bh / h, 4)],
         "severity": affected_pct,
@@ -294,7 +315,7 @@ def render_segmentation_overlay(
     seg_result: Dict[str, Any],
 ) -> bytes:
     """
-    Render the classical CV leaf contour (emerald green) and lesion masks
+    Render the classical CV leaf contours (emerald green) and lesion masks
     (semi-transparent red fill + bright red outline) onto a copy of the image,
     returning JPEG bytes for Streamlit display.
     """
@@ -303,16 +324,19 @@ def render_segmentation_overlay(
     h, w = canvas.shape[:2]
 
     if seg_result.get("found"):
-        leaf_poly = seg_result.get("leaf_polygon", [])
-        if len(leaf_poly) >= 3:
-            pts = np.array([[int(px * w), int(py * h)] for px, py in leaf_poly], dtype=np.int32)
-            cv2.polylines(
-                canvas,
-                [pts],
-                isClosed=True,
-                color=(16, 185, 129),
-                thickness=max(2, int(min(h, w) * 0.006)),
-            )
+        leaf_polys = seg_result.get("leaf_polygons") or (
+            [seg_result["leaf_polygon"]] if seg_result.get("leaf_polygon") else []
+        )
+        for leaf_poly in leaf_polys:
+            if len(leaf_poly) >= 3:
+                pts = np.array([[int(px * w), int(py * h)] for px, py in leaf_poly], dtype=np.int32)
+                cv2.polylines(
+                    canvas,
+                    [pts],
+                    isClosed=True,
+                    color=(16, 185, 129),
+                    thickness=max(2, int(min(h, w) * 0.006)),
+                )
 
         lesions = seg_result.get("lesions", [])
         for l_poly in lesions:

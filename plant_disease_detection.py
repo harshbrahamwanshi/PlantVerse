@@ -70,6 +70,7 @@ from ml_config import (
     PLANTVILLAGE_38_RAW_CLASSES,
     SUPPORTED_DISEASE_CROPS,
     UNSUPPORTED_CROP_DISEASE_MESSAGE,
+    load_conditions_metadata,
     load_plants_metadata,
     resolve_supported_disease_crop,
 )
@@ -83,6 +84,7 @@ warnings.filterwarnings("ignore")
 
 DEFAULT_MODEL_NAME = DISEASE_HF_MODEL_NAME
 CONFIDENCE_THRESHOLD = DISEASE_MEDIUM_CONF_THRESHOLD
+_PIPELINE_VERSION = "v4_healthy_foliage_fix"
 
 
 @st.cache_resource
@@ -410,18 +412,56 @@ def _build_general_condition_diagnosis(
     is_not_plant = bool(cond_pred_source.get("is_not_plant", False)) and (
         not detected_plant_name or "Unsupported / Non-Crop" in detected_plant_name
     )
-    cond_list = cond_pred_source.get("condition_predictions", [])
-    if is_not_plant or not cond_list:
+    cond_list_raw = cond_pred_source.get("condition_predictions", [])
+    if is_not_plant or not cond_list_raw:
         return {
             "available": False,
             "is_not_plant": is_not_plant,
         }
+
+    conditions_meta = load_conditions_metadata()
+    cond_list: List[Dict[str, Any]] = []
+    for c_item in cond_list_raw:
+        c_id = c_item.get("id", "healthy")
+        c_meta = conditions_meta.get(c_id, {})
+        c_score = float(c_item.get("score", 0.0))
+        c_is_healthy = bool(c_meta.get("healthy", c_id == "healthy"))
+        raw_c_name = c_meta.get("disease") or c_item.get("name") or c_id.replace("_", " ").title()
+        if raw_c_name in ("Unknown Condition", "Healthy") or c_is_healthy:
+            c_name = "Healthy Foliage" if c_is_healthy else c_id.replace("_", " ").title()
+        else:
+            c_name = raw_c_name
+        raw_c_type = c_meta.get("type") or c_item.get("type") or ""
+        c_type = (
+            "Healthy Physiology"
+            if (c_is_healthy or raw_c_type in ("", "None", "General foliar condition"))
+            else raw_c_type
+        )
+        cond_list.append(
+            {
+                "id": c_id,
+                "name": c_name,
+                "type": c_type,
+                "pathogen": c_meta.get("pathogen")
+                or c_item.get("pathogen")
+                or ("None — Healthy physiological state" if c_is_healthy else "Foliar pathogen / environmental stress"),
+                "urgency": c_meta.get("urgency") or c_item.get("urgency") or ("none" if c_is_healthy else "medium"),
+                "healthy": c_is_healthy,
+                "symptoms": c_meta.get("symptoms") or c_item.get("symptoms") or "",
+                "chemical": c_meta.get("chemical") if "chemical" in c_meta else c_item.get("chemical", []),
+                "organic": c_meta.get("organic") if "organic" in c_meta else c_item.get("organic", []),
+                "prevention": c_meta.get("prevention") if "prevention" in c_meta else c_item.get("prevention", []),
+                "score": c_score,
+                "confidence_pct": float(c_item.get("confidence_pct", round(c_score * 100, 1))),
+            }
+        )
 
     top_cond = cond_list[0]
     second_cond = cond_list[1] if len(cond_list) > 1 else {"score": 0.0}
     cond_score = float(top_cond.get("score", 0.0))
     cond_conf_pct = float(top_cond.get("confidence_pct", round(cond_score * 100, 1)))
     is_healthy = bool(top_cond.get("healthy", top_cond.get("id") == "healthy"))
+    cond_name_clean = top_cond["name"]
 
     if cond_score >= 0.65:
         cond_tier = "high"
@@ -446,8 +486,8 @@ def _build_general_condition_diagnosis(
         p_meta = explicit_meta
     elif species_reliable:
         p_meta = (
-            species_source.get("plant_metadata")
-            or _resolve_plant_metadata(species_source.get("raw_label"))
+            _resolve_plant_metadata(species_source.get("raw_label"))
+            or species_source.get("plant_metadata")
             or {}
         )
     else:
@@ -481,20 +521,15 @@ def _build_general_condition_diagnosis(
         uses_list = []
         toxic_note = ""
 
-    organic_list = list(top_cond.get("organic", []))
-    chemical_list = list(top_cond.get("chemical", []))
+    organic_list = [x for x in top_cond.get("organic", []) if x and x != "No treatment needed"]
+    chemical_list = [x for x in top_cond.get("chemical", []) if x and x != "No treatment needed"]
     prevention_list = list(top_cond.get("prevention", []))
     combined_recs: List[str] = []
     for item in organic_list + prevention_list:
         if item and item != "No treatment needed" and item not in combined_recs:
             combined_recs.append(item)
 
-    raw_pathogen = top_cond.get("pathogen", "")
-    pathogen_display = (
-        raw_pathogen
-        if raw_pathogen
-        else ("None — Healthy physiological state" if is_healthy else "Foliar pathogen / environmental stress")
-    )
+    pathogen_display = top_cond["pathogen"]
 
     return {
         "available": True,
@@ -507,10 +542,10 @@ def _build_general_condition_diagnosis(
         "plant_confidence": float(species_source.get("score", 0.0)),
         "plant_confidence_pct": round(float(species_source.get("score", 0.0)) * 100, 1),
         "plant_confidence_tier": species_source.get("confidence_tier", "medium"),
-        "condition_id": top_cond.get("id", "unknown"),
-        "condition_name": top_cond.get("name", "Unknown Condition"),
+        "condition_id": top_cond.get("id", "healthy"),
+        "condition_name": cond_name_clean,
         "full_diagnosis_title": (
-            f"Healthy {plant_display}" if is_healthy else f"{plant_display} — {top_cond.get('name', 'Foliar Stress')}"
+            f"{plant_display} — Healthy Foliage" if is_healthy else f"{plant_display} — {cond_name_clean}"
         ),
         "health_status": "Healthy" if is_healthy else "Diseased",
         "is_healthy": is_healthy,
@@ -518,7 +553,7 @@ def _build_general_condition_diagnosis(
         "confidence_pct": cond_conf_pct,
         "top2_confidence": float(second_cond.get("score", 0.0)),
         "confidence_tier": cond_tier,
-        "type": top_cond.get("type", "General foliar condition"),
+        "type": top_cond["type"],
         "pathogen": pathogen_display,
         "urgency": top_cond.get("urgency", "none" if is_healthy else "medium"),
         "symptoms": top_cond.get("symptoms", ""),
@@ -605,6 +640,7 @@ def _build_unsupported_crop_response(
         "quality_warnings": vision_res.get("quality_warnings", []),
         "image_bytes": image_bytes,
         "image_dimensions": f"{image.width} × {image.height} px",
+        "_pipeline_version": _PIPELINE_VERSION,
     }
 
 
@@ -851,5 +887,6 @@ def predict_disease(
         "top_candidates": top_candidates,
         "image_bytes": image_bytes,
         "image_dimensions": f"{image.width} × {image.height} px",
+        "_pipeline_version": _PIPELINE_VERSION,
     }
 
