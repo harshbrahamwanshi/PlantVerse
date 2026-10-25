@@ -8,7 +8,8 @@ from PIL import Image
 
 from ar_location_plant_map import PlantLocationFinder
 from disease_recommendations import get_disease_info
-from plant_disease_detection import predict_disease
+from ml_config import LOW_CONFIDENCE_DISEASE_MESSAGE, UNSUPPORTED_CROP_DISEASE_MESSAGE
+from plant_disease_detection import get_supported_disease_crops_list, predict_disease
 from plant_identification import LANGUAGES, translate_text
 from ui.chrome import definition_row, init_state, kicker, section_rule
 from ui.presentation import upsert_disease_diagnosis, upsert_library_entry
@@ -35,6 +36,12 @@ with top_left:
         "The neural pathology inference pipeline diagnoses conditions across 38 distinct agricultural classes, "
         "evaluates prediction confidence, and supplies validated cultural and treatment recommendations."
     )
+    supported_crops = get_supported_disease_crops_list()
+    with st.expander(":material/agriculture: Supported crops for 38-class disease classification", expanded=False):
+        st.markdown(
+            "**Supported agricultural crops (14 hosts, 38 disease/healthy classes):** "
+            + ", ".join(supported_crops)
+        )
 
 with top_right:
     with st.container(border=True):
