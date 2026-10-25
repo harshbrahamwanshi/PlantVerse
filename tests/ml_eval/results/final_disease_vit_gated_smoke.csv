@@ -1,0 +1,21 @@
+dataset,backend,image,predicted_disease,confidence,expected_disease,correct,top5_correct
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,hero.jpg,UNSUPPORTED_PLANT,0.0,UNSUPPORTED_NON_CROP,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,ginkgo.jpg,UNSUPPORTED_PLANT,0.0,UNSUPPORTED_NON_CROP,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,fern-plate.jpg,UNSUPPORTED_PLANT,0.0,UNSUPPORTED_NON_CROP,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,tomato_early_blight.jpg,Tomato with Early Blight,0.9684,Tomato with Early Blight,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,apple_scab.jpg,Apple Scab,0.9916,Apple Scab,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,healthy_tomato.jpg,Healthy Tomato Plant,0.977,Healthy Tomato Plant,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,healthy_apple.jpg,Healthy Apple,0.881,Healthy Apple,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,hibiscus.jpg,UNSUPPORTED_PLANT,0.0,UNSUPPORTED_NON_CROP,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,tulsi.jpg,UNSUPPORTED_PLANT,0.0,UNSUPPORTED_NON_CROP,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,neem.jpg,UNSUPPORTED_PLANT,0.0,UNSUPPORTED_NON_CROP,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,peepal.jpg,UNSUPPORTED_PLANT,0.0,UNSUPPORTED_NON_CROP,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,money_plant.jpg,UNSUPPORTED_PLANT,0.0,UNSUPPORTED_NON_CROP,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,curry_leaf.jpg,UNSUPPORTED_PLANT,0.0,UNSUPPORTED_NON_CROP,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,snake_plant.jpg,UNSUPPORTED_PLANT,0.0,UNSUPPORTED_NON_CROP,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,croton.jpg,UNSUPPORTED_PLANT,0.0,UNSUPPORTED_NON_CROP,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,rose_black_spot.jpg,UNSUPPORTED_PLANT,0.0,UNSUPPORTED_NON_CROP,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,rose_powdery_mildew.jpg,UNSUPPORTED_PLANT,0.0,UNSUPPORTED_NON_CROP,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,late_blight.jpg,Tomato with Bacterial Spot,0.3335,Tomato with Late Blight,False,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,corn_rust.jpg,Corn (Maize) with Common Rust,0.99,Corn (Maize) with Common Rust,True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ViT ONNX + Crop Gate)",onnx_vit_gated,Potato_Late_blight_5305.jpg,Potato with Late Blight,0.9244,Potato with Late Blight,True,True

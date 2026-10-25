@@ -1,0 +1,21 @@
+dataset,backend,image,predicted_plant,confidence,expected_plant,correct,top5_correct
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,hero.jpg,Tamarind,0.8514,Adiantum pedatum,False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,ginkgo.jpg,Tamarind,0.4769,Ginkgo biloba,False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,fern-plate.jpg,Gulmohar,0.5525,Fern (Polypodiopsida),False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,tomato_early_blight.jpg,Tomato,0.8879,Tomato (Solanum lycopersicum),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,apple_scab.jpg,Apple,0.9729,Apple (Malus domestica),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,healthy_tomato.jpg,Tomato,0.8116,Tomato (Solanum lycopersicum),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,healthy_apple.jpg,Apple,0.8321,Apple (Malus domestica),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,hibiscus.jpg,Hibiscus (Gudhal),0.9391,Hibiscus (Hibiscus rosa-sinensis),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,tulsi.jpg,Tulsi (Holy basil),0.9801,Tulsi (Ocimum tenuiflorum),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,neem.jpg,Neem,0.9237,Neem (Azadirachta indica),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,peepal.jpg,Peepal (Sacred fig),0.2791,Peepal (Ficus religiosa),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,money_plant.jpg,Money plant (Pothos),0.9523,Money plant (Epipremnum aureum),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,curry_leaf.jpg,Curry leaf,0.9605,Curry leaf (Bergera koenigii),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,snake_plant.jpg,Snake plant,0.9394,Snake plant (Dracaena trifasciata),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,croton.jpg,Croton,0.8548,Croton (Codiaeum variegatum),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,rose_black_spot.jpg,Rose,0.502,Rose (Rosa),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,rose_powdery_mildew.jpg,Squash / Pumpkin,0.1815,Rose (Rosa),False,False
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,late_blight.jpg,Tomato,0.9165,Tomato (Solanum lycopersicum),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,corn_rust.jpg,Maize (Corn),0.9255,Corn (Maize) (Zea mays),True,True
+"UNVERIFIED SMOKE TEST (n=20 Repo Images, New ConvNeXt-Tiny ONNX)",onnx_convnext,Potato_Late_blight_5305.jpg,Tomato,0.819,Potato (Solanum tuberosum),False,True

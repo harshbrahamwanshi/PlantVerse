@@ -268,6 +268,29 @@ def resolve_supported_disease_crop(plant_name: Optional[str]) -> Optional[str]:
 # ==============================================================================
 # 3. CLASSICAL CV LESION SEGMENTATION, SEVERITY & HEALTH SCORE CONFIG (TASKS 5-6)
 # ==============================================================================
+CLASSICAL_CV_METHOD_LABEL = (
+    "Color-threshold segmentation (classical CV: HSV + Excess-Green index + border LAB background filter — not a trained segmentation model)"
+)
+
+CLASSICAL_CV_LIMITATIONS: List[str] = [
+    "Cast shadows or dark specular glare on leaves can be misclassified as necrotic tissue.",
+    "Soil, brown bark, or dead background foliage touching the leaf margin can inflate lesion area if chroma matches.",
+    "Non-green, purple, or variegated leaves (e.g., Croton, Coleus, Money Plant, Snake Plant) trigger false color masks and are excluded.",
+    "Diffuse viral mottling or mild nutrient chlorosis without discrete spots may be underestimated.",
+]
+
+SEVERITY_SCHEME_LABEL = (
+    "Project-defined severity categories (Early < 5%, Moderate 5–20%, Severe >= 20% affected leaf area; not agricultural standards)"
+)
+
+DERIVED_HEALTH_SCORE_LABEL = "Derived metric (not scientifically validated)"
+
+EXPERT_REVIEW_NOTICE = (
+    "Agronomic Review Status: Preliminary reference entry — requires verification by a certified plant pathologist or local agricultural extension service before field application."
+)
+
+NO_RECOMMENDATION_MESSAGE = "No recommendation available for this disease."
+
 # Project-defined severity categories mapped from affected leaf area %
 SEVERITY_THRESHOLDS_PCT = {
     "early_max": 5.0,       # > 0% and < 5% affected leaf area -> Early

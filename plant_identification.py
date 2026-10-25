@@ -3,6 +3,7 @@
 # ============================================================
 
 from functools import lru_cache
+import io
 import os
 from pathlib import Path
 import re
@@ -214,6 +215,19 @@ def _validate_and_orient_image(image: Any) -> Image.Image:
         pil_img = Image.open(p)
     elif isinstance(image, Image.Image):
         pil_img = image.copy()
+    elif hasattr(image, "read"):
+        if hasattr(image, "seek"):
+            image.seek(0)
+        data = image.read()
+        if hasattr(image, "seek"):
+            image.seek(0)
+        if not data:
+            raise ValueError("Image stream is empty (0 bytes).")
+        pil_img = Image.open(io.BytesIO(data))
+    elif isinstance(image, (bytes, bytearray)):
+        if not image:
+            raise ValueError("Image data is empty (0 bytes).")
+        pil_img = Image.open(io.BytesIO(bytes(image)))
     else:
         raise ValueError("Unsupported image input type for plant identification.")
 

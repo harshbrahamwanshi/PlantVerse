@@ -1,0 +1,46 @@
+dataset,backend,image,predicted_plant,confidence,expected_plant,correct,top5_correct
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,tulsi_380918853.jpg,Tulsi (Holy basil),0.9569,Tulsi (Holy basil) (Ocimum tenuiflorum),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,tulsi_64287124.jpg,Tulsi (Holy basil),0.9803,Tulsi (Holy basil) (Ocimum tenuiflorum),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,tulsi_58917293.jpg,Tulsi (Holy basil),0.9939,Tulsi (Holy basil) (Ocimum tenuiflorum),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,neem_369551525.jpg,Neem,0.8892,Neem (Azadirachta indica),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,neem_114153293.jpg,Tamarind,0.6263,Neem (Azadirachta indica),False,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,neem_390983363.jpg,Neem,0.9006,Neem (Azadirachta indica),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,peepal_113736804.jpg,Banyan,0.4705,Peepal (Sacred fig) (Ficus religiosa),False,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,peepal_280480426.jpg,Banyan,0.2251,Peepal (Sacred fig) (Ficus religiosa),False,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,peepal_12520769.jpg,Banyan,0.8324,Peepal (Sacred fig) (Ficus religiosa),False,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,curry_leaf_157448360.jpg,Curry leaf,0.6888,Curry leaf (Bergera koenigii),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,curry_leaf_52820495.jpg,Curry leaf,0.9548,Curry leaf (Bergera koenigii),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,curry_leaf_101342948.jpg,Curry leaf,0.9776,Curry leaf (Bergera koenigii),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,hibiscus_32479230.jpg,Hibiscus (Gudhal),0.9353,Hibiscus (Gudhal) (Hibiscus rosa-sinensis),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,hibiscus_68413783.jpg,Hibiscus (Gudhal),0.9404,Hibiscus (Gudhal) (Hibiscus rosa-sinensis),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,hibiscus_298931869.jpg,Hibiscus (Gudhal),0.8301,Hibiscus (Gudhal) (Hibiscus rosa-sinensis),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,money_plant_104746694.jpg,Money plant (Pothos),0.9533,Money plant (Pothos) (Epipremnum aureum),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,money_plant_193606010.jpg,Money plant (Pothos),0.9628,Money plant (Pothos) (Epipremnum aureum),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,money_plant_117240294.jpg,Money plant (Pothos),0.9432,Money plant (Pothos) (Epipremnum aureum),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,banyan_113736743.jpg,Amaltas (Golden shower),0.1269,Banyan (Ficus benghalensis),False,False
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,banyan_114153488.jpg,Banyan,0.9344,Banyan (Ficus benghalensis),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,banyan_113736791.jpg,Not a plant,0.7179,Banyan (Ficus benghalensis),False,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,rose_36758591.jpg,Rose,0.8982,Rose (Rosa),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,rose_33167954.jpg,Rose,0.8011,Rose (Rosa),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,rose_317227925.jpg,Rose,0.9335,Rose (Rosa),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,aloe_117192404.jpg,Adenium (Desert rose),0.1119,Aloe vera,False,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,aloe_262170032.jpg,Aloe vera,0.8019,Aloe vera,True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,aloe_106550388.jpg,Aloe vera,0.9293,Aloe vera,True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,mango_19655004.jpg,Mango,0.2939,Mango (Mangifera indica),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,mango_331796879.jpg,Saptaparni (Devil's tree),0.5394,Mango (Mangifera indica),False,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,mango_70910208.jpg,Mango,0.8553,Mango (Mangifera indica),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,snake_plant_223497256.jpg,Aloe vera,0.4325,Snake plant (Dracaena trifasciata),False,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,snake_plant_161046655.jpg,Spider plant,0.4817,Snake plant (Dracaena trifasciata),False,False
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,snake_plant_218071479.jpg,Snake plant,0.9365,Snake plant (Dracaena trifasciata),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,croton_254988627.jpg,Peach,0.514,Croton (Codiaeum variegatum),False,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,croton_12299543.jpg,Maize (Corn),0.2403,Croton (Codiaeum variegatum),False,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,croton_102706603.jpg,Croton,0.5457,Croton (Codiaeum variegatum),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,tomato_64241091.jpg,Not a plant,0.1513,Tomato (Solanum lycopersicum),False,False
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,tomato_372633474.jpg,Tomato,0.7773,Tomato (Solanum lycopersicum),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,tomato_338947286.jpg,Tomato,0.7822,Tomato (Solanum lycopersicum),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,apple_35253084.jpg,Apple,0.7395,Apple (Malus domestica),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,apple_273510153.jpg,Apple,0.7849,Apple (Malus domestica),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,apple_400320485.jpg,Apple,0.9405,Apple (Malus domestica),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,potato_22073246.jpg,Potato,0.3893,Potato (Solanum tuberosum),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,potato_22452271.jpg,Potato,0.8286,Potato (Solanum tuberosum),True,True
+"Public Field Species Set (iNaturalist 45, New ConvNeXt-Tiny ONNX) [POSSIBLY INFLATED BY OVERLAP]",onnx_convnext,potato_159043837.jpg,Potato,0.9417,Potato (Solanum tuberosum),True,True
