@@ -2,116 +2,130 @@
 PlantVerse — Centralized ML Pipeline Configuration (`ml_config.py`)
 ===================================================================
 Single source of truth for all model identifiers, file paths, preprocessing
-parameters, confidence thresholds, supported plant & crop class lists,
-host-to-crop consistency mappings, and lesion severity thresholds.
+parameters, confidence thresholds (with provisional sample-size annotations),
+supported plant & crop class lists, host-to-crop consistency mappings,
+classical CV lesion severity thresholds, and local feedback logging.
 
 No scattered constants in page or service modules (Ground Rule 8).
 """
 
+import json
 import os
 from pathlib import Path
-from typing import Dict, List, Set, Tuple
+from typing import Any, Dict, List, Optional, Set, Tuple
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 MODELS_DIR = PROJECT_ROOT / "models"
+DATA_DIR = PROJECT_ROOT / "data"
 
 # ==============================================================================
-# 1. PLANT IDENTIFICATION CONFIGURATION
+# 1. PLANT IDENTIFICATION CONFIGURATION (Primary: ONNX ConvNeXt-Tiny)
 # ==============================================================================
-PLANT_ID_BACKEND = os.getenv("PLANTVERSE_PLANT_ID_BACKEND", "florasense").strip().lower()
-FLORASENSE_MODEL_NAME = os.getenv("PLANTVERSE_FLORASENSE_MODEL", "Sisigoks/FloraSense").strip()
+PLANT_ID_BACKEND = os.getenv("PLANTVERSE_PLANT_ID_BACKEND", "onnx_convnext").strip().lower()
 ONNX_PLANT_MODEL_PATH = Path(
     os.getenv("PLANTVERSE_ONNX_PLANT_MODEL", str(MODELS_DIR / "plant_model.onnx"))
 )
 ONNX_PLANT_LABELS_PATH = Path(
     os.getenv("PLANTVERSE_ONNX_PLANT_LABELS", str(MODELS_DIR / "plant_labels.json"))
 )
+PLANTS_METADATA_PATH = Path(
+    os.getenv("PLANTVERSE_PLANTS_METADATA", str(DATA_DIR / "plants_metadata.json"))
+)
+CONDITIONS_METADATA_PATH = Path(
+    os.getenv("PLANTVERSE_CONDITIONS_METADATA", str(DATA_DIR / "conditions_metadata.json"))
+)
+CROP_DISEASES_KB_PATH = Path(
+    os.getenv("PLANTVERSE_CROP_DISEASES_KB", str(DATA_DIR / "crop_diseases_kb.json"))
+)
+INAT_ATTRIBUTION_CSV_PATH = MODELS_DIR / "inat_attribution.csv"
 
-# FloraSense preprocessing (verified against Sisigoks/FloraSense preprocessor_config.json):
-# - RGB conversion + EXIF orientation transpose
-# - Squash resize to (224, 224) with BILINEAR interpolation (default_to_square=True, do_center_crop=False)
-# - Rescale by 1/255.0
-# - Normalize with mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]
+# Secondary optional top-5 suggestions model (never used as headline)
+FLORASENSE_MODEL_NAME = os.getenv("PLANTVERSE_FLORASENSE_MODEL", "Sisigoks/FloraSense").strip()
+ENABLE_FLORASENSE_SECONDARY = os.getenv("PLANTVERSE_ENABLE_FLORASENSE_SECONDARY", "0").strip() == "1"
+
+# ONNX ConvNeXt-Tiny preprocessing (verified against models/plant_labels.json & training notebook):
+# - EXIF orientation transpose + RGB conversion
+# - Squash resize to (224, 224) with BILINEAR interpolation
+# - Scale to [0.0, 1.0] (/ 255.0)
+# - ImageNet normalization: mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]
+ONNX_PLANT_INPUT_SIZE: Tuple[int, int] = (224, 224)
+ONNX_PLANT_MEAN: Tuple[float, float, float] = (0.485, 0.456, 0.406)
+ONNX_PLANT_STD: Tuple[float, float, float] = (0.229, 0.224, 0.225)
+
+# Secondary FloraSense preprocessing:
 FLORASENSE_INPUT_SIZE: Tuple[int, int] = (224, 224)
 FLORASENSE_MEAN: Tuple[float, float, float] = (0.5, 0.5, 0.5)
 FLORASENSE_STD: Tuple[float, float, float] = (0.5, 0.5, 0.5)
 
-# Data-driven confidence thresholds for FloraSense (9,985 classes; uniform = 0.0001):
-# Measured on iNaturalist (45), PlantDoc (236), and PlantVillage (76):
-#   - 90th percentile of incorrect predictions across all three sets is <= 0.0039
-#   - Median of incorrect predictions is 0.0009 - 0.0012
-#   - Median of correct iNaturalist predictions is 0.0130 (mean 0.0211)
+# Provisional data-driven confidence thresholds for ONNX ConvNeXt-Tiny (68 species + not_plant):
+# Derived from tuning set (n=163: 45 iNaturalist + 118 PlantDoc tuning half; 144 correct, 19 incorrect):
+#   - Correct predictions (n=144): mean=0.8527, p10=0.6336, p25=0.8066, median=0.9265
+#   - Incorrect predictions (n=19): mean=0.5238, median=0.5394, p75=0.6754
+#   - High confidence >= 0.68 (above p75=0.6754 of incorrect predictions)
+#   - Medium confidence >= 0.35 (warn user to verify morphological traits)
+#   - Low confidence < 0.35 or not_plant -> reject identification
+ONNX_PLANT_PROVISIONAL_N = 163
+ONNX_PLANT_HIGH_CONF_THRESHOLD = float(os.getenv("ONNX_PLANT_HIGH_CONF", "0.68"))
+ONNX_PLANT_MEDIUM_CONF_THRESHOLD = float(os.getenv("ONNX_PLANT_MEDIUM_CONF", "0.35"))
+ONNX_PLANT_MIN_TOP1_TOP2_MARGIN = float(os.getenv("ONNX_PLANT_MIN_MARGIN", "0.15"))
+ONNX_NOT_PLANT_THRESHOLD = float(os.getenv("ONNX_NOT_PLANT_THRESHOLD", "0.45"))
+
+# Secondary FloraSense thresholds (provisional, n=163):
 FLORASENSE_HIGH_CONF_THRESHOLD = float(os.getenv("FLORASENSE_HIGH_CONF", "0.0250"))
 FLORASENSE_MEDIUM_CONF_THRESHOLD = float(os.getenv("FLORASENSE_MEDIUM_CONF", "0.0040"))
 FLORASENSE_MIN_TOP1_TOP2_RATIO = float(os.getenv("FLORASENSE_MIN_MARGIN_RATIO", "1.60"))
-
-# Data-driven confidence thresholds for ONNX ConvNeXt-Tiny plant model (68 species + not_plant):
-ONNX_PLANT_HIGH_CONF_THRESHOLD = float(os.getenv("ONNX_PLANT_HIGH_CONF", "0.65"))
-ONNX_PLANT_MEDIUM_CONF_THRESHOLD = float(os.getenv("ONNX_PLANT_MEDIUM_CONF", "0.35"))
-ONNX_NOT_PLANT_THRESHOLD = float(os.getenv("ONNX_NOT_PLANT_THRESHOLD", "0.50"))
 
 LOW_CONFIDENCE_PLANT_MESSAGE = (
     "Plant could not be identified reliably. Please upload a clearer image."
 )
 
-# Representative supported plant groups & species exposed in UI
+
+def load_onnx_plant_labels() -> Dict[str, Any]:
+    """Load the 68 species + not_plant and 7 condition labels from models/plant_labels.json."""
+    if not ONNX_PLANT_LABELS_PATH.exists():
+        raise RuntimeError(f"Missing plant labels file at '{ONNX_PLANT_LABELS_PATH}'.")
+    return json.loads(ONNX_PLANT_LABELS_PATH.read_text(encoding="utf-8"))
+
+
+def load_plants_metadata() -> Dict[str, Dict[str, Any]]:
+    """Load rich metadata (common name, scientific name, Hindi name, care, pv_crop) for all 68 species."""
+    if not PLANTS_METADATA_PATH.exists():
+        return {}
+    raw = json.loads(PLANTS_METADATA_PATH.read_text(encoding="utf-8"))
+    return {p["id"]: p for p in raw.get("plants", [])}
+
+
 SUPPORTED_PLANT_SUMMARY = {
-    "florasense": {
-        "model_name": "Sisigoks/FloraSense (ViT-Base, 9,985 fine-grained botanical taxa)",
-        "total_raw_classes": 9985,
-        "unique_binomials": 9481,
-        "reported_eval_accuracy": 0.3546,
-        "key_supported_genera": [
-            "Adiantum (Maidenhair ferns)",
-            "Aloe (Aloe vera & relatives)",
-            "Azadirachta (Neem)",
-            "Capsicum (Bell & Chilli peppers)",
-            "Citrus (Orange, Lemon, Lime)",
-            "Codiaeum (Croton)",
-            "Cucurbita (Squash, Pumpkin)",
-            "Epipremnum (Money plant / Pothos)",
-            "Ficus (Peepal, Banyan, Rubber plant)",
-            "Fragaria (Strawberry)",
-            "Ginkgo (Ginkgo biloba)",
-            "Glycine (Soybean)",
-            "Hibiscus (Hibiscus rosa-sinensis & relatives)",
-            "Malus (Apple)",
-            "Mangifera (Mango)",
-            "Murraya / Bergera (Curry leaf)",
-            "Ocimum (Tulsi / Basil)",
-            "Prunus (Cherry, Peach)",
-            "Rosa (Rose)",
-            "Rubus (Raspberry)",
-            "Sansevieria / Dracaena (Snake plant)",
-            "Solanum (Tomato, Potato, Eggplant)",
-            "Vaccinium (Blueberry)",
-            "Vitis (Grape)",
-            "Zea (Corn / Maize)",
-        ],
-    },
     "onnx_convnext": {
-        "model_name": "ConvNeXt-Tiny Field Plant Identifier (68 regional & crop species + non-plant rejection)",
+        "model_name": "ConvNeXt-Tiny Dual-Head Plant Identifier (68 regional & crop species + non-plant rejection)",
+        "license": "Apache-2.0 base (timm convnext_tiny) + CC BY-NC-SA 4.0 training corpus (iNaturalist attributions in models/inat_attribution.csv)",
         "total_raw_classes": 69,
         "unique_binomials": 68,
-        "reported_eval_accuracy": 0.9053,
+        "provisional_thresholds_n": ONNX_PLANT_PROVISIONAL_N,
+    },
+    "florasense": {
+        "model_name": "Sisigoks/FloraSense (ViT-Base, 9,985 fine-grained botanical taxa — secondary suggestions only)",
+        "license": "Apache-2.0 base (google/vit-base-patch16-224); fine-tuned checkpoint license unspecified on HF Hub",
+        "total_raw_classes": 9985,
+        "unique_binomials": 9481,
     },
 }
 
 
 # ==============================================================================
-# 2. DISEASE DETECTION CONFIGURATION
+# 2. DISEASE DETECTION CONFIGURATION (Primary: ViT int8 ONNX `models/model.onnx`)
 # ==============================================================================
-DISEASE_BACKEND = os.getenv("PLANTVERSE_DISEASE_BACKEND", "mobilenet_v2").strip().lower()
-DISEASE_HF_MODEL_NAME = os.getenv(
-    "PLANT_DISEASE_MODEL_NAME",
-    "linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification",
-).strip()
+DISEASE_BACKEND = os.getenv("PLANTVERSE_DISEASE_BACKEND", "onnx_vit").strip().lower()
 ONNX_DISEASE_MODEL_PATH = Path(
     os.getenv("PLANTVERSE_ONNX_DISEASE_MODEL", str(MODELS_DIR / "model.onnx"))
 )
 ONNX_DISEASE_LABELS_PATH = Path(
     os.getenv("PLANTVERSE_ONNX_DISEASE_LABELS", str(MODELS_DIR / "labels.json"))
 )
+DISEASE_HF_MODEL_NAME = os.getenv(
+    "PLANT_DISEASE_MODEL_NAME",
+    "linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification",
+).strip()
 EXTERNAL_API_URL = os.getenv("PLANT_DISEASE_API_URL", "").strip()
 LOCAL_KERAS_PATH = os.getenv("PLANT_DISEASE_KERAS_MODEL_PATH", "trained_plant_disease_model.keras").strip()
 
@@ -119,22 +133,21 @@ LOCAL_KERAS_PATH = os.getenv("PLANT_DISEASE_KERAS_MODEL_PATH", "trained_plant_di
 MAX_IMAGE_SIZE_BYTES = 10 * 1024 * 1024  # 10 MB
 MIN_IMAGE_DIMENSION_PX = 32
 
-# MobileNetV2 preprocessing (verified against linkanjarad preprocessor_config.json):
-# - RGB conversion + EXIF orientation transpose
-# - Resize shortest edge to 256 (BILINEAR) -> Center crop (224, 224)
-# - Rescale 1/255.0 -> Normalize mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]
+# ViT Disease ONNX preprocessing (verified against classifier.py & ViT config):
+# - EXIF orientation transpose + RGB conversion
+# - Squash resize to (224, 224) with BILINEAR interpolation
+# - Scale and normalize: x / 127.5 - 1.0 (equivalent to rescale 1/255, mean=0.5, std=0.5)
 DISEASE_INPUT_SIZE: Tuple[int, int] = (224, 224)
 DISEASE_RESIZE_SHORTEST_EDGE: int = 256
 DISEASE_MEAN: Tuple[float, float, float] = (0.5, 0.5, 0.5)
 DISEASE_STD: Tuple[float, float, float] = (0.5, 0.5, 0.5)
 
-# Data-driven confidence thresholds for Disease Detection:
-# Measured on PlantVillage (76) and PlantDoc (236):
-#   - On PlantVillage: correct min=0.7025, p25=0.9923, median=0.9981
-#   - On PlantDoc: correct median=0.7849 (mean=0.7226), whereas incorrect median=0.5500 (p25=0.3571)
-#   - High confidence >= 0.75 (above incorrect median & near correct median on field photos)
-#   - Medium confidence >= 0.55 (warn user that diagnosis is tentative)
-#   - Low confidence < 0.55 (reject as unreliable)
+# Provisional data-driven confidence thresholds for Disease Detection (derived on PlantDoc tuning half, n=118):
+#   - ViT Tuning Correct (n=87): mean=0.8201, p10=0.5512, p25=0.7734, median=0.8932
+#   - High confidence >= 0.75 (near p25 of correct predictions) and top1-top2 margin >= 0.10
+#   - Medium confidence >= 0.55 (near p10 of correct predictions; show with caution banner)
+#   - Low confidence < 0.55 -> reject diagnosis as unreliable
+DISEASE_PROVISIONAL_N = 118
 DISEASE_HIGH_CONF_THRESHOLD = float(os.getenv("DISEASE_HIGH_CONF_THRESHOLD", "0.75"))
 DISEASE_MEDIUM_CONF_THRESHOLD = float(os.getenv("DISEASE_CONFIDENCE_THRESHOLD", "0.55"))
 DISEASE_MIN_TOP1_TOP2_MARGIN = float(os.getenv("DISEASE_MIN_MARGIN", "0.10"))
@@ -189,49 +202,71 @@ PLANTVILLAGE_38_RAW_CLASSES: List[str] = [
     "Tomato___healthy",
 ]
 
-# Supported 14 crops in the 38-class PlantVillage disease model and their botanical/common aliases
+# Mapping from canonical crop name to the exact subset of indices (0..37) in PLANTVILLAGE_38_RAW_CLASSES
+CROP_TO_CLASS_INDICES: Dict[str, List[int]] = {
+    "Apple": [0, 1, 2, 3],
+    "Blueberry": [4],
+    "Cherry": [5, 6],
+    "Corn (Maize)": [7, 8, 9, 10],
+    "Grape": [11, 12, 13, 14],
+    "Orange / Citrus": [15],
+    "Peach": [16, 17],
+    "Bell Pepper": [18, 19],
+    "Potato": [20, 21, 22],
+    "Raspberry": [23],
+    "Soybean": [24],
+    "Squash": [25],
+    "Strawberry": [26, 27],
+    "Tomato": [28, 29, 30, 31, 32, 33, 34, 35, 36, 37],
+}
+
+# Supported 14 crops in the 38-class PlantVillage disease model and their botanical/common/model ID aliases
 SUPPORTED_DISEASE_CROPS: Dict[str, Set[str]] = {
     "Apple": {"apple", "malus", "malus domestica", "malus pumila", "malus sylvestris", "malus baccata", "malus prunifolia", "crabapple"},
     "Blueberry": {"blueberry", "vaccinium", "vaccinium corymbosum", "vaccinium angustifolium", "vaccinium myrtillus"},
-    "Cherry": {"cherry", "cherry (including sour)", "prunus avium", "prunus cerasus", "prunus serrulata", "sweet cherry", "sour cherry"},
-    "Corn (Maize)": {"corn", "corn (maize)", "maize", "zea", "zea mays"},
+    "Cherry": {"cherry", "cherry (including sour)", "prunus avium", "prunus cerasus", "prunus avium / cerasus", "prunus serrulata", "sweet cherry", "sour cherry"},
+    "Corn (Maize)": {"corn", "corn (maize)", "maize (corn)", "maize", "zea", "zea mays"},
     "Grape": {"grape", "grapevine", "vitis", "vitis vinifera", "vitis labrusca", "vitis riparia"},
-    "Orange / Citrus": {"orange", "orange / citrus", "orange (fruit)", "citrus", "citrus sinensis", "citrus reticulata", "citrus limon", "citrus aurantium", "lemon", "lime", "mandarin"},
+    "Orange / Citrus": {"orange", "orange / citrus", "lemon / citrus", "orange (fruit)", "citrus", "citrus sp.", "citrus sinensis", "citrus reticulata", "citrus limon", "citrus aurantium", "lemon", "lime", "mandarin"},
     "Peach": {"peach", "prunus persica", "nectarine"},
-    "Bell Pepper": {"bell pepper", "pepper, bell", "pepper", "capsicum", "capsicum annuum", "capsicum frutescens", "capsicum chinense", "capsicum / chilli", "chilli", "sweet pepper"},
+    "Bell Pepper": {"bell pepper", "pepper, bell", "pepper", "capsicum", "capsicum / chilli", "capsicum annuum", "capsicum frutescens", "capsicum chinense", "chilli", "sweet pepper"},
     "Potato": {"potato", "solanum tuberosum"},
     "Raspberry": {"raspberry", "rubus idaeus", "rubus occidentalis", "rubus strigosus"},
     "Soybean": {"soybean", "soya bean", "soyabean", "glycine max", "glycine soja"},
-    "Squash": {"squash", "squash / pumpkin", "pumpkin", "zucchini", "cucurbita", "cucurbita pepo", "cucurbita maxima", "cucurbita moschata"},
-    "Strawberry": {"strawberry", "fragaria", "fragaria ananassa", "fragaria x ananassa", "fragaria vesca"},
+    "Squash": {"squash", "squash / pumpkin", "pumpkin", "zucchini", "cucurbita", "cucurbita sp.", "cucurbita pepo", "cucurbita maxima", "cucurbita moschata"},
+    "Strawberry": {"strawberry", "fragaria", "fragaria ananassa", "fragaria x ananassa", "fragaria × ananassa", "fragaria vesca"},
     "Tomato": {"tomato", "solanum lycopersicum", "lycopersicon esculentum", "solanum pimpinellifolium"},
 }
 
 
-def resolve_supported_disease_crop(plant_name: str) -> str | None:
+def resolve_supported_disease_crop(plant_name: Optional[str]) -> Optional[str]:
     """
-    Given a plant name (common name or Latin binomial), return the canonical
+    Given a plant name (common name, model ID, or Latin binomial), return the canonical
     supported crop name from SUPPORTED_DISEASE_CROPS if and only if it belongs
     to one of the 14 supported crops. Otherwise return None.
     """
     if not plant_name:
         return None
     clean = plant_name.strip().lower().replace("_", " ")
-    if clean in ("unknown", "unknown plant", "unidentified plant", "not_plant", "no plant"):
+    if clean in ("unknown", "unknown plant", "unidentified plant", "not_plant", "not plant", "no plant"):
         return None
 
     for canonical_crop, aliases in SUPPORTED_DISEASE_CROPS.items():
         if clean == canonical_crop.lower() or clean in aliases:
             return canonical_crop
         for alias in aliases:
-            # Match exact token prefix (e.g. "malus domestica borkh" -> "malus domestica")
-            if len(alias) >= 4 and (clean.startswith(alias + " ") or alias.startswith(clean + " ")):
+            if len(alias) >= 4 and (
+                clean == alias
+                or clean.startswith(alias + " ")
+                or clean.startswith(alias + " (")
+                or alias.startswith(clean + " ")
+            ):
                 return canonical_crop
     return None
 
 
 # ==============================================================================
-# 3. CLASSICAL CV LESION SEGMENTATION, SEVERITY & HEALTH SCORE CONFIG (PHASE 6)
+# 3. CLASSICAL CV LESION SEGMENTATION, SEVERITY & HEALTH SCORE CONFIG (TASKS 5-6)
 # ==============================================================================
 # Project-defined severity categories mapped from affected leaf area %
 SEVERITY_THRESHOLDS_PCT = {
@@ -251,11 +286,13 @@ VARIEGATED_OR_COLORED_FOLIAGE_PLANTS: Set[str] = {
     "bougainvillea",
     "money plant",
     "money_plant",
+    "money plant (pothos)",
     "epipremnum",
     "epipremnum aureum",
     "snake plant",
     "snake_plant",
     "sansevieria",
+    "sansevieria trifasciata",
     "dracaena trifasciata",
     "spider plant",
     "spider_plant",
@@ -263,5 +300,11 @@ VARIEGATED_OR_COLORED_FOLIAGE_PLANTS: Set[str] = {
     "aloe",
     "aloe vera",
     "jade",
+    "jade plant",
     "crassula ovata",
 }
+
+# ==============================================================================
+# 4. USER FEEDBACK LOGGING CONFIG (TASK 11)
+# ==============================================================================
+USER_FEEDBACK_LOG_PATH = DATA_DIR / "user_feedback_log.jsonl"

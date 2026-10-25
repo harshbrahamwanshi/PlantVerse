@@ -3,11 +3,13 @@
 # ============================================================
 
 from functools import lru_cache
+import os
+from pathlib import Path
 import re
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
-from bs4 import BeautifulSoup
 import numpy as np
+import onnxruntime as ort
 from PIL import Image, ImageOps
 import requests
 import streamlit as st
@@ -15,6 +17,7 @@ import torch
 from transformers import AutoImageProcessor, AutoModelForImageClassification
 
 from ml_config import (
+    ENABLE_FLORASENSE_SECONDARY,
     FLORASENSE_HIGH_CONF_THRESHOLD,
     FLORASENSE_INPUT_SIZE,
     FLORASENSE_MEAN,
@@ -23,7 +26,22 @@ from ml_config import (
     FLORASENSE_MODEL_NAME,
     FLORASENSE_STD,
     LOW_CONFIDENCE_PLANT_MESSAGE,
+    MAX_IMAGE_SIZE_BYTES,
+    MIN_IMAGE_DIMENSION_PX,
+    ONNX_NOT_PLANT_THRESHOLD,
+    ONNX_PLANT_HIGH_CONF_THRESHOLD,
+    ONNX_PLANT_INPUT_SIZE,
+    ONNX_PLANT_LABELS_PATH,
+    ONNX_PLANT_MEAN,
+    ONNX_PLANT_MEDIUM_CONF_THRESHOLD,
+    ONNX_PLANT_MIN_TOP1_TOP2_MARGIN,
+    ONNX_PLANT_MODEL_PATH,
+    ONNX_PLANT_PROVISIONAL_N,
+    ONNX_PLANT_STD,
+    PLANT_ID_BACKEND,
     SUPPORTED_PLANT_SUMMARY,
+    load_onnx_plant_labels,
+    load_plants_metadata,
 )
 
 
@@ -51,78 +69,109 @@ def translate_text(text, target_lang):
     If Google Translate is unavailable, the original English
     text is returned instead of crashing the application.
     """
-
-    # No translation required
     if not text or target_lang == "en":
         return text
 
     try:
         url = "https://translate.googleapis.com/translate_a/single"
-
         params = {
             "client": "gtx",
             "sl": "en",
             "tl": target_lang,
             "dt": "t",
-            "q": text
+            "q": text,
         }
-
         response = requests.get(
             url,
             params=params,
             timeout=10,
-            headers={
-                "User-Agent": "PlantVerse/1.0"
-            }
+            headers={"User-Agent": "PlantVerse/1.0"},
         )
-
         response.raise_for_status()
-
         data = response.json()
-
         if data and data[0]:
             return "".join(
                 part[0]
                 for part in data[0]
                 if part and len(part) > 0
             )
-
         return text
-
-    except requests.exceptions.RequestException as e:
-        print(f"Translation request failed: {e}")
-        return text
-
-    except (ValueError, IndexError, TypeError) as e:
-        print(f"Translation returned invalid data: {e}")
-        return text
-
-    except Exception as e:
-        print(f"Translation error: {e}")
+    except Exception:
         return text
 
 
 # ============================================================
-# 3. Plant Classifier & Preprocessing
+# 3. Primary ONNX ConvNeXt-Tiny Plant Classifier & Secondary FloraSense
 # ============================================================
 
-_CROP_BOTANICAL_MAP = {
-    "Squash": "Cucurbita",
-    "Orange": "Orange (fruit)",
-    "Corn (Maize)": "Maize",
-    "Corn": "Maize",
-    "Cherry (including sour)": "Prunus cerasus",
-    "Cherry": "Prunus avium",
-    "Pepper, bell": "Bell pepper",
-    "Bell Pepper": "Bell pepper",
-}
+@st.cache_resource
+def load_onnx_plant_classifier(
+    model_path_str: Optional[str] = None,
+    labels_path_str: Optional[str] = None,
+) -> Dict[str, Any]:
+    """
+    Load the primary ConvNeXt-Tiny ONNX plant + foliar condition classifier once.
+    Raises RuntimeError with a clear message if the model or labels file is missing or corrupted.
+    """
+    m_path = Path(model_path_str or os.getenv("PLANTVERSE_ONNX_PLANT_MODEL", str(ONNX_PLANT_MODEL_PATH)))
+    l_path = Path(labels_path_str or os.getenv("PLANTVERSE_ONNX_PLANT_LABELS", str(ONNX_PLANT_LABELS_PATH)))
+
+    if not m_path.exists():
+        raise RuntimeError(
+            f"Missing plant identification model file at '{m_path}'. "
+            "Please verify that 'models/plant_model.onnx' is present."
+        )
+    if m_path.stat().st_size < 1024:
+        raise RuntimeError(
+            f"Plant identification model file at '{m_path}' is empty or truncated ({m_path.stat().st_size} bytes)."
+        )
+    if not l_path.exists():
+        raise RuntimeError(
+            f"Missing plant labels file at '{l_path}'. "
+            "Please verify that 'models/plant_labels.json' is present."
+        )
+
+    try:
+        meta = json.loads(l_path.read_text(encoding="utf-8")) if "json" in globals() else load_onnx_plant_labels()
+    except Exception as exc:
+        raise RuntimeError(f"Corrupted plant labels JSON at '{l_path}': {exc}") from exc
+
+    try:
+        import json as _json
+        meta = _json.loads(l_path.read_text(encoding="utf-8"))
+        species = meta["species"]
+        conditions = meta["conditions"]
+        input_size = int(meta.get("input_size", 224))
+        mean = np.array(meta.get("mean", ONNX_PLANT_MEAN), dtype=np.float32)
+        std = np.array(meta.get("std", ONNX_PLANT_STD), dtype=np.float32)
+
+        opts = ort.SessionOptions()
+        opts.intra_op_num_threads = 2
+        session = ort.InferenceSession(str(m_path), opts, providers=["CPUExecutionProvider"])
+        plants_meta = load_plants_metadata()
+
+        return {
+            "session": session,
+            "species": species,
+            "conditions": conditions,
+            "input_size": input_size,
+            "mean": mean,
+            "std": std,
+            "plants_meta": plants_meta,
+            "model_path": str(m_path),
+        }
+    except Exception as exc:
+        raise RuntimeError(
+            f"Failed to initialize ONNX plant identification model from '{m_path}' (weights may be corrupted): {exc}"
+        ) from exc
 
 
 @st.cache_resource
-def load_classifier() -> Dict[str, Any]:
+def load_florasense_classifier() -> Dict[str, Any]:
     """
-    Load the FloraSense Vision Transformer model and processor in eval mode.
-    Raises RuntimeError with a clear message if the model or weights cannot be loaded.
+    Load the secondary FloraSense Vision Transformer model in eval mode.
+    Used only when secondary 9,985-taxon suggestions are requested or when
+    PLANTVERSE_PLANT_ID_BACKEND=florasense is set for benchmark comparison.
     """
     try:
         model = AutoModelForImageClassification.from_pretrained(FLORASENSE_MODEL_NAME)
@@ -135,16 +184,142 @@ def load_classifier() -> Dict[str, Any]:
         }
     except Exception as exc:
         raise RuntimeError(
-            f"Unable to load plant identification model '{FLORASENSE_MODEL_NAME}'. "
-            f"Verify model weights are available locally or check network connection: {exc}"
+            f"Unable to load secondary FloraSense model '{FLORASENSE_MODEL_NAME}': {exc}"
         ) from exc
 
 
+def load_classifier() -> Dict[str, Any]:
+    """Load the configured active plant classifier."""
+    backend = os.getenv("PLANTVERSE_PLANT_ID_BACKEND", PLANT_ID_BACKEND).strip().lower()
+    if backend == "florasense":
+        return load_florasense_classifier()
+    return load_onnx_plant_classifier()
+
+
+def _validate_and_orient_image(image: Any) -> Image.Image:
+    """
+    Validate image input, apply EXIF orientation transpose, convert to RGB,
+    and enforce minimum dimensions (>= 32x32 px).
+    """
+    if image is None:
+        raise ValueError("No image provided for plant identification.")
+    if isinstance(image, (str, os.PathLike)):
+        p = Path(image)
+        if not p.exists():
+            raise ValueError(f"Image file does not exist: {image}")
+        if p.stat().st_size == 0:
+            raise ValueError("Image file is empty (0 bytes).")
+        if p.stat().st_size > MAX_IMAGE_SIZE_BYTES:
+            raise ValueError("Image file exceeds maximum allowed size (10 MB).")
+        pil_img = Image.open(p)
+    elif isinstance(image, Image.Image):
+        pil_img = image.copy()
+    else:
+        raise ValueError("Unsupported image input type for plant identification.")
+
+    img = ImageOps.exif_transpose(pil_img)
+    if img.mode != "RGB":
+        img = img.convert("RGB")
+    if img.width < MIN_IMAGE_DIMENSION_PX or img.height < MIN_IMAGE_DIMENSION_PX:
+        raise ValueError(
+            f"Image is too small ({img.width}x{img.height} px). "
+            f"Minimum dimension is {MIN_IMAGE_DIMENSION_PX}x{MIN_IMAGE_DIMENSION_PX} px."
+        )
+    return img
+
+
+def preprocess_for_onnx_plant(
+    image: Image.Image,
+    input_size: int = 224,
+    mean: Optional[np.ndarray] = None,
+    std: Optional[np.ndarray] = None,
+) -> np.ndarray:
+    """
+    Exact training-matched preprocessing for FloraCare's `plant_model.onnx` (ConvNeXt-Tiny):
+    1. EXIF orientation transpose + RGB conversion.
+    2. Squash-resize to (224, 224) with BILINEAR interpolation.
+    3. Rescale pixel intensities to [0.0, 1.0] (/ 255.0).
+    4. Normalize with ImageNet mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225].
+    5. Transpose HWC -> CHW and add batch dimension [1, 3, 224, 224].
+    """
+    img = _validate_and_orient_image(image)
+    m = mean if mean is not None else np.array(ONNX_PLANT_MEAN, dtype=np.float32)
+    s = std if std is not None else np.array(ONNX_PLANT_STD, dtype=np.float32)
+    resized = img.resize((input_size, input_size), Image.Resampling.BILINEAR)
+    x = np.asarray(resized, dtype=np.float32) / 255.0
+    chw = ((x - m) / s).transpose(2, 0, 1)
+    return np.expand_dims(chw, axis=0).astype(np.float32)
+
+
+def preprocess_for_florasense(image: Image.Image) -> torch.Tensor:
+    """
+    Exact training-matched preprocessing for Sisigoks/FloraSense (google/vit-base-patch16-224).
+    """
+    img = _validate_and_orient_image(image)
+    resized = img.resize(FLORASENSE_INPUT_SIZE, Image.Resampling.BILINEAR)
+    arr = np.asarray(resized, dtype=np.float32) / 255.0
+    mean = np.array(FLORASENSE_MEAN, dtype=np.float32)
+    std = np.array(FLORASENSE_STD, dtype=np.float32)
+    norm = (arr - mean) / std
+    chw = np.transpose(norm, (2, 0, 1))
+    return torch.from_numpy(chw).unsqueeze(0)
+
+
+def _softmax_np(logits: np.ndarray) -> np.ndarray:
+    shifted = logits - np.max(logits, axis=-1, keepdims=True)
+    exp_v = np.exp(shifted)
+    return exp_v / np.sum(exp_v, axis=-1, keepdims=True)
+
+
+def evaluate_onnx_plant_confidence_policy(
+    top1_id: str,
+    top1_score: float,
+    top2_score: float,
+    not_plant_score: float = 0.0,
+    high_threshold: float = ONNX_PLANT_HIGH_CONF_THRESHOLD,
+    medium_threshold: float = ONNX_PLANT_MEDIUM_CONF_THRESHOLD,
+    min_margin: float = ONNX_PLANT_MIN_TOP1_TOP2_MARGIN,
+    not_plant_threshold: float = ONNX_NOT_PLANT_THRESHOLD,
+) -> Tuple[str, str]:
+    """
+    Evaluate confidence tier ('high', 'medium', 'low') for the ONNX ConvNeXt-Tiny plant model.
+    Thresholds are provisional (derived on n=163 tuning images: 45 iNaturalist + 118 PlantDoc tuning half).
+    """
+    if top1_id == "not_plant" or not_plant_score >= not_plant_threshold:
+        return "low", LOW_CONFIDENCE_PLANT_MESSAGE
+
+    margin = top1_score - top2_score
+    if top1_score >= high_threshold and margin >= min_margin:
+        return "high", ""
+    if top1_score >= medium_threshold and margin >= (min_margin * 0.5):
+        return (
+            "medium",
+            f"Moderate confidence identification ({top1_score * 100:.1f}%; provisional threshold derived on n={ONNX_PLANT_PROVISIONAL_N} tuning images). "
+            "Please verify morphological traits against the species profile below.",
+        )
+    return "low", LOW_CONFIDENCE_PLANT_MESSAGE
+
+
+def evaluate_plant_confidence_policy(
+    top1_score: float,
+    top2_score: float,
+    high_threshold: float = FLORASENSE_HIGH_CONF_THRESHOLD,
+    medium_threshold: float = FLORASENSE_MEDIUM_CONF_THRESHOLD,
+    min_ratio: float = FLORASENSE_MIN_TOP1_TOP2_RATIO,
+) -> Tuple[str, str]:
+    """Evaluate confidence tier for the secondary FloraSense model."""
+    ratio = top1_score / max(top2_score, 1e-7)
+    if top1_score >= high_threshold and ratio >= min_ratio:
+        return "high", ""
+    if top1_score >= medium_threshold and ratio >= min_ratio:
+        return (
+            "medium",
+            "Moderate confidence prediction: fine-grained visual similarity detected across related taxa.",
+        )
+    return "low", LOW_CONFIDENCE_PLANT_MESSAGE
+
+
 def _clean_florasense_label(raw_label: str) -> str:
-    """
-    Convert raw FloraSense labels like 'Adiantum_pedatum_L_' or
-    'Valerianella_locusta__L___Laterr_' into a clean binomial 'Adiantum pedatum'.
-    """
     if not raw_label:
         return "Unknown"
     if "_" not in raw_label:
@@ -155,73 +330,56 @@ def _clean_florasense_label(raw_label: str) -> str:
     return " ".join(parts[:2]) if len(parts) >= 2 else parts[0]
 
 
-def preprocess_for_florasense(image: Image.Image) -> torch.Tensor:
+def get_florasense_secondary_suggestions(image: Image.Image, top_k: int = 5) -> List[Dict[str, Any]]:
     """
-    Exact training-matched preprocessing for Sisigoks/FloraSense (google/vit-base-patch16-224):
-    1. Apply EXIF orientation transpose so portrait mobile photos are upright.
-    2. Convert to 3-channel RGB.
-    3. Squash-resize to (224, 224) using BILINEAR interpolation (matching ViTImageProcessor default_to_square=True).
-    4. Scale pixel intensities to [0.0, 1.0] (rescale_factor = 1/255).
-    5. Normalize with mean=[0.5, 0.5, 0.5] and std=[0.5, 0.5, 0.5].
-    6. Transpose HWC -> CHW and add batch dimension [1, 3, 224, 224].
+    Optional secondary top-5 taxonomic suggestions from Sisigoks/FloraSense (9,985 classes).
+    Presented strictly as 'other possible matches (low confidence)', never as the headline.
     """
-    if image is None:
-        raise ValueError("No image provided for plant identification.")
-    img = ImageOps.exif_transpose(image)
-    if img.mode != "RGB":
-        img = img.convert("RGB")
-    if img.width < 32 or img.height < 32:
-        raise ValueError(f"Image is too small ({img.width}x{img.height} px). Minimum dimension is 32x32 px.")
+    try:
+        pixel_values = preprocess_for_florasense(image)
+        bundle = load_florasense_classifier()
+        model = bundle["model"]
+        id2label = bundle["id2label"]
+        with torch.no_grad():
+            logits = model(pixel_values=pixel_values).logits[0]
+            probs = torch.softmax(logits, dim=-1).cpu().numpy()
 
-    resized = img.resize(FLORASENSE_INPUT_SIZE, Image.Resampling.BILINEAR)
-    arr = np.asarray(resized, dtype=np.float32) / 255.0
-    mean = np.array(FLORASENSE_MEAN, dtype=np.float32)
-    std = np.array(FLORASENSE_STD, dtype=np.float32)
-    norm = (arr - mean) / std
-    chw = np.transpose(norm, (2, 0, 1))
-    return torch.from_numpy(chw).unsqueeze(0)
+        top_indices = np.argsort(probs)[::-1][:50]
+        species_scores: Dict[str, float] = {}
+        species_raw_map: Dict[str, str] = {}
+        for idx in top_indices:
+            raw_lbl = id2label[int(idx)]
+            clean_lbl = _clean_florasense_label(raw_lbl)
+            species_scores[clean_lbl] = species_scores.get(clean_lbl, 0.0) + float(probs[int(idx)])
+            if clean_lbl not in species_raw_map:
+                species_raw_map[clean_lbl] = raw_lbl
 
-
-def evaluate_plant_confidence_policy(
-    top1_score: float,
-    top2_score: float,
-    high_threshold: float = FLORASENSE_HIGH_CONF_THRESHOLD,
-    medium_threshold: float = FLORASENSE_MEDIUM_CONF_THRESHOLD,
-    min_ratio: float = FLORASENSE_MIN_TOP1_TOP2_RATIO,
-) -> Tuple[str, str]:
-    """
-    Evaluate confidence tier ('high', 'medium', 'low') using measured top-1 probability
-    and top-1 / top-2 probability ratio.
-    """
-    ratio = top1_score / max(top2_score, 1e-7)
-    if top1_score >= high_threshold and ratio >= min_ratio:
-        return "high", ""
-    if top1_score >= medium_threshold and ratio >= min_ratio:
-        return (
-            "medium",
-            "Moderate confidence prediction: fine-grained visual similarity detected across related taxa. Verify diagnostic traits below.",
-        )
-    return "low", LOW_CONFIDENCE_PLANT_MESSAGE
+        ranked = sorted(species_scores.items(), key=lambda kv: -kv[1])[:top_k]
+        return [
+            {
+                "species": sp,
+                "raw_label": species_raw_map.get(sp, sp),
+                "score": float(sc),
+                "confidence_pct": round(float(sc) * 100, 2),
+                "source": "Sisigoks/FloraSense (secondary 9,985-taxon index)",
+            }
+            for sp, sc in ranked
+        ]
+    except Exception:
+        return []
 
 
-def predict_species_detailed(image: Image.Image) -> Dict[str, Any]:
-    """
-    Run genuine plant species identification using FloraSense without any cross-model
-    hijacking or fake fallbacks. Aggregates probability mass across duplicate synonym
-    authorities in FloraSense's 9,985-class head and applies the confidence policy.
-    """
+def _predict_species_florasense_detailed(image: Image.Image) -> Dict[str, Any]:
+    """Run FloraSense directly (used only when PLANTVERSE_PLANT_ID_BACKEND=florasense in benchmarks)."""
     pixel_values = preprocess_for_florasense(image)
-    bundle = load_classifier()
+    bundle = load_florasense_classifier()
     model = bundle["model"]
     id2label = bundle["id2label"]
 
     with torch.no_grad():
-        outputs = model(pixel_values=pixel_values)
-        logits = outputs.logits[0]
+        logits = model(pixel_values=pixel_values).logits[0]
         probs = torch.softmax(logits, dim=-1).cpu().numpy()
 
-    # Aggregate top-50 raw classes by cleaned binomial so duplicate authority strings
-    # (e.g. 'Adiantum_raddianum_C_Presl' and 'Adiantum_raddianum_C__Presl') sum together
     top_indices = np.argsort(probs)[::-1][:50]
     species_scores: Dict[str, float] = {}
     species_raw_map: Dict[str, str] = {}
@@ -240,6 +398,7 @@ def predict_species_detailed(image: Image.Image) -> Dict[str, Any]:
     top_candidates = [
         {
             "species": sp,
+            "scientific_name": sp,
             "raw_label": species_raw_map.get(sp, sp),
             "score": float(sc),
             "confidence_pct": round(float(sc) * 100, 2),
@@ -249,31 +408,160 @@ def predict_species_detailed(image: Image.Image) -> Dict[str, Any]:
 
     return {
         "species": top1_label,
+        "scientific_name": top1_label,
         "raw_label": species_raw_map.get(top1_label, top1_label),
         "score": float(top1_score),
         "top2_score": float(top2_score),
-        "margin_ratio": round(float(top1_score) / max(float(top2_score), 1e-7), 2),
+        "margin": round(float(top1_score - top2_score), 4),
         "confidence_tier": tier,
         "is_reliable": tier in ("high", "medium"),
+        "is_not_plant": False,
         "warning_message": message,
         "top_candidates": top_candidates,
+        "secondary_suggestions": [],
+        "condition_predictions": [],
+        "plant_metadata": {},
         "model_name": FLORASENSE_MODEL_NAME,
     }
 
 
-def predict_species(image: Image.Image) -> Tuple[str, float]:
+def predict_species_detailed(
+    image: Any,
+    include_secondary_florasense: bool = False,
+) -> Dict[str, Any]:
     """
-    Predict plant species from uploaded image.
+    Run primary plant identification using ConvNeXt-Tiny (`models/plant_model.onnx`,
+    68 species + `not_plant`, and 7 foliar condition classes).
+    Optionally attaches secondary low-confidence suggestions from `Sisigoks/FloraSense`.
+    """
+    backend = os.getenv("PLANTVERSE_PLANT_ID_BACKEND", PLANT_ID_BACKEND).strip().lower()
+    img = _validate_and_orient_image(image)
+    if backend == "florasense":
+        return _predict_species_florasense_detailed(img)
+
+    bundle = load_onnx_plant_classifier()
+    session = bundle["session"]
+    species_list: List[str] = bundle["species"]
+    conditions_list: List[str] = bundle["conditions"]
+    plants_meta: Dict[str, Dict[str, Any]] = bundle["plants_meta"]
+
+    inp = preprocess_for_onnx_plant(
+        img,
+        input_size=bundle["input_size"],
+        mean=bundle["mean"],
+        std=bundle["std"],
+    )
+    species_logits, condition_logits = session.run(None, {"pixel_values": inp})
+    p_species = _softmax_np(species_logits)[0]
+    p_condition = _softmax_np(condition_logits)[0]
+
+    not_plant_idx = species_list.index("not_plant") if "not_plant" in species_list else -1
+    not_plant_prob = float(p_species[not_plant_idx]) if not_plant_idx >= 0 else 0.0
+
+    sorted_sp_idx = np.argsort(p_species)[::-1]
+    top1_idx = int(sorted_sp_idx[0])
+    top2_idx = int(sorted_sp_idx[1]) if len(sorted_sp_idx) > 1 else top1_idx
+
+    top1_id = species_list[top1_idx]
+    top1_score = float(p_species[top1_idx])
+    top2_score = float(p_species[top2_idx]) if len(sorted_sp_idx) > 1 else 0.0
+
+    tier, warning_msg = evaluate_onnx_plant_confidence_policy(
+        top1_id=top1_id,
+        top1_score=top1_score,
+        top2_score=top2_score,
+        not_plant_score=not_plant_prob,
+    )
+    is_not_plant = top1_id == "not_plant" or not_plant_prob >= ONNX_NOT_PLANT_THRESHOLD
+
+    if is_not_plant:
+        display_name = "Not a plant"
+        scientific_name = "Non-botanical image"
+        wiki_query = ""
+        p_meta = {}
+    else:
+        p_meta = plants_meta.get(top1_id, {})
+        display_name = p_meta.get("name", top1_id.replace("_", " ").capitalize())
+        scientific_name = p_meta.get("scientific", display_name)
+        wiki_query = p_meta.get("wiki", scientific_name)
+
+    top_candidates: List[Dict[str, Any]] = []
+    for idx in sorted_sp_idx:
+        sp_id = species_list[int(idx)]
+        if sp_id == "not_plant":
+            continue
+        meta_i = plants_meta.get(sp_id, {})
+        name_i = meta_i.get("name", sp_id.replace("_", " ").capitalize())
+        sci_i = meta_i.get("scientific", name_i)
+        sc_i = float(p_species[int(idx)])
+        top_candidates.append(
+            {
+                "id": sp_id,
+                "species": name_i,
+                "scientific_name": sci_i,
+                "raw_label": sp_id,
+                "pv_crop": meta_i.get("pv_crop"),
+                "score": sc_i,
+                "confidence_pct": round(sc_i * 100, 2),
+            }
+        )
+        if len(top_candidates) >= 5:
+            break
+
+    sorted_cond_idx = np.argsort(p_condition)[::-1]
+    condition_predictions = [
+        {
+            "id": conditions_list[int(i)],
+            "score": float(p_condition[int(i)]),
+            "confidence_pct": round(float(p_condition[int(i)]) * 100, 1),
+        }
+        for i in sorted_cond_idx
+    ]
+
+    secondary_suggestions: List[Dict[str, Any]] = []
+    if include_secondary_florasense or ENABLE_FLORASENSE_SECONDARY:
+        secondary_suggestions = get_florasense_secondary_suggestions(img, top_k=5)
+
+    return {
+        "species": display_name,
+        "scientific_name": scientific_name,
+        "wiki_query": wiki_query,
+        "raw_label": top1_id,
+        "score": float(top1_score),
+        "top2_score": float(top2_score),
+        "not_plant_score": round(not_plant_prob, 4),
+        "margin": round(float(top1_score - top2_score), 4),
+        "confidence_tier": tier,
+        "is_reliable": (tier in ("high", "medium")) and not is_not_plant,
+        "is_not_plant": is_not_plant,
+        "warning_message": warning_msg,
+        "top_candidates": top_candidates,
+        "secondary_suggestions": secondary_suggestions,
+        "condition_predictions": condition_predictions,
+        "plant_metadata": p_meta,
+        "model_name": "ConvNeXt-Tiny ONNX (plant_model.onnx)",
+    }
+
+
+def predict_species(image: Any) -> Tuple[str, float]:
+    """
+    Predict plant species from uploaded image behind the existing PlantVerse interface.
     Returns (species_name, confidence_score).
-    Note: Does NOT hijack predictions with the crop disease model.
     """
     res = predict_species_detailed(image)
     return res["species"], res["score"]
 
 
 def get_supported_plants_info() -> Dict[str, Any]:
-    """Return metadata on supported plant classes for config/UI display."""
-    return SUPPORTED_PLANT_SUMMARY["florasense"]
+    """Return metadata and full 68-species list for config/UI display."""
+    info = dict(SUPPORTED_PLANT_SUMMARY["onnx_convnext"])
+    plants_meta = load_plants_metadata()
+    species_names = [
+        f"{p['name']} ({p['scientific']})" if p.get("scientific") else p["name"]
+        for p in plants_meta.values()
+    ]
+    info["supported_species_list"] = sorted(species_names)
+    return info
 
 
 # ============================================================
@@ -293,17 +581,22 @@ def get_wikipedia_title(name: str):
     If Wikipedia is unavailable, return the original
     model prediction instead of crashing.
     """
-
     clean_query = _clean_florasense_label(name) if "_" in name else name
+    # Also map known plant metadata names to their clean Wikipedia title if available
+    plants_meta = load_plants_metadata()
+    for p in plants_meta.values():
+        if clean_query.lower() in (p["id"].lower(), p["name"].lower(), p.get("scientific", "").lower()):
+            if p.get("wiki"):
+                clean_query = p["wiki"]
+                break
 
     url = "https://en.wikipedia.org/w/api.php"
-
     params = {
         "action": "query",
         "list": "search",
         "srsearch": clean_query,
         "format": "json",
-        "utf8": 1
+        "utf8": 1,
     }
 
     try:
@@ -311,47 +604,18 @@ def get_wikipedia_title(name: str):
             url,
             params=params,
             timeout=10,
-            headers=WIKIMEDIA_HEADERS
+            headers=WIKIMEDIA_HEADERS,
         )
-
         response.raise_for_status()
-
-        # Make sure the server actually returned JSON
-        content_type = response.headers.get(
-            "Content-Type",
-            ""
-        ).lower()
-
+        content_type = response.headers.get("Content-Type", "").lower()
         if "json" not in content_type:
-            print("Wikipedia returned a non-JSON response.")
-            print(response.text[:300])
             return clean_query
-
         data = response.json()
-
-        results = data.get(
-            "query",
-            {}
-        ).get(
-            "search",
-            []
-        )
-
+        results = data.get("query", {}).get("search", [])
         if results:
             return results[0].get("title", clean_query)
-
         return clean_query
-
-    except requests.exceptions.RequestException as e:
-        print(f"Wikipedia request failed: {e}")
-        return clean_query
-
-    except (ValueError, KeyError, TypeError) as e:
-        print(f"Wikipedia returned invalid JSON/data: {e}")
-        return clean_query
-
-    except Exception as e:
-        print(f"Wikipedia error: {e}")
+    except Exception:
         return clean_query
 
 
@@ -388,7 +652,6 @@ def get_taxonomy_from_wikidata(label: str):
     If Wikidata fails, return an error dictionary instead
     of crashing the application.
     """
-
     clean_label = _clean_florasense_label(label) if "_" in label else label
     search_url = "https://www.wikidata.org/w/api.php"
 
@@ -476,8 +739,8 @@ def get_taxonomy_from_wikidata(label: str):
                             taxonomy[rank_key] = sci_val
                 if taxonomy:
                     return taxonomy
-        except Exception as sparql_err:
-            print(f"SPARQL taxonomy fallback notice: {sparql_err}")
+        except Exception:
+            pass
 
         # 4. Fallback: lightweight wbgetentities traversal if SPARQL is unavailable
         @lru_cache(None)
@@ -497,8 +760,7 @@ def get_taxonomy_from_wikidata(label: str):
                 )
                 r.raise_for_status()
                 return r.json().get("entities", {}).get(e, {})
-            except Exception as err:
-                print(f"Failed to fetch Wikidata entity {e}: {err}")
+            except Exception:
                 return {}
 
         def find_taxon(e, depth=0):
@@ -571,11 +833,9 @@ def get_taxonomy_from_wikidata(label: str):
         collect(taxon_e)
         return taxonomy
 
-    except requests.exceptions.RequestException as e:
-        print(f"Wikidata request failed: {e}")
+    except requests.exceptions.RequestException:
         return {"error": "Unable to connect to Wikidata."}
-    except Exception as e:
-        print(f"Wikidata error: {e}")
+    except Exception:
         return {"error": "Unable to retrieve taxonomy information."}
 
 
@@ -585,20 +845,16 @@ def get_taxonomy_from_wikidata(label: str):
 
 def get_medicinal_uses_from_wikipedia(
     title: str,
-    target_lang="en"
+    target_lang="en",
 ):
     """
     Extract medicinal/traditional medicine/uses information
     from the Wikipedia page using a single lightweight API call.
-
-    If Wikipedia is unavailable, return None.
     """
-
     clean_title = _clean_florasense_label(title) if "_" in title else title
 
     try:
         url = "https://en.wikipedia.org/w/api.php"
-
         response = requests.get(
             url,
             params={
@@ -642,7 +898,6 @@ def get_medicinal_uses_from_wikipedia(
             "description",
         )
 
-        # Split plain-text extract into sections by "== Heading =="
         sections = []
         current_heading = "lead"
         current_lines = []
@@ -666,7 +921,6 @@ def get_medicinal_uses_from_wikipedia(
                 break
 
         if not target_text:
-            # Fall back to lead section
             for heading, body in sections:
                 if heading == "lead" and body:
                     target_text = body
@@ -694,13 +948,5 @@ def get_medicinal_uses_from_wikipedia(
                     return bullet_points
 
         return bullet_points[:5] if bullet_points else None
-
-    except requests.exceptions.RequestException as e:
-        print(f"Wikipedia medicinal-use request failed: {e}")
+    except Exception:
         return None
-    except Exception as e:
-        print(f"Medicinal-use extraction error: {e}")
-        return None
-
-
-# Identification UI lives in app_pages/identify.py and reuses the functions above.
