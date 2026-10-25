@@ -1,0 +1,21 @@
+dataset,image,predicted_plant,confidence,expected_plant,correct
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),hero.jpg,Adiantum pedatum,0.2954,Adiantum pedatum,True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),ginkgo.jpg,Abies alba,0.0009,Ginkgo biloba,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),fern-plate.jpg,Raspberry,0.8689,Fern (Polypodiopsida),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),tomato_early_blight.jpg,Tomato,0.7837,Tomato (Solanum lycopersicum),True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),apple_scab.jpg,Apple,0.9794,Apple (Malus domestica),True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),healthy_tomato.jpg,Tomato,0.9922,Tomato (Solanum lycopersicum),True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),healthy_apple.jpg,Salix lasiolepis,0.0014,Apple (Malus domestica),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),hibiscus.jpg,Tomato,0.6765,Hibiscus (Hibiscus rosa-sinensis),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),tulsi.jpg,Tomato,0.626,Tulsi (Ocimum tenuiflorum),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),neem.jpg,Cucurbita,0.6068,Neem (Azadirachta indica),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),peepal.jpg,Grape,0.946,Peepal (Ficus religiosa),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),money_plant.jpg,Grape,0.807,Money plant (Epipremnum aureum),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),curry_leaf.jpg,Grape,0.7473,Curry leaf (Bergera koenigii),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),snake_plant.jpg,Sansevieria metallica,0.1129,Snake plant (Dracaena trifasciata),True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),croton.jpg,Codiaeum spp,0.11,Croton (Codiaeum variegatum),True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),rose_black_spot.jpg,Rosa moschata,0.0008,Rose (Rosa),True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),rose_powdery_mildew.jpg,Grape,0.7666,Rose (Rosa),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),late_blight.jpg,Tomato,0.984,Tomato (Solanum lycopersicum),True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),corn_rust.jpg,Hordeum vulgare,0.0022,Corn (Maize) (Zea mays),False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),Potato_Late_blight_5305.jpg,Tomato,0.994,Potato (Solanum tuberosum),False

@@ -1,0 +1,77 @@
+dataset,image,predicted_plant,confidence,expected_plant,correct
+Dataset-Image Set (PlantVillage Held-Out Test Split),Apple_healthy_614.jpg,Apple,0.997,Apple (Malus domestica),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Blueberry_healthy_791.jpg,Blueberry,1.0,Blueberry (Vaccinium corymbosum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Cherry_including_sour_Powdery_mildew_950.jpg,Prunus avium,0.9999,Cherry (Prunus avium),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Cherry_including_sour_healthy_1186.jpg,Prunus avium,1.0,Cherry (Prunus avium),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Corn_maize_Common_rust__1542.jpg,Maize,0.9993,Corn (Maize) (Zea mays),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Grape_Esca_Black_Measles__2471.jpg,Grape,0.9985,Grape (Vitis vinifera),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Orange_Haunglongbing_Citrus_greening__3517.jpg,Orange / Citrus,0.9999,Orange / Citrus (Citrus sinensis),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Potato_Late_blight_5305.jpg,Tomato,0.994,Potato (Solanum tuberosum),False
+Dataset-Image Set (PlantVillage Held-Out Test Split),Soybean_healthy_5991.jpg,Soybean,0.9839,Soybean (Glycine max),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Soybean_healthy_6468.jpg,Soybean,0.999,Soybean (Glycine max),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Tomato_Leaf_Mold_8313.jpg,Tomato,0.9895,Tomato (Solanum lycopersicum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Tomato_Spider_mites_Two_spotted_spider_mite_8779.jpg,Tomato,0.9937,Tomato (Solanum lycopersicum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Tomato_Tomato_Yellow_Leaf_Curl_Virus_9548.jpg,Tomato,0.9999,Tomato (Solanum lycopersicum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),Tomato_healthy_10664.jpg,Tomato,0.9998,Tomato (Solanum lycopersicum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2280.jpg,Grape,0.9972,Grape (Vitis vinifera),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2281.jpg,Grape,0.9992,Grape (Vitis vinifera),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2282.jpg,Grape,0.9939,Grape (Vitis vinifera),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2283.jpg,Grape,0.998,Grape (Vitis vinifera),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2284.jpg,Grape,0.9999,Grape (Vitis vinifera),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_510.jpg,Apple,0.9949,Apple (Malus domestica),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_511.jpg,Apple,0.9941,Apple (Malus domestica),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_512.jpg,Apple,0.7086,Apple (Malus domestica),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_513.jpg,Apple,0.9971,Apple (Malus domestica),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_514.jpg,Apple,0.9386,Apple (Malus domestica),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5630.jpg,Soybean,0.9993,Soybean (Glycine max),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5631.jpg,Soybean,0.9996,Soybean (Glycine max),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5632.jpg,Soybean,0.9998,Soybean (Glycine max),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5633.jpg,Soybean,0.9999,Soybean (Glycine max),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5634.jpg,Soybean,0.9183,Soybean (Glycine max),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5015.jpg,Bell pepper,0.9997,Bell Pepper (Capsicum annuum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5016.jpg,Bell pepper,0.999,Bell Pepper (Capsicum annuum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5017.jpg,Bell pepper,0.9853,Bell Pepper (Capsicum annuum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5018.jpg,Bell pepper,0.9987,Bell Pepper (Capsicum annuum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_5019.jpg,Bell pepper,0.9996,Bell Pepper (Capsicum annuum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_4570.jpg,Bell pepper,0.9957,Bell Pepper (Capsicum annuum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_4571.jpg,Bell pepper,0.9919,Bell Pepper (Capsicum annuum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_4572.jpg,Bell pepper,0.9983,Bell Pepper (Capsicum annuum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_4573.jpg,Bell pepper,0.9999,Bell Pepper (Capsicum annuum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_4574.jpg,Bell pepper,0.9322,Bell Pepper (Capsicum annuum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2855.jpg,Grape,0.9988,Grape (Vitis vinifera),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2856.jpg,Grape,0.9991,Grape (Vitis vinifera),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2857.jpg,Grape,0.9991,Grape (Vitis vinifera),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2858.jpg,Grape,0.9976,Grape (Vitis vinifera),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2859.jpg,Grape,0.9969,Grape (Vitis vinifera),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2095.jpg,Grape,0.9939,Grape (Vitis vinifera),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2096.jpg,Grape,0.9886,Grape (Vitis vinifera),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2097.jpg,Grape,0.8539,Grape (Vitis vinifera),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2098.jpg,Grape,0.997,Grape (Vitis vinifera),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_2099.jpg,Grape,0.9962,Grape (Vitis vinifera),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1780.jpg,Maize,0.7218,Corn (Maize) (Zea mays),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1781.jpg,Maize,0.9016,Corn (Maize) (Zea mays),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1782.jpg,Maize,0.9956,Corn (Maize) (Zea mays),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1783.jpg,Maize,0.9964,Corn (Maize) (Zea mays),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1784.jpg,Maize,0.9999,Corn (Maize) (Zea mays),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_8640.jpg,Tomato,0.7025,Tomato (Solanum lycopersicum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_8641.jpg,Tomato,0.9868,Tomato (Solanum lycopersicum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_8642.jpg,Tomato,0.9659,Tomato (Solanum lycopersicum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_8643.jpg,Tomato,0.9871,Tomato (Solanum lycopersicum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_8644.jpg,Tomato,0.9373,Tomato (Solanum lycopersicum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_650.jpg,Blueberry,0.9997,Blueberry (Vaccinium corymbosum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_651.jpg,Blueberry,0.9997,Blueberry (Vaccinium corymbosum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_652.jpg,Blueberry,0.9999,Blueberry (Vaccinium corymbosum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_653.jpg,Blueberry,0.9997,Blueberry (Vaccinium corymbosum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_654.jpg,Blueberry,0.9985,Blueberry (Vaccinium corymbosum),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_610.jpg,Apple,0.9662,Apple (Malus domestica),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_611.jpg,Apple,0.9997,Apple (Malus domestica),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_612.jpg,Apple,0.9874,Apple (Malus domestica),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_613.jpg,Apple,0.8391,Apple (Malus domestica),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_614.jpg,Apple,0.9978,Apple (Malus domestica),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1915.jpg,Maize,1.0,Corn (Maize) (Zea mays),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1916.jpg,Maize,0.9996,Corn (Maize) (Zea mays),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1917.jpg,Maize,0.9999,Corn (Maize) (Zea mays),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1918.jpg,Maize,0.9999,Corn (Maize) (Zea mays),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_1919.jpg,Maize,0.9986,Corn (Maize) (Zea mays),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_4475.jpg,Peach,0.999,Peach (Prunus persica),True
+Dataset-Image Set (PlantVillage Held-Out Test Split),pv_test_4476.jpg,Peach,0.9948,Peach (Prunus persica),True

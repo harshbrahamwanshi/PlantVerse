@@ -1,0 +1,21 @@
+dataset,image,predicted_disease,confidence,expected_disease,correct
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),hero.jpg,Healthy Raspberry Plant,0.2836,UNSUPPORTED_NON_CROP,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),ginkgo.jpg,Squash with Powdery Mildew,0.4625,UNSUPPORTED_NON_CROP,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),fern-plate.jpg,Healthy Raspberry Plant,0.8689,UNSUPPORTED_NON_CROP,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),tomato_early_blight.jpg,Tomato with Early Blight,0.7837,Tomato with Early Blight,True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),apple_scab.jpg,Apple Scab,0.9794,Apple Scab,True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),healthy_tomato.jpg,Healthy Tomato Plant,0.9922,Healthy Tomato Plant,True
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),healthy_apple.jpg,Healthy Blueberry Plant,0.4823,Healthy Apple,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),hibiscus.jpg,Tomato with Late Blight,0.6765,UNSUPPORTED_NON_CROP,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),tulsi.jpg,Tomato with Late Blight,0.626,UNSUPPORTED_NON_CROP,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),neem.jpg,Squash with Powdery Mildew,0.6068,UNSUPPORTED_NON_CROP,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),peepal.jpg,Grape with Black Rot,0.946,UNSUPPORTED_NON_CROP,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),money_plant.jpg,Grape with Black Rot,0.807,UNSUPPORTED_NON_CROP,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),curry_leaf.jpg,Grape with Black Rot,0.7473,UNSUPPORTED_NON_CROP,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),snake_plant.jpg,Healthy Strawberry Plant,0.181,UNSUPPORTED_NON_CROP,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),croton.jpg,Grape with Esca (Black Measles),0.3318,UNSUPPORTED_NON_CROP,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),rose_black_spot.jpg,Apple Scab,0.4588,UNSUPPORTED_NON_CROP,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),rose_powdery_mildew.jpg,Grape with Black Rot,0.7666,UNSUPPORTED_NON_CROP,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),late_blight.jpg,Tomato with Early Blight,0.984,Tomato with Late Blight,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),corn_rust.jpg,Corn (Maize) with Northern Leaf Blight,0.533,Corn (Maize) with Common Rust,False
+UNVERIFIED SMOKE TEST (Labels Inferred from Repo Filenames),Potato_Late_blight_5305.jpg,Tomato with Late Blight,0.994,Potato with Late Blight,False
