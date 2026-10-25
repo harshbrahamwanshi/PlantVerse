@@ -315,3 +315,41 @@ def test_error_paths_missing_and_corrupted_models_and_bad_images():
         corrupt_path.unlink(missing_ok=True)
         import plant_disease_detection
         plant_disease_detection.load_onnx_disease_classifier.clear()
+
+
+def test_non_crop_general_foliar_condition_and_feedback_widget():
+    # 1. Rose black spot (non-crop plant): 38-class gate is Unsupported, 7-class general condition is Diseased (Leaf spot / blight)
+    rose_img = PROJECT_ROOT / "static/sample_leaves/rose_black_spot.jpg"
+    res_rose = predict_disease(str(rose_img))
+    assert res_rose["health_status"] == "Unsupported"
+    assert res_rose["is_supported_crop"] is False
+    gc = res_rose.get("general_condition", {})
+    assert gc.get("available") is True
+    assert gc.get("plant_name") == "Rose"
+    assert gc.get("health_status") == "Diseased"
+    assert gc.get("condition_id") == "leaf_spot_blight"
+    assert len(gc.get("recommendations", [])) > 0
+    assert len(gc.get("common_species_problems", [])) > 0
+
+    # 2. Money plant (variegated non-crop houseplant): 38-class gate is Unsupported, 7-class general condition + care available
+    mp_img = PROJECT_ROOT / "static/sample_leaves/money_plant.jpg"
+    res_mp = predict_disease(str(mp_img))
+    assert res_mp["health_status"] == "Unsupported"
+    gc_mp = res_mp.get("general_condition", {})
+    assert gc_mp.get("available") is True
+    assert "Money plant" in gc_mp.get("plant_name", "")
+    assert res_mp["vision_analysis"]["is_variegated_foliage"] is True
+    assert res_mp["vision_analysis"]["affected_area_pct"] is None
+    assert res_mp["vision_analysis"]["raw_unfiltered_severity_pct"] is not None
+
+    # 3. Verify render_feedback_widget accepts both task_type/extra_meta and context_type/extra_metadata
+    from ui.feedback import render_feedback_widget
+    render_feedback_widget(
+        context_type="disease_detection_unsupported_gate",
+        predicted_label="Money plant (Pothos)",
+        confidence=0.935,
+        model_name="plant_model.onnx",
+        extra_metadata={"health_status": "Unsupported"},
+        key_prefix="test_fb_ctx",
+    )
+

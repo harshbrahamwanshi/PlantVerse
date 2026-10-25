@@ -95,6 +95,18 @@ def load_plants_metadata() -> Dict[str, Dict[str, Any]]:
     return {p["id"]: p for p in raw.get("plants", [])}
 
 
+def load_conditions_metadata() -> Dict[str, Dict[str, Any]]:
+    """Load rich metadata for the 7 general foliar condition classes from data/conditions_metadata.json."""
+    if not CONDITIONS_METADATA_PATH.exists():
+        return {}
+    raw = json.loads(CONDITIONS_METADATA_PATH.read_text(encoding="utf-8"))
+    if "conditions" in raw and isinstance(raw["conditions"], list):
+        return {c["id"]: c for c in raw["conditions"]}
+    return raw
+
+
+
+
 SUPPORTED_PLANT_SUMMARY = {
     "onnx_convnext": {
         "model_name": "ConvNeXt-Tiny Dual-Head Plant Identifier (68 regional & crop species + non-plant rejection)",

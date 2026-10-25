@@ -65,10 +65,11 @@ from ml_config import (
     PLANTVILLAGE_38_RAW_CLASSES,
     SUPPORTED_DISEASE_CROPS,
     UNSUPPORTED_CROP_DISEASE_MESSAGE,
+    load_plants_metadata,
     resolve_supported_disease_crop,
 )
 from plant_identification import predict_species_detailed
-from vision_analysis import analyze_foliar_lesions
+from vision_analysis import analyze_foliar_lesions, crop_to_bbox, segment_leaf
 
 warnings.filterwarnings("ignore")
 
@@ -347,21 +348,218 @@ def get_supported_disease_crops_list() -> List[str]:
     return list(SUPPORTED_DISEASE_CROPS.keys())
 
 
+def _resolve_plant_metadata(plant_name_or_id: Optional[str]) -> Dict[str, Any]:
+    """Find the matching plant entry from data/plants_metadata.json by ID, common name, scientific name, or pv_crop."""
+    if not plant_name_or_id:
+        return {}
+    plants_meta = load_plants_metadata()
+    clean = plant_name_or_id.strip().lower()
+    clean_id = clean.replace(" ", "_")
+    if clean_id in plants_meta:
+        return plants_meta[clean_id]
+    for p in plants_meta.values():
+        p_id = p.get("id", "").lower()
+        p_name = p.get("name", "").lower()
+        p_sci = p.get("scientific", "").lower()
+        p_pv = (p.get("pv_crop") or "").lower()
+        if clean in (p_id, p_name, p_sci, p_pv):
+            return p
+        if p_name and (clean.startswith(p_name.split("(")[0].strip()) or p_name.startswith(clean)):
+            return p
+    return {}
+
+
+def _build_general_condition_diagnosis(
+    image: Image.Image,
+    detected_plant_name: str,
+    plant_pred: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
+    """
+    Build the 7-class general foliar condition & plant care diagnosis from
+    `models/plant_model.onnx` (`condition_logits` head) + `data/conditions_metadata.json`
+    + `data/plants_metadata.json`.
+    When a leaf bounding box is found via classical CV (`segment_leaf`), evaluates the
+    condition head on the cropped leaf (`crop_to_bbox`) just like FloraCare's `plant_id.py`.
+    """
+    try:
+        img_rgb = np.asarray(image)
+        seg = segment_leaf(img_rgb)
+        leaf_crop_pil: Optional[Image.Image] = None
+        if seg.get("found") and seg.get("bbox"):
+            cropped_rgb = crop_to_bbox(img_rgb, seg["bbox"])
+            if cropped_rgb.shape[:2] != img_rgb.shape[:2]:
+                leaf_crop_pil = Image.fromarray(cropped_rgb)
+
+        if leaf_crop_pil is not None:
+            cond_pred_source = predict_species_detailed(image, leaf_crop=leaf_crop_pil)
+        elif plant_pred is not None:
+            cond_pred_source = plant_pred
+        else:
+            cond_pred_source = predict_species_detailed(image)
+    except Exception:
+        cond_pred_source = plant_pred or {}
+
+    is_not_plant = bool(cond_pred_source.get("is_not_plant", False)) and (
+        not detected_plant_name or "Unsupported / Non-Crop" in detected_plant_name
+    )
+    cond_list = cond_pred_source.get("condition_predictions", [])
+    if is_not_plant or not cond_list:
+        return {
+            "available": False,
+            "is_not_plant": is_not_plant,
+        }
+
+    top_cond = cond_list[0]
+    second_cond = cond_list[1] if len(cond_list) > 1 else {"score": 0.0}
+    cond_score = float(top_cond.get("score", 0.0))
+    cond_conf_pct = float(top_cond.get("confidence_pct", round(cond_score * 100, 1)))
+    is_healthy = bool(top_cond.get("healthy", top_cond.get("id") == "healthy"))
+
+    if cond_score >= 0.65:
+        cond_tier = "high"
+    elif cond_score >= 0.35:
+        cond_tier = "medium"
+    else:
+        cond_tier = "low"
+
+    species_source = (
+        plant_pred
+        if (plant_pred and plant_pred.get("is_reliable") and not plant_pred.get("is_not_plant"))
+        else cond_pred_source
+    )
+    explicit_meta = (
+        _resolve_plant_metadata(detected_plant_name)
+        if (detected_plant_name and "Unsupported" not in detected_plant_name)
+        else {}
+    )
+    species_reliable = bool(explicit_meta) or bool(species_source.get("is_reliable", False))
+
+    if explicit_meta:
+        p_meta = explicit_meta
+    elif species_reliable:
+        p_meta = (
+            species_source.get("plant_metadata")
+            or _resolve_plant_metadata(species_source.get("raw_label"))
+            or {}
+        )
+    else:
+        p_meta = {}
+
+    if p_meta:
+        plant_display = p_meta.get("name", detected_plant_name)
+        scientific_name = p_meta.get("scientific", plant_display)
+        hindi_name = p_meta.get("hindi", "")
+        category = p_meta.get("category", "Botanical Specimen")
+        common_problems = p_meta.get("problems", [])
+        care_dict = p_meta.get("care", {})
+        uses_list = p_meta.get("uses", [])
+        toxic_note = p_meta.get("toxic", "")
+    elif detected_plant_name and "Unsupported" not in detected_plant_name:
+        plant_display = detected_plant_name
+        scientific_name = detected_plant_name
+        hindi_name = ""
+        category = "Botanical Specimen"
+        common_problems = []
+        care_dict = {}
+        uses_list = []
+        toxic_note = ""
+    else:
+        plant_display = "Unidentified Plant (Low Species Confidence)"
+        scientific_name = f"Tentative top match: {species_source.get('species', 'Unknown')} ({round(float(species_source.get('score', 0.0)) * 100, 1)}%)"
+        hindi_name = ""
+        category = "Unconfirmed Host Species"
+        common_problems = []
+        care_dict = {}
+        uses_list = []
+        toxic_note = ""
+
+    organic_list = list(top_cond.get("organic", []))
+    chemical_list = list(top_cond.get("chemical", []))
+    prevention_list = list(top_cond.get("prevention", []))
+    combined_recs: List[str] = []
+    for item in organic_list + prevention_list:
+        if item and item != "No treatment needed" and item not in combined_recs:
+            combined_recs.append(item)
+
+    raw_pathogen = top_cond.get("pathogen", "")
+    pathogen_display = (
+        raw_pathogen
+        if raw_pathogen
+        else ("None — Healthy physiological state" if is_healthy else "Foliar pathogen / environmental stress")
+    )
+
+    return {
+        "available": True,
+        "is_not_plant": False,
+        "plant_id": p_meta.get("id", species_source.get("raw_label", "")),
+        "plant_name": plant_display,
+        "scientific_name": scientific_name,
+        "hindi_name": hindi_name,
+        "category": category,
+        "plant_confidence": float(species_source.get("score", 0.0)),
+        "plant_confidence_pct": round(float(species_source.get("score", 0.0)) * 100, 1),
+        "plant_confidence_tier": species_source.get("confidence_tier", "medium"),
+        "condition_id": top_cond.get("id", "unknown"),
+        "condition_name": top_cond.get("name", "Unknown Condition"),
+        "full_diagnosis_title": (
+            f"Healthy {plant_display}" if is_healthy else f"{plant_display} — {top_cond.get('name', 'Foliar Stress')}"
+        ),
+        "health_status": "Healthy" if is_healthy else "Diseased",
+        "is_healthy": is_healthy,
+        "confidence": cond_score,
+        "confidence_pct": cond_conf_pct,
+        "top2_confidence": float(second_cond.get("score", 0.0)),
+        "confidence_tier": cond_tier,
+        "type": top_cond.get("type", "General foliar condition"),
+        "pathogen": pathogen_display,
+        "urgency": top_cond.get("urgency", "none" if is_healthy else "medium"),
+        "symptoms": top_cond.get("symptoms", ""),
+        "recommendations": combined_recs,
+        "organic_treatments": organic_list,
+        "chemical_treatments": chemical_list,
+        "preventive_measures": prevention_list,
+        "care": care_dict,
+        "common_species_problems": common_problems,
+        "uses": uses_list,
+        "toxic": toxic_note,
+        "variegated": bool(p_meta.get("variegated", False)),
+        "top_conditions": cond_list,
+        "top_species_candidates": cond_pred_source.get("top_candidates", []),
+        "model_name": "ConvNeXt-Tiny Dual-Head ONNX (models/plant_model.onnx — 7-class foliar condition head)",
+        "expert_review_notice": EXPERT_REVIEW_NOTICE,
+    }
+
+
 def _build_unsupported_crop_response(
     image: Image.Image,
     image_bytes: bytes,
     detected_plant_name: str,
+    plant_pred: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     """
     Return the standardized response when the identified plant is not one of the
     14 crops supported by the 38-class disease classifier (Task 4).
-    Never runs or displays a crop disease on non-crop plants.
+    - Never runs or displays a 38-class crop disease on non-crop plants (`health_status="Unsupported"`,
+      `is_supported_crop=False`, `disease=UNSUPPORTED_CROP_DISEASE_MESSAGE`).
+    - Simultaneously attaches `general_condition` from the 7-class foliar condition head of
+      `models/plant_model.onnx` + `data/conditions_metadata.json` + `data/plants_metadata.json`
+      so non-crop houseplants, trees, and medicinal plants receive accurate general foliar condition
+      diagnosis, lesion segmentation, and species-specific cultural care.
     """
+    gen_cond = _build_general_condition_diagnosis(
+        image=image,
+        detected_plant_name=detected_plant_name,
+        plant_pred=plant_pred,
+    )
+    cond_is_healthy = bool(gen_cond.get("is_healthy", True)) if gen_cond.get("available") else True
+    cond_urgency = str(gen_cond.get("urgency", "none")) if gen_cond.get("available") else "none"
+    target_plant_for_cv = gen_cond.get("plant_name") or detected_plant_name
+
     vision_res = analyze_foliar_lesions(
         image,
-        is_healthy=True,
-        plant_name_or_id=detected_plant_name,
-        urgency_or_severity="none",
+        is_healthy=cond_is_healthy,
+        plant_name_or_id=target_plant_for_cv,
+        urgency_or_severity=cond_urgency,
     )
     return {
         "success": True,
@@ -376,15 +574,21 @@ def _build_unsupported_crop_response(
         "confidence_tier": "unsupported",
         "raw_label": "UNSUPPORTED_PLANT",
         "pathogen": "N/A (Plant is not one of the 14 supported agricultural crops)",
-        "severity": "N/A",
+        "severity": vision_res["project_severity_category"],
+        "severity_scheme_label": vision_res["severity_scheme_label"],
+        "affected_area_pct": vision_res["affected_area_pct"],
+        "affected_area_status": vision_res["estimation_status"],
+        "derived_health_score": vision_res["derived_health_score"],
+        "health_score_label": vision_res["health_score_label"],
         "symptoms": UNSUPPORTED_CROP_DISEASE_MESSAGE,
         "recommendations": [],
         "preventive_measures": [],
         "chemical_treatments": [],
         "organic_treatments": [],
-        "care": {},
+        "care": gen_cond.get("care", {}),
+        "general_condition": gen_cond,
         "needs_expert_review": False,
-        "expert_review_notice": "",
+        "expert_review_notice": EXPERT_REVIEW_NOTICE,
         "no_recommendation_message": NO_RECOMMENDATION_MESSAGE,
         "is_uncertain": True,
         "uncertainty_message": UNSUPPORTED_CROP_DISEASE_MESSAGE,
@@ -469,6 +673,7 @@ def predict_disease(
 
     # 2. Plant -> Disease Consistency Gate (Task 4)
     allowed_crop_weights: Optional[Dict[str, float]] = None
+    plant_pred: Optional[Dict[str, Any]] = None
     if host_plant is not None:
         canonical_crop = resolve_supported_disease_crop(host_plant)
         if canonical_crop is None:
@@ -476,6 +681,21 @@ def predict_disease(
         allowed_crop_weights = {canonical_crop: 1.0}
     elif enforce_crop_gate:
         plant_pred = predict_species_detailed(image)
+        # If full-frame prediction was low-confidence or distracted by desk/indoor clutter,
+        # check whether classical CV leaf segmentation isolates a clear leaf crop.
+        if not plant_pred["is_reliable"] or plant_pred["is_not_plant"]:
+            try:
+                img_rgb = np.asarray(image)
+                seg_check = segment_leaf(img_rgb)
+                if seg_check.get("found") and seg_check.get("bbox"):
+                    cropped_rgb = crop_to_bbox(img_rgb, seg_check["bbox"])
+                    if cropped_rgb.shape[:2] != img_rgb.shape[:2]:
+                        leaf_pred = predict_species_detailed(image, leaf_crop=Image.fromarray(cropped_rgb))
+                        if leaf_pred["is_reliable"] and not leaf_pred["is_not_plant"]:
+                            plant_pred = leaf_pred
+            except Exception:
+                pass
+
         top_crop = (
             resolve_supported_disease_crop(plant_pred["species"])
             or resolve_supported_disease_crop(plant_pred["raw_label"])
@@ -486,7 +706,7 @@ def predict_disease(
                 if plant_pred["is_reliable"] and not plant_pred["is_not_plant"]
                 else "Unsupported / Non-Crop Specimen"
             )
-            return _build_unsupported_crop_response(image, image_bytes, detected_label)
+            return _build_unsupported_crop_response(image, image_bytes, detected_label, plant_pred=plant_pred)
 
         # Collect candidate supported crops with >= 5% species probability
         allowed_crop_weights = {}
@@ -577,9 +797,16 @@ def predict_disease(
         urgency_or_severity=info.get("severity", "medium"),
     )
 
+    p_meta = _resolve_plant_metadata(crop) or (plant_pred.get("plant_metadata", {}) if plant_pred else {})
+    gen_cond = _build_general_condition_diagnosis(image, crop, plant_pred=plant_pred)
+
     return {
         "success": True,
         "plant": crop,
+        "scientific_name": p_meta.get("scientific", crop),
+        "hindi_name": p_meta.get("hindi", ""),
+        "common_species_problems": p_meta.get("problems", []),
+        "uses": p_meta.get("uses", []),
         "disease": condition,
         "disease_name": full_disease_name,
         "health_status": health_status,
@@ -605,7 +832,8 @@ def predict_disease(
         "preventive_measures": info.get("preventive_measures", []),
         "chemical_treatments": info.get("chemical_treatments", []),
         "organic_treatments": info.get("organic_treatments", []),
-        "care": info.get("care", {}),
+        "care": info.get("care") or p_meta.get("care", {}),
+        "general_condition": gen_cond,
         "known_disease": info.get("known_disease", True),
         "needs_expert_review": info.get("needs_expert_review", True),
         "expert_review_notice": info.get("expert_review_notice", EXPERT_REVIEW_NOTICE),
@@ -616,3 +844,4 @@ def predict_disease(
         "image_bytes": image_bytes,
         "image_dimensions": f"{image.width} × {image.height} px",
     }
+

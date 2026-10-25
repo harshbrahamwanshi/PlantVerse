@@ -49,6 +49,7 @@ from ml_config import (
     ONNX_PLANT_STD,
     PLANT_ID_BACKEND,
     SUPPORTED_PLANT_SUMMARY,
+    load_conditions_metadata,
     load_onnx_plant_labels,
     load_plants_metadata,
 )
@@ -158,6 +159,7 @@ def load_onnx_plant_classifier(
         opts.intra_op_num_threads = 2
         session = ort.InferenceSession(str(m_path), opts, providers=["CPUExecutionProvider"])
         plants_meta = load_plants_metadata()
+        conditions_meta = load_conditions_metadata()
 
         return {
             "session": session,
@@ -167,6 +169,7 @@ def load_onnx_plant_classifier(
             "mean": mean,
             "std": std,
             "plants_meta": plants_meta,
+            "conditions_meta": conditions_meta,
             "model_path": str(m_path),
         }
     except Exception as exc:
@@ -450,10 +453,14 @@ def _predict_species_florasense_detailed(image: Image.Image) -> Dict[str, Any]:
 def predict_species_detailed(
     image: Any,
     include_secondary_florasense: bool = False,
+    leaf_crop: Optional[Image.Image] = None,
 ) -> Dict[str, Any]:
     """
     Run primary plant identification using ConvNeXt-Tiny (`models/plant_model.onnx`,
     68 species + `not_plant`, and 7 foliar condition classes).
+    When `leaf_crop` is provided (from classical CV leaf segmentation), species probabilities
+    are averaged over the full frame and the cropped leaf, and condition probabilities are
+    taken from the leaf crop (matching FloraCare's dual-view inference).
     Optionally attaches secondary low-confidence suggestions from `Sisigoks/FloraSense`.
     """
     backend = os.getenv("PLANTVERSE_PLANT_ID_BACKEND", PLANT_ID_BACKEND).strip().lower()
@@ -466,16 +473,29 @@ def predict_species_detailed(
     species_list: List[str] = bundle["species"]
     conditions_list: List[str] = bundle["conditions"]
     plants_meta: Dict[str, Dict[str, Any]] = bundle["plants_meta"]
+    conditions_meta: Dict[str, Dict[str, Any]] = bundle.get("conditions_meta", {})
 
-    inp = preprocess_for_onnx_plant(
+    inp_full = preprocess_for_onnx_plant(
         img,
         input_size=bundle["input_size"],
         mean=bundle["mean"],
         std=bundle["std"],
     )
-    species_logits, condition_logits = session.run(None, {"pixel_values": inp})
-    p_species = _softmax_np(species_logits)[0]
-    p_condition = _softmax_np(condition_logits)[0]
+    if leaf_crop is not None:
+        inp_leaf = preprocess_for_onnx_plant(
+            leaf_crop,
+            input_size=bundle["input_size"],
+            mean=bundle["mean"],
+            std=bundle["std"],
+        )
+        inp_batch = np.concatenate([inp_full, inp_leaf], axis=0)
+        species_logits, condition_logits = session.run(None, {"pixel_values": inp_batch})
+        p_species = _softmax_np(species_logits).mean(axis=0)
+        p_condition = _softmax_np(condition_logits)[-1]
+    else:
+        species_logits, condition_logits = session.run(None, {"pixel_values": inp_full})
+        p_species = _softmax_np(species_logits)[0]
+        p_condition = _softmax_np(condition_logits)[0]
 
     not_plant_idx = species_list.index("not_plant") if "not_plant" in species_list else -1
     not_plant_prob = float(p_species[not_plant_idx]) if not_plant_idx >= 0 else 0.0
@@ -531,14 +551,27 @@ def predict_species_detailed(
             break
 
     sorted_cond_idx = np.argsort(p_condition)[::-1]
-    condition_predictions = [
-        {
-            "id": conditions_list[int(i)],
-            "score": float(p_condition[int(i)]),
-            "confidence_pct": round(float(p_condition[int(i)]) * 100, 1),
-        }
-        for i in sorted_cond_idx
-    ]
+    condition_predictions = []
+    for i in sorted_cond_idx:
+        c_id = conditions_list[int(i)]
+        c_meta = conditions_meta.get(c_id, {})
+        c_score = float(p_condition[int(i)])
+        condition_predictions.append(
+            {
+                "id": c_id,
+                "name": c_meta.get("disease", c_id.replace("_", " ").capitalize()),
+                "type": c_meta.get("type", "General foliar condition"),
+                "pathogen": c_meta.get("pathogen", "N/A"),
+                "urgency": c_meta.get("urgency", "medium"),
+                "healthy": bool(c_meta.get("healthy", c_id == "healthy")),
+                "symptoms": c_meta.get("symptoms", ""),
+                "chemical": c_meta.get("chemical", []),
+                "organic": c_meta.get("organic", []),
+                "prevention": c_meta.get("prevention", []),
+                "score": c_score,
+                "confidence_pct": round(c_score * 100, 1),
+            }
+        )
 
     secondary_suggestions: List[Dict[str, Any]] = []
     if include_secondary_florasense or ENABLE_FLORASENSE_SECONDARY:

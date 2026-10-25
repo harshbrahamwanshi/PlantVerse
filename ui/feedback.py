@@ -29,17 +29,23 @@ def log_user_feedback(entry: Dict[str, Any]) -> None:
 
 
 def render_feedback_widget(
-    task_type: str,
-    predicted_label: str,
-    confidence: float,
-    model_name: str,
-    key_prefix: str,
+    task_type: Optional[str] = None,
+    predicted_label: str = "",
+    confidence: float = 0.0,
+    model_name: str = "",
+    key_prefix: str = "feedback",
     extra_meta: Optional[Dict[str, Any]] = None,
+    *,
+    context_type: Optional[str] = None,
+    extra_metadata: Optional[Dict[str, Any]] = None,
+    **kwargs: Any,
 ) -> None:
     """
     Render the optional, local-only 'Was this correct?' feedback UI block with
     an explicit consent notice so real-world accuracy can be measured over time.
     """
+    resolved_task_type = task_type or context_type or "prediction"
+    resolved_extra_meta = extra_meta if extra_meta is not None else extra_metadata
     with st.container(border=True):
         st.markdown("##### :material/fact_check: Was this prediction correct? *(Optional Local Feedback)*")
         st.caption(
@@ -76,13 +82,14 @@ def render_feedback_widget(
             is_correct = verdict.startswith("Yes")
             log_user_feedback(
                 {
-                    "task_type": task_type,
+                    "task_type": resolved_task_type,
                     "predicted_label": predicted_label,
                     "confidence": round(float(confidence), 4),
                     "model_name": model_name,
                     "user_confirmed_correct": is_correct,
                     "user_expected_label": user_correction.strip() if not is_correct else predicted_label,
-                    **(extra_meta or {}),
+                    **(resolved_extra_meta or {}),
                 }
             )
             st.success("Thank you — your feedback was logged locally to `data/user_feedback_log.jsonl`.")
+

@@ -348,23 +348,24 @@ def analyze_foliar_lesions(
     img_rgb = np.asarray(img)
     seg = segment_leaf(img_rgb)
     variegated = is_variegated_plant(plant_name_or_id)
+    full_lesion_overlay_bytes = render_segmentation_overlay(img_rgb, seg)
 
     if variegated:
         affected_pct: Optional[float] = None
         estimation_status = (
             "Affected area could not be estimated (plant has naturally variegated or non-green foliage; "
-            "color-threshold segmentation is disabled to prevent false lesion masks)."
+            "color-threshold segmentation is disabled by default to prevent false lesion masks)."
         )
         seg_overlay = dict(seg, lesions=[])
         overlay_bytes = render_segmentation_overlay(img_rgb, seg_overlay)
     elif not seg["found"]:
         affected_pct = None
         estimation_status = "Affected area could not be estimated (leaf boundary could not be isolated from the background)."
-        overlay_bytes = render_segmentation_overlay(img_rgb, seg)
+        overlay_bytes = full_lesion_overlay_bytes
     else:
         affected_pct = float(seg["severity"])
         estimation_status = "Estimated via classical CV color-threshold segmentation"
-        overlay_bytes = render_segmentation_overlay(img_rgb, seg)
+        overlay_bytes = full_lesion_overlay_bytes
 
     severity_category = compute_severity_category(affected_pct, is_healthy=is_healthy)
     derived_health = compute_derived_health_score(
@@ -377,6 +378,8 @@ def analyze_foliar_lesions(
         "segmentation_found": bool(seg["found"]),
         "is_variegated_foliage": variegated,
         "affected_area_pct": affected_pct,
+        "raw_unfiltered_severity_pct": float(seg["severity"]) if seg.get("found") else None,
+        "raw_unfiltered_lesion_count": int(seg.get("lesion_count", 0)) if seg.get("found") else 0,
         "estimation_status": estimation_status,
         "lesion_count": seg.get("lesion_count", 0) if not variegated else 0,
         "leaf_area_ratio": seg.get("leaf_area_ratio", 0.0),
@@ -391,4 +394,6 @@ def analyze_foliar_lesions(
         "cluttered_background_detected": seg.get("cluttered_background_detected", False),
         "quality_warnings": seg.get("quality_warnings", []),
         "overlay_image_bytes": overlay_bytes,
+        "overlay_with_lesions_bytes": full_lesion_overlay_bytes,
     }
+

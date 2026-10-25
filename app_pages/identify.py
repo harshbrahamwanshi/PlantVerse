@@ -529,12 +529,53 @@ with tab_path:
             st.info(f":material/info: **{translate_text(UNSUPPORTED_CROP_DISEASE_MESSAGE, lang_code)}**")
             st.caption(
                 translate_text(
-                    "The 38-class disease classifier supports only 14 agricultural crops (Apple, Blueberry, Cherry, Corn, "
+                    "The 38-class agricultural crop ViT classifier supports only 14 crops (Apple, Blueberry, Cherry, Corn, "
                     "Grape, Orange/Citrus, Peach, Bell Pepper, Potato, Raspberry, Soybean, Squash, Strawberry, Tomato). "
                     "Impossible cross-crop combinations are strictly blocked.",
                     lang_code,
                 )
             )
+            gc = d_info.get("general_condition") or {}
+            if gc.get("available"):
+                st.space("small")
+                st.markdown(f"##### :material/neurology: {translate_text('7-Class General Foliar Condition & Care Assessment', lang_code)}")
+                with st.container(border=True):
+                    definition_row(
+                        translate_text("Foliar Health Status", lang_code),
+                        f"**{translate_text(gc['health_status'], lang_code)}**",
+                        key="id-gc-health",
+                    )
+                    definition_row(
+                        translate_text("General Condition (7-Class Head)", lang_code),
+                        f"**{translate_text(gc['condition_name'], lang_code)}** ({gc['confidence_pct']}%)",
+                        key="id-gc-cond",
+                    )
+                    definition_row(
+                        translate_text("Causal Agent / Group", lang_code),
+                        f"*{gc['pathogen']}*",
+                        key="id-gc-agent",
+                    )
+                    definition_row(
+                        translate_text("Symptoms", lang_code),
+                        translate_text(gc["symptoms"], lang_code),
+                        key="id-gc-symp",
+                    )
+                gc_recs = gc.get("recommendations", [])
+                if gc_recs:
+                    st.space("small")
+                    st.markdown(f"#### {translate_text('Targeted Actionable Recommendations', lang_code)}")
+                    with st.container(border=True):
+                        for idx, r in enumerate(gc_recs, 1):
+                            st.markdown(f"**{idx}.** {translate_text(r, lang_code)}")
+                st.space("small")
+                if st.button(
+                    translate_text("Open Full Pathology Studio", lang_code),
+                    icon=":material/biotech:",
+                    type="primary",
+                    key="btn_open_disease_studio_gc",
+                ):
+                    st.session_state.disease_result = d_info
+                    st.switch_page("app_pages/disease_detection.py")
         elif d_info.get("confidence_tier") == "low":
             st.error(translate_text(d_info.get("uncertainty_message", "Disease could not be diagnosed reliably."), lang_code))
         else:
@@ -590,6 +631,7 @@ with tab_path:
                 st.switch_page("app_pages/disease_detection.py")
     else:
         st.info(translate_text("Foliar pathology screening was not enabled for this analysis run.", lang_code))
+
 
 st.space("medium")
 render_feedback_widget(
