@@ -7,10 +7,18 @@ import io
 import os
 from pathlib import Path
 import re
+import sys
 from typing import Any, Dict, List, Optional, Tuple
 
+for _venv_sp in sorted((Path(__file__).resolve().parent / "venv" / "lib").glob("python*/site-packages")):
+    if str(_venv_sp) not in sys.path:
+        sys.path.append(str(_venv_sp))
+
 import numpy as np
-import onnxruntime as ort
+try:
+    import onnxruntime as ort
+except ImportError:
+    ort = None  # type: ignore[assignment]
 from PIL import Image, ImageOps
 import requests
 import streamlit as st

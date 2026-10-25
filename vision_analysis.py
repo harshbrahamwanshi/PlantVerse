@@ -20,7 +20,13 @@ lesion hues, diffuse viral mottling, and naturally variegated or non-green leave
 from __future__ import annotations
 
 import io
+from pathlib import Path
+import sys
 from typing import Any, Dict, List, Optional, Tuple
+
+for _venv_sp in sorted((Path(__file__).resolve().parent / "venv" / "lib").glob("python*/site-packages")):
+    if str(_venv_sp) not in sys.path:
+        sys.path.append(str(_venv_sp))
 
 import cv2
 import numpy as np
